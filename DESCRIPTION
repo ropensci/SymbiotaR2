@@ -1,0 +1,18 @@
+Package: SymbiotaR2
+Type: Package
+Title: XXX
+Version: 0.0-1
+Authors@R: c(person("Austin", "Koontz", email = "XXX", role = c("aut", "cre"), comment=c(ORCID="0000-0002-6241-3164")),
+    c(person("William D.", "Pearse", email = "will.pearse@gmail.com", role ="aut", comment=c(ORCID="0000-0002-6241-3164"))
+Maintainer: XXX
+Description: XXX
+License: MIT + file LICENSE
+URL: https://github.com/pearselab/SymbiotaR2
+BugReports: https://github.com/pearselab/SymbiotaR2
+LazyLoad: yes
+Imports:
+    httr (>= 1.0.0),
+    xml2 (>= 1.2.0),
+    jsonlite (>= 1.5)
+Encoding: UTF-8
+RoxygenNote: 6.1.1
