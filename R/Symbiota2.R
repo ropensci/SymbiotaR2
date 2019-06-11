@@ -1,15 +1,28 @@
 # %%% SYMBIOTA2 LIBRARY %%%
 
 library(curl)
+library(utils) # for download.file fxn
 library(rjson)
 
-ChecklistProjects <- function(webpage,pageNumber,){
-  
+ChecklistProjects <- function(webpage="http://a02235015-6.bluezone.usu.edu/api/checklist/checklistprojects",pageNumber,){
+  # Build a path corresponding to the url to pull from using function arguments
+  url_path <- paste0(webpage,"?page=",pageNumber)
+  # Specify a file (with the JSON extension) to write the JSON object to
+  # !!! THIS IS WHERE YOUR TROUBLES ARE !!!
+  sampleDestination <- "~/Symbiota2/destination.json"
+  # Download the file from the url to the destination file
+  download.file(url = url_path, destfile = sampleDestination)
+  # Convert the JSON object into an R object (in this case, a list of lists)
+  RObject <- fromJSON(file = sampleDestination)
+  return(RObject)
 }
 
-results <- curl("http://a02235015-6.bluezone.usu.edu/api/checklist/checklistprojects?page=1")
-str(results)
-results
+download.file("http://a02235015-6.bluezone.usu.edu/api/checklist/checklistprojects?page=1",sampleDestination)
+
+RObject <- fromJSON(file = sampleDestination)
+print(RObject)
+str(RObject)
+length(RObject)
 
 # NEXT STEPS
 # 1. Figure out how to structure curl command such that -X GET and -H are included in command, as in API? 
