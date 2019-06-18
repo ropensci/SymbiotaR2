@@ -1,27 +1,27 @@
 # %%% SYMBIOTA2 LIBRARY %%%
 
-library(curl)
-library(utils) # for download.file fxn
+library(utils)
 library(rjson)
 
-ChecklistProjects <- function(webpage="http://a02235015-6.bluezone.usu.edu/api/checklist/checklistprojects",pageNumber){
+# Declaration for default webpage used in url_path variable of download.file command
+default.webpage <- "http://a02235015-6.bluezone.usu.edu/api/checklist/checklistprojects"
+
+ChecklistProjects <- function(webpage=default.webpage,pageNumber){
   # Build a path corresponding to the url to pull from using function arguments
   url_path <- paste0(webpage,"?page=",pageNumber)
-  # Specify a file (with the JSON extension) to write the JSON object to
-  # !!! THIS IS WHERE YOUR TROUBLES ARE !!!
-  sampleDestination <- "~/Symbiota2/destination.json"
+  # Specify a random file (with the JSON extension) to write the JSON object to in the tmp directory
+  sampleDestination <- tempfile()
   # Download the file from the url to the destination file
   download.file(url = url_path, destfile = sampleDestination)
   # Convert the JSON object into an R object (in this case, a list of lists)
   RObject <- fromJSON(file = sampleDestination)
+  # Return only hydra:member component of RObject 
+  RObject <- RObject$`hydra:member`
   return(RObject)
 }
 
 test <- ChecklistProjects(pageNumber = 1)
 str(test)
 
-# NEXT STEPS
-# 1. ChecklistProjects
-  # a. Dealing with @context, @id, and @type list members...convert names to strings, or remove @ symbol?
-  # b. Figuring out difference between pageNumber=1 and pagNumber>1...
-# 2. ChecklistProjects/{id}?
+test <- do.call(rbind, test)
+str(test)
