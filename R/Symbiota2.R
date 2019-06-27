@@ -92,7 +92,7 @@ Children <- function(url=default.url,ID,page){
       RObject[[i]][sapply(RObject[[i]], is.null)] <- NA
     }
     # Convert RObject into a data.frame and return
-    #RObject <- sapply(RObject, as.data.frame)
+    RObject <- sapply(RObject, as.data.frame)
     return(RObject)
   }
 }
