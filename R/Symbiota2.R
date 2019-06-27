@@ -6,6 +6,7 @@ library(rjson)
 # Declaration for default webpage used in url_path variable of download.file command
 default.url <- "http://a02235015-6.bluezone.usu.edu/api/checklist/"
 
+# ChecklistProjects function
 ChecklistProjects <- function(url=default.url,ID,page){
   #browser()
   # If ID argument is present, retrieve the specific ChecklistProjects resource corresponding to ID
@@ -41,24 +42,23 @@ ChecklistProjects <- function(url=default.url,ID,page){
         }
         # PROBLEM: differing lengths of checklistId parameter
         # Convert RObject into a data.frame and return
-        sapply(RObject, as.data.frame)
+        #sapply(RObject, as.data.frame)
         return(RObject)
     }
 }
 test <- ChecklistProjects(ID = 5)
-test <- ChecklistProjects(page = 1)
+test <- ChecklistProjects(page = 1) # fails
 
-for(i in seq_along(test)){
-  for(j in seq_along(test[[i]])){
-    test[[i]][[j]] <- ifelse(is.null(test[[i]][[j]]), NA, test[[i]][[j]])
-    if(length(test[[i]][[j]])>1)
-      test[[i]][[j]] <- paste(test[[i]][[j]], collapse="-")
-  }
-}
+# for(i in seq_along(test)){
+#   for(j in seq_along(test[[i]])){
+#     test[[i]][[j]] <- ifelse(is.null(test[[i]][[j]]), NA, test[[i]][[j]])
+#     if(length(test[[i]][[j]])>1)
+#       test[[i]][[j]] <- paste(test[[i]][[j]], collapse="-")
+#   }
+# }
 
+# Children function
 Children <- function(url=default.url,ID,page){
-  #browser()
-  # PROBLEM: Webpages for retrieving Children resource of specific ID not found...
   # If ID argument is present, retrieve the specific Children resource corresponding to ID
   if(!missing(ID)){
     # Build a path corresponding to the url to pull from using function arguments
@@ -66,6 +66,7 @@ Children <- function(url=default.url,ID,page){
     # Specify a random file (with the JSON extension) to write the JSON object to in the tmp directory
     sampleDestination <- tempfile()
     # Download the file from the url to the destination file
+    # PROBLEM: Webpages for retrieving Children resource of specific ID not found, "because of an invalid identifier configuration"
     download.file(url = complete_url, destfile = sampleDestination)
     # Convert the JSON object into an R object (in this case, a list of lists)
     RObject <- fromJSON(file = sampleDestination)
@@ -77,7 +78,7 @@ Children <- function(url=default.url,ID,page){
       page = 1
     }
     # Build a path corresponding to the url to pull from using function arguments
-    complete_url <- paste0(url,"children/?page=",page)
+    complete_url <- paste0(url,"children?page=",page)
     # Specify a random file (with the JSON extension) to write the JSON object to in the tmp directory
     sampleDestination <- tempfile()
     # Download the file from the url to the destination file
@@ -90,13 +91,14 @@ Children <- function(url=default.url,ID,page){
     for(i in seq_along(RObject)){
       RObject[[i]][sapply(RObject[[i]], is.null)] <- NA
     }
-    # PROBLEM: differing lengths of checklistId parameter
     # Convert RObject into a data.frame and return
-    #sapply(RObject, as.data.frame)
+    #RObject <- sapply(RObject, as.data.frame)
     return(RObject)
   }
 }
-test <- Children(ID = 5)
-test <- Children(page = 1)
 
+test <- Children(ID = 5) # fails
+
+test <- Children(page = 1)
 str(test)
+
