@@ -4,7 +4,7 @@ library(utils)
 library(rjson)
 
 # Declaration for default webpage used in url_path variable of download.file command
-default.url <- "http://a02235015-6.bluezone.usu.edu/api/checklist/"
+default.url <- "http://a02235015-6.bluezone.usu.edu/api/"
 
 # ChecklistProjects function
 ChecklistProjects <- function(url=default.url,ID,page){
@@ -12,7 +12,7 @@ ChecklistProjects <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific ChecklistProjects resource corresponding to ID
     if(!missing(ID)){
       # Build a path corresponding to the url to pull from using function arguments
-      complete_url <- paste0(url,"checklistprojects/",ID)
+      complete_url <- paste0(url,"checklist/checklistprojects/",ID)
       # Specify a random file (with the JSON extension) to write the JSON object to in the tmp directory
       sampleDestination <- tempfile()
       # Download the file from the url to the destination file
@@ -27,7 +27,7 @@ ChecklistProjects <- function(url=default.url,ID,page){
         page = 1
       }
         # Build a path corresponding to the url to pull from using function arguments
-        complete_url <- paste0(url,"checklistprojects/?page=",page)
+        complete_url <- paste0(url,"checklist/checklistprojects/?page=",page)
         # Specify a random file (with the JSON extension) to write the JSON object to in the tmp directory
         sampleDestination <- tempfile()
         # Download the file from the url to the destination file
@@ -62,7 +62,7 @@ Children <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific Children resource corresponding to ID
   if(!missing(ID)){
     # Build a path corresponding to the url to pull from using function arguments
-    complete_url <- paste0(url,"children/",ID)
+    complete_url <- paste0(url,"checklist/children/",ID)
     # Specify a random file (with the JSON extension) to write the JSON object to in the tmp directory
     sampleDestination <- tempfile()
     # Download the file from the url to the destination file
@@ -78,7 +78,7 @@ Children <- function(url=default.url,ID,page){
       page = 1
     }
     # Build a path corresponding to the url to pull from using function arguments
-    complete_url <- paste0(url,"children?page=",page)
+    complete_url <- paste0(url,"checklist/children?page=",page)
     # Specify a random file (with the JSON extension) to write the JSON object to in the tmp directory
     sampleDestination <- tempfile()
     # Download the file from the url to the destination file
@@ -92,7 +92,7 @@ Children <- function(url=default.url,ID,page){
       RObject[[i]][sapply(RObject[[i]], is.null)] <- NA
     }
     # Convert RObject into a data.frame and return
-    RObject <- sapply(RObject, as.data.frame)
+    #RObject <- sapply(RObject, as.data.frame)
     return(RObject)
   }
 }
@@ -100,5 +100,59 @@ Children <- function(url=default.url,ID,page){
 test <- Children(ID = 5) # fails
 
 test <- Children(page = 1)
+str(test)
+
+# Taxa function
+Taxa <- function(url=default.url,ID,page){
+  browser()
+  # If ID argument is present, retrieve the specific Taxa resource corresponding to ID
+  if(!missing(ID)){
+    # Build a path corresponding to the url to pull from using function arguments
+    complete_url <- paste0(url,"taxa/",ID)
+    # Specify a random file (with the JSON extension) to write the JSON object to in the tmp directory
+    sampleDestination <- tempfile()
+    # Download the file from the url to the destination file
+    download.file(url = complete_url, destfile = sampleDestination)
+    # Convert the JSON object into an R object (in this case, a list of lists)
+    RObject <- fromJSON(file = sampleDestination)
+    return(RObject)
+  }else{
+    # Otherwise, retrieve a collection of Taxa resources based on page number
+    if(missing(page)){
+      # If page number is missing, set page variable equal to 1 (the first page)
+      page = 1
+    }
+    # Build a path corresponding to the url to pull from using function arguments
+    complete_url <- paste0(url,"taxa?page=",page)
+    # Specify a random file (with the JSON extension) to write the JSON object to in the tmp directory
+    sampleDestination <- tempfile()
+    # Download the file from the url to the destination file
+    download.file(url = complete_url, destfile = sampleDestination)
+    # Convert the JSON object into an R object (in this case, a list of lists)
+    RObject <- fromJSON(file = sampleDestination)
+    # Return only hydra:member component of RObject 
+    RObject <- RObject$`hydra:member`
+    # Convert NULL within list to NA (in order to properly export as a data.frame)
+    for(i in seq_along(RObject)){
+      RObject[[i]][sapply(RObject[[i]], is.null)] <- NA
+    }
+    # Convert lists of length 0 to NA (in order to properly export as a data.frame)
+    # PROBLEM: Seems like there should be a better way of doing this (besides a loop within a loop)
+    for(i in seq_along(RObject)){
+      for(j in seq_along(RObject[[i]])){
+        if(length(RObject[[i]][[j]]) < 1){
+          RObject[[i]][[j]] <- NA
+        }
+      }
+    }
+    # Convert RObject into a data.frame and return
+    RObject <- sapply(RObject, as.data.frame)
+    return(RObject)
+  }
+}
+
+test <- Taxa(ID = 2) 
+str(test)
+test <- Taxa(page = 1)
 str(test)
 
