@@ -104,7 +104,7 @@ str(test)
 
 # Taxa function
 Taxa <- function(url=default.url,ID,page){
-  browser()
+  #browser()
   # If ID argument is present, retrieve the specific Taxa resource corresponding to ID
   if(!missing(ID)){
     # Build a path corresponding to the url to pull from using function arguments
@@ -151,7 +151,7 @@ Taxa <- function(url=default.url,ID,page){
   }
 }
 
-test <- Taxa(ID = 2) 
+test <- Taxa(ID = 16) 
 str(test)
 test <- Taxa(page = 1)
 str(test)
