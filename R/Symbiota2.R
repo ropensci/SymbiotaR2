@@ -8,7 +8,6 @@ default.url <- "http://a02235015-6.bluezone.usu.edu/api/"
 
 # ChecklistProjects function
 ChecklistProjects <- function(url=default.url,ID,page){
-  #browser()
   # If ID argument is present, retrieve the specific ChecklistProjects resource corresponding to ID
     if(!missing(ID)){
       # Build a path corresponding to the url to pull from using function arguments
@@ -26,7 +25,7 @@ ChecklistProjects <- function(url=default.url,ID,page){
         # If page number is missing, set page variable equal to 1 (the first page)
         page = 1
       }
-        # Build a path corresponding to the url to pull from using function arguments
+        # Build a path corresponding to the url to pull from, using function arguments
         complete_url <- paste0(url,"checklist/checklistprojects/?page=",page)
         # Specify a random file (with the JSON extension) to write the JSON object to in the tmp directory
         sampleDestination <- tempfile()
@@ -34,28 +33,19 @@ ChecklistProjects <- function(url=default.url,ID,page){
         download.file(url = complete_url, destfile = sampleDestination)
         # Convert the JSON object into an R object (in this case, a list of lists)
         RObject <- fromJSON(file = sampleDestination)
-        # Return only hydra:member component of RObject 
+        # Return only hydra:member component of RObject
         RObject <- RObject$`hydra:member`
-        # Convert NULL within list to NA (in order to properly export as a data.frame)
-        for(i in seq_along(RObject)){
-          RObject[[i]][sapply(RObject[[i]], is.null)] <- NA
-        }
-        # PROBLEM: differing lengths of checklistId parameter
-        # Convert RObject into a data.frame and return
-        #sapply(RObject, as.data.frame)
+        # Extract checklistId items from list members of RObject
+        # (Is this the correct thing to do? Note the presence of the Checklists fxn...)
+        RObject <- lapply(RObject, function(x) x$checklistId)
+        # Consider removing lists of length 0?
+        # Return the checklistId items as a data.frame
+        sapply(RObject, as.data.frame)
         return(RObject)
     }
 }
 test <- ChecklistProjects(ID = 5)
 test <- ChecklistProjects(page = 1)
-
-# for(i in seq_along(test)){
-#   for(j in seq_along(test[[i]])){
-#     test[[i]][[j]] <- ifelse(is.null(test[[i]][[j]]), NA, test[[i]][[j]])
-#     if(length(test[[i]][[j]])>1)
-#       test[[i]][[j]] <- paste(test[[i]][[j]], collapse="-")
-#   }
-# }
 
 # Children function
 Children <- function(url=default.url,ID,page){
@@ -96,11 +86,8 @@ Children <- function(url=default.url,ID,page){
     return(RObject)
   }
 }
-
 test <- Children(ID = 5) # fails
-
 test <- Children(page = 1)
-str(test)
 
 # Coordinates function
 Coordinates <- function(url=default.url,ID,page){
@@ -112,8 +99,10 @@ Coordinates <- function(url=default.url,ID,page){
     sampleDestination <- tempfile()
     # Download the file from the url to the destination file
     download.file(url = complete_url, destfile = sampleDestination)
-    # Convert the JSON object into an R object (in this case, a list of lists)
+    # Convert the JSON object into an R object (a list of lists)
     RObject <- fromJSON(file = sampleDestination)
+    # Extract and combine latitude and longitude elements from R Object
+    RObject <- c(RObject$decimalLatitude,RObject$decimalLongitude)
     return(RObject)
   }else{
     # Otherwise, retrieve a collection of Coordinates resources based on page number
@@ -131,13 +120,10 @@ Coordinates <- function(url=default.url,ID,page){
     RObject <- fromJSON(file = sampleDestination)
     # Return only hydra:member component of RObject 
     RObject <- RObject$`hydra:member`
-    # PROBLEM: Latitude and Longitude values are being rounded off, somehow
-    # Convert NULL within list to NA (in order to properly export as a data.frame)
-    for(i in seq_along(RObject)){
-      RObject[[i]][sapply(RObject[[i]], is.null)] <- NA
-    }
+    # Extract decimalLatitude and decimalLongitude items from list members of RObject
+    RObject <- lapply(RObject, function(x) c(x$decimalLatitude,x$decimalLongitude))
     # Convert RObject into a data.frame and return
-    #RObject <- sapply(RObject, as.data.frame)
+    RObject <- sapply(RObject, as.data.frame)
     return(RObject)
   }
 }
@@ -330,3 +316,132 @@ TaxaLink <- function(url=default.url,ID,page){
 }
 test <- TaxaLink(ID = 16) 
 test <- TaxaLink(page = 1)
+
+# Vouchers function
+Vouchers <- function(url=default.url,ID,page){
+  browser()
+  # If ID argument is present, retrieve the specific Voucher resource corresponding to ID
+  if(!missing(ID)){
+    # Build a path corresponding to the url to pull from using function arguments
+    complete_url <- paste0(url,"checklist/vouchers/",ID)
+    # Specify a random file (with the JSON extension) to write the JSON object to in the tmp directory
+    sampleDestination <- tempfile()
+    # Download the file from the url to the destination file
+    download.file(url = complete_url, destfile = sampleDestination)
+    # Convert the JSON object into an R object (in this case, a list of lists)
+    RObject <- fromJSON(file = sampleDestination)
+    return(RObject)
+  }else{
+    # Otherwise, retrieve a collection of Voucher resources based on page number
+    if(missing(page)){
+      # If page number is missing, set page variable equal to 1 (the first page)
+      page = 1
+    }
+    # Build a path corresponding to the url to pull from, using function arguments
+    complete_url <- paste0(url,"checklist/vouchers/?page=",page)
+    # Specify a random file (with the JSON extension) to write the JSON object to in the tmp directory
+    sampleDestination <- tempfile()
+    # Download the file from the url to the destination file
+    download.file(url = complete_url, destfile = sampleDestination)
+    # Convert the JSON object into an R object (in this case, a list of lists)
+    RObject <- fromJSON(file = sampleDestination)
+    # Return only hydra:member component of RObject
+    RObject <- RObject$`hydra:member`
+    # It isn't clear what I need to return here, or if I should just pass on this whole thing into a data.frame...
+    # Return the Voucher items as a data.frame
+    sapply(RObject, as.data.frame)
+    return(RObject)
+  }
+}
+test <- Vouchers(ID = 5)
+test <- Vouchers(page = 1)
+
+# Checklists function
+Checklists <- function(url=default.url,ID,page){
+  # If ID argument is present, retrieve the specific Checklists resource corresponding to ID
+  if(!missing(ID)){
+    # Build a path corresponding to the url to pull from using function arguments
+    complete_url <- paste0(url,"checklist/checklists/",ID)
+    # Specify a random file (with the JSON extension) to write the JSON object to in the tmp directory
+    sampleDestination <- tempfile()
+    # Download the file from the url to the destination file
+    download.file(url = complete_url, destfile = sampleDestination)
+    # Convert the JSON object into an R object (in this case, a list of lists)
+    RObject <- fromJSON(file = sampleDestination)
+    return(RObject)
+  }else{
+    # Otherwise, retrieve a collection of ChecklistProjects resources based on page number
+    if(missing(page)){
+      # If page number is missing, set page variable equal to 1 (the first page)
+      page = 1
+    }
+    # Build a path corresponding to the url to pull from, using function arguments
+    complete_url <- paste0(url,"checklist/checklistprojects/?page=",page)
+    # Specify a random file (with the JSON extension) to write the JSON object to in the tmp directory
+    sampleDestination <- tempfile()
+    # Download the file from the url to the destination file
+    download.file(url = complete_url, destfile = sampleDestination)
+    # Convert the JSON object into an R object (in this case, a list of lists)
+    RObject <- fromJSON(file = sampleDestination)
+    # Return only hydra:member component of RObject
+    RObject <- RObject$`hydra:member`
+    # Extract checklistId items from list members of RObject
+    RObject <- lapply(RObject, function(x) x$checklistId)
+    # Consider removing lists of length 0?
+    # Return the checklistId items as a data.frame
+    sapply(RObject, as.data.frame)
+    return(RObject)
+  }
+}
+test <- ChecklistProjects(ID = 5)
+test <- ChecklistProjects(page = 1)
+
+# Taxa function
+Taxa <- function(url=default.url,ID,page){
+  # If ID argument is present, retrieve the specific Taxa resource corresponding to ID
+  if(!missing(ID)){
+    # Build a path corresponding to the url to pull from using function arguments
+    complete_url <- paste0(url,"taxa/",ID)
+    # Specify a random file (with the JSON extension) to write the JSON object to in the tmp directory
+    sampleDestination <- tempfile()
+    # Download the file from the url to the destination file
+    download.file(url = complete_url, destfile = sampleDestination)
+    # Convert the JSON object into an R object (in this case, a list of lists)
+    RObject <- fromJSON(file = sampleDestination)
+    return(RObject)
+  }else{
+    # Otherwise, retrieve a collection of Taxa resources based on page number
+    if(missing(page)){
+      # If page number is missing, set page variable equal to 1 (the first page)
+      page = 1
+    }
+    # Build a path corresponding to the url to pull from using function arguments
+    complete_url <- paste0(url,"taxa?page=",page)
+    # Specify a random file (with the JSON extension) to write the JSON object to in the tmp directory
+    sampleDestination <- tempfile()
+    # Download the file from the url to the destination file
+    download.file(url = complete_url, destfile = sampleDestination)
+    # Convert the JSON object into an R object (in this case, a list of lists)
+    RObject <- fromJSON(file = sampleDestination)
+    # Return only hydra:member component of RObject 
+    RObject <- RObject$`hydra:member`
+    # Convert NULL within list to NA (in order to properly export as a data.frame)
+    for(i in seq_along(RObject)){
+      RObject[[i]][sapply(RObject[[i]], is.null)] <- NA
+    }
+    # Convert lists of length 0 to NA (in order to properly export as a data.frame)
+    # PROBLEM: Seems like there should be a better way of doing this (besides a loop within a loop)
+    # for(i in seq_along(RObject)){
+    #   for(j in seq_along(RObject[[i]])){
+    #     if(length(RObject[[i]][[j]]) < 1){
+    #       RObject[[i]][[j]] <- NA
+    #     }
+    #   }
+    # }
+    # Convert RObject into a data.frame and return
+    RObject <- sapply(RObject, as.data.frame)
+    return(RObject)
+  }
+}
+test <- Taxa(ID = 5) 
+test <- Taxa(page = 1)
