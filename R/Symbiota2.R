@@ -6,48 +6,6 @@ library(rjson)
 # Declaration for default webpage used in url_path variable of download.file command
 default.url <- "http://a02235015-6.bluezone.usu.edu/api/"
 
-# Blueprint function--
-FXN_NAME <- function(url=default.url,ID,page){
-  #browser()
-  # If ID argument is present, retrieve the specific FXN_NAME resource corresponding to ID
-  if(!missing(ID)){
-    # Build a path corresponding to the url to pull from using function arguments
-    complete_url <- paste0(url,"checklist/FXN_NAME/",ID)
-    # Specify a random file (with the JSON extension) to write the JSON object to in the tmp directory
-    sampleDestination <- tempfile()
-    # Download the file from the url to the destination file
-    download.file(url = complete_url, destfile = sampleDestination)
-    # Convert the JSON object into an R object (a list of lists)
-    RObject <- fromJSON(file = sampleDestination)
-    return(RObject)
-  }else{
-    # Otherwise, retrieve a collection of FXN_NAME resources based on page number
-    if(missing(page)){
-      # If page number is missing, set page variable equal to 1 (the first page)
-      page = 1
-    }
-    # Build a path corresponding to the url to pull from using function arguments
-    complete_url <- paste0(url,"checklist/FXN_NAME?page=",page)
-    # Specify a random file (with the JSON extension) to write the JSON object to in the tmp directory
-    sampleDestination <- tempfile()
-    # Download the file from the url to the destination file
-    download.file(url = complete_url, destfile = sampleDestination)
-    # Convert the JSON object into an R object (in this case, a list of lists)
-    RObject <- fromJSON(file = sampleDestination)
-    # Return only hydra:member component of RObject 
-    RObject <- RObject$`hydra:member`
-    # Convert NULL within list to NA (in order to properly export as a data.frame)
-    for(i in seq_along(RObject)){
-      RObject[[i]][sapply(RObject[[i]], is.null)] <- NA
-    }
-    # Convert RObject into a data.frame and return
-    RObject <- sapply(RObject, as.data.frame)
-    return(RObject)
-  }
-}
-test <- FXN_NAME(ID = 5)
-test <- FXN_NAME(page = 1)
-
 # ChecklistProjects function--works
 ChecklistProjects <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific ChecklistProjects resource corresponding to ID
@@ -548,7 +506,7 @@ test <- Stats(page = 1)
 
 # Collections function--ID works; issue with converting to data.frame with page output
 Collections <- function(url=default.url,ID,page){
-  browser()
+  #browser()
   # If ID argument is present, retrieve the specific Collections resource corresponding to ID
   if(!missing(ID)){
     # Build a path corresponding to the url to pull from using function arguments
@@ -559,14 +517,6 @@ Collections <- function(url=default.url,ID,page){
     download.file(url = complete_url, destfile = sampleDestination)
     # Convert the JSON object into an R object (a list of lists)
     RObject <- fromJSON(file = sampleDestination)
-    # Convert NULL items within list to NA (in order to properly export as a data.frame; may be a better way to do this)
-    for(i in 1:length(RObject)){
-      if(is.null(RObject[[i]])){
-        RObject[[i]] <- NA
-      }
-    }
-    # Convert RObject into a data.frame and return
-    RObject <- sapply(RObject, as.data.frame)
     return(RObject)
   }else{
     # Otherwise, retrieve a collection of Collections resources based on page number
@@ -597,7 +547,176 @@ Collections <- function(url=default.url,ID,page){
 test <- Collections(ID = 5)
 test <- Collections(page = 1)
 
-# Taxa function
+# Configurations function--works. (This function has more functions than the others in the API)
+Configurations <- function(url=default.url,ID,page){
+  # If ID argument is present, retrieve the specific Configurations resource corresponding to ID
+  if(!missing(ID)){
+    # Build a path corresponding to the url to pull from using function arguments
+    complete_url <- paste0(url,"configurations/",ID)
+    # Specify a random file (with the JSON extension) to write the JSON object to in the tmp directory
+    sampleDestination <- tempfile()
+    # Download the file from the url to the destination file
+    download.file(url = complete_url, destfile = sampleDestination)
+    # Convert the JSON object into an R object (a list of lists)
+    RObject <- fromJSON(file = sampleDestination)
+    return(RObject)
+  }else{
+    # Otherwise, retrieve a collection of Configurations resources based on page number
+    if(missing(page)){
+      # If page number is missing, set page variable equal to 1 (the first page)
+      page = 1
+    }
+    # Build a path corresponding to the url to pull from using function arguments
+    complete_url <- paste0(url,"configurations?page=",page)
+    # Specify a random file (with the JSON extension) to write the JSON object to in the tmp directory
+    sampleDestination <- tempfile()
+    # Download the file from the url to the destination file
+    download.file(url = complete_url, destfile = sampleDestination)
+    # Convert the JSON object into an R object (in this case, a list of lists)
+    RObject <- fromJSON(file = sampleDestination)
+    # Return only hydra:member component of RObject 
+    RObject <- RObject$`hydra:member`
+    # Convert NULL within list to NA (in order to properly export as a data.frame)
+    for(i in seq_along(RObject)){
+      RObject[[i]][sapply(RObject[[i]], is.null)] <- NA
+    }
+    # Convert RObject into a data.frame and return
+    RObject <- sapply(RObject, as.data.frame)
+    return(RObject)
+  }
+}
+test <- Configurations(ID = 5)
+test <- Configurations(page = 1)
+
+# Central function--works
+Central <- function(url=default.url,ID,page){
+  # If ID argument is present, retrieve the specific Central resource corresponding to ID
+  if(!missing(ID)){
+    # Build a path corresponding to the url to pull from using function arguments
+    complete_url <- paste0(url,"crowdsource/central/",ID)
+    # Specify a random file (with the JSON extension) to write the JSON object to in the tmp directory
+    sampleDestination <- tempfile()
+    # Download the file from the url to the destination file
+    download.file(url = complete_url, destfile = sampleDestination)
+    # Convert the JSON object into an R object (a list of lists)
+    RObject <- fromJSON(file = sampleDestination)
+    return(RObject)
+  }else{
+    # Otherwise, retrieve a collection of Central resources based on page number
+    if(missing(page)){
+      # If page number is missing, set page variable equal to 1 (the first page)
+      page = 1
+    }
+    # Build a path corresponding to the url to pull from using function arguments
+    complete_url <- paste0(url,"crowdsource/central?page=",page)
+    # Specify a random file (with the JSON extension) to write the JSON object to in the tmp directory
+    sampleDestination <- tempfile()
+    # Download the file from the url to the destination file
+    download.file(url = complete_url, destfile = sampleDestination)
+    # Convert the JSON object into an R object (in this case, a list of lists)
+    RObject <- fromJSON(file = sampleDestination)
+    # Return only hydra:member component of RObject 
+    RObject <- RObject$`hydra:member`
+    # Convert NULL within list to NA (in order to properly export as a data.frame)
+    for(i in seq_along(RObject)){
+      RObject[[i]][sapply(RObject[[i]], is.null)] <- NA
+    }
+    # Convert RObject into a data.frame and return
+    RObject <- sapply(RObject, as.data.frame)
+    return(RObject)
+  }
+}
+test <- Central(ID = 1)
+test <- Central(page = 1)
+
+# Queue function--works
+Queue <- function(url=default.url,ID,page){
+  # If ID argument is present, retrieve the specific Queue resource corresponding to ID
+  if(!missing(ID)){
+    # Build a path corresponding to the url to pull from using function arguments
+    complete_url <- paste0(url,"crowdsource/queue/",ID)
+    # Specify a random file (with the JSON extension) to write the JSON object to in the tmp directory
+    sampleDestination <- tempfile()
+    # Download the file from the url to the destination file
+    download.file(url = complete_url, destfile = sampleDestination)
+    # Convert the JSON object into an R object (a list of lists)
+    RObject <- fromJSON(file = sampleDestination)
+    return(RObject)
+  }else{
+    # Otherwise, retrieve a collection of Queue resources based on page number
+    if(missing(page)){
+      # If page number is missing, set page variable equal to 1 (the first page)
+      page = 1
+    }
+    # Build a path corresponding to the url to pull from using function arguments
+    complete_url <- paste0(url,"crowdsource/queue?page=",page)
+    # Specify a random file (with the JSON extension) to write the JSON object to in the tmp directory
+    sampleDestination <- tempfile()
+    # Download the file from the url to the destination file
+    download.file(url = complete_url, destfile = sampleDestination)
+    # Convert the JSON object into an R object (in this case, a list of lists)
+    RObject <- fromJSON(file = sampleDestination)
+    # Return only hydra:member component of RObject 
+    RObject <- RObject$`hydra:member`
+    # Convert NULL within list to NA (in order to properly export as a data.frame)
+    for(i in seq_along(RObject)){
+      RObject[[i]][sapply(RObject[[i]], is.null)] <- NA
+    }
+    # Convert RObject into a data.frame and return
+    RObject <- sapply(RObject, as.data.frame)
+    return(RObject)
+  }
+}
+test <- Queue(ID = 1)
+test <- Queue(page = 1)
+
+# Numbers function--
+Numbers <- function(url=default.url,ID,page){
+  #browser()
+  # If ID argument is present, retrieve the specific Numbers resource corresponding to ID
+  if(!missing(ID)){
+    # Build a path corresponding to the url to pull from using function arguments
+    complete_url <- paste0(url,"exsiccati/numbers/",ID)
+    # Specify a random file (with the JSON extension) to write the JSON object to in the tmp directory
+    sampleDestination <- tempfile()
+    # Download the file from the url to the destination file
+    download.file(url = complete_url, destfile = sampleDestination)
+    # Convert the JSON object into an R object (a list of lists)
+    RObject <- fromJSON(file = sampleDestination)
+    # Extract exsiccatiNumber from RObject
+    RObject <- RObject$exsiccatiNumber
+    return(RObject)
+  }else{
+    # Otherwise, retrieve a collection of Numbers resources based on page number
+    if(missing(page)){
+      # If page number is missing, set page variable equal to 1 (the first page)
+      page = 1
+    }
+    # Build a path corresponding to the url to pull from using function arguments
+    complete_url <- paste0(url,"exsiccati/numbers?page=",page)
+    # Specify a random file (with the JSON extension) to write the JSON object to in the tmp directory
+    sampleDestination <- tempfile()
+    # Download the file from the url to the destination file
+    download.file(url = complete_url, destfile = sampleDestination)
+    # Convert the JSON object into an R object (in this case, a list of lists)
+    RObject <- fromJSON(file = sampleDestination)
+    # Return only hydra:member component of RObject 
+    RObject <- RObject$`hydra:member`
+    # Convert NULL within list to NA (in order to properly export as a data.frame)
+    for(i in seq_along(RObject)){
+      RObject[[i]][sapply(RObject[[i]], is.null)] <- NA
+    }
+    # Extract exsiccatiNumber from list members of RObject
+    RObject <- lapply(RObject, function(x) x$exsiccatiNumber)
+    # Convert RObject into a data.frame and return
+    RObject <- sapply(RObject, as.data.frame)
+    return(RObject)
+  }
+}
+test <- Numbers(ID = 5)
+test <- Numbers(page = 1)
+
+# Taxa function--ID works; issue with converting to data.frame with page output
 Taxa <- function(url=default.url,ID,page){
   #browser()
   # If ID argument is present, retrieve the specific Taxa resource corresponding to ID
@@ -610,6 +729,8 @@ Taxa <- function(url=default.url,ID,page){
     download.file(url = complete_url, destfile = sampleDestination)
     # Convert the JSON object into an R object (in this case, a list of lists)
     RObject <- fromJSON(file = sampleDestination)
+    # Convert RObject into a data.frame and return
+    RObject <- sapply(RObject, as.data.frame)
     return(RObject)
   }else{
     # Otherwise, retrieve a collection of Taxa resources based on page number
@@ -631,15 +752,6 @@ Taxa <- function(url=default.url,ID,page){
     for(i in seq_along(RObject)){
       RObject[[i]][sapply(RObject[[i]], is.null)] <- NA
     }
-    # Convert lists of length 0 to NA (in order to properly export as a data.frame)
-    # PROBLEM: Seems like there should be a better way of doing this (besides a loop within a loop)
-    # for(i in seq_along(RObject)){
-    #   for(j in seq_along(RObject[[i]])){
-    #     if(length(RObject[[i]][[j]]) < 1){
-    #       RObject[[i]][[j]] <- NA
-    #     }
-    #   }
-    # }
     # Convert RObject into a data.frame and return
     RObject <- sapply(RObject, as.data.frame)
     return(RObject)
@@ -647,3 +759,45 @@ Taxa <- function(url=default.url,ID,page){
 }
 test <- Taxa(ID = 5) 
 test <- Taxa(page = 1)
+
+# Blueprint function--
+FXN_NAME <- function(url=default.url,ID,page){
+  #browser()
+  # If ID argument is present, retrieve the specific FXN_NAME resource corresponding to ID
+  if(!missing(ID)){
+    # Build a path corresponding to the url to pull from using function arguments
+    complete_url <- paste0(url,"checklist/FXN_NAME/",ID)
+    # Specify a random file (with the JSON extension) to write the JSON object to in the tmp directory
+    sampleDestination <- tempfile()
+    # Download the file from the url to the destination file
+    download.file(url = complete_url, destfile = sampleDestination)
+    # Convert the JSON object into an R object (a list of lists)
+    RObject <- fromJSON(file = sampleDestination)
+    return(RObject)
+  }else{
+    # Otherwise, retrieve a collection of FXN_NAME resources based on page number
+    if(missing(page)){
+      # If page number is missing, set page variable equal to 1 (the first page)
+      page = 1
+    }
+    # Build a path corresponding to the url to pull from using function arguments
+    complete_url <- paste0(url,"checklist/FXN_NAME?page=",page)
+    # Specify a random file (with the JSON extension) to write the JSON object to in the tmp directory
+    sampleDestination <- tempfile()
+    # Download the file from the url to the destination file
+    download.file(url = complete_url, destfile = sampleDestination)
+    # Convert the JSON object into an R object (in this case, a list of lists)
+    RObject <- fromJSON(file = sampleDestination)
+    # Return only hydra:member component of RObject 
+    RObject <- RObject$`hydra:member`
+    # Convert NULL within list to NA (in order to properly export as a data.frame)
+    for(i in seq_along(RObject)){
+      RObject[[i]][sapply(RObject[[i]], is.null)] <- NA
+    }
+    # Convert RObject into a data.frame and return
+    RObject <- sapply(RObject, as.data.frame)
+    return(RObject)
+  }
+}
+test <- FXN_NAME(ID = 5)
+test <- FXN_NAME(page = 1)
