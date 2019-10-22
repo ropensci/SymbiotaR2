@@ -1687,8 +1687,6 @@ UserRoles <- function(url=default.url,ID,permissions){
 }
 test <- UserRoles(ID = 1)
 test <- UserRoles(ID = 1, permissions = 1)
-
-# _______________________________________________________________________________________
 # Functions that aren't in the development database (and so, are difficult to check) ======================
 # Dynamic function
 Dynamic <- function(url=default.url,ID,page){
@@ -2572,8 +2570,6 @@ References <- function(url=default.url,ID,page){
 }
 test <- References(ID = 5)
 test <- References(page = 1)
-
-# _______________________________________________________________________________________
 # Functions that are nearly there =====================================================================
 # ChecklistProjects function--ID works; issue with converting to data.frame output for page
 ChecklistProjects <- function(url=default.url,ID,page){
@@ -2617,7 +2613,6 @@ ChecklistProjects <- function(url=default.url,ID,page){
 }
 test <- ChecklistProjects(ID = 5)
 test <- ChecklistProjects(page = 1)
-
 # TaxaLink function--ID not returning a data.frame, yet; page works
 TaxaLink <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific TaxaLink resource corresponding to ID
@@ -2658,7 +2653,6 @@ TaxaLink <- function(url=default.url,ID,page){
 }
 test <- TaxaLink(ID = 1) 
 test <- TaxaLink(page = 1)
-
 # Vouchers function--ID fails; page works
 Vouchers <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific Voucher resource corresponding to ID
@@ -2699,7 +2693,6 @@ Vouchers <- function(url=default.url,ID,page){
 }
 test <- Vouchers(ID = 5)
 test <- Vouchers(page = 1)
-
 # Checklists function--issue with converting NULL items to NA
 Checklists <- function(url=default.url,ID,page){
   #browser()
@@ -2745,7 +2738,6 @@ Checklists <- function(url=default.url,ID,page){
 }
 test <- Checklists(ID = 5)
 test <- Checklists(page = 1)
-
 # Collections function--ID works; issue with converting to data.frame output for page
 Collections <- function(url=default.url,ID,page){
   #browser()
@@ -2788,7 +2780,6 @@ Collections <- function(url=default.url,ID,page){
 }
 test <- Collections(ID = 5)
 test <- Collections(page = 1)
-
 # CharacterLanguages function--ID fails; page works
 CharacterLanguages <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific CharacterLanguages resource corresponding to ID
@@ -2829,7 +2820,6 @@ CharacterLanguages <- function(url=default.url,ID,page){
 }
 test <- CharacterLanguages(ID = 6)
 test <- CharacterLanguages(page = 1)
-
 # Characters function--ID works; issue with converting to data.frame output for page
 Characters <- function(url=default.url,ID,page){
   #browser()
@@ -2871,7 +2861,6 @@ Characters <- function(url=default.url,ID,page){
 }
 test <- Characters(ID = 1)
 test <- Characters(page = 1)
-
 # CharacterStateLanguages function--ID fails; page works
 CharacterStateLanguages <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific CharacterStateLanguages resource corresponding to ID
@@ -2912,7 +2901,6 @@ CharacterStateLanguages <- function(url=default.url,ID,page){
 }
 test <- CharacterStateLanguages(ID = 6)
 test <- CharacterStateLanguages(page = 1)
-
 # CharacterStates function--ID works; issue with converting to data.frame output for page
 CharacterStates <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific CharacterStates resource corresponding to ID
@@ -2953,7 +2941,6 @@ CharacterStates <- function(url=default.url,ID,page){
 }
 test <- CharacterStates(ID = 1)
 test <- CharacterStates(page = 1)
-
 # Descriptions function--ID fails; page works
 Descriptions <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific Descriptions resource corresponding to ID
@@ -2994,7 +2981,6 @@ Descriptions <- function(url=default.url,ID,page){
 }
 test <- Descriptions(ID = 228)
 test <- Descriptions(page = 1)
-
 # Images function--ID works; page not found
 Images <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific Images resource corresponding to ID
@@ -3035,7 +3021,6 @@ Images <- function(url=default.url,ID,page){
 }
 test <- Images(ID = 5)
 test <- Images(page = 1)
-
 # Tag function--ID works; page not found
 Tag <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific Tag resource corresponding to ID
@@ -3076,7 +3061,6 @@ Tag <- function(url=default.url,ID,page){
 }
 test <- Tag(ID = 5)
 test <- Tag(page = 1)
-
 # LookupChronostratigraphy function--ID works; issue with converting to data.frame output for page
 LookupChronostratigraphy <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific LookupChronostratigraphy resource corresponding to ID
@@ -3117,7 +3101,6 @@ LookupChronostratigraphy <- function(url=default.url,ID,page){
 }
 test <- LookupChronostratigraphy(ID = 1)
 test <- LookupChronostratigraphy(page = 1)
-
 # Occurrences function--ID works; issue with converting to data.frame output for page
 Occurrences <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific Occurrences resource corresponding to ID
@@ -3158,7 +3141,6 @@ Occurrences <- function(url=default.url,ID,page){
 }
 test <- Occurrences(ID = 1)
 test <- Occurrences(page = 1)
-
 # Taxa function--ID works; issue with converting to data.frame with page output
 Taxa <- function(url=default.url,ID,page){
   #browser()
@@ -3202,7 +3184,6 @@ Taxa <- function(url=default.url,ID,page){
 }
 test <- Taxa(ID = 5) 
 test <- Taxa(page = 1)
-
 # Authorities function--ID works; issue with converting to data.frame with page output
 Authorities <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific Authorities resource corresponding to ID
@@ -3243,7 +3224,6 @@ Authorities <- function(url=default.url,ID,page){
 }
 test <- Authorities(ID = 1)
 test <- Authorities(page = 1)
-
 # DescriptionStatements function--ID works; page not found
 DescriptionStatements <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific DescriptionStatements resource corresponding to ID
@@ -3284,7 +3264,6 @@ DescriptionStatements <- function(url=default.url,ID,page){
 }
 test <- DescriptionStatements(ID = 1)
 test <- DescriptionStatements(page = 1)
-
 # Links function--ID works; page not found
 Links <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific Links resource corresponding to ID
@@ -3325,7 +3304,6 @@ Links <- function(url=default.url,ID,page){
 }
 test <- Links(ID = 1)
 test <- Links(page = 1)
-
 # Ranks function--ID works; page not found
 Ranks <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific Ranks resource corresponding to ID
@@ -3366,7 +3344,6 @@ Ranks <- function(url=default.url,ID,page){
 }
 test <- Ranks(ID = 1)
 test <- Ranks(page = 1)
-
 # ResourceLinks function--ID works; page not found
 ResourceLinks <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific ResourceLinks resource corresponding to ID
@@ -3407,7 +3384,6 @@ ResourceLinks <- function(url=default.url,ID,page){
 }
 test <- ResourceLinks(ID = 1)
 test <- ResourceLinks(page = 1)
-
 # Vernaculars function--ID works; page not found
 Vernaculars <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific Vernaculars resource corresponding to ID
@@ -3448,7 +3424,6 @@ Vernaculars <- function(url=default.url,ID,page){
 }
 test <- Vernaculars(ID = 1)
 test <- Vernaculars(page = 1)
-
 # States function--ID works; page not found
 States <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific States resource corresponding to ID
@@ -3489,7 +3464,6 @@ States <- function(url=default.url,ID,page){
 }
 test <- States(ID = 1)
 test <- States(page = 1)
-
 # Users function--ID not authorized; page works
 Users <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific Users resource corresponding to ID
@@ -3530,8 +3504,6 @@ Users <- function(url=default.url,ID,page){
 }
 test <- Users(ID = 1)
 test <- Users(page = 1)
-# _______________________________________________________________________________________
-# _______________________________________________________________________________________
 # Functions that aren't working==========================================================
 if(FALSE){
   # Children function--not working
