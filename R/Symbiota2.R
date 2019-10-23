@@ -2573,7 +2573,7 @@ test <- References(page = 1)
 # Functions that are nearly there =====================================================================
 # ChecklistProjects function--ID works; issue with converting to data.frame output for page
 ChecklistProjects <- function(url=default.url,ID,page){
-  #browser()
+  browser()
   # If ID argument is present, retrieve the specific ChecklistProjects resource corresponding to ID
     if(!missing(ID)){
       # Build a path corresponding to the url to pull from using function arguments
