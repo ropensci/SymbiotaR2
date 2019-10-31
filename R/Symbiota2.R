@@ -301,8 +301,8 @@ Numbers <- function(url=default.url,ID,page){
     download.file(url = complete_url, destfile = sampleDestination)
     # Convert the JSON object into an R object (a list of lists)
     RObject <- fromJSON(file = sampleDestination)
-    # Extract exsiccatiNumber from RObject
-    RObject <- RObject$exsiccatiNumber
+    # Extract exsiccatiNumber from RObject, convert to numeric, and return
+    RObject <- as.numeric(RObject$exsiccatiNumber)
     return(RObject)
   }else{
     # Otherwise, retrieve a collection of Numbers resources based on page number
@@ -324,8 +324,8 @@ Numbers <- function(url=default.url,ID,page){
     for(i in seq_along(RObject)){
       RObject[[i]][sapply(RObject[[i]], is.null)] <- NA
     }
-    # Extract exsiccatiNumber from list members of RObject
-    RObject <- lapply(RObject, function(x) x$exsiccatiNumber)
+    # Extract exsiccatiNumber from list members of RObject, and convert to numeric
+    RObject <- as.numeric(lapply(RObject, function(x) x$exsiccatiNumber))
     # Convert RObject into a data.frame and return
     RObject <- sapply(RObject, as.data.frame)
     return(RObject)
@@ -572,7 +572,7 @@ RawLabels <- function(url=default.url,ID,page){
   }
 }
 test <- RawLabels(ID = 124663)
-test <- RawLabels(page = 2)
+test <- RawLabels(page = 1)
 # CharacterHeading function
 CharacterHeading <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific CharacterHeading resource corresponding to ID
@@ -693,7 +693,7 @@ DescriptionDeletions <- function(url=default.url,ID,page){
 }
 test <- DescriptionDeletions(ID = 638)
 test <- DescriptionDeletions(page = 1)
-# Descriptions function
+# Descriptions function--requires multiple arguments for pulling specific resource
 Descriptions <- function(url=default.url,character.ID,characterState.ID,taxa.ID,page){
   # If ID argument is present, retrieve the specific Descriptions resource corresponding to ID
   if(!missing(character.ID)){
@@ -1701,12 +1701,15 @@ Traits <- function(url=default.url,ID,page){
 }
 test <- Traits(ID = 1)
 test <- Traits(page = 1)
-# Attributes function--ID must be a string with stateId, rather than a numeric; consider adding an argument check
-Attributes <- function(url=default.url,ID,page){
+# Attributes function--requires multiple arguments for pulling specific resource
+Attributes <- function(url=default.url,state.ID,occurrence.ID,page){
   # If ID argument is present, retrieve the specific Attributes resource corresponding to ID
-  if(!missing(ID)){
+  if(!missing(occurrence.ID)){
+    if(missing(state.ID)){
+      stop("state.ID argument must be specified (along with occurrence.ID) to pull a specific Attributes resource")
+    }
     # Build a path corresponding to the url to pull from using function arguments
-    complete_url <- paste0(url,"traits/attributes/",ID)
+    complete_url <- paste0(url,"traits/attributes/%22stateId%3D",state.ID,"%3BoccurrenceId%3D",occurrence.ID,"%22")
     # Specify a random file (with the JSON extension) to write the JSON object to in the tmp directory
     sampleDestination <- tempfile()
     # Download the file from the url to the destination file
@@ -1739,7 +1742,7 @@ Attributes <- function(url=default.url,ID,page){
     return(RObject)
   }
 }
-test <- Attributes(ID = "stateId=1;occurrenceId=8")
+test <- Attributes(state.ID = 1, occurrence.ID = 152)
 test <- Attributes(page = 1)
 # UserRoles function--permissions argument is a binary (presence/absence)--need to reflect this in argument checks
 UserRoles <- function(url=default.url,ID,permissions){
@@ -2692,13 +2695,10 @@ ChecklistProjects <- function(url=default.url,ID,page){
         RObject <- fromJSON(file = sampleDestination)
         # Return only hydra:member component of RObject
         RObject <- RObject$`hydra:member`
-        # Convert NULL within list to NA and return
+        # Convert NULL within list to NA, and return
         for(i in seq_along(RObject)){
           RObject[[i]][sapply(RObject[[i]], is.null)] <- NA
-          #RObject[[i]] <- sapply(RObject[[i]], as.data.frame)
         }
-        # Return the checklistId items as a data.frame
-        #sapply(RObject, as.data.frame)
         return(RObject)
     }
 }
@@ -2817,13 +2817,10 @@ Collections <- function(url=default.url,ID,page){
     RObject <- fromJSON(file = sampleDestination)
     # Return only hydra:member component of RObject 
     RObject <- RObject$`hydra:member`
-    # Convert NULL within list to NA (in order to properly export as a data.frame) and return
+    # Convert NULL within list to NA, and return
     for(i in seq_along(RObject)){
       RObject[[i]][sapply(RObject[[i]], is.null)] <- NA
     }
-    # Convert RObject into a data.frame and return
-    # Getting error: arguments imply differing number of rows...
-    #RObject <- sapply(RObject, as.data.frame)
     return(RObject)
   }
 }
@@ -2869,9 +2866,8 @@ CharacterLanguages <- function(url=default.url,ID,page){
 }
 test <- CharacterLanguages(ID = 6)
 test <- CharacterLanguages(page = 1)
-# Characters function--ID works; issue with converting to data.frame output for page
+# Characters function--D works; page output as a list rather than data.frame
 Characters <- function(url=default.url,ID,page){
-  #browser()
   # If ID argument is present, retrieve the specific Characters resource corresponding to ID
   if(!missing(ID)){
     # Build a path corresponding to the url to pull from using function arguments
@@ -2899,12 +2895,10 @@ Characters <- function(url=default.url,ID,page){
     RObject <- fromJSON(file = sampleDestination)
     # Return only hydra:member component of RObject 
     RObject <- RObject$`hydra:member`
-    # Convert NULL within list to NA (in order to properly export as a data.frame)
+    # Convert NULL within list to NA, and return
     for(i in seq_along(RObject)){
       RObject[[i]][sapply(RObject[[i]], is.null)] <- NA
     }
-    # Convert RObject into a data.frame and return
-    RObject <- sapply(RObject, as.data.frame)
     return(RObject)
   }
 }
@@ -3068,7 +3062,7 @@ Tag <- function(url=default.url,ID,page){
 }
 test <- Tag(ID = 5)
 test <- Tag(page = 1)
-# LookupChronostratigraphy function--ID works; issue with converting to data.frame output for page
+# LookupChronostratigraphy function--ID works; page output as a list rather than data.frame
 LookupChronostratigraphy <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific LookupChronostratigraphy resource corresponding to ID
   if(!missing(ID)){
@@ -3097,18 +3091,16 @@ LookupChronostratigraphy <- function(url=default.url,ID,page){
     RObject <- fromJSON(file = sampleDestination)
     # Return only hydra:member component of RObject 
     RObject <- RObject$`hydra:member`
-    # Convert NULL within list to NA (in order to properly export as a data.frame)
+    # Convert NULL within list to NA, and return
     for(i in seq_along(RObject)){
       RObject[[i]][sapply(RObject[[i]], is.null)] <- NA
     }
-    # Convert RObject into a data.frame and return
-    RObject <- sapply(RObject, as.data.frame)
     return(RObject)
   }
 }
 test <- LookupChronostratigraphy(ID = 1)
 test <- LookupChronostratigraphy(page = 1)
-# Occurrences function--ID works; issue with converting to data.frame output for page
+# Occurrences function--ID works; page output as a list rather than data.frame
 Occurrences <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific Occurrences resource corresponding to ID
   if(!missing(ID)){
@@ -3137,20 +3129,17 @@ Occurrences <- function(url=default.url,ID,page){
     RObject <- fromJSON(file = sampleDestination)
     # Return only hydra:member component of RObject 
     RObject <- RObject$`hydra:member`
-    # Convert NULL within list to NA (in order to properly export as a data.frame)
+    # Convert NULL within list to NA, and return
     for(i in seq_along(RObject)){
       RObject[[i]][sapply(RObject[[i]], is.null)] <- NA
     }
-    # Convert RObject into a data.frame and return
-    RObject <- sapply(RObject, as.data.frame)
     return(RObject)
   }
 }
 test <- Occurrences(ID = 1)
 test <- Occurrences(page = 1)
-# Taxa function--ID works; issue with converting to data.frame with page output
+# Taxa function--ID works; page output as a list rather than data.frame
 Taxa <- function(url=default.url,ID,page){
-  #browser()
   # If ID argument is present, retrieve the specific Taxa resource corresponding to ID
   if(!missing(ID)){
     # Build a path corresponding to the url to pull from using function arguments
@@ -3180,18 +3169,16 @@ Taxa <- function(url=default.url,ID,page){
     RObject <- fromJSON(file = sampleDestination)
     # Return only hydra:member component of RObject 
     RObject <- RObject$`hydra:member`
-    # Convert NULL within list to NA (in order to properly export as a data.frame)
+    # Convert NULL within list to NA, and return
     for(i in seq_along(RObject)){
       RObject[[i]][sapply(RObject[[i]], is.null)] <- NA
     }
-    # Convert RObject into a data.frame and return
-    RObject <- sapply(RObject, as.data.frame)
     return(RObject)
   }
 }
 test <- Taxa(ID = 5) 
 test <- Taxa(page = 1)
-# Authorities function--ID works; issue with converting to data.frame with page output
+# Authorities function--ID works; page output as a list rather than data.frame
 Authorities <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific Authorities resource corresponding to ID
   if(!missing(ID)){
@@ -3220,12 +3207,10 @@ Authorities <- function(url=default.url,ID,page){
     RObject <- fromJSON(file = sampleDestination)
     # Return only hydra:member component of RObject 
     RObject <- RObject$`hydra:member`
-    # Convert NULL within list to NA (in order to properly export as a data.frame)
+    # Convert NULL within list to NA, and return
     for(i in seq_along(RObject)){
       RObject[[i]][sapply(RObject[[i]], is.null)] <- NA
     }
-    # Convert RObject into a data.frame and return
-    RObject <- sapply(RObject, as.data.frame)
     return(RObject)
   }
 }
