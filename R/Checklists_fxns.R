@@ -1,6 +1,23 @@
-# Checklist Category
+#' Retrieves Checklists resources from the Symbiota2 server
+#' 
+#' Functions that retrieve Checklist resources from the server previously connected to.
+#' Each function either retrieves an individual resource or a page of resources,
+#' depending on the arguments provided.
+#' 
+#' @param url URL of the Symbiota2 portal connected to
+#' @param ID ID value (usually \code{numeric}, but not always) used to refer to the specific resource to pull from the database
+#' @param page \code{numeric} value referring to the page of Checklist resources to pull. If neither an
+#' ID or a page parameter is provided, function will pull the first page of resources (i.e. \code{page=1}`)
+#' @return If using \code{ID}, the specific Checklist resource specified; If using page, the \code{page} specified
+#' of Checklist resources
+#' @author Austin Koontz
+#' @export
+#' @rdname Checklists
+#' @name Checklists
 
-# Coordinates function
+#' Coordinates
+#' @rdname Checklists
+#' @name Checklists
 Coordinates <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific Coordinates resource corresponding to ID
   if(!missing(ID)){
@@ -38,9 +55,11 @@ Coordinates <- function(url=default.url,ID,page){
     return(RObject)
   }
 }
-test <- Coordinates(ID = 5)
-test <- Coordinates(page = 1)
-# TaxaLink function
+
+#' TaxaLink
+#' @rdname Checklists
+#' @name Checklists
+#' @export
 TaxaLink <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific TaxaLink resource corresponding to ID
   if(!missing(ID)){
@@ -80,9 +99,11 @@ TaxaLink <- function(url=default.url,ID,page){
     return(RObject)
   }
 }
-test <- TaxaLink(ID = 5) 
-test <- TaxaLink(page = 1)
-# Dynamic function
+
+#' Dynamic function
+#' @rdname Checklists
+#' @name Checklists
+#' @export
 Dynamic <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific Dynamic resource corresponding to ID
   if(!missing(ID)){
@@ -121,9 +142,11 @@ Dynamic <- function(url=default.url,ID,page){
     return(RObject)
   }
 }
-test <- Dynamic(ID = 5)
-test <- Dynamic(page = 1)
-# ProjectCategories function
+
+#' ProjectCategories function
+#' @rdname Checklists
+#' @name Checklists
+#' @export
 ProjectCategories <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific ProjectCategories resource corresponding to ID
   if(!missing(ID)){
@@ -162,9 +185,11 @@ ProjectCategories <- function(url=default.url,ID,page){
     return(RObject)
   }
 }
-test <- ProjectCategories(ID = 5)
-test <- ProjectCategories(page = 1)
-# TaxaComments function
+
+#' TaxaComments function
+#' @rdname Checklists
+#' @name Checklists
+#' @export
 TaxaComments <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific TaxaComments resource corresponding to ID
   if(!missing(ID)){
@@ -202,5 +227,3 @@ TaxaComments <- function(url=default.url,ID,page){
     return(RObject)
   }
 }
-test <- TaxaComments(ID = 16) 
-test <- TaxaComments(page = 1)
