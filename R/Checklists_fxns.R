@@ -78,7 +78,7 @@ ProjectCategories <- function(url=NA, ID=NA, page=NA){
 TaxaComments <- function(url=NA, ID=NA, page=NA){
     # Argument handling
     url <- .get.url(url)
-    RObject <- .api.scaffold(.check.api.entry("checklist/projectcategories"), url, ID, page)
+    RObject <- .api.scaffold(.check.api.entry("checklist/taxacomments"), url, ID, page)
 
     # ID Download
     if(!is.na(ID))
