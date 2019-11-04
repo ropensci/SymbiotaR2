@@ -1,7 +1,7 @@
 .api.scaffold <- function(api.entry, url=NA, ID=NA, page=NA){
     # Argument handling and setup
     if(is.na(url)){
-        url <- getOption("SymbiotaR2.url")
+        url <- getOption("SymbiotaR2_url")
         if(is.null(url))
             stop("No Symbiota2 portal URL specified in defaults or function call")
     }
@@ -22,4 +22,28 @@
     download.file(url = complete_url, destfile = dwn_file)
     RObject <- fromJSON(file = sampleDestination)
     return(RObject)
+}
+
+.get.os <- function(){
+    os <- Sys.info()["sysname"]
+    if(os == "Darwin")
+        return("mac")
+    if(os == "Windows")
+        return("win")
+    if(grepl("linux", os, ignore.case=TRUE))
+        return("linux")
+    stop("Cannot auto-detect system")
+}
+
+.check.url <- function(url){
+    failed <- TRUE
+    tryCatch({
+        download.file(url, tempfile(), quiet=TRUE)
+        failed <- FALSE
+    }, error = function(e) NA)
+    if(failed)
+        stop("URL ", url, " cannot be reached; is it a valid Symbiota2 portal API?")
+    if(substr(url, nchar(url), nchar(url)) != "/")
+        url <- paste0(url, "/")
+    return(url)
 }
