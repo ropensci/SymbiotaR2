@@ -16,7 +16,7 @@ test_that("TaxaLink",{
   expect_equal(length(data),  19)
   expect_is(data, "list")
   
-  data <- Coordinates(page=1)
+  data <- TaxaLink(page=1)
   expect_equal(length(data),  540)
   expect_is(data, "list")
 })
@@ -440,3 +440,4 @@ test_that("UserRoles",{
   expect_equal(length(data),  8)
   expect_is(data, "list")
 })
+
