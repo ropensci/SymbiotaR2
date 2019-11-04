@@ -1,14 +1,20 @@
 Package: SymbiotaR2
 Type: Package
-Title: XXX
+Title: Downloading data from Symbiota2 portals into R
 Version: 0.0-1
-Authors@R: c(person("Austin", "Koontz", email = "XXX", role = c("aut", "cre"), comment=c(ORCID="0000-0002-6241-3164")),
+Authors@R: c(person("Austin", "Koontz", email = "austin.koontz@usu.edu", role = c("aut", "cre")),
     c(person("William D.", "Pearse", email = "will.pearse@gmail.com", role ="aut", comment=c(ORCID="0000-0002-6241-3164"))
-Maintainer: XXX
-Description: XXX
+Maintainer: Austin Koontz <austin.koontz@usu.edu>
+Description: Download data from Symbiota2 portals using Symbiota's
+    API. Covers the Checklists, Collections, Crowdsource, Exsiccati,
+    Glossary, ImageProcessor, Key, Media, Occurrence, Reference, Taxa,
+    Traits, and UserRoles API families. Each Symbiota2 portal owner
+    can load their own plugins (and modified code), and so this
+    package may not cover every possible API endpoint from a given
+    Symbiota2 instance.
 License: MIT + file LICENSE
 URL: https://github.com/pearselab/SymbiotaR2
-BugReports: https://github.com/pearselab/SymbiotaR2
+BugReports: https://github.com/pearselab/SymbiotaR2/issues
 LazyLoad: yes
 Imports:
     httr (>= 1.0.0),
