@@ -1,6 +1,21 @@
-# Collection Category
+#' Retrieves Collection resources from the Symbiota2 server
+#' 
+#' Functions that retrieve Collection resources from the server previously connected to.
+#' Each function either retrieves an individual resource or a page of resources,
+#' depending on the arguments provided.
+#' 
+#' @param url URL of the Symbiota2 portal connected to
+#' @param ID ID value (usually \code{numeric}, but not always) used to refer to the specific resource to pull from the database
+#' @param page \code{numeric} value referring to the page of Collection resources to pull. If neither an
+#' ID or a page parameter is provided, function will pull the first page of resources (i.e. \code{page=1}`)
+#' @return If using \code{ID}, the specific Collection resource specified; If using page, the \code{page} specified
+#' of Collection resources
+#' @author Austin Koontz
+#' @export
 
-# Categories function
+#' Categories
+#' @rdname Collection
+#' @name Collection
 Categories <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific Categories resource corresponding to ID
   if(!missing(ID)){
@@ -38,9 +53,10 @@ Categories <- function(url=default.url,ID,page){
     return(RObject)
   }
 }
-test <- Categories(ID = 1)
-test <- Categories(page = 1)
-# Institutions function
+
+#' Institutions
+#' @rdname Collection
+#' @name Collection
 Institutions <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific Institutions resource corresponding to ID
   if(!missing(ID)){
@@ -78,9 +94,10 @@ Institutions <- function(url=default.url,ID,page){
     return(RObject)
   }
 }
-test <- Institutions(ID = 5)
-test <- Institutions(page = 1)
-# Stats function
+
+#' Stats
+#' @rdname Collection
+#' @name Collection
 Stats <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific Stats resource corresponding to ID
   if(!missing(ID)){
@@ -118,5 +135,4 @@ Stats <- function(url=default.url,ID,page){
     return(RObject)
   }
 }
-test <- Stats(ID = 5)
-test <- Stats(page = 1)
+
