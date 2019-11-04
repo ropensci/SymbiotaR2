@@ -1,6 +1,21 @@
-# Media Category
+#' Retrieves Media resources from the Symbiota2 server
+#' 
+#' Functions that retrieve Media resources from the server previously connected to.
+#' Each function either retrieves an individual resource or a page of resources,
+#' depending on the arguments provided.
+#' 
+#' @param url URL of the Symbiota2 portal connected to
+#' @param ID ID value (usually \code{numeric}, but not always) used to refer to the specific resource to pull from the database
+#' @param page \code{numeric} value referring to the page of Media resources to pull. If neither an
+#' ID or a page parameter is provided, function will pull the first page of resources (i.e. \code{page=1}`)
+#' @return If using \code{ID}, the specific Media resource specified; If using page, the \code{page} specified
+#' of Media resources
+#' @author Austin Koontz
+#' @export
 
-# Media function
+#' Media
+#' @rdname Media
+#' @name Media
 Media <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific Media resource corresponding to ID
   if(!missing(ID)){
@@ -38,9 +53,10 @@ Media <- function(url=default.url,ID,page){
     return(RObject)
   }
 }
-test <- Media(ID = 5)
-test <- Media(page = 1)
-# Keywords function
+
+#' Keywords
+#' @rdname Media
+#' @name Media
 Keywords <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific Keywords resource corresponding to ID
   if(!missing(ID)){
@@ -78,9 +94,11 @@ Keywords <- function(url=default.url,ID,page){
     return(RObject)
   }
 }
-test <- Keywords(ID = 5)
-test <- Keywords(page = 1)
-# TagKey function--ID must be a string rather than a numeric; consider adding an argument check
+
+#' TagKey
+#' @rdname Media
+#' @name Media
+#' --ID must be a string rather than a numeric; consider adding an argument check
 TagKey <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific TagKey resource corresponding to ID
   if(!missing(ID)){
@@ -118,5 +136,4 @@ TagKey <- function(url=default.url,ID,page){
     return(RObject)
   }
 }
-test <- TagKey(ID = "Diagnostic")
-test <- TagKey(page = 1)
+

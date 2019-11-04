@@ -1,6 +1,21 @@
-# Crowdsource Category
+#' Retrieves Crowdsource resources from the Symbiota2 server
+#' 
+#' Functions that retrieve Crowdsource resources from the server previously connected to.
+#' Each function either retrieves an individual resource or a page of resources,
+#' depending on the arguments provided.
+#' 
+#' @param url URL of the Symbiota2 portal connected to
+#' @param ID ID value (usually \code{numeric}, but not always) used to refer to the specific resource to pull from the database
+#' @param page \code{numeric} value referring to the page of Crowdsource resources to pull. If neither an
+#' ID or a page parameter is provided, function will pull the first page of resources (i.e. \code{page=1}`)
+#' @return If using \code{ID}, the specific Crowdsource resource specified; If using page, the \code{page} specified
+#' of Crowdsource resources
+#' @author Austin Koontz
+#' @export
 
-# Central function
+#' Central
+#' @rdname Crowdsource
+#' @name Crowdsource
 Central <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific Central resource corresponding to ID
   if(!missing(ID)){
@@ -38,9 +53,10 @@ Central <- function(url=default.url,ID,page){
     return(RObject)
   }
 }
-test <- Central(ID = 1)
-test <- Central(page = 1)
-# Queue function
+
+#' Queue
+#' @rdname Crowdsource
+#' @name Crowdsource
 Queue <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific Queue resource corresponding to ID
   if(!missing(ID)){
@@ -78,5 +94,3 @@ Queue <- function(url=default.url,ID,page){
     return(RObject)
   }
 }
-test <- Queue(ID = 1)
-test <- Queue(page = 1)

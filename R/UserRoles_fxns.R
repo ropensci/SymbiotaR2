@@ -1,4 +1,15 @@
-# UserRoles Category
+#' Retrieves UserRoles resources from the Symbiota2 server
+#' 
+#' Functions that retrieve UserRoles resources from the server previously connected to.
+#' Each function either retrieves an individual resource or a page of resources,
+#' depending on the arguments provided.
+#' 
+#' @param url URL of the Symbiota2 portal connected to
+#' @param ID ID value (usually \code{numeric}, but not always) used to refer to the specific resource to pull from the database
+#' @param permissions \code{numeric} value referring to permissions argument used to pull reource.
+#' @return UserRoles resource requested
+#' @author Austin Koontz
+#' @export
 
 # UserRoles function--permissions argument is a binary (presence/absence)--need to reflect this in argument checks
 UserRoles <- function(url=default.url,ID,permissions){
@@ -34,5 +45,3 @@ UserRoles <- function(url=default.url,ID,permissions){
     return(RObject)
   }
 }
-test <- UserRoles(ID = 1)
-test <- UserRoles(ID = 1, permissions = 1)

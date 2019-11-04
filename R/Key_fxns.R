@@ -1,6 +1,21 @@
-# Key Categories
+#' Retrieves Key resources from the Symbiota2 server
+#' 
+#' Functions that retrieve Key resources from the server previously connected to.
+#' Each function either retrieves an individual resource or a page of resources,
+#' depending on the arguments provided.
+#' 
+#' @param url URL of the Symbiota2 portal connected to
+#' @param ID ID value (usually \code{numeric}, but not always) used to refer to the specific resource to pull from the database
+#' @param page \code{numeric} value referring to the page of Key resources to pull. If neither an
+#' ID or a page parameter is provided, function will pull the first page of resources (i.e. \code{page=1}`)
+#' @return If using \code{ID}, the specific Key resource specified; If using page, the \code{page} specified
+#' of Key resources
+#' @author Austin Koontz
+#' @export
 
-# CharacterHeading function
+#' CharacterHeading
+#' @rdname Key
+#' @name Key
 CharacterHeading <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific CharacterHeading resource corresponding to ID
   if(!missing(ID)){
@@ -38,9 +53,10 @@ CharacterHeading <- function(url=default.url,ID,page){
     return(RObject)
   }
 }
-test <- CharacterHeading(ID = 1)
-test <- CharacterHeading(page = 1)
-# CharacterStateImages function
+
+#' CharacterStateImages
+#' @rdname Key
+#' @name Key
 CharacterStateImages <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific CharacterStateImages resource corresponding to ID
   if(!missing(ID)){
@@ -78,9 +94,10 @@ CharacterStateImages <- function(url=default.url,ID,page){
     return(RObject)
   }
 }
-test <- CharacterStateImages(ID = 1)
-test <- CharacterStateImages(page = 1)
-# DescriptionDeletions function
+
+#' DescriptionDeletions
+#' @rdname Key
+#' @name Key
 DescriptionDeletions <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific DescriptionDeletions resource corresponding to ID
   if(!missing(ID)){
@@ -118,9 +135,14 @@ DescriptionDeletions <- function(url=default.url,ID,page){
     return(RObject)
   }
 }
-test <- DescriptionDeletions(ID = 638)
-test <- DescriptionDeletions(page = 1)
-# Descriptions function--requires multiple arguments for pulling specific resource
+
+#' Descriptions
+#' @rdname Key
+#' @name Key
+#' @param character.ID Specifies the character.ID argument to include in the url in order to pull the Descriptions resource
+#' @param characterState.ID Specifies the character.ID argument to include in the url in order to pull the Descriptions resource
+#' @param taxa.ID Specifies the taxa.ID argument to include in the url in order to pull the Descriptions resource
+#' requires multiple arguments for pulling specific resource
 Descriptions <- function(url=default.url,character.ID,characterState.ID,taxa.ID,page){
   # If ID argument is present, retrieve the specific Descriptions resource corresponding to ID
   if(!missing(character.ID)){
@@ -166,5 +188,4 @@ Descriptions <- function(url=default.url,character.ID,characterState.ID,taxa.ID,
     return(RObject)
   }
 }
-test <- Descriptions(character.ID = 2, characterState.ID = 229, taxa.ID = 33)
-test <- Descriptions(page = 1)
+

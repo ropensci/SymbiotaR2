@@ -1,6 +1,21 @@
-# Reference Category
+#' Retrieves Reference resources from the Symbiota2 server
+#' 
+#' Functions that retrieve Reference resources from the server previously connected to.
+#' Each function either retrieves an individual resource or a page of resources,
+#' depending on the arguments provided.
+#' 
+#' @param url URL of the Symbiota2 portal connected to
+#' @param ID ID value (usually \code{numeric}, but not always) used to refer to the specific resource to pull from the database
+#' @param page \code{numeric} value referring to the page of Reference resources to pull. If neither an
+#' ID or a page parameter is provided, function will pull the first page of resources (i.e. \code{page=1}`)
+#' @return If using \code{ID}, the specific Reference resource specified; If using page, the \code{page} specified
+#' of Reference resources
+#' @author Austin Koontz
+#' @export
 
-# LookupReferenceTypes function
+#' LookupReferenceTypes
+#' @rdname Reference
+#' @name Reference
 LookupReferenceTypes <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific LookupReferenceTypes resource corresponding to ID
   if(!missing(ID)){
@@ -38,9 +53,10 @@ LookupReferenceTypes <- function(url=default.url,ID,page){
     return(RObject)
   }
 }
-test <- LookupReferenceTypes(ID = 5)
-test <- LookupReferenceTypes(page = 1)
-# Authors function
+
+#' Authors
+#' @rdname Reference
+#' @name Reference
 Authors <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific Authors resource corresponding to ID
   if(!missing(ID)){
@@ -78,9 +94,10 @@ Authors <- function(url=default.url,ID,page){
     return(RObject)
   }
 }
-test <- Authors(ID = 5)
-test <- Authors(page = 1)
-# ChecklistTaxaLink function
+
+#' ChecklistTaxaLink
+#' @rdname Reference
+#' @name Reference
 ChecklistTaxaLink <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific ChecklistTaxaLink resource corresponding to ID
   if(!missing(ID)){
@@ -118,9 +135,10 @@ ChecklistTaxaLink <- function(url=default.url,ID,page){
     return(RObject)
   }
 }
-test <- ChecklistTaxaLink(ID = 5)
-test <- ChecklistTaxaLink(page = 1)
-# References function
+
+#' References
+#' @rdname Reference
+#' @name Reference
 References <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific References resource corresponding to ID
   if(!missing(ID)){
@@ -158,5 +176,3 @@ References <- function(url=default.url,ID,page){
     return(RObject)
   }
 }
-test <- References(ID = 5)
-test <- References(page = 1)

@@ -1,6 +1,21 @@
-# Occurence Category--NOT ALL FUNCTIONS HAVE THE SAME URL HERE. Some are grouped into occurrencecomments, occurrenceloan, etc.
+#' Retrieves Occurrence resources from the Symbiota2 server
+#' 
+#' Functions that retrieve Occurrence resources from the server previously connected to.
+#' Each function either retrieves an individual resource or a page of resources,
+#' depending on the arguments provided.
+#' 
+#' @param url URL of the Symbiota2 portal connected to
+#' @param ID ID value (usually \code{numeric}, but not always) used to refer to the specific resource to pull from the database
+#' @param page \code{numeric} value referring to the page of Occurrence resources to pull. If neither an
+#' ID or a page parameter is provided, function will pull the first page of resources (i.e. \code{page=1}`)
+#' @return If using \code{ID}, the specific Occurrence resource specified; If using page, the \code{page} specified
+#' of Occurrence resources
+#' @author Austin Koontz
+#' @export
 
-# AccessStats function
+#' AccessStats
+#' @rdname Occurrences
+#' @name Occurrences
 AccessStats <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific AccessStats resource corresponding to ID
   if(!missing(ID)){
@@ -38,9 +53,10 @@ AccessStats <- function(url=default.url,ID,page){
     return(RObject)
   }
 }
-test <- AccessStats(ID = 4)
-test <- AccessStats(page = 1)
-# Determinations function
+
+#' Determinations
+#' @rdname Occurrences
+#' @name Occurrences
 Determinations <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific Determinations resource corresponding to ID
   if(!missing(ID)){
@@ -78,9 +94,10 @@ Determinations <- function(url=default.url,ID,page){
     return(RObject)
   }
 }
-test <- Determinations(ID = 4)
-test <- Determinations(page = 1)
-# Duplicates function
+
+#' Duplicates
+#' @rdname Occurrences
+#' @name Occurrences
 Duplicates <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific Duplicates resource corresponding to ID
   if(!missing(ID)){
@@ -118,9 +135,10 @@ Duplicates <- function(url=default.url,ID,page){
     return(RObject)
   }
 }
-test <- Duplicates(ID = 4)
-test <- Duplicates(page = 1)
-# Edits function
+
+#' Edits
+#' @rdname Occurrences
+#' @name Occurrences
 Edits <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific Edits resource corresponding to ID
   if(!missing(ID)){
@@ -158,9 +176,10 @@ Edits <- function(url=default.url,ID,page){
     return(RObject)
   }
 }
-test <- Edits(ID = 16)
-test <- Edits(page = 1)
-# FullText function
+
+#' FullText
+#' @rdname Occurrences
+#' @name Occurrences
 FullText <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific FullText resource corresponding to ID
   if(!missing(ID)){
@@ -198,9 +217,10 @@ FullText <- function(url=default.url,ID,page){
     return(RObject)
   }
 }
-test <- FullText(ID = 1)
-test <- FullText(page = 1)
-# GuidDeterminations function--ID must be a string rather than a numeric; consider adding an argument check
+
+#' GuidDeterminations
+#' @rdname Occurrences
+#' @name Occurrences
 GuidDeterminations <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific GuidDeterminations resource corresponding to ID
   if(!missing(ID)){
@@ -238,9 +258,10 @@ GuidDeterminations <- function(url=default.url,ID,page){
     return(RObject)
   }
 }
-test <- GuidDeterminations(ID = "00135877-f154-4fdf-965b-3e56118ed747")
-test <- GuidDeterminations(page = 1)
-# GuidOccurrences function--ID must be a string rather than a numeric; consider adding an argument check
+
+#' GuidOccurrences
+#' @rdname Occurrences
+#' @name Occurrences
 GuidOccurrences <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific GuidOccurrences resource corresponding to ID
   if(!missing(ID)){
@@ -278,9 +299,10 @@ GuidOccurrences <- function(url=default.url,ID,page){
     return(RObject)
   }
 }
-test <- GuidOccurrences(ID = "00046309-7f89-4d73-8b36-8ee87d7bb053")
-test <- GuidOccurrences(page = 1)
-# LookupCounties function
+
+#' LookupCounties
+#' @rdname Occurrences
+#' @name Occurrences
 LookupCounties <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific LookupCounties resource corresponding to ID
   if(!missing(ID)){
@@ -318,9 +340,10 @@ LookupCounties <- function(url=default.url,ID,page){
     return(RObject)
   }
 }
-test <- LookupCounties(ID = 1)
-test <- LookupCounties(page = 1)
-# LookupCountries function
+
+#' LookupCountries
+#' @rdname Occurrences
+#' @name Occurrences
 LookupCountries <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific LookupCountries resource corresponding to ID
   if(!missing(ID)){
@@ -358,9 +381,10 @@ LookupCountries <- function(url=default.url,ID,page){
     return(RObject)
   }
 }
-test <- LookupCountries(ID = 1)
-test <- LookupCountries(page = 1)
-# LookupStateProvinces function
+
+#' LookupStateProvinces
+#' @rdname Occurrences
+#' @name Occurrences
 LookupStateProvinces <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific LookupStateProvinces resource corresponding to ID
   if(!missing(ID)){
@@ -398,9 +422,10 @@ LookupStateProvinces <- function(url=default.url,ID,page){
     return(RObject)
   }
 }
-test <- LookupStateProvinces(ID = 1)
-test <- LookupStateProvinces(page = 1)
-# Verification function
+
+#' Verification
+#' @rdname Occurrences
+#' @name Occurrences
 Verification <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific Verification resource corresponding to ID
   if(!missing(ID)){
@@ -438,9 +463,10 @@ Verification <- function(url=default.url,ID,page){
     return(RObject)
   }
 }
-test <- Verification(ID = 6)
-test <- Verification(page = 1)
-# Associations function
+
+#' Associations
+#' @rdname Occurrences
+#' @name Occurrences
 Associations <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific Associations resource corresponding to ID
   if(!missing(ID)){
@@ -478,9 +504,10 @@ Associations <- function(url=default.url,ID,page){
     return(RObject)
   }
 }
-test <- Associations(ID = 1)
-test <- Associations(page = 1)
-# Comments function
+
+#' Comments
+#' @rdname Occurrences
+#' @name Occurrences
 Comments <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific Comments resource corresponding to ID
   if(!missing(ID)){
@@ -518,9 +545,10 @@ Comments <- function(url=default.url,ID,page){
     return(RObject)
   }
 }
-test <- Comments(ID = 1)
-test <- Comments(page = 1)
-# DatasetLink function
+
+#' DatasetLink
+#' @rdname Occurrences
+#' @name Occurrences
 DatasetLink <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific DatasetLink resource corresponding to ID
   if(!missing(ID)){
@@ -558,9 +586,10 @@ DatasetLink <- function(url=default.url,ID,page){
     return(RObject)
   }
 }
-test <- DatasetLink(ID = 1)
-test <- DatasetLink(page = 1)
-# Datasets function
+
+#' Dataset
+#' @rdname Occurrences
+#' @name Occurrences
 Datasets <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific Datasets resource corresponding to ID
   if(!missing(ID)){
@@ -598,9 +627,10 @@ Datasets <- function(url=default.url,ID,page){
     return(RObject)
   }
 }
-test <- Datasets(ID = 1)
-test <- Datasets(page = 1)
-# Exchange function
+
+#' Exchange
+#' @rdname Occurrences
+#' @name Occurrences
 Exchange <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific Exchange resource corresponding to ID
   if(!missing(ID)){
@@ -638,9 +668,10 @@ Exchange <- function(url=default.url,ID,page){
     return(RObject)
   }
 }
-test <- Exchange(ID = 1)
-test <- Exchange(page = 1)
-# Loans function
+
+#' Loans
+#' @rdname Occurrences
+#' @name Occurrences
 Loans <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific Loans resource corresponding to ID
   if(!missing(ID)){
@@ -678,9 +709,10 @@ Loans <- function(url=default.url,ID,page){
     return(RObject)
   }
 }
-test <- Loans(ID = 1)
-test <- Loans(page = 1)
-# EditLocks function
+
+#' EditLocks
+#' @rdname Occurrences
+#' @name Occurrences
 EditLocks <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific EditLocks resource corresponding to ID
   if(!missing(ID)){
@@ -718,9 +750,10 @@ EditLocks <- function(url=default.url,ID,page){
     return(RObject)
   }
 }
-test <- EditLocks(ID = 4)
-test <- EditLocks(page = 1)
-# Identifiers function
+
+#' Identifiers
+#' @rdname Occurrences
+#' @name Occurrences
 Identifiers <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific Identifiers resource corresponding to ID
   if(!missing(ID)){
@@ -758,9 +791,10 @@ Identifiers <- function(url=default.url,ID,page){
     return(RObject)
   }
 }
-test <- Identifiers(ID = 1)
-test <- Identifiers(page = 1)
-# LookupMunicipalities function
+
+#' LookupMunicipalities
+#' @rdname Occurrences
+#' @name Occurrences
 LookupMunicipalities <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific LookupMunicipalities resource corresponding to ID
   if(!missing(ID)){
@@ -798,9 +832,10 @@ LookupMunicipalities <- function(url=default.url,ID,page){
     return(RObject)
   }
 }
-test <- LookupMunicipalities(ID = 1)
-test <- LookupMunicipalities(page = 1)
-# Revisions function
+
+#' Revisions
+#' @rdname Occurrences
+#' @name Occurrences
 Revisions <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific Revisions resource corresponding to ID
   if(!missing(ID)){
@@ -838,9 +873,10 @@ Revisions <- function(url=default.url,ID,page){
     return(RObject)
   }
 }
-test <- Revisions(ID = 1)
-test <- Revisions(page = 1)
-# UploadDeterminations function
+
+#' UploadDeterminations
+#' @rdname Occurrences
+#' @name Occurrences
 UploadDeterminations <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific UploadDeterminations resource corresponding to ID
   if(!missing(ID)){
@@ -878,9 +914,10 @@ UploadDeterminations <- function(url=default.url,ID,page){
     return(RObject)
   }
 }
-test <- UploadDeterminations(ID = 1)
-test <- UploadDeterminations(page = 1)
-# UploadMappings function
+
+#' UploadMappings
+#' @rdname Occurrences
+#' @name Occurrences
 UploadMappings <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific UploadMappings resource corresponding to ID
   if(!missing(ID)){
@@ -918,9 +955,10 @@ UploadMappings <- function(url=default.url,ID,page){
     return(RObject)
   }
 }
-test <- UploadMappings(ID = 64)
-test <- UploadMappings(page = 1)
-# UploadOccurrences function
+
+#' UploadOccurrences
+#' @rdname Occurrences
+#' @name Occurrences
 UploadOccurrences <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific UploadOccurrences resource corresponding to ID
   if(!missing(ID)){
@@ -958,9 +996,10 @@ UploadOccurrences <- function(url=default.url,ID,page){
     return(RObject)
   }
 }
-test <- UploadOccurrences(ID = 1)
-test <- UploadOccurrences(page = 1)
-# UploadParameters function
+
+#' UploadParameters
+#' @rdname Occurrences
+#' @name Occurrences
 UploadParameters <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific UploadParameters resource corresponding to ID
   if(!missing(ID)){
@@ -998,9 +1037,10 @@ UploadParameters <- function(url=default.url,ID,page){
     return(RObject)
   }
 }
-test <- UploadParameters(ID = 6)
-test <- UploadParameters(page = 1)
-# Genetic function
+
+#' Genetic
+#' @rdname Occurrences
+#' @name Occurrences
 Genetic <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific Genetic resource corresponding to ID
   if(!missing(ID)){
@@ -1038,5 +1078,3 @@ Genetic <- function(url=default.url,ID,page){
     return(RObject)
   }
 }
-test <- Genetic(ID = 1)
-test <- Genetic(page = 1)

@@ -1,6 +1,21 @@
-# ImageProcessor Category
+#' Retrieves ImageProcessor resources from the Symbiota2 server
+#' 
+#' Functions that retrieve ImageProcessor resources from the server previously connected to.
+#' Each function either retrieves an individual resource or a page of resources,
+#' depending on the arguments provided.
+#' 
+#' @param url URL of the Symbiota2 portal connected to
+#' @param ID ID value (usually \code{numeric}, but not always) used to refer to the specific resource to pull from the database
+#' @param page \code{numeric} value referring to the page of ImageProcessor resources to pull. If neither an
+#' ID or a page parameter is provided, function will pull the first page of resources (i.e. \code{page=1}`)
+#' @return If using \code{ID}, the specific ImageProcessor resource specified; If using page, the \code{page} specified
+#' of ImageProcessor resources
+#' @author Austin Koontz
+#' @export
 
-# Projects function
+#' Projects
+#' @rdname ImagePRocessor
+#' @name ImagePRocessor
 Projects <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific Projects resource corresponding to ID
   if(!missing(ID)){
@@ -38,9 +53,10 @@ Projects <- function(url=default.url,ID,page){
     return(RObject)
   }
 }
-test <- Projects(ID = 5)
-test <- Projects(page = 1)
-# RawLabels function
+
+#' RawLabels
+#' @rdname ImagePRocessor
+#' @name ImagePRocessor
 RawLabels <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific RawLabels resource corresponding to ID
   if(!missing(ID)){
@@ -78,9 +94,10 @@ RawLabels <- function(url=default.url,ID,page){
     return(RObject)
   }
 }
-test <- RawLabels(ID = 124663)
-test <- RawLabels(page = 1)
-# Nlp function
+
+#' Nlp
+#' @rdname ImagePRocessor
+#' @name ImagePRocessor
 Nlp <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific Nlp resource corresponding to ID
   if(!missing(ID)){
@@ -118,9 +135,10 @@ Nlp <- function(url=default.url,ID,page){
     return(RObject)
   }
 }
-test <- Nlp(ID = 1)
-test <- Nlp(page = 1)
-# NlpFragment function
+
+#' NlpFragment
+#' @rdname ImagePRocessor
+#' @name ImagePRocessor
 NlpFragment <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific NlpFragment resource corresponding to ID
   if(!missing(ID)){
@@ -158,9 +176,10 @@ NlpFragment <- function(url=default.url,ID,page){
     return(RObject)
   }
 }
-test <- NlpFragment(ID = 1)
-test <- NlpFragment(page = 1)
-# NlpVersion function
+
+#' NlpVersion
+#' @rdname ImagePRocessor
+#' @name ImagePRocessor
 NlpVersion <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific NlpVersion resource corresponding to ID
   if(!missing(ID)){
@@ -198,9 +217,10 @@ NlpVersion <- function(url=default.url,ID,page){
     return(RObject)
   }
 }
-test <- NlpVersion(ID = 1)
-test <- NlpVersion(page = 1)
-# OcrFragment function
+
+#' OcrFragment
+#' @rdname ImagePRocessor
+#' @name ImagePRocessor
 OcrFragment <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific OcrFragment resource corresponding to ID
   if(!missing(ID)){
@@ -238,5 +258,3 @@ OcrFragment <- function(url=default.url,ID,page){
     return(RObject)
   }
 }
-test <- OcrFragment(ID = 5)
-test <- OcrFragment(page = 1)

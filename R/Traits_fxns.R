@@ -1,6 +1,21 @@
-# Traits Category
+#' Retrieves Traits resources from the Symbiota2 server
+#' 
+#' Functions that retrieve Traits resources from the server previously connected to.
+#' Each function either retrieves an individual resource or a page of resources,
+#' depending on the arguments provided.
+#' 
+#' @param url URL of the Symbiota2 portal connected to
+#' @param ID ID value (usually \code{numeric}, but not always) used to refer to the specific resource to pull from the database
+#' @param page \code{numeric} value referring to the page of Traits resources to pull. If neither an
+#' ID or a page parameter is provided, function will pull the first page of resources (i.e. \code{page=1}`)
+#' @return If using \code{ID}, the specific Traits resource specified; If using page, the \code{page} specified
+#' of Traits resources
+#' @author Austin Koontz
+#' @export
 
-# Traits function
+#' Traits
+#' @rdname Traits
+#' @name Traits
 Traits <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific Traits resource corresponding to ID
   if(!missing(ID)){
@@ -38,9 +53,11 @@ Traits <- function(url=default.url,ID,page){
     return(RObject)
   }
 }
-test <- Traits(ID = 1)
-test <- Traits(page = 1)
-# Attributes function--requires multiple arguments for pulling specific resource
+
+#' Attributes
+#' @rdname Traits
+#' @name Traits
+#' --requires multiple arguments for pulling specific resource
 Attributes <- function(url=default.url,state.ID,occurrence.ID,page){
   # If ID argument is present, retrieve the specific Attributes resource corresponding to ID
   if(!missing(occurrence.ID)){
@@ -81,5 +98,3 @@ Attributes <- function(url=default.url,state.ID,occurrence.ID,page){
     return(RObject)
   }
 }
-test <- Attributes(state.ID = 1, occurrence.ID = 152)
-test <- Attributes(page = 1)

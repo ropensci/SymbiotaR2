@@ -1,6 +1,21 @@
-# Exsiccati Category
+#' Retrieves Exsiccati resources from the Symbiota2 server
+#' 
+#' Functions that retrieve Exsiccati resources from the server previously connected to.
+#' Each function either retrieves an individual resource or a page of resources,
+#' depending on the arguments provided.
+#' 
+#' @param url URL of the Symbiota2 portal connected to
+#' @param ID ID value (usually \code{numeric}, but not always) used to refer to the specific resource to pull from the database
+#' @param page \code{numeric} value referring to the page of Exsiccati resources to pull. If neither an
+#' ID or a page parameter is provided, function will pull the first page of resources (i.e. \code{page=1}`)
+#' @return If using \code{ID}, the specific Exsiccati resource specified; If using page, the \code{page} specified
+#' of Exsiccati resources
+#' @author Austin Koontz
+#' @export
 
-# Numbers function
+#' Numbers
+#' @rdname Exsicacati
+#' @name Exsicacati
 Numbers <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific Numbers resource corresponding to ID
   if(!missing(ID)){
@@ -42,9 +57,10 @@ Numbers <- function(url=default.url,ID,page){
     return(RObject)
   }
 }
-test <- Numbers(ID = 5)
-test <- Numbers(page = 1)
-# Titles function
+
+#' Titles
+#' @rdname Exsicacati
+#' @name Exsicacati
 Titles <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific Titles resource corresponding to ID
   if(!missing(ID)){
@@ -82,5 +98,4 @@ Titles <- function(url=default.url,ID,page){
     return(RObject)
   }
 }
-test <- Titles(ID = 1)
-test <- Titles(page = 1)
+
