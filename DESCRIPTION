@@ -13,6 +13,8 @@ LazyLoad: yes
 Imports:
     httr (>= 1.0.0),
     xml2 (>= 1.2.0),
-    jsonlite (>= 1.5)
+    jsonlite (>= 1.5),
+    rjson (>= 0.2.20),
+    vcr (>= 0.3.0)
 Encoding: UTF-8
 RoxygenNote: 6.1.1
