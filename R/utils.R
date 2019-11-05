@@ -24,6 +24,15 @@
     return(RObject)
 }
 
+.page.to.dataframe <- function(RObject){
+  # Takes the page RObject and converts it to a data.frame to be returned
+  RObject <- RObject$`hydra:member`
+  for(i in seq_along(RObject))
+    RObject[[i]][sapply(RObject[[i]], is.null)] <- NA
+  RObject <- sapply(RObject, as.data.frame)
+  return(RObject)
+}
+
 .get.os <- function(){
     os <- Sys.info()["sysname"]
     if(os == "Darwin")
@@ -53,7 +62,6 @@
         api.entry <- substr(api.entry, 0, nchar(api.entry)-1)
     return(api.entry)
 }
-
 
 .get.url <- function(url=NA){
     if(is.na(url)){
