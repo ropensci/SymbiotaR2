@@ -45,8 +45,8 @@ Coordinates <- function(url=default.url,ID,page){
     return(RObject)
   }
 }
-test <- Coordinates(ID = 5)
-test <- Coordinates(page = 1)
+# test <- Coordinates(ID = 5)
+# test <- Coordinates(page = 1)
 # TaxaLink function
 TaxaLink <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific TaxaLink resource corresponding to ID
@@ -87,8 +87,8 @@ TaxaLink <- function(url=default.url,ID,page){
     return(RObject)
   }
 }
-test <- TaxaLink(ID = 5) 
-test <- TaxaLink(page = 1)
+# test <- TaxaLink(ID = 5) 
+# test <- TaxaLink(page = 1)
 # Categories function
 Categories <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific Categories resource corresponding to ID
@@ -127,8 +127,8 @@ Categories <- function(url=default.url,ID,page){
     return(RObject)
   }
 }
-test <- Categories(ID = 1)
-test <- Categories(page = 1)
+# test <- Categories(ID = 1)
+# test <- Categories(page = 1)
 # Institutions function
 Institutions <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific Institutions resource corresponding to ID
@@ -167,8 +167,8 @@ Institutions <- function(url=default.url,ID,page){
     return(RObject)
   }
 }
-test <- Institutions(ID = 5)
-test <- Institutions(page = 1)
+# test <- Institutions(ID = 5)
+# test <- Institutions(page = 1)
 # Stats function
 Stats <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific Stats resource corresponding to ID
@@ -207,8 +207,8 @@ Stats <- function(url=default.url,ID,page){
     return(RObject)
   }
 }
-test <- Stats(ID = 5)
-test <- Stats(page = 1)
+# test <- Stats(ID = 5)
+# test <- Stats(page = 1)
 # Central function
 Central <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific Central resource corresponding to ID
@@ -247,8 +247,8 @@ Central <- function(url=default.url,ID,page){
     return(RObject)
   }
 }
-test <- Central(ID = 1)
-test <- Central(page = 1)
+# test <- Central(ID = 1)
+# test <- Central(page = 1)
 # Queue function
 Queue <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific Queue resource corresponding to ID
@@ -287,8 +287,8 @@ Queue <- function(url=default.url,ID,page){
     return(RObject)
   }
 }
-test <- Queue(ID = 1)
-test <- Queue(page = 1)
+# test <- Queue(ID = 1)
+# test <- Queue(page = 1)
 # Numbers function
 Numbers <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific Numbers resource corresponding to ID
@@ -331,8 +331,8 @@ Numbers <- function(url=default.url,ID,page){
     return(RObject)
   }
 }
-test <- Numbers(ID = 5)
-test <- Numbers(page = 1)
+# test <- Numbers(ID = 5)
+# test <- Numbers(page = 1)
 # Titles function
 Titles <- function(url=default.url,ID,page){
   # If ID argument is present, retrieve the specific Titles resource corresponding to ID
