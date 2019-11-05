@@ -5,15 +5,20 @@
 #' depending on the arguments provided.
 #' 
 #' @param url URL of the Symbiota2 portal connected to
-#' @param ID ID value (usually \code{numeric}, but not always) used to refer to the specific resource to pull from the database
+#' @param ID ID value (usually \code{numeric}, but not always) 
+#' used to refer to the specific resource to pull from the database
 #' @param page \code{numeric} value referring to the page of Checklist resources to pull. If neither an
 #' ID or a page parameter is provided, function will pull the first page of resources (i.e. \code{page=1}`)
-#' @return If using \code{ID}, the specific Checklist resource specified; If using page, the \code{page} specified
-#' of Checklist resources
+#' @return If using \code{ID}, the specific Checklist resource specified; 
+#' If using page, the \code{page} specified of Checklist resources
 #' @author Austin Koontz
-#' @export
 #' @rdname Checklists
 #' @name Checklists
+#' @export
+
+#' @rdname Checklists
+#' @name Checklists
+#' @export
 Coordinates <- function(url=NA, ID=NA, page=NA){
     # Argument handling
     url <- .get.url(url)
@@ -48,10 +53,9 @@ TaxaLink <- function(url=NA, ID=NA, page=NA){
     }
 
     # Page (specified or default) download
-    RObject <- RObject$`hydra:member`
-    for(i in seq_along(RObject))
-        RObject[[i]][sapply(RObject[[i]], is.null)] <- NA
-    RObject <- sapply(RObject, as.data.frame)
+    if(!is.na(page)){
+      RObject <- .page.to.dataframe(RObject)
+    }
     return(RObject)
 }
 
@@ -67,11 +71,11 @@ Dynamic <- function(url=NA, ID=NA, page=NA){
     if(!is.na(ID))
         return(RObject)
 
-    # Page (specified or deault) download
-    RObject <- RObject$`hydra:member`
-    for(i in seq_along(RObject))
-        RObject[[i]][sapply(RObject[[i]], is.null)] <- NA
-    return(sapply(RObject, as.data.frame))
+    # Page (specified or default) download
+    if(!is.na(page)){
+      RObject <- .page.to.dataframe(RObject)
+    }
+    return(RObject)
 }
 
 #' @rdname Checklists
@@ -86,11 +90,11 @@ ProjectCategories <- function(url=NA, ID=NA, page=NA){
     if(!is.na(ID))
         return(RObject)
     
-    # Page (specified or deault) download
-    RObject <- RObject$`hydra:member`
-    for(i in seq_along(RObject))
-        RObject[[i]][sapply(RObject[[i]], is.null)] <- NA
-    return(sapply(RObject, as.data.frame))
+    # Page (specified or default) download
+    if(!is.na(page)){
+      RObject <- .page.to.dataframe(RObject)
+    }
+    return(RObject)
 }
 
 #' @rdname Checklists
@@ -105,9 +109,9 @@ TaxaComments <- function(url=NA, ID=NA, page=NA){
     if(!is.na(ID))
         return(RObject)
 
-    # Page (specified or deault) download
-    RObject <- RObject$`hydra:member`
-    for(i in seq_along(RObject))
-        RObject[[i]][sapply(RObject[[i]], is.null)] <- NA
-    return(sapply(RObject, as.data.frame))
+    # Page (specified or default) download
+    if(!is.na(page)){
+      RObject <- .page.to.dataframe(RObject)
+    }
+    return(RObject)
 }

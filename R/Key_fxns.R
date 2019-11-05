@@ -11,132 +11,67 @@
 #' @return If using \code{ID}, the specific Key resource specified; If using page, the \code{page} specified
 #' of Key resources
 #' @author Austin Koontz
+#' @rdname Key
+#' @name Key
 #' @export
 
-#' CharacterHeading
 #' @rdname Key
 #' @name Key
-CharacterHeading <- function(url=default.url,ID,page){
-  # If ID argument is present, retrieve the specific CharacterHeading resource corresponding to ID
-  if(!missing(ID)){
-    # Build a path corresponding to the url to pull from using function arguments
-    complete_url <- paste0(url,"key/characterheading/",ID)
-    # Specify a random file (with the JSON extension) to write the JSON object to in the tmp directory
-    sampleDestination <- tempfile()
-    # Download the file from the url to the destination file
-    download.file(url = complete_url, destfile = sampleDestination)
-    # Convert the JSON object into an R object (a list of lists)
-    RObject <- fromJSON(file = sampleDestination)
-    return(RObject)
-  }else{
-    # Otherwise, retrieve a collection of CharacterHeading resources based on page number
-    if(missing(page)){
-      # If page number is missing, set page variable equal to 1 (the first page)
-      page = 1
-    }
-    # Build a path corresponding to the url to pull from using function arguments
-    complete_url <- paste0(url,"key/characterheading?page=",page)
-    # Specify a random file (with the JSON extension) to write the JSON object to in the tmp directory
-    sampleDestination <- tempfile()
-    # Download the file from the url to the destination file
-    download.file(url = complete_url, destfile = sampleDestination)
-    # Convert the JSON object into an R object (in this case, a list of lists)
-    RObject <- fromJSON(file = sampleDestination)
-    # Return only hydra:member component of RObject 
-    RObject <- RObject$`hydra:member`
-    # Convert NULL within list to NA (in order to properly export as a data.frame)
-    for(i in seq_along(RObject)){
-      RObject[[i]][sapply(RObject[[i]], is.null)] <- NA
-    }
-    # Convert RObject into a data.frame and return
-    RObject <- sapply(RObject, as.data.frame)
+CharacterHeading <- function(url=NA, ID=NA, page=NA){
+  # Argument handling
+  url <- .get.url(url)
+  RObject <- .api.scaffold(.check.api.entry("key/characterheading"), url, ID, page)
+  
+  # ID Download
+  if(!is.na(ID)){
     return(RObject)
   }
+  
+  # Page (specified or default) download
+  if(!is.na(page)){
+    RObject <- .page.to.dataframe(RObject)
+  }
+  return(RObject)
 }
 
-#' CharacterStateImages
 #' @rdname Key
 #' @name Key
-CharacterStateImages <- function(url=default.url,ID,page){
-  # If ID argument is present, retrieve the specific CharacterStateImages resource corresponding to ID
-  if(!missing(ID)){
-    # Build a path corresponding to the url to pull from using function arguments
-    complete_url <- paste0(url,"key/characterstateimages/",ID)
-    # Specify a random file (with the JSON extension) to write the JSON object to in the tmp directory
-    sampleDestination <- tempfile()
-    # Download the file from the url to the destination file
-    download.file(url = complete_url, destfile = sampleDestination)
-    # Convert the JSON object into an R object (a list of lists)
-    RObject <- fromJSON(file = sampleDestination)
-    return(RObject)
-  }else{
-    # Otherwise, retrieve a collection of CharacterStateImages resources based on page number
-    if(missing(page)){
-      # If page number is missing, set page variable equal to 1 (the first page)
-      page = 1
-    }
-    # Build a path corresponding to the url to pull from using function arguments
-    complete_url <- paste0(url,"key/characterstateimages?page=",page)
-    # Specify a random file (with the JSON extension) to write the JSON object to in the tmp directory
-    sampleDestination <- tempfile()
-    # Download the file from the url to the destination file
-    download.file(url = complete_url, destfile = sampleDestination)
-    # Convert the JSON object into an R object (in this case, a list of lists)
-    RObject <- fromJSON(file = sampleDestination)
-    # Return only hydra:member component of RObject 
-    RObject <- RObject$`hydra:member`
-    # Convert NULL within list to NA (in order to properly export as a data.frame)
-    for(i in seq_along(RObject)){
-      RObject[[i]][sapply(RObject[[i]], is.null)] <- NA
-    }
-    # Convert RObject into a data.frame and return
-    RObject <- sapply(RObject, as.data.frame)
+CharacterStateImages <- function(url=NA, ID=NA, page=NA){
+  # Argument handling
+  url <- .get.url(url)
+  RObject <- .api.scaffold(.check.api.entry("key/characterstateimages"), url, ID, page)
+  
+  # ID Download
+  if(!is.na(ID)){
     return(RObject)
   }
+  
+  # Page (specified or default) download
+  if(!is.na(page)){
+    RObject <- .page.to.dataframe(RObject)
+  }
+  return(RObject)
 }
 
-#' DescriptionDeletions
 #' @rdname Key
 #' @name Key
 DescriptionDeletions <- function(url=default.url,ID,page){
-  # If ID argument is present, retrieve the specific DescriptionDeletions resource corresponding to ID
-  if(!missing(ID)){
-    # Build a path corresponding to the url to pull from using function arguments
-    complete_url <- paste0(url,"key/descriptiondeletions/",ID)
-    # Specify a random file (with the JSON extension) to write the JSON object to in the tmp directory
-    sampleDestination <- tempfile()
-    # Download the file from the url to the destination file
-    download.file(url = complete_url, destfile = sampleDestination)
-    # Convert the JSON object into an R object (a list of lists)
-    RObject <- fromJSON(file = sampleDestination)
-    return(RObject)
-  }else{
-    # Otherwise, retrieve a collection of DescriptionDeletions resources based on page number
-    if(missing(page)){
-      # If page number is missing, set page variable equal to 1 (the first page)
-      page = 1
-    }
-    # Build a path corresponding to the url to pull from using function arguments
-    complete_url <- paste0(url,"key/descriptiondeletions?page=",page)
-    # Specify a random file (with the JSON extension) to write the JSON object to in the tmp directory
-    sampleDestination <- tempfile()
-    # Download the file from the url to the destination file
-    download.file(url = complete_url, destfile = sampleDestination)
-    # Convert the JSON object into an R object (in this case, a list of lists)
-    RObject <- fromJSON(file = sampleDestination)
-    # Return only hydra:member component of RObject 
-    RObject <- RObject$`hydra:member`
-    # Convert NULL within list to NA (in order to properly export as a data.frame)
-    for(i in seq_along(RObject)){
-      RObject[[i]][sapply(RObject[[i]], is.null)] <- NA
-    }
-    # Convert RObject into a data.frame and return
-    RObject <- sapply(RObject, as.data.frame)
+  # Argument handling
+  url <- .get.url(url)
+  RObject <- .api.scaffold(.check.api.entry("key/descriptiondeletions"), url, ID, page)
+  
+  # ID Download
+  if(!is.na(ID)){
     return(RObject)
   }
+  
+  # Page (specified or default) download
+  if(!is.na(page)){
+    RObject <- .page.to.dataframe(RObject)
+  }
+  return(RObject)
 }
 
-#' Descriptions
 #' @rdname Key
 #' @name Key
 #' @param character.ID Specifies the character.ID argument to include in the url in order to pull the Descriptions resource

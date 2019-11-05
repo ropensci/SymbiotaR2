@@ -11,6 +11,8 @@
 #' @return If using \code{ID}, the specific Traits resource specified; If using page, the \code{page} specified
 #' of Traits resources
 #' @author Austin Koontz
+#' @rdname Traits
+#' @name Traits
 #' @export
 
 #' Traits

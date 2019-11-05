@@ -11,6 +11,8 @@
 #' @return If using \code{ID}, the specific Taxa resource specified; If using page, the \code{page} specified
 #' of Taxa resources
 #' @author Austin Koontz
+#' @rdname Taxa
+#' @name Taxa
 #' @export
 
 #' DescriptionBlock

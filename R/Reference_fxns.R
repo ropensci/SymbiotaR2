@@ -11,6 +11,8 @@
 #' @return If using \code{ID}, the specific Reference resource specified; If using page, the \code{page} specified
 #' of Reference resources
 #' @author Austin Koontz
+#' @rdname Reference
+#' @name Reference
 #' @export
 
 #' LookupReferenceTypes

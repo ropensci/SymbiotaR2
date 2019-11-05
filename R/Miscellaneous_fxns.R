@@ -11,129 +11,63 @@
 #' @return If using \code{ID}, the specific Miscellaneous resource specified; If using page, the \code{page} specified
 #' of Miscellaneous resources
 #' @author Austin Koontz
+#' @rdname Miscellaneous
+#' @name Miscellaneous
 #' @export
 
-#' Configurations
 #' @rdname Miscellaneous
 #' @name Miscellaneous
-Configurations <- function(url=default.url,ID,page){
-  # If ID argument is present, retrieve the specific Configurations resource corresponding to ID
-  if(!missing(ID)){
-    # Build a path corresponding to the url to pull from using function arguments
-    complete_url <- paste0(url,"configurations/",ID)
-    # Specify a random file (with the JSON extension) to write the JSON object to in the tmp directory
-    sampleDestination <- tempfile()
-    # Download the file from the url to the destination file
-    download.file(url = complete_url, destfile = sampleDestination)
-    # Convert the JSON object into an R object (a list of lists)
-    RObject <- fromJSON(file = sampleDestination)
-    return(RObject)
-  }else{
-    # Otherwise, retrieve a collection of Configurations resources based on page number
-    if(missing(page)){
-      # If page number is missing, set page variable equal to 1 (the first page)
-      page = 1
-    }
-    # Build a path corresponding to the url to pull from using function arguments
-    complete_url <- paste0(url,"configurations?page=",page)
-    # Specify a random file (with the JSON extension) to write the JSON object to in the tmp directory
-    sampleDestination <- tempfile()
-    # Download the file from the url to the destination file
-    download.file(url = complete_url, destfile = sampleDestination)
-    # Convert the JSON object into an R object (in this case, a list of lists)
-    RObject <- fromJSON(file = sampleDestination)
-    # Return only hydra:member component of RObject 
-    RObject <- RObject$`hydra:member`
-    # Convert NULL within list to NA (in order to properly export as a data.frame)
-    for(i in seq_along(RObject)){
-      RObject[[i]][sapply(RObject[[i]], is.null)] <- NA
-    }
-    # Convert RObject into a data.frame and return
-    RObject <- sapply(RObject, as.data.frame)
+Configurations <- function(url=NA, ID=NA, page=NA){
+  # Argument handling
+  url <- .get.url(url)
+  RObject <- .api.scaffold(.check.api.entry("configurations"), url, ID, page)
+  
+  # ID Download
+  if(!is.na(ID)){
     return(RObject)
   }
+  
+  # Page (specified or default) download
+  if(!is.na(page)){
+    RObject <- .page.to.dataframe(RObject)
+  }
+  return(RObject)
 }
 
-
-#' LookupLanguages
 #' @rdname Miscellaneous
 #' @name Miscellaneous
-LookupLanguages <- function(url=default.url,ID,page){
-  # If ID argument is present, retrieve the specific LookupLanguages resource corresponding to ID
-  if(!missing(ID)){
-    # Build a path corresponding to the url to pull from using function arguments
-    complete_url <- paste0(url,"lookuplanguages/",ID)
-    # Specify a random file (with the JSON extension) to write the JSON object to in the tmp directory
-    sampleDestination <- tempfile()
-    # Download the file from the url to the destination file
-    download.file(url = complete_url, destfile = sampleDestination)
-    # Convert the JSON object into an R object (a list of lists)
-    RObject <- fromJSON(file = sampleDestination)
-    return(RObject)
-  }else{
-    # Otherwise, retrieve a collection of LookupLanguages resources based on page number
-    if(missing(page)){
-      # If page number is missing, set page variable equal to 1 (the first page)
-      page = 1
-    }
-    # Build a path corresponding to the url to pull from using function arguments
-    complete_url <- paste0(url,"lookuplanguages?page=",page)
-    # Specify a random file (with the JSON extension) to write the JSON object to in the tmp directory
-    sampleDestination <- tempfile()
-    # Download the file from the url to the destination file
-    download.file(url = complete_url, destfile = sampleDestination)
-    # Convert the JSON object into an R object (in this case, a list of lists)
-    RObject <- fromJSON(file = sampleDestination)
-    # Return only hydra:member component of RObject 
-    RObject <- RObject$`hydra:member`
-    # Convert NULL within list to NA (in order to properly export as a data.frame)
-    for(i in seq_along(RObject)){
-      RObject[[i]][sapply(RObject[[i]], is.null)] <- NA
-    }
-    # Convert RObject into a data.frame and return
-    RObject <- sapply(RObject, as.data.frame)
+LookupLanguages <- function(url=NA, ID=NA, page=NA){
+  # Argument handling
+  url <- .get.url(url)
+  RObject <- .api.scaffold(.check.api.entry("lookuplanguages"), url, ID, page)
+  
+  # ID Download
+  if(!is.na(ID)){
     return(RObject)
   }
+  
+  # Page (specified or default) download
+  if(!is.na(page)){
+    RObject <- .page.to.dataframe(RObject)
+  }
+  return(RObject)
 }
 
-
-#' SchemaVersion
 #' @rdname Miscellaneous
 #' @name Miscellaneous
-SchemaVersion <- function(url=default.url,ID,page){
-  # If ID argument is present, retrieve the specific SchemaVersion resource corresponding to ID
-  if(!missing(ID)){
-    # Build a path corresponding to the url to pull from using function arguments
-    complete_url <- paste0(url,"schemaversion/",ID)
-    # Specify a random file (with the JSON extension) to write the JSON object to in the tmp directory
-    sampleDestination <- tempfile()
-    # Download the file from the url to the destination file
-    download.file(url = complete_url, destfile = sampleDestination)
-    # Convert the JSON object into an R object (a list of lists)
-    RObject <- fromJSON(file = sampleDestination)
-    return(RObject)
-  }else{
-    # Otherwise, retrieve a collection of SchemaVersion resources based on page number
-    if(missing(page)){
-      # If page number is missing, set page variable equal to 1 (the first page)
-      page = 1
-    }
-    # Build a path corresponding to the url to pull from using function arguments
-    complete_url <- paste0(url,"schemaversion?page=",page)
-    # Specify a random file (with the JSON extension) to write the JSON object to in the tmp directory
-    sampleDestination <- tempfile()
-    # Download the file from the url to the destination file
-    download.file(url = complete_url, destfile = sampleDestination)
-    # Convert the JSON object into an R object (in this case, a list of lists)
-    RObject <- fromJSON(file = sampleDestination)
-    # Return only hydra:member component of RObject 
-    RObject <- RObject$`hydra:member`
-    # Convert NULL within list to NA (in order to properly export as a data.frame)
-    for(i in seq_along(RObject)){
-      RObject[[i]][sapply(RObject[[i]], is.null)] <- NA
-    }
-    # Convert RObject into a data.frame and return
-    RObject <- sapply(RObject, as.data.frame)
+SchemaVersion <- function(url=NA, ID=NA, page=NA){
+  # Argument handling
+  url <- .get.url(url)
+  RObject <- .api.scaffold(.check.api.entry("schemaversion"), url, ID, page)
+  
+  # ID Download
+  if(!is.na(ID)){
     return(RObject)
   }
+  
+  # Page (specified or default) download
+  if(!is.na(page)){
+    RObject <- .page.to.dataframe(RObject)
+  }
+  return(RObject)
 }

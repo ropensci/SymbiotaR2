@@ -11,6 +11,8 @@
 #' @return If using \code{ID}, the specific Occurrence resource specified; If using page, the \code{page} specified
 #' of Occurrence resources
 #' @author Austin Koontz
+#' @rdname Occurrences
+#' @name Occurrences
 #' @export
 
 #' AccessStats
