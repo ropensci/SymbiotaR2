@@ -25,3 +25,14 @@ test_that("RawLabels",{
   expect_is(data, "list")
 })
 
+context("Nlp")
+#Nlp
+
+context("NlpFragment")
+#NlpFragment
+
+context("NlpVersion")
+#NlpVersion
+
+context("OcrFragment")
+#OcrFragment

@@ -12,7 +12,6 @@ test_that("Coordinates",{
   expect_is(data, "list")
 })
 
-
 context("TaxaLink")
 test_that("TaxaLink",{
   data <- TaxaLink(ID=5)
@@ -28,10 +27,8 @@ test_that("TaxaLink",{
 context("Dynamic")
 #Dynamic
 
-
 context("ProjectCategories")
 #ProjectCategories
-
 
 context("TaxaComments")
 #TaxaComments

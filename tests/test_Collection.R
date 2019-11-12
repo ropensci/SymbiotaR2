@@ -12,7 +12,6 @@ test_that("Categories",{
   expect_is(data, "list")
 })
 
-
 context("Institutions")
 test_that("Institutions",{
   data <- Institutions(ID=5)
@@ -24,7 +23,6 @@ test_that("Institutions",{
   expect_equal(length(data),  600)
   expect_is(data, "list")
 })
-
 
 context("Stats")
 test_that("Stats",{
