@@ -3,8 +3,17 @@
 context("Media")
 #Media
 
+context("Guid")
+#Guid
+
+context("Images")
+#Images
+
 context("Keywords")
 #Keywords
+
+context("Tag")
+#Tag
 
 context("TagKey")
 test_that("TagKey",{

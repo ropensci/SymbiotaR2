@@ -33,7 +33,7 @@ Numbers <- function(url=NA, ID=NA, page=NA){
     RObject[[i]][sapply(RObject[[i]], is.null)] <- NA
   RObject <- as.numeric(lapply(RObject, function(x) x$exsiccatiNumber))
   RObject <- sapply(RObject, as.data.frame)
-  return(output)
+  return(RObject)
 }
  
 #' @rdname Exsiccati

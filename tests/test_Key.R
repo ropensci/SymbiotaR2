@@ -12,6 +12,21 @@ test_that("CharacterHeading",{
   expect_is(data, "list")
 })
 
+context("CharacterLanguages")
+#CharacterLanguages
+
+context("Characters")
+test_that("Characters",{
+  data <- Characters(ID=1)
+  expect_equal(length(data),  19)
+  expect_is(data, "list")
+})
+test_that("Characters",{
+  data <- Characters(page=1)
+  expect_equal(length(data),  18)
+  expect_is(data, "list")
+})
+
 context("CharacterStateImages")
 test_that("CharacterStateImages",{
   data <- CharacterStateImages(ID=1)
@@ -21,6 +36,21 @@ test_that("CharacterStateImages",{
 test_that("CharacterStateImages",{
   data <- CharacterStateImages(page=1)
   expect_equal(length(data),  108)
+  expect_is(data, "list")
+})
+
+context("CharacterStateLanguages")
+#CharacterStateLanguages
+
+context("CharacterStates")
+test_that("CharacterStates",{
+  data <- CharacterStates(ID=1)
+  expect_equal(length(data),  16)
+  expect_is(data, "list")
+})
+test_that("CharacterStates",{
+  data <- CharacterStates(page=1)
+  expect_equal(length(data),  15)
   expect_is(data, "list")
 })
 

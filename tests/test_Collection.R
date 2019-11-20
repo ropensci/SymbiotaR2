@@ -35,3 +35,15 @@ test_that("Stats",{
   expect_equal(length(data),  390)
   expect_is(data, "list")
 })
+
+context("Collections")
+test_that("Collections",{
+  data <- Collection(ID=1)
+  expect_equal(length(data),  37)
+  expect_is(data, "list")
+})
+test_that("Collections",{
+  data <- Collections(page=1)
+  expect_equal(length(data),  36)
+  expect_is(data, "list")
+})

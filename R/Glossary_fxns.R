@@ -50,21 +50,3 @@ TermLink <- function(url=NA, ID=NA, page=NA){
   }
   return(RObject)
 }
-
-#' @rdname Glossary
-#' @name Glossary
-Sources <- function(url=NA, ID=NA, page=NA){
-  # Argument handling
-  url <- .get.url(url)
-  RObject <- .api.scaffold(.check.api.entry("glossary/sources"), url, ID, page)
-  
-  # ID Download
-  if(!is.na(ID))
-    return(RObject)
-  
-  # Page (specified or default) download
-  if(!is.na(page)){
-    RObject <- .page.to.dataframe(RObject)
-  }
-  return(RObject)
-}

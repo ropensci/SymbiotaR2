@@ -18,7 +18,25 @@
 
 #' @rdname Checklists
 #' @name Checklists
-#' @export
+ChecklistProjects <- function(url=NA, ID=NA, page=NA){
+  # Argument handling
+  url <- .get.url(url)
+  RObject <- .api.scaffold(.check.api.entry("checklist/checklistprojects"), url, ID, page)
+  
+  # ID Download
+  if(!is.na(ID)){
+    RObject[sapply(RObject,is.null)] <- NA
+    return(RObject)
+  }
+  
+  # Page (specified or default) download
+  RObject <- RObject$`hydra:member`
+  output <- as.data.frame(do.call(rbind, RObject))
+  return(output)
+}
+
+#' @rdname Checklists
+#' @name Checklists
 Coordinates <- function(url=NA, ID=NA, page=NA){
     # Argument handling
     url <- .get.url(url)
@@ -40,7 +58,6 @@ Coordinates <- function(url=NA, ID=NA, page=NA){
 
 #' @rdname Checklists
 #' @name Checklists
-#' @export
 TaxaLink <- function(url=NA, ID=NA, page=NA){
     # Argument handling
     url <- .get.url(url)
@@ -61,57 +78,19 @@ TaxaLink <- function(url=NA, ID=NA, page=NA){
 
 #' @rdname Checklists
 #' @name Checklists
-#' @export
-Dynamic <- function(url=NA, ID=NA, page=NA){
-    # Argument handling
-    url <- .get.url(url)
-    RObject <- .api.scaffold(.check.api.entry("checklist/dynamic"), url, ID, page)
-    
-    # ID Download
-    if(!is.na(ID))
-        return(RObject)
-
-    # Page (specified or default) download
-    if(!is.na(page)){
-      RObject <- .page.to.dataframe(RObject)
-    }
+Checklists <- function(url=NA, ID=NA, page=NA){
+  # Argument handling
+  url <- .get.url(url)
+  RObject <- .api.scaffold(.check.api.entry("checklists"), url, ID, page)
+  
+  # ID Download
+  if(!is.na(ID)){
+    RObject[sapply(RObject,is.null)] <- NA
     return(RObject)
-}
-
-#' @rdname Checklists
-#' @name Checklists
-#' @export
-ProjectCategories <- function(url=NA, ID=NA, page=NA){
-    # Argument handling
-    url <- .get.url(url)
-    RObject <- .api.scaffold(.check.api.entry("checklist/projectcategories"), url, ID, page)
-
-    # ID Download
-    if(!is.na(ID))
-        return(RObject)
-    
-    # Page (specified or default) download
-    if(!is.na(page)){
-      RObject <- .page.to.dataframe(RObject)
-    }
-    return(RObject)
-}
-
-#' @rdname Checklists
-#' @name Checklists
-#' @export
-TaxaComments <- function(url=NA, ID=NA, page=NA){
-    # Argument handling
-    url <- .get.url(url)
-    RObject <- .api.scaffold(.check.api.entry("checklist/taxacomments"), url, ID, page)
-
-    # ID Download
-    if(!is.na(ID))
-        return(RObject)
-
-    # Page (specified or default) download
-    if(!is.na(page)){
-      RObject <- .page.to.dataframe(RObject)
-    }
-    return(RObject)
+  }
+  
+  # Page (specified or default) download
+  RObject <- RObject$`hydra:member`
+  output <- as.data.frame(do.call(rbind, RObject))
+  return(output)
 }

@@ -1,5 +1,17 @@
 # ImageProcessor tests
 
+context("Nlp")
+#Nlp
+
+context("NlpFragment")
+#NlpFragment
+
+context("NlpVersion")
+#NlpVersion
+
+context("OcrFragment")
+#OcrFragment
+
 context("Projects")
 test_that("Projects",{
   data <- Projects(ID=5)
@@ -24,15 +36,3 @@ test_that("RawLabels",{
   expect_equal(length(data),  360)
   expect_is(data, "list")
 })
-
-context("Nlp")
-#Nlp
-
-context("NlpFragment")
-#NlpFragment
-
-context("NlpVersion")
-#NlpVersion
-
-context("OcrFragment")
-#OcrFragment

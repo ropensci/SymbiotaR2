@@ -12,6 +12,9 @@ test_that("Glossary",{
   expect_is(data, "list")
 })
 
+context("Sources")
+#Sources
+
 context("TermLink")
 test_that("TermLink",{
   data <- TermLink(ID=1)
@@ -23,6 +26,3 @@ test_that("TermLink",{
   expect_equal(length(data),  210)
   expect_is(data, "list")
 })
-
-context("Sources")
-#Sources

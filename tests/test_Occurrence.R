@@ -36,6 +36,9 @@ test_that("Duplicates",{
   expect_is(data, "list")
 })
 
+context("EditLocks")
+#EditLocks
+
 context("Edits")
 test_that("Edits",{
   data <- Edits(ID = 16)
@@ -60,6 +63,9 @@ test_that("FullText",{
   expect_is(data, "list")
 })
 
+context("GeoIndex")
+#GeoIndex
+
 context("GuidDeterminations")
 test_that("GuidDeterminations",{
   data <- GuidDeterminations(ID = "00135877-f154-4fdf-965b-3e56118ed747")
@@ -81,6 +87,21 @@ test_that("GuidOccurrences",{
 test_that("GuidOccurrences",{
   data <- GuidOccurrences(page=1)
   expect_equal(length(data),  240)
+  expect_is(data, "list")
+})
+
+context("Identifiers")
+#Identifiers
+
+context("LookupChronostratigraphy")
+test_that("LookupChronostratigraphy",{
+  data <- LookupChronostratigraphy(ID = 1)
+  expect_equal(length(data),  10)
+  expect_is(data, "list")
+})
+test_that("LookupChronostratigraphy",{
+  data <- LookupChronostratigraphy(page=1)
+  expect_equal(length(data),  9)
   expect_is(data, "list")
 })
 
@@ -108,6 +129,9 @@ test_that("LookupCountries",{
   expect_is(data, "list")
 })
 
+context("LookupMunicipalities")
+#LookupMunicipalities
+
 context("LookupStateProvinces")
 test_that("LookupStateProvinces",{
   data <- LookupStateProvinces(ID = 1)
@@ -117,6 +141,39 @@ test_that("LookupStateProvinces",{
 test_that("LookupStateProvinces",{
   data <- LookupStateProvinces(page=1)
   expect_equal(length(data),  210)
+  expect_is(data, "list")
+})
+
+context("Revisions")
+#Revisions
+
+context("UploadDeterminations")
+#UploadDeterminations
+
+context("UploadMappings")
+test_that("UploadMappings",{
+  data <- UploadMappings(ID = 64)
+  expect_equal(length(data),  9)
+  expect_is(data, "list")
+})
+test_that("UploadMappings",{
+  data <- UploadMappings(page=1)
+  expect_equal(length(data),  240)
+  expect_is(data, "list")
+})
+
+context("UploadOccurrences")
+#UploadOccurrences
+
+context("UploadParameters")
+test_that("UploadParameters",{
+  data <- UploadParameters(ID = 6)
+  expect_equal(length(data),  21)
+  expect_is(data, "list")
+})
+test_that("UploadParameters",{
+  data <- UploadParameters(page=1)
+  expect_equal(length(data),  600)
   expect_is(data, "list")
 })
 
@@ -180,6 +237,9 @@ test_that("Datasets",{
   expect_is(data, "list")
 })
 
+context("Genetic")
+#Genetic
+
 context("Exchange")
 test_that("Exchange",{
   data <- Exchange(ID = 1)
@@ -204,29 +264,14 @@ test_that("Loans",{
   expect_is(data, "list")
 })
 
-context("EditLocks")
-#EditLocks
-
-context("Identifiers")
-#Identifiers
-
-context("LookupMunicipalities")
-#LookupMunicipalities
-
-context("Revisions")
-#Revisions
-
-context("UploadDeterminations")
-#UploadDeterminations
-
-context("UploadMappings")
-#AccessStats
-
-context("UploadOccurrences")
-#UploadOccurrences
-
-context("UploadParameters")
-#UploadParameters
-
-context("Genetic")
-#Genetic
+context("Occurrences")
+test_that("Occurrences",{
+  data <- Occurrences(ID = 1)
+  expect_equal(length(data),  108)
+  expect_is(data, "list")
+})
+test_that("Occurrences",{
+  data <- Occurrences(page=1)
+  expect_equal(length(data),  107)
+  expect_is(data, "list")
+})

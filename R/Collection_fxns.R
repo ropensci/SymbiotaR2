@@ -69,3 +69,20 @@ Stats <- function(url=NA, ID=NA, page=NA){
     }
     return(RObject)
 }
+
+#' @rdname Collection
+#' @name Collection
+Collections <- function(url=NA, ID=NA, page=NA){
+  # Argument handling
+  url <- .get.url(url)
+  RObject <- .api.scaffold(.check.api.entry("collections"), url, ID, page)
+  
+  # ID download
+  if(!is.na(ID))
+    return(RObject)
+  
+  # Page (specified or default) download
+  RObject <- RObject$`hydra:member`
+  output <- as.data.frame(do.call(rbind, RObject))
+  return(output)
+}
