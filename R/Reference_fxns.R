@@ -17,67 +17,10 @@
 
 #' @rdname Reference
 #' @name Reference
-LookupReferenceTypes <- function(url=default.url,ID,page){
+LookupReferenceTypes <- function(url=NA, ID=NA, page=NA){
   # Argument handling
   url <- .get.url(url)
   RObject <- .api.scaffold(.check.api.entry("reference/lookupreferencetypes"), url, ID, page)
-  
-  # ID Download
-  if(!is.na(ID)){
-    return(RObject)
-  }
-  
-  # Page (specified or default) download
-  if(!is.na(page)){
-    RObject <- .page.to.dataframe(RObject)
-  }
-  return(RObject)
-}
-
-#' @rdname Reference
-#' @name Reference
-Authors <- function(url=default.url,ID,page){
-  # Argument handling
-  url <- .get.url(url)
-  RObject <- .api.scaffold(.check.api.entry("reference/authors"), url, ID, page)
-  
-  # ID Download
-  if(!is.na(ID)){
-    return(RObject)
-  }
-  
-  # Page (specified or default) download
-  if(!is.na(page)){
-    RObject <- .page.to.dataframe(RObject)
-  }
-  return(RObject)
-}
-
-#' @rdname Reference
-#' @name Reference
-ChecklistTaxaLink <- function(url=default.url,ID,page){
-  # Argument handling
-  url <- .get.url(url)
-  RObject <- .api.scaffold(.check.api.entry("reference/checklisttaxalink"), url, ID, page)
-  
-  # ID Download
-  if(!is.na(ID)){
-    return(RObject)
-  }
-  
-  # Page (specified or default) download
-  if(!is.na(page)){
-    RObject <- .page.to.dataframe(RObject)
-  }
-  return(RObject)
-}
-
-#' @rdname Reference
-#' @name Reference
-References <- function(url=default.url,ID,page){
-  # Argument handling
-  url <- .get.url(url)
-  RObject <- .api.scaffold(.check.api.entry("references"), url, ID, page)
   
   # ID Download
   if(!is.na(ID)){

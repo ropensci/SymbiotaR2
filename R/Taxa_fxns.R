@@ -17,7 +17,45 @@
 
 #' @rdname Taxa
 #' @name Taxa
-DescriptionBlock <- function(url=default.url,ID,page){
+Taxa <- function(url=NA, ID=NA, page=NA){
+  # Argument handling
+  url <- .get.url(url)
+  RObject <- .api.scaffold(.check.api.entry("taxa"), url, ID, page)
+  
+  # ID Download
+  if(!is.na(ID)){
+    RObject[sapply(RObject,is.null)] <- NA
+    return(RObject)
+  }
+  
+  # Page (specified or default) download
+  RObject <- RObject$`hydra:member`
+  output <- as.data.frame(do.call(rbind, RObject))
+  return(output)
+}
+
+#' @rdname Taxa
+#' @name Taxa
+Authorities <- function(url=NA, ID=NA, page=NA){
+  # Argument handling
+  url <- .get.url(url)
+  RObject <- .api.scaffold(.check.api.entry("taxa/authorities"), url, ID, page)
+  
+  # ID Download
+  if(!is.na(ID)){
+    RObject[sapply(RObject,is.null)] <- NA
+    return(RObject)
+  }
+  
+  # Page (specified or default) download
+  RObject <- RObject$`hydra:member`
+  output <- as.data.frame(do.call(rbind, RObject))
+  return(output)
+}
+
+#' @rdname Taxa
+#' @name Taxa
+DescriptionBlock <- function(url=NA, ID=NA, page=NA){
   # Argument handling
   url <- .get.url(url)
   RObject <- .api.scaffold(.check.api.entry("taxa/descriptionblock"), url, ID, page)
@@ -36,7 +74,7 @@ DescriptionBlock <- function(url=default.url,ID,page){
 
 #' @rdname Taxa
 #' @name Taxa
-Synonymy <- function(url=default.url,ID,page){
+Synonymy <- function(url=NA, ID=NA, page=NA){
   # Argument handling
   url <- .get.url(url)
   RObject <- .api.scaffold(.check.api.entry("taxa/synonymy"), url, ID, page)

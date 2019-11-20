@@ -1,5 +1,11 @@
 # Reference tests
 
+context("Authors")
+#Authors
+
+context("ChecklistTaxaLink")
+#ChecklistTaxaLink
+
 context("LookupReferenceTypes")
 test_that("LookupReferenceTypes",{
   data <- LookupReferenceTypes(ID = 5)
@@ -11,12 +17,6 @@ test_that("LookupReferenceTypes",{
   expect_equal(length(data),  720)
   expect_is(data, "list")
 })
-
-context("Authors")
-#Authors
-
-context("ChecklistTaxaLink")
-#ChecklistTaxaLink
 
 context("References")
 #References
