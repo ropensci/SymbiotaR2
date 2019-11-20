@@ -1,1 +1,0 @@
-# Nearly working functions

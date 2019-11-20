@@ -1,4 +1,4 @@
-# UserRoles tests
+# Users tests
 
 context("UserRoles")
 test_that("UserRoles",{
@@ -11,3 +11,6 @@ test_that("UserRoles",{
   expect_equal(length(data),  8)
   expect_is(data, "list")
 })
+
+context("Users")
+#Users

@@ -12,7 +12,7 @@
 #' @export
 
 # UserRoles function--permissions argument is a binary (presence/absence)--need to reflect this in argument checks
-UserRoles <- function(url=default.url,ID,permissions){
+UserRoles <- function(url=NA, ID=NA , permissions=NA){
   # If permissions argument is absent, retrieve the specific UserRoles resource corresponding to ID
   if(missing(permissions)){
     # Build a path corresponding to the url to pull from using function arguments
