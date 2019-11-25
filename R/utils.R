@@ -12,6 +12,8 @@
         complete_url <- paste0(url,api.entry,"/",ID)
         download.file(url = complete_url, destfile = dwn_file)
         RObject <- fromJSON(file = dwn_file)
+        for(i in seq_along(RObject))
+          RObject[i][sapply(RObject[i], is.null)] <- NA
         return(RObject)
     }
 
