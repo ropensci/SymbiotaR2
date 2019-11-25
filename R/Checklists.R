@@ -31,6 +31,8 @@ ChecklistProjects <- function(url=NA, ID=NA, page=NA){
   
   # Page (specified or default) download
   RObject <- RObject$`hydra:member`
+  for(i in seq_along(RObject))
+    RObject[[i]][sapply(RObject[[i]], is.null)] <- NA
   output <- as.data.frame(do.call(rbind, RObject))
   return(output)
 }
@@ -91,6 +93,8 @@ Checklists <- function(url=NA, ID=NA, page=NA){
   
   # Page (specified or default) download
   RObject <- RObject$`hydra:member`
+  for(i in seq_along(RObject))
+    RObject[[i]][sapply(RObject[[i]], is.null)] <- NA
   output <- as.data.frame(do.call(rbind, RObject))
   return(output)
 }
