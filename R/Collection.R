@@ -15,6 +15,8 @@
 #' @rdname Collection
 #' @name Collection
 #' @export
+#' @importFrom rjson fromJSON
+#' @importFrom utils download.file
 
 #' @rdname Collection
 #' @name Collection

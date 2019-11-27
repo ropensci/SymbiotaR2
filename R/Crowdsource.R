@@ -15,6 +15,8 @@
 #' @rdname Crowdsource
 #' @name Crowdsource
 #' @export
+#' @importFrom rjson fromJSON
+#' @importFrom utils download.file
 
 #' @rdname Crowdsource
 #' @name Crowdsource

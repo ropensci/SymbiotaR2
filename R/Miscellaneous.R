@@ -14,6 +14,8 @@
 #' @rdname Miscellaneous
 #' @name Miscellaneous
 #' @export
+#' @importFrom rjson fromJSON
+#' @importFrom utils download.file
 
 #' @rdname Miscellaneous
 #' @name Miscellaneous

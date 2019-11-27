@@ -14,6 +14,8 @@
 #' @rdname Occurrences
 #' @name Occurrences
 #' @export
+#' @importFrom rjson fromJSON
+#' @importFrom utils download.file
 
 #' @rdname Occurrences
 #' @name Occurrences

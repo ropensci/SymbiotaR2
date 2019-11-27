@@ -14,6 +14,8 @@
 #' @rdname Glossary
 #' @name Glossary
 #' @export
+#' @importFrom rjson fromJSON
+#' @importFrom utils download.file
 
 #' @rdname Glossary
 #' @name Glossary

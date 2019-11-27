@@ -15,6 +15,8 @@
 #' @rdname Checklists
 #' @name Checklists
 #' @export
+#' @importFrom rjson fromJSON
+#' @importFrom utils download.file
 
 #' @rdname Checklists
 #' @name Checklists

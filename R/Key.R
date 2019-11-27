@@ -14,6 +14,8 @@
 #' @rdname Key
 #' @name Key
 #' @export
+#' @importFrom rjson fromJSON
+#' @importFrom utils download.file
 
 #' @rdname Key
 #' @name Key
