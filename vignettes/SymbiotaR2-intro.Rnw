@@ -1,0 +1,97 @@
+% \VignetteIndexEntry{SymbiotaR2}
+%\VignettePackage{SymbiotaR2}
+%\VignetteEngine{knitr::knitr}
+%\VignetteEncoding{UTF-8}
+\documentclass[12pt]{article}
+\usepackage{amssymb,amsmath}
+\usepackage{geometry}
+\geometry{letterpaper}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{natbib}
+\usepackage{color} \definecolor{dark-gray}{gray}{0.3}
+\usepackage[colorlinks=true,urlcolor=dark-gray,breaklinks,citecolor=black,linkcolor=black]{hyperref}
+\bibliographystyle{besjournals}
+\title{Downloading data from \emph{Symbiota2} portals into R}
+\author{Austin Koontz \& William D.\ Pearse}
+\date{\today}
+
+\begin{document}
+\maketitle
+\tableofcontents
+<<include=FALSE>>=
+library(SymbiotaR2)
+options(width=40)
+@ 
+\section{Overview}
+\emph{SymbiotaR2} allows users to connect to and download data from
+specified Symbiota2 portals, granting access to thousands of digitized 
+flora and fauna specimen records across the United States. It does this by
+querying endpoints in the Symbiota2 API, then downloading a JSON object
+containing the requested data to a temporary directory on the local computer,
+and finally converting that JSON object into an R format that is 
+straightforward and easy to use. The general argument structure of \emph{SymbiotaR2} 
+allows users to specify whether they want to pull a single resource or a 
+collection of resources from the API.
+
+\section{Example}
+The \emph{SymbiotaR2} package includes commands to pull from the Checklists, 
+Collections, Crowdsource, Exsiccati, Glossary, ImageProcessor, Key, Media, 
+Occurrence, Reference, Taxa, Traits, and UserRoles API families of the specified 
+Symbiota2 portal. Note that because each Symbiota2 portal owner can load their 
+own plugins into the API, it's possible that not every possible API endpoint 
+from the specified Symbiota2 instance will be covered. 
+
+Below, we provide an example of pulling a single `Taxa` resource into the R
+environment, by specifying an `ID` argument in the command call:
+
+```
+url <- "http://address_for_Symbiota2_portal.edu/api/"
+my.Taxa <- Taxa(url, ID=12)
+str(my.Taxa)
+```
+```
+List of 23
+ $ @context             : chr "/api/contexts/Taxa"
+ $ @id                  : chr "/api/taxa/12"
+ $ @type                : chr "Taxa"
+ $ id                   : num 12
+ $ rankId               : chr "/api/taxa/ranks/31"
+ $ scientificName       : chr "Polygonum bistortoides"
+ $ unitIndicator1       : logi NA
+ $ unitName1            : chr "Polygonum"
+ $ unitIndicator2       : logi NA
+ $ unitName2            : chr "bistortoides"
+ $ unitIndicator3       : logi NA
+ $ unitName3            : logi NA
+ $ author               : chr "Pursh"
+ $ phylogenySortSequence: logi NA
+ $ status               : chr "AZTT-USDA Plants consistant"
+ $ source               : logi NA
+ $ notes                : logi NA
+ $ hybrid               : logi NA
+ $ securityStatus       : num 0
+ $ modifiedTimestamp    : logi NA
+ $ initialTimestamp     : chr "2019-01-11T21:44:39+00:00"
+ $ modifiedUserId       : logi NA
+ $ taxaAuthorityId      : list()
+```
+
+If a collection of resources from the Symbiota2 API needs to come into 
+the R environment, then the `page` argument can be specified in place of
+`ID` to retrieve a list of resources (here, as a `data.frame`):
+
+```
+url <- "http://address_for_Symbiota2_portal.edu/api/"
+my.Coordinates <- Coordinates(url, page=1)
+str(my.Coordinates)
+```
+```
+'data.frame':	5 obs. of  2 variables:
+ $ latitude : num  32.2 32.2 32.2 32.2 32.2
+ $ longitude: num  -111 -111 -111 -111 -111
+ ```
+From here, these R objects can be taken and manipulated as needed for 
+downstream processing.
+
+\end{document}
