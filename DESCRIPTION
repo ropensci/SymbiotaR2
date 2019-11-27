@@ -15,7 +15,11 @@ Description: Download data from Symbiota2 portals using Symbiota's
 License: MIT + file LICENSE
 URL: https://github.com/pearselab/SymbiotaR2
 BugReports: https://github.com/pearselab/SymbiotaR2/issues
+VignetteBuilder: knitr
 LazyLoad: yes
+Suggests:
+    knitr (>= 1.23),
+    testthat (>= 2.0.0)
 Imports:
     httr (>= 1.0.0),
     xml2 (>= 1.2.0),
