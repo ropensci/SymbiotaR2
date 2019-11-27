@@ -1,20 +1,9 @@
-% \VignetteIndexEntry{SymbiotaR2}
-%\VignettePackage{SymbiotaR2}
-%\VignetteEngine{knitr::knitr}
-%\VignetteEncoding{UTF-8}
-\documentclass[12pt]{article}
-\usepackage{amssymb,amsmath}
-\usepackage{geometry}
-\geometry{letterpaper}
-\usepackage{graphicx}
-\usepackage{url}
-\usepackage{natbib}
-\usepackage{color} \definecolor{dark-gray}{gray}{0.3}
-\usepackage[colorlinks=true,urlcolor=dark-gray,breaklinks,citecolor=black,linkcolor=black]{hyperref}
-\bibliographystyle{besjournals}
-\title{Downloading data from \emph{Symbiota2} portals into R}
-\author{Austin Koontz \& William D.\ Pearse}
-\date{\today}
+---
+title: "Downloading data from Symbiota2 portals in R"
+author: "Austin Koontz & William D. Pearse"
+date: "11/27/2019"
+output: html_document
+---
 
 \begin{document}
 \maketitle
@@ -46,7 +35,7 @@ Below, we provide an example of pulling a single `Taxa` resource into the R
 environment, by specifying an `ID` argument in the command call:
 
 ```
-url <- "http://address_for_Symbiota2_portal.edu/api/"
+url <- "http://a02235015-6.bluezone.usu.edu/api/"
 my.Taxa <- Taxa(url, ID=12)
 str(my.Taxa)
 ```
@@ -82,7 +71,7 @@ the R environment, then the `page` argument can be specified in place of
 `ID` to retrieve a list of resources (here, as a `data.frame`):
 
 ```
-url <- "http://address_for_Symbiota2_portal.edu/api/"
+url <- "http://a02235015-6.bluezone.usu.edu/api/"
 my.Coordinates <- Coordinates(url, page=1)
 str(my.Coordinates)
 ```
@@ -91,7 +80,7 @@ str(my.Coordinates)
  $ latitude : num  32.2 32.2 32.2 32.2 32.2
  $ longitude: num  -111 -111 -111 -111 -111
  ```
-From here, these R objects can be taken and manipulated as needed for 
-downstream processing.
+From here, these R objects can be taken and manipulated as needed for any
+downstream processes.
 
 \end{document}
