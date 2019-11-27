@@ -2,7 +2,6 @@
 % Please edit documentation in R/Glossary.R
 \name{Glossary}
 \alias{Glossary}
-\alias{Glossary}
 \alias{TermLink}
 \title{Retrieves Glossary resources from the Symbiota2 server}
 \usage{
