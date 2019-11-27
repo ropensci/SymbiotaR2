@@ -1,28 +1,17 @@
 # Media tests
 
-context("Media")
-#Media
-
-context("Guid")
-#Guid
-
-context("Images")
-#Images
-
-context("Keywords")
-#Keywords
-
-context("Tag")
-#Tag
-
 context("TagKey")
-test_that("TagKey",{
-  data <- TagKey(ID = "Diagnostic")
-  expect_equal(length(data),  8)
-  expect_is(data, "list")
+use_cassette(name="TagKey_ID", {
+  test_that("TagKey_ID",{
+    data <- TagKey(url=url, ID="Diagnostic")
+    expect_equal(length(data),  8)
+    expect_type(data, "list")
+  })
 })
-test_that("TagKey",{
-  data <- TagKey(page=1)
-  expect_equal(length(data),  70)
-  expect_is(data, "list")
+use_cassette(name="TagKey_page", {
+  test_that("TagKey_page",{
+    data <- TagKey(url=url, page=1)
+    expect_equal(length(data),  70)
+    expect_type(data, "list")
+  })
 })

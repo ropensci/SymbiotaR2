@@ -1,76 +1,65 @@
 # Taxa tests
 
 context("Taxa")
-test_that("Taxa",{
-  data <- Taxa(ID = 1)
-  expect_equal(length(data),  23)
-  expect_is(data, "list")
+use_cassette(name="Taxa_ID", {
+  test_that("Taxa_ID",{
+    data <- Taxa(url=url, ID= 1)
+    expect_equal(length(data),  23)
+    expect_type(data, "list")
+  })
 })
-test_that("Taxa",{
-  data <- Taxa(page=1)
-  expect_equal(length(data),  22)
-  expect_is(data, "list")
+use_cassette(name="Taxa_page", {
+  test_that("Taxa_page",{
+    data <- Taxa(url=url, page=1)
+    expect_equal(length(data),  22)
+    expect_type(data, "list")
+  })
 })
 
 context("Authorities")
-test_that("Authorities",{
-  data <- Authorities(ID = 1)
-  expect_equal(length(data),  15)
-  expect_is(data, "list")
+use_cassette(name="Authorities_ID", {
+  test_that("Authorities_ID",{
+    data <- Authorities(url=url, ID= 1)
+    expect_equal(length(data),  15)
+    expect_type(data, "list")
+  })
 })
-test_that("Authorities",{
-  data <- Authorities(page=1)
-  expect_equal(length(data),  14)
-  expect_is(data, "list")
+use_cassette(name="Authorities_page", {
+  test_that("Authorities_page",{
+    data <- Authorities(url=url, page=1)
+    expect_equal(length(data),  14)
+    expect_type(data, "list")
+  })
 })
 
 context("DescriptionBlock")
-test_that("DescriptionBlock",{
-  data <- DescriptionBlock(ID = 1)
-  expect_equal(length(data),  14)
-  expect_is(data, "list")
+use_cassette(name="DescriptionBlock_ID", {
+  test_that("DescriptionBlock_ID",{
+    data <- DescriptionBlock(url=url, ID= 1)
+    expect_equal(length(data),  14)
+    expect_type(data, "list")
+  })
 })
-test_that("DescriptionBlock",{
-  data <- DescriptionBlock(page=1)
-  expect_equal(length(data),  390)
-  expect_is(data, "list")
+use_cassette(name="DescriptionBlock_page", {
+  test_that("DescriptionBlock_page",{
+    data <- DescriptionBlock(url=url, page=1)
+    expect_equal(length(data),  390)
+    expect_type(data, "list")
+  })
 })
-
-context("DescriptionStatements")
-#DescriptionStatements
-
-context("Links")
-#Links
-
-context("Maps")
-#Maps
-
-context("Ranks")
-#Ranks
-
-context("Relationships")
-#Relationships
-
-context("ResourceLinks")
-#ResourceLinks
 
 context("Synonymy")
-test_that("Synonymy",{
-  data <- Synonymy(ID = 1)
-  expect_equal(length(data),  13)
-  expect_is(data, "list")
+use_cassette(name="Synonymy_ID", {
+  test_that("Synonymy_ID",{
+    data <- Synonymy(url=url, ID= 1)
+    expect_equal(length(data),  13)
+    expect_type(data, "list")
+  })
 })
-test_that("Synonymy",{
-  data <- Synonymy(page=1)
-  expect_equal(length(data),  360)
-  expect_is(data, "list")
+use_cassette(name="Synonymy_page", {
+  test_that("Synonymy_page",{
+    data <- Synonymy(url=url, page=1)
+    expect_equal(length(data),  360)
+    expect_type(data, "list")
+  })
 })
-
-context("Upload")
-#Upload
-
-context("UserTaxonomy")
-#UserTaxonomy
-
-context("Vernaculars")
-#Vernaculars

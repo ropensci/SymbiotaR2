@@ -1,22 +1,17 @@
 # Reference tests
 
-context("Authors")
-#Authors
-
-context("ChecklistTaxaLink")
-#ChecklistTaxaLink
-
 context("LookupReferenceTypes")
-test_that("LookupReferenceTypes",{
-  data <- LookupReferenceTypes(ID = 5)
-  expect_equal(length(data),  25)
-  expect_is(data, "list")
+use_cassette(name="LookupReferenceTypes_ID", {
+  test_that("LookupReferenceTypes_ID",{
+    data <- LookupReferenceTypes(url=url, ID=5)
+    expect_equal(length(data),  25)
+    expect_type(data, "list")
+  })
 })
-test_that("LookupReferenceTypes",{
-  data <- LookupReferenceTypes(page=1)
-  expect_equal(length(data),  720)
-  expect_is(data, "list")
+use_cassette(name="LookupReferenceTypes_page", {
+  test_that("LookupReferenceTypes_page",{
+    data <- LookupReferenceTypes(url=url, page=1)
+    expect_equal(length(data),  720)
+    expect_type(data, "list")
+  })
 })
-
-context("References")
-#References

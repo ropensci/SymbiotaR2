@@ -1,26 +1,33 @@
 # Crowdsource tests
 
 context("Central")
-test_that("Central",{
-  data <- Central(ID=1)
-  expect_equal(length(data),  10)
-  expect_is(data, "list")
+use_cassette(name="Central_ID", {
+  test_that("Central_ID",{
+    data <- Central(url=url, ID=1)
+    expect_equal(length(data),  10)
+    expect_type(data, "list")
+  })
 })
-test_that("Central",{
-  data <- Central(page=1)
-  expect_equal(length(data),  18)
-  expect_is(data, "list")
+use_cassette(name="Central_page", {
+  test_that("Central_page",{
+    data <- Central(url=url, page=1)
+    expect_equal(length(data),  18)
+    expect_type(data, "list")
+  })
 })
-
 
 context("Queue")
-test_that("Queue",{
-  data <- Queue(ID=1)
-  expect_equal(length(data),  12)
-  expect_is(data, "list")
+use_cassette(name="Queue_ID", {
+  test_that("Queue_ID",{
+    data <- Queue(url=url, ID=1)
+    expect_equal(length(data),  12)
+    expect_type(data, "list")
+  })
 })
-test_that("Queue",{
-  data <- Queue(page=1)
-  expect_equal(length(data),  55)
-  expect_is(data, "list")
+use_cassette(name="Queue_page", {
+  test_that("Queue_page",{
+    data <- Queue(url=url, page=1)
+    expect_equal(length(data),  55)
+    expect_type(data, "list")
+  })
 })

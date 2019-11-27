@@ -1,31 +1,17 @@
 # Traits test
 
 context("Traits")
-test_that("Traits",{
-  data <- Traits(ID = 1)
-  expect_equal(length(data),  16)
-  expect_is(data, "list")
+use_cassette(name="Traits_ID", {
+  test_that("Traits_ID",{
+    data <- Traits(url=url, ID = 1)
+    expect_equal(length(data),  16)
+    expect_type(data, "list")
+  })
 })
-test_that("Traits",{
-  data <- Traits(page=1)
-  expect_equal(length(data),  60)
-  expect_is(data, "list")
+use_cassette(name="Traits_page", {
+  test_that("Traits_page",{
+    data <- Traits(url=url, page=1)
+    expect_equal(length(data),  60)
+    expect_type(data, "list")
+  })
 })
-
-context("Attributes")
-test_that("Attributes",{
-  data <- Attributes(state.ID = 1, occurence.ID = 152)
-  expect_equal(length(data),  16)
-  expect_is(data, "list")
-})
-test_that("Attributes",{
-  data <- Attributes(page=1)
-  expect_equal(length(data),  450)
-  expect_is(data, "list")
-})
-
-context("Dependencies")
-#Dependencies
-
-context("States")
-#States
