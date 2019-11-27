@@ -28,12 +28,14 @@ Numbers <- function(url=NA, ID=NA, page=NA){
   }
   
   # Page (specified or default) download
-  RObject <- RObject$`hydra:member`
-  for(i in seq_along(RObject))
-    RObject[[i]][sapply(RObject[[i]], is.null)] <- NA
-  RObject <- as.numeric(lapply(RObject, function(x) x$exsiccatiNumber))
-  RObject <- sapply(RObject, as.data.frame)
-  return(RObject)
+  if(!is.na(page)){
+    RObject <- RObject$`hydra:member`
+    for(i in seq_along(RObject))
+      RObject[[i]][sapply(RObject[[i]], is.null)] <- NA
+    RObject <- as.numeric(lapply(RObject, function(x) x$exsiccatiNumber))
+    RObject <- sapply(RObject, as.data.frame)
+    return(RObject)
+  }
 }
  
 #' @rdname Exsiccati

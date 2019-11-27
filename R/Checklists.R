@@ -30,11 +30,13 @@ ChecklistProjects <- function(url=NA, ID=NA, page=NA){
   }
   
   # Page (specified or default) download
-  RObject <- RObject$`hydra:member`
-  for(i in seq_along(RObject))
-    RObject[[i]][sapply(RObject[[i]], is.null)] <- NA
-  output <- as.data.frame(do.call(rbind, RObject))
-  return(output)
+  if(!is.na(page)){
+    RObject <- RObject$`hydra:member`
+    for(i in seq_along(RObject))
+      RObject[[i]][sapply(RObject[[i]], is.null)] <- NA
+    output <- as.data.frame(do.call(rbind, RObject))
+    return(output)
+  }
 }
 
 #' @rdname Checklists
@@ -51,11 +53,13 @@ Coordinates <- function(url=NA, ID=NA, page=NA){
     }
 
     # Page (specified or default) download
-    RObject <- RObject$`hydra:member`
-    RObject <- lapply(RObject, function(x) c(x$decimalLatitude,x$decimalLongitude))
-    output <- as.data.frame(do.call(rbind, RObject))
-    names(output) <- c("latitude","longitude")
-    return(output)
+    if(!is.na(page)){
+      RObject <- RObject$`hydra:member`
+      RObject <- lapply(RObject, function(x) c(x$decimalLatitude,x$decimalLongitude))
+      output <- as.data.frame(do.call(rbind, RObject))
+      names(output) <- c("latitude","longitude")
+      return(output)
+    }
 }
 
 #' @rdname Checklists
@@ -92,9 +96,11 @@ Checklists <- function(url=NA, ID=NA, page=NA){
   }
   
   # Page (specified or default) download
-  RObject <- RObject$`hydra:member`
-  for(i in seq_along(RObject))
-    RObject[[i]][sapply(RObject[[i]], is.null)] <- NA
-  output <- as.data.frame(do.call(rbind, RObject))
-  return(output)
+  if(!is.na(page)){
+    RObject <- RObject$`hydra:member`
+    for(i in seq_along(RObject))
+      RObject[[i]][sapply(RObject[[i]], is.null)] <- NA
+    output <- as.data.frame(do.call(rbind, RObject))
+    return(output)
+  }
 }

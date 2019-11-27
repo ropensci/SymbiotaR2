@@ -29,9 +29,13 @@ Taxa <- function(url=NA, ID=NA, page=NA){
   }
   
   # Page (specified or default) download
-  RObject <- RObject$`hydra:member`
-  output <- as.data.frame(do.call(rbind, RObject))
-  return(output)
+  if(!is.na(page)){
+    RObject <- RObject$`hydra:member`
+    for(i in seq_along(RObject))
+      RObject[[i]][sapply(RObject[[i]], is.null)] <- NA
+    output <- as.data.frame(do.call(rbind, RObject))
+    return(output)
+  }
 }
 
 #' @rdname Taxa
@@ -48,9 +52,13 @@ Authorities <- function(url=NA, ID=NA, page=NA){
   }
   
   # Page (specified or default) download
-  RObject <- RObject$`hydra:member`
-  output <- as.data.frame(do.call(rbind, RObject))
-  return(output)
+  if(!is.na(page)){
+    RObject <- RObject$`hydra:member`
+    for(i in seq_along(RObject))
+      RObject[[i]][sapply(RObject[[i]], is.null)] <- NA
+    output <- as.data.frame(do.call(rbind, RObject))
+    return(output)
+  }
 }
 
 #' @rdname Taxa

@@ -86,9 +86,11 @@ CharacterStates <- function(url=NA, ID=NA, page=NA){
   }
   
   # Page (specified or default) download
-  RObject <- RObject$`hydra:member`
-  output <- as.data.frame(do.call(rbind, RObject))
-  return(output)
+  if(!is.na(page)){
+    RObject <- RObject$`hydra:member`
+    output <- as.data.frame(do.call(rbind, RObject))
+    return(output)
+  }
 }
 
 #' @rdname Key
