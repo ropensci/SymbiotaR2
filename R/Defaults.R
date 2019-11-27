@@ -21,7 +21,6 @@
 #' # Trying to save a non-existence portal
 #' SymbiotaR2_setup("http://nonexistent-portal.com/api/", TRUE)
 #' }
-#' @importFrom base Sys.info
 #' @export
 
 SymbiotaR2_setup <- function(url, append=FALSE, verbose=TRUE){

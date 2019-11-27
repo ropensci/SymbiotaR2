@@ -172,7 +172,7 @@ Descriptions <- function(url=default.url,character.ID,characterState.ID,taxa.ID,
 
 #' @rdname Traits
 #' @name Traits
-#' --requires multiple arguments for pulling specific resource, so code not yet refactored
+# --requires multiple arguments for pulling specific resource, so code not yet refactored
 Attributes <- function(url=default.url,state.ID,occurrence.ID,page){
   # If ID argument is present, retrieve the specific Attributes resource corresponding to ID
   if(!missing(occurrence.ID)){

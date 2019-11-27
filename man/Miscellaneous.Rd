@@ -3,9 +3,7 @@
 \name{Miscellaneous}
 \alias{Miscellaneous}
 \alias{Configurations}
-\alias{Miscellaneous}
 \alias{LookupLanguages}
-\alias{Miscellaneous}
 \alias{SchemaVersion}
 \title{Retrieves Miscellaneous resources from the Symbiota2 server}
 \usage{
