@@ -1,3 +1,8 @@
+# Internal functions used for SymbiotaR2 package
+
+#' @importFrom rjson fromJSON
+#' @importFrom utils download.file
+
 .api.scaffold <- function(api.entry, url=NA, ID=NA, page=NA){
     # Argument handling and setup
     if(is.na(url)){
