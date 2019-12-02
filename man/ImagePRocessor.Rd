@@ -3,6 +3,7 @@
 \name{ImagePRocessor}
 \alias{ImagePRocessor}
 \alias{Projects}
+\alias{ImagePRocessor}
 \alias{RawLabels}
 \title{Retrieves ImageProcessor resources from the Symbiota2 server}
 \usage{

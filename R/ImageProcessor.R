@@ -14,8 +14,6 @@
 #' @rdname ImagePRocessor
 #' @name ImagePRocessor
 #' @export
-#' @importFrom rjson fromJSON
-#' @importFrom utils download.file
 
 #' @rdname ImagePRocessor
 #' @name ImagePRocessor

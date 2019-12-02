@@ -14,8 +14,6 @@
 #' @rdname Exsiccati
 #' @name Exsiccati
 #' @export
-#' @importFrom rjson fromJSON
-#' @importFrom utils download.file
 
 #' @rdname Exsiccati
 #' @name Exsiccati

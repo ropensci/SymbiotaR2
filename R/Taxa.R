@@ -14,8 +14,6 @@
 #' @rdname Taxa
 #' @name Taxa
 #' @export
-#' @importFrom rjson fromJSON
-#' @importFrom utils download.file
 
 #' @rdname Taxa
 #' @name Taxa

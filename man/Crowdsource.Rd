@@ -3,6 +3,7 @@
 \name{Crowdsource}
 \alias{Crowdsource}
 \alias{Central}
+\alias{Crowdsource}
 \alias{Queue}
 \title{Retrieves Crowdsource resources from the Symbiota2 server}
 \usage{

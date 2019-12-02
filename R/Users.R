@@ -10,8 +10,6 @@
 #' @return UserRoles resource requested
 #' @author Austin Koontz
 #' @export
-#' @importFrom rjson fromJSON
-#' @importFrom utils download.file
 
 # UserRoles function--permissions argument is a binary (presence/absence)--need to reflect this in argument checks
 UserRoles <- function(url=NA, ID=NA , permissions=NA){

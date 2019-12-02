@@ -3,6 +3,7 @@
 \name{Exsiccati}
 \alias{Exsiccati}
 \alias{Numbers}
+\alias{Exsiccati}
 \alias{Titles}
 \title{Retrieves Exsiccati resources from the Symbiota2 server}
 \usage{

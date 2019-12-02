@@ -14,8 +14,6 @@
 #' @rdname Media
 #' @name Media
 #' @export
-#' @importFrom rjson fromJSON
-#' @importFrom utils download.file
 
 #' @rdname Media
 #' @name Media

@@ -3,8 +3,11 @@
 \name{Checklists}
 \alias{Checklists}
 \alias{ChecklistProjects}
+\alias{Checklists}
 \alias{Coordinates}
+\alias{Checklists}
 \alias{TaxaLink}
+\alias{Checklists}
 \title{Retrieves Checklists resources from the Symbiota2 server}
 \usage{
 ChecklistProjects(url = NA, ID = NA, page = NA)

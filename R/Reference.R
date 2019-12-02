@@ -14,8 +14,6 @@
 #' @rdname Reference
 #' @name Reference
 #' @export
-#' @importFrom rjson fromJSON
-#' @importFrom utils download.file
 
 #' @rdname Reference
 #' @name Reference

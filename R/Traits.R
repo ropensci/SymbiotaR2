@@ -14,8 +14,6 @@
 #' @rdname Traits
 #' @name Traits
 #' @export
-#' @importFrom rjson fromJSON
-#' @importFrom utils download.file
 
 #' @rdname Traits
 #' @name Traits

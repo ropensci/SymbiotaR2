@@ -2,8 +2,11 @@
 % Please edit documentation in R/Taxa.R
 \name{Taxa}
 \alias{Taxa}
+\alias{Taxa}
 \alias{Authorities}
+\alias{Taxa}
 \alias{DescriptionBlock}
+\alias{Taxa}
 \alias{Synonymy}
 \title{Retrieves Taxa resources from the Symbiota2 server}
 \usage{

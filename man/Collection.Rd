@@ -3,8 +3,11 @@
 \name{Collection}
 \alias{Collection}
 \alias{Categories}
+\alias{Collection}
 \alias{Institutions}
+\alias{Collection}
 \alias{Stats}
+\alias{Collection}
 \alias{Collections}
 \title{Retrieves Collection resources from the Symbiota2 server}
 \usage{
