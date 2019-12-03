@@ -3,7 +3,6 @@
 \name{Traits}
 \alias{Traits}
 \alias{Attributes}
-\alias{Traits}
 \title{Retrieves Traits resources from the Symbiota2 server}
 \usage{
 Attributes(url = default.url, state.ID, occurrence.ID, page)

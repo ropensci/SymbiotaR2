@@ -3,20 +3,14 @@
 \name{Key}
 \alias{Key}
 \alias{Descriptions}
-\alias{Key}
 \alias{CharacterHeading}
-\alias{Key}
 \alias{Characters}
-\alias{Key}
 \alias{CharacterStateImages}
-\alias{Key}
 \alias{CharacterStates}
-\alias{Key}
 \alias{DescriptionDeletions}
 \title{Retrieves Key resources from the Symbiota2 server}
 \usage{
-Descriptions(url = default.url, character.ID, characterState.ID, taxa.ID,
-  page)
+Descriptions(url = default.url, character.ID, characterState.ID, taxa.ID, page)
 
 CharacterHeading(url = NA, ID = NA, page = NA)
 
