@@ -2,6 +2,7 @@
 
 #' @importFrom rjson fromJSON
 #' @importFrom utils download.file
+#' @importFrom httr verbose
 
 .api.scaffold <- function(api.entry, url=NA, ID=NA, page=NA){
     # Argument handling and setup
