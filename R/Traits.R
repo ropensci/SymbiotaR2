@@ -15,9 +15,6 @@
 #' @name Traits
 #' @export
 
-#' @rdname Traits
-#' @name Traits
-
 Traits <- function(url=NA, ID=NA, page=NA){
   # Argument handling
   url <- .get.url(url)
