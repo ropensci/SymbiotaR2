@@ -24,7 +24,6 @@ Suggests:
 Imports:
     httr (>= 1.0.0),
     xml2 (>= 1.2.0),
-    jsonlite (>= 1.5),
     rjson (>= 0.2.20)
 Encoding: UTF-8
 RoxygenNote: 7.0.2
