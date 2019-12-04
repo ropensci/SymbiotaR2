@@ -9,6 +9,8 @@
 #' @param permissions \code{numeric} value referring to permissions argument used to pull reource.
 #' @return UserRoles resource requested
 #' @author Austin Koontz
+#' @rdname Users
+#' @name Users
 #' @export
 
 # UserRoles function--permissions argument is a binary (presence/absence)--need to reflect this in argument checks

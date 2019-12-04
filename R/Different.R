@@ -118,11 +118,6 @@ CharacterStateLanguages <- function(url=default.url,ID,page){
   }
 }
 
-#' @rdname Key
-#' @name Key
-#' @param character.ID Specifies the character.ID argument to include in the url in order to pull the Descriptions resource
-#' @param characterState.ID Specifies the character.ID argument to include in the url in order to pull the Descriptions resource
-#' @param taxa.ID Specifies the taxa.ID argument to include in the url in order to pull the Descriptions resource
 #' requires multiple arguments for pulling specific resource
 Descriptions <- function(url=default.url,character.ID,characterState.ID,taxa.ID,page){
   # If ID argument is present, retrieve the specific Descriptions resource corresponding to ID
@@ -170,8 +165,6 @@ Descriptions <- function(url=default.url,character.ID,characterState.ID,taxa.ID,
   }
 }
 
-#' @rdname Traits
-#' @name Traits
 # --requires multiple arguments for pulling specific resource, so code not yet refactored
 Attributes <- function(url=default.url,state.ID,occurrence.ID,page){
   # If ID argument is present, retrieve the specific Attributes resource corresponding to ID

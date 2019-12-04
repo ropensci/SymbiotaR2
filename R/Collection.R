@@ -16,8 +16,6 @@
 #' @name Collection
 #' @export
 
-#' @rdname Collection
-#' @name Collection
 Categories <- function(url=NA, ID=NA, page=NA){
     # Argument handling
     url <- .get.url(url)
@@ -34,8 +32,6 @@ Categories <- function(url=NA, ID=NA, page=NA){
     return(RObject)
 }
 
-#' @rdname Collection
-#' @name Collection
 Institutions <- function(url=NA, ID=NA, page=NA){
     # Argument handling
     url <- .get.url(url)
@@ -52,8 +48,6 @@ Institutions <- function(url=NA, ID=NA, page=NA){
     return(RObject)
 }
 
-#' @rdname Collection
-#' @name Collection
 Stats <- function(url=NA, ID=NA, page=NA){
     # Argument handling
     url <- .get.url(url)
@@ -70,8 +64,6 @@ Stats <- function(url=NA, ID=NA, page=NA){
     return(RObject)
 }
 
-#' @rdname Collection
-#' @name Collection
 Collections <- function(url=NA, ID=NA, page=NA){
   # Argument handling
   url <- .get.url(url)

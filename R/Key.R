@@ -15,8 +15,6 @@
 #' @name Key
 #' @export
 
-#' @rdname Key
-#' @name Key
 CharacterHeading <- function(url=NA, ID=NA, page=NA){
   # Argument handling
   url <- .get.url(url)
@@ -34,8 +32,6 @@ CharacterHeading <- function(url=NA, ID=NA, page=NA){
   return(RObject)
 }
 
-#' @rdname Key
-#' @name Key
 Characters <- function(url=NA, ID=NA, page=NA){
   # Argument handling
   url <- .get.url(url)
@@ -53,8 +49,6 @@ Characters <- function(url=NA, ID=NA, page=NA){
   return(output)
 }
 
-#' @rdname Key
-#' @name Key
 CharacterStateImages <- function(url=NA, ID=NA, page=NA){
   # Argument handling
   url <- .get.url(url)
@@ -72,8 +66,6 @@ CharacterStateImages <- function(url=NA, ID=NA, page=NA){
   return(RObject)
 }
 
-#' @rdname Key
-#' @name Key
 CharacterStates <- function(url=NA, ID=NA, page=NA){
   # Argument handling
   url <- .get.url(url)
@@ -93,8 +85,6 @@ CharacterStates <- function(url=NA, ID=NA, page=NA){
   }
 }
 
-#' @rdname Key
-#' @name Key
 DescriptionDeletions <- function(url=NA, ID=NA, page=NA){
   # Argument handling
   url <- .get.url(url)

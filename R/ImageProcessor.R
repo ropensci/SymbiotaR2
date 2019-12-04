@@ -15,8 +15,6 @@
 #' @name ImagePRocessor
 #' @export
 
-#' @rdname ImagePRocessor
-#' @name ImagePRocessor
 Projects <- function(url=NA, ID=NA, page=NA){
   # Argument handling
   url <- .get.url(url)
@@ -34,8 +32,6 @@ Projects <- function(url=NA, ID=NA, page=NA){
   return(RObject)
 }
 
-#' @rdname ImagePRocessor
-#' @name ImagePRocessor
 RawLabels <- function(url=NA, ID=NA, page=NA){
   # Argument handling
   url <- .get.url(url)

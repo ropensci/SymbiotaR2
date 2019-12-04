@@ -16,8 +16,6 @@
 #' @name Checklists
 #' @export
 
-#' @rdname Checklists
-#' @name Checklists
 ChecklistProjects <- function(url=NA, ID=NA, page=NA){
   # Argument handling
   url <- .get.url(url)
@@ -39,8 +37,6 @@ ChecklistProjects <- function(url=NA, ID=NA, page=NA){
   }
 }
 
-#' @rdname Checklists
-#' @name Checklists
 Coordinates <- function(url=NA, ID=NA, page=NA){
     # Argument handling
     url <- .get.url(url)
@@ -62,8 +58,6 @@ Coordinates <- function(url=NA, ID=NA, page=NA){
     }
 }
 
-#' @rdname Checklists
-#' @name Checklists
 TaxaLink <- function(url=NA, ID=NA, page=NA){
     # Argument handling
     url <- .get.url(url)
@@ -82,8 +76,6 @@ TaxaLink <- function(url=NA, ID=NA, page=NA){
     return(RObject)
 }
 
-#' @rdname Checklists
-#' @name Checklists
 Checklists <- function(url=NA, ID=NA, page=NA){
   # Argument handling
   url <- .get.url(url)
