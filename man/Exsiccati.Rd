@@ -3,12 +3,9 @@
 \name{Exsiccati}
 \alias{Exsiccati}
 \alias{Numbers}
-\alias{Titles}
 \title{Retrieves Exsiccati resources from the Symbiota2 server}
 \usage{
 Numbers(url = NA, ID = NA, page = NA)
-
-Titles(url = NA, ID = NA, page = NA)
 }
 \arguments{
 \item{url}{URL of the Symbiota2 portal connected to}

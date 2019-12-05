@@ -3,71 +3,9 @@
 \name{Occurrences}
 \alias{Occurrences}
 \alias{AccessStats}
-\alias{Determinations}
-\alias{Duplicates}
-\alias{EditLocks}
-\alias{Edits}
-\alias{FullText}
-\alias{GuidDeterminations}
-\alias{GuidOccurrences}
-\alias{LookupChronostratigraphy}
-\alias{LookupCounties}
-\alias{LookupCountries}
-\alias{LookupStateProvinces}
-\alias{UploadMappings}
-\alias{UploadParameters}
-\alias{Verification}
-\alias{Associations}
-\alias{Comments}
-\alias{DatasetLink}
-\alias{Datasets}
-\alias{Exchange}
-\alias{Loans}
 \title{Retrieves Occurrence resources from the Symbiota2 server}
 \usage{
 AccessStats(url = NA, ID = NA, page = NA)
-
-Determinations(url = NA, ID = NA, page = NA)
-
-Duplicates(url = NA, ID = NA, page = NA)
-
-EditLocks(url = NA, ID = NA, page = NA)
-
-Edits(url = NA, ID = NA, page = NA)
-
-FullText(url = NA, ID = NA, page = NA)
-
-GuidDeterminations(url = NA, ID = NA, page = NA)
-
-GuidOccurrences(url = NA, ID = NA, page = NA)
-
-LookupChronostratigraphy(url = NA, ID = NA, page = NA)
-
-LookupCounties(url = NA, ID = NA, page = NA)
-
-LookupCountries(url = NA, ID = NA, page = NA)
-
-LookupStateProvinces(url = NA, ID = NA, page = NA)
-
-UploadMappings(url = NA, ID = NA, page = NA)
-
-UploadParameters(url = NA, ID = NA, page = NA)
-
-Verification(url = NA, ID = NA, page = NA)
-
-Associations(url = NA, ID = NA, page = NA)
-
-Comments(url = NA, ID = NA, page = NA)
-
-DatasetLink(url = NA, ID = NA, page = NA)
-
-Datasets(url = NA, ID = NA, page = NA)
-
-Exchange(url = NA, ID = NA, page = NA)
-
-Loans(url = NA, ID = NA, page = NA)
-
-Occurrences(url = NA, ID = NA, page = NA)
 }
 \arguments{
 \item{url}{URL of the Symbiota2 portal connected to}

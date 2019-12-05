@@ -2,12 +2,9 @@
 % Please edit documentation in R/Glossary.R
 \name{Glossary}
 \alias{Glossary}
-\alias{TermLink}
 \title{Retrieves Glossary resources from the Symbiota2 server}
 \usage{
 Glossary(url = NA, ID = NA, page = NA)
-
-TermLink(url = NA, ID = NA, page = NA)
 }
 \arguments{
 \item{url}{URL of the Symbiota2 portal connected to}
