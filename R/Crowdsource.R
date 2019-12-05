@@ -16,6 +16,7 @@
 #' @name Crowdsource
 #' @export
 
+#' @rdname Crowdsource
 Central <- function(url=NA, ID=NA, page=NA){
   # Argument handling
   url <- .get.url(url)
@@ -32,6 +33,7 @@ Central <- function(url=NA, ID=NA, page=NA){
   return(RObject)
 }
 
+#' @rdname Crowdsource
 Queue <- function(url=NA, ID=NA, page=NA){
   # Argument handling
   url <- .get.url(url)

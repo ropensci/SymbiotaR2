@@ -15,6 +15,7 @@
 #' @name Miscellaneous
 #' @export
 
+#' @rdname Miscellaneous
 Configurations <- function(url=NA, ID=NA, page=NA){
   # Argument handling
   url <- .get.url(url)
@@ -32,6 +33,7 @@ Configurations <- function(url=NA, ID=NA, page=NA){
   return(RObject)
 }
 
+#' @rdname Miscellaneous
 LookupLanguages <- function(url=NA, ID=NA, page=NA){
   # Argument handling
   url <- .get.url(url)
@@ -49,6 +51,7 @@ LookupLanguages <- function(url=NA, ID=NA, page=NA){
   return(RObject)
 }
 
+#' @rdname Miscellaneous
 SchemaVersion <- function(url=NA, ID=NA, page=NA){
   # Argument handling
   url <- .get.url(url)

@@ -15,6 +15,7 @@
 #' @name Exsiccati
 #' @export
 
+#' @rdname Exisccati
 Numbers <- function(url=NA, ID=NA, page=NA){
   # Argument handling
   url <- .get.url(url)
@@ -35,7 +36,8 @@ Numbers <- function(url=NA, ID=NA, page=NA){
     return(RObject)
   }
 }
- 
+
+#' @rdname Exisccati 
 Titles <- function(url=NA, ID=NA, page=NA){
   # Argument handling
   url <- .get.url(url)

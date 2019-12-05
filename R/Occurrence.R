@@ -15,6 +15,7 @@
 #' @name Occurrences
 #' @export
 
+#' @rdname Occurrences
 AccessStats <- function(url=NA, ID=NA, page=NA){
   # Argument handling
   url <- .get.url(url)
@@ -32,6 +33,7 @@ AccessStats <- function(url=NA, ID=NA, page=NA){
   return(RObject)
 }
 
+#' @rdname Occurrences
 Determinations <- function(url=NA, ID=NA, page=NA){
   # Argument handling
   url <- .get.url(url)
@@ -49,6 +51,7 @@ Determinations <- function(url=NA, ID=NA, page=NA){
   return(RObject)
 }
 
+#' @rdname Occurrences
 Duplicates <- function(url=NA, ID=NA, page=NA){
   # Argument handling
   url <- .get.url(url)
@@ -66,6 +69,7 @@ Duplicates <- function(url=NA, ID=NA, page=NA){
   return(RObject)
 }
 
+#' @rdname Occurrences
 EditLocks <- function(url=NA, ID=NA, page=NA){
   # Argument handling
   url <- .get.url(url)
@@ -83,6 +87,7 @@ EditLocks <- function(url=NA, ID=NA, page=NA){
   return(RObject)
 }
 
+#' @rdname Occurrences
 Edits <- function(url=NA, ID=NA, page=NA){
   # Argument handling
   url <- .get.url(url)
@@ -100,6 +105,7 @@ Edits <- function(url=NA, ID=NA, page=NA){
   return(RObject)
 }
 
+#' @rdname Occurrences
 FullText <- function(url=NA, ID=NA, page=NA){
   # Argument handling
   url <- .get.url(url)
@@ -117,6 +123,7 @@ FullText <- function(url=NA, ID=NA, page=NA){
   return(RObject)
 }
 
+#' @rdname Occurrences
 GuidDeterminations <- function(url=NA, ID=NA, page=NA){
   # Argument handling
   url <- .get.url(url)
@@ -134,6 +141,7 @@ GuidDeterminations <- function(url=NA, ID=NA, page=NA){
   return(RObject)
 }
 
+#' @rdname Occurrences
 GuidOccurrences <- function(url=NA, ID=NA, page=NA){
   # Argument handling
   url <- .get.url(url)
@@ -151,6 +159,7 @@ GuidOccurrences <- function(url=NA, ID=NA, page=NA){
   return(RObject)
 }
 
+#' @rdname Occurrences
 LookupChronostratigraphy <- function(url=NA, ID=NA, page=NA){
   # Argument handling
   url <- .get.url(url)
@@ -170,6 +179,7 @@ LookupChronostratigraphy <- function(url=NA, ID=NA, page=NA){
   }
 }
 
+#' @rdname Occurrences
 LookupCounties <- function(url=NA, ID=NA, page=NA){
   # Argument handling
   url <- .get.url(url)
@@ -187,6 +197,7 @@ LookupCounties <- function(url=NA, ID=NA, page=NA){
   return(RObject)
 }
 
+#' @rdname Occurrences
 LookupCountries <- function(url=NA, ID=NA, page=NA){
   # Argument handling
   url <- .get.url(url)
@@ -204,6 +215,7 @@ LookupCountries <- function(url=NA, ID=NA, page=NA){
   return(RObject)
 }
 
+#' @rdname Occurrences
 LookupStateProvinces <- function(url=NA, ID=NA, page=NA){
   # Argument handling
   url <- .get.url(url)
@@ -221,6 +233,7 @@ LookupStateProvinces <- function(url=NA, ID=NA, page=NA){
   return(RObject)
 }
 
+#' @rdname Occurrences
 UploadMappings <- function(url=NA, ID=NA, page=NA){
   # Argument handling
   url <- .get.url(url)
@@ -238,6 +251,7 @@ UploadMappings <- function(url=NA, ID=NA, page=NA){
   return(RObject)
 }
 
+#' @rdname Occurrences
 UploadParameters <- function(url=NA, ID=NA, page=NA){
   # Argument handling
   url <- .get.url(url)
@@ -255,6 +269,7 @@ UploadParameters <- function(url=NA, ID=NA, page=NA){
   return(RObject)
 }
 
+#' @rdname Occurrences
 Verification <- function(url=NA, ID=NA, page=NA){
   # Argument handling
   url <- .get.url(url)
@@ -272,6 +287,7 @@ Verification <- function(url=NA, ID=NA, page=NA){
   return(RObject)
 }
 
+#' @rdname Occurrences
 Associations <- function(url=NA, ID=NA, page=NA){
   # Argument handling
   url <- .get.url(url)
@@ -289,6 +305,7 @@ Associations <- function(url=NA, ID=NA, page=NA){
   return(RObject)
 }
 
+#' @rdname Occurrences
 Comments <- function(url=NA, ID=NA, page=NA){
   # Argument handling
   url <- .get.url(url)
@@ -306,6 +323,7 @@ Comments <- function(url=NA, ID=NA, page=NA){
   return(RObject)
 }
 
+#' @rdname Occurrences
 DatasetLink <- function(url=NA, ID=NA, page=NA){
   # Argument handling
   url <- .get.url(url)
@@ -323,6 +341,7 @@ DatasetLink <- function(url=NA, ID=NA, page=NA){
   return(RObject)
 }
 
+#' @rdname Occurrences
 Datasets <- function(url=NA, ID=NA, page=NA){
   # Argument handling
   url <- .get.url(url)
@@ -340,6 +359,7 @@ Datasets <- function(url=NA, ID=NA, page=NA){
   return(RObject)
 }
 
+#' @rdname Occurrences
 Exchange <- function(url=NA, ID=NA, page=NA){
   # Argument handling
   url <- .get.url(url)
@@ -357,6 +377,7 @@ Exchange <- function(url=NA, ID=NA, page=NA){
   return(RObject)
 }
 
+#' @rdname Occurrences
 Loans <- function(url=NA, ID=NA, page=NA){
   # Argument handling
   url <- .get.url(url)
@@ -374,6 +395,7 @@ Loans <- function(url=NA, ID=NA, page=NA){
   return(RObject)
 }
 
+#' @rdname Occurrences
 Occurrences <- function(url=NA, ID=NA, page=NA){
   # Argument handling
   url <- .get.url(url)

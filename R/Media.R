@@ -15,7 +15,8 @@
 #' @name Media
 #' @export
 
-#' --ID must be a string rather than a numeric; consider adding an argument check
+#' @rdname Media
+# ID must be a string rather than a numeric; consider adding an argument check
 TagKey <- function(url=NA, ID=NA, page=NA){
   # Argument handling
   url <- .get.url(url)

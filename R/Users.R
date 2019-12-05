@@ -13,6 +13,7 @@
 #' @name Users
 #' @export
 
+#' @rdname Users
 # UserRoles function--permissions argument is a binary (presence/absence)--need to reflect this in argument checks
 UserRoles <- function(url=NA, ID=NA , permissions=NA){
   # If permissions argument is absent, retrieve the specific UserRoles resource corresponding to ID
