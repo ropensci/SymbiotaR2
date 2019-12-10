@@ -12,6 +12,7 @@
 #' @param append \code{logical} of whether to attempt to append this
 #'     to your \code{.Rprofile} file, making this your default every
 #'     time you start up \code{R}
+#' @param verbose \code{logical} of whether or not to display output
 #' @return Invisbly, the URL that has been stored
 #' @author Will Pearse
 #' @examples
