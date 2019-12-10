@@ -1,4 +1,5 @@
 # Traits test
+url <- "http://a02235015-6.bluezone.usu.edu/api/"
 
 context("Traits")
 use_cassette(name="Traits_ID", {

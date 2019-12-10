@@ -1,4 +1,5 @@
 # Exsiccati tests
+url <- "http://a02235015-6.bluezone.usu.edu/api/"
 
 context("Numbers")
 use_cassette(name="Numbers_ID", {

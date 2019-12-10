@@ -1,4 +1,5 @@
 # Crowdsource tests
+url <- "http://a02235015-6.bluezone.usu.edu/api/"
 
 context("Central")
 use_cassette(name="Central_ID", {

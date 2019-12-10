@@ -1,4 +1,5 @@
 # Media tests
+url <- "http://a02235015-6.bluezone.usu.edu/api/"
 
 context("TagKey")
 use_cassette(name="TagKey_ID", {

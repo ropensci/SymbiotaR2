@@ -1,4 +1,5 @@
 # Glossary tests
+url <- "http://a02235015-6.bluezone.usu.edu/api/"
 
 context("Glossary")
 use_cassette(name="Glossary_ID", {

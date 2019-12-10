@@ -1,4 +1,5 @@
 # Taxa tests
+url <- "http://a02235015-6.bluezone.usu.edu/api/"
 
 context("Taxa")
 use_cassette(name="Taxa_ID", {

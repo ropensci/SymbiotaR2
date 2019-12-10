@@ -1,4 +1,5 @@
 # Checklist tests
+url <- "http://a02235015-6.bluezone.usu.edu/api/"
 
 context("ChecklistProjects")
 use_cassette(name="ChecklistProjects_ID", {
@@ -15,7 +16,6 @@ use_cassette(name="ChecklistProjects_page", {
     expect_type(data, "list")
   })
 })
-
 context("Coordinates")
 use_cassette(name="Coordinates_ID",{
   test_that("Coordinates_ID",{

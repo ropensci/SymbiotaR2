@@ -1,4 +1,5 @@
 # Users tests
+url <- "http://a02235015-6.bluezone.usu.edu/api/"
 
 context("UserRoles")
 use_cassette(name="UserRoles_ID", {

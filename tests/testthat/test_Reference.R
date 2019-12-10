@@ -1,4 +1,5 @@
 # Reference tests
+url <- "http://a02235015-6.bluezone.usu.edu/api/"
 
 context("LookupReferenceTypes")
 use_cassette(name="LookupReferenceTypes_ID", {

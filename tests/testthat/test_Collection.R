@@ -1,4 +1,5 @@
 # Collection tests
+url <- "http://a02235015-6.bluezone.usu.edu/api/"
 
 context("Categories")
 use_cassette(name="Categories_ID",{

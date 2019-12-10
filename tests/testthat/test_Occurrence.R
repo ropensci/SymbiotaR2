@@ -1,4 +1,5 @@
 # Occurrence tests
+url <- "http://a02235015-6.bluezone.usu.edu/api/"
 
 context("AccessStats")
 use_cassette(name="AccessStats_ID", {

@@ -1,4 +1,5 @@
 # Miscellaneous tests
+url <- "http://a02235015-6.bluezone.usu.edu/api/"
 
 context("Configurations")
 use_cassette(name="Configurations_ID", {

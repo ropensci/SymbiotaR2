@@ -1,4 +1,5 @@
 # ImageProcessor tests
+url <- "http://a02235015-6.bluezone.usu.edu/api/"
 
 context("Projects")
 use_cassette(name="Projects_ID", {
