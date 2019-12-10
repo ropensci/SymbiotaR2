@@ -3,9 +3,12 @@
 \name{ImagePRocessor}
 \alias{ImagePRocessor}
 \alias{Projects}
+\alias{RawLabels}
 \title{Retrieves ImageProcessor resources from the Symbiota2 server}
 \usage{
 Projects(url = NA, ID = NA, page = NA)
+
+RawLabels(url = NA, ID = NA, page = NA)
 }
 \arguments{
 \item{url}{URL of the Symbiota2 portal connected to}

@@ -2,9 +2,18 @@
 % Please edit documentation in R/Taxa.R
 \name{Taxa}
 \alias{Taxa}
+\alias{Authorities}
+\alias{DescriptionBlock}
+\alias{Synonymy}
 \title{Retrieves Taxa resources from the Symbiota2 server}
 \usage{
 Taxa(url = NA, ID = NA, page = NA)
+
+Authorities(url = NA, ID = NA, page = NA)
+
+DescriptionBlock(url = NA, ID = NA, page = NA)
+
+Synonymy(url = NA, ID = NA, page = NA)
 }
 \arguments{
 \item{url}{URL of the Symbiota2 portal connected to}

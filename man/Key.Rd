@@ -3,9 +3,21 @@
 \name{Key}
 \alias{Key}
 \alias{CharacterHeading}
+\alias{Characters}
+\alias{CharacterStateImages}
+\alias{CharacterStates}
+\alias{DescriptionDeletions}
 \title{Retrieves Key resources from the Symbiota2 server}
 \usage{
 CharacterHeading(url = NA, ID = NA, page = NA)
+
+Characters(url = NA, ID = NA, page = NA)
+
+CharacterStateImages(url = NA, ID = NA, page = NA)
+
+CharacterStates(url = NA, ID = NA, page = NA)
+
+DescriptionDeletions(url = NA, ID = NA, page = NA)
 }
 \arguments{
 \item{url}{URL of the Symbiota2 portal connected to}

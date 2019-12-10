@@ -3,9 +3,17 @@
 \name{Checklists}
 \alias{Checklists}
 \alias{ChecklistProjects}
+\alias{Coordinates}
+\alias{TaxaLink}
 \title{Retrieves Checklists resources from the Symbiota2 server}
 \usage{
 ChecklistProjects(url = NA, ID = NA, page = NA)
+
+Coordinates(url = NA, ID = NA, page = NA)
+
+TaxaLink(url = NA, ID = NA, page = NA)
+
+Checklists(url = NA, ID = NA, page = NA)
 }
 \arguments{
 \item{url}{URL of the Symbiota2 portal connected to}

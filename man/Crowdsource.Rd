@@ -3,9 +3,12 @@
 \name{Crowdsource}
 \alias{Crowdsource}
 \alias{Central}
+\alias{Queue}
 \title{Retrieves Crowdsource resources from the Symbiota2 server}
 \usage{
 Central(url = NA, ID = NA, page = NA)
+
+Queue(url = NA, ID = NA, page = NA)
 }
 \arguments{
 \item{url}{URL of the Symbiota2 portal connected to}

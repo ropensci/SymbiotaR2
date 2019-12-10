@@ -3,9 +3,18 @@
 \name{Collection}
 \alias{Collection}
 \alias{Categories}
+\alias{Institutions}
+\alias{Stats}
+\alias{Collections}
 \title{Retrieves Collection resources from the Symbiota2 server}
 \usage{
 Categories(url = NA, ID = NA, page = NA)
+
+Institutions(url = NA, ID = NA, page = NA)
+
+Stats(url = NA, ID = NA, page = NA)
+
+Collections(url = NA, ID = NA, page = NA)
 }
 \arguments{
 \item{url}{URL of the Symbiota2 portal connected to}

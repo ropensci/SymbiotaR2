@@ -13,6 +13,8 @@ appended if it is not given)}
 \item{append}{\code{logical} of whether to attempt to append this
 to your \code{.Rprofile} file, making this your default every
 time you start up \code{R}}
+
+\item{verbose}{\code{logical} of whether or not to display output}
 }
 \value{
 Invisbly, the URL that has been stored

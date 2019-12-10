@@ -3,9 +3,15 @@
 \name{Miscellaneous}
 \alias{Miscellaneous}
 \alias{Configurations}
+\alias{LookupLanguages}
+\alias{SchemaVersion}
 \title{Retrieves Miscellaneous resources from the Symbiota2 server}
 \usage{
 Configurations(url = NA, ID = NA, page = NA)
+
+LookupLanguages(url = NA, ID = NA, page = NA)
+
+SchemaVersion(url = NA, ID = NA, page = NA)
 }
 \arguments{
 \item{url}{URL of the Symbiota2 portal connected to}
