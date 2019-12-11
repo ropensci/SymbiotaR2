@@ -3,6 +3,8 @@
 #' @importFrom rjson fromJSON
 #' @importFrom utils download.file
 #' @importFrom httr verbose
+#' @importFrom fs path_home
+#' @import xml2
 
 .api.scaffold <- function(api.entry, url=NA, ID=NA, page=NA){
     # Argument handling and setup
