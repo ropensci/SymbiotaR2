@@ -10,7 +10,7 @@
 #' @param page \code{numeric} value referring to the page of Crowdsource resources to pull. If neither an
 #' ID or a page parameter is provided, function will pull the first page of resources (i.e. \code{page=1}`)
 #' @return If using \code{ID}, the specific Crowdsource resource specified; 
-#' If using page, the \code{page} specified of Crowdsource resources
+#' if using page, the \code{page} specified of Crowdsource resources
 #' @author Austin Koontz
 #' @rdname Crowdsource
 #' @name Crowdsource

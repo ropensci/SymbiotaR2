@@ -10,7 +10,7 @@
 #' @param page \code{numeric} value referring to the page of Checklist resources to pull. If neither an
 #' ID or a page parameter is provided, function will pull the first page of resources (i.e. \code{page=1}`)
 #' @return If using \code{ID}, the specific Checklist resource specified; 
-#' If using page, the \code{page} specified of Checklist resources
+#' if using page, the \code{page} specified of Checklist resources
 #' @author Austin Koontz
 #' @rdname Checklists
 #' @name Checklists

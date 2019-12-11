@@ -8,7 +8,7 @@
 #' @param ID ID value (usually \code{numeric}, but not always) used to refer to the specific resource to pull from the database
 #' @param page \code{numeric} value referring to the page of ImageProcessor resources to pull. If neither an
 #' ID or a page parameter is provided, function will pull the first page of resources (i.e. \code{page=1}`)
-#' @return If using \code{ID}, the specific ImageProcessor resource specified; If using page, the \code{page} specified
+#' @return If using \code{ID}, the specific ImageProcessor resource specified; if using page, the \code{page} specified
 #' of ImageProcessor resources
 #' @author Austin Koontz
 #' @rdname ImagePRocessor

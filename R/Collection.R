@@ -10,7 +10,7 @@
 #' @param page \code{numeric} value referring to the page of Collection resources to pull. If neither an
 #' ID or a page parameter is provided, function will pull the first page of resources (i.e. \code{page=1}`)
 #' @return If using \code{ID}, the specific Collection resource specified; 
-#' If using page, the \code{page} specified of Collection resources
+#' if using page, the \code{page} specified of Collection resources
 #' @author Austin Koontz
 #' @rdname Collection
 #' @name Collection
