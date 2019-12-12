@@ -22,18 +22,20 @@ affiliations:
 # Summary
 
 `SymbiotaR2` is an R [@R2018] package for easily accessing and handling 
-specimen-based Symbiota2 data within an R environment. This allows anyone
-to establish a connection to a Symbiota2 database anywhere and download 
-digitized biological collection data from that database. The downloaded 
-data can then be manipulated in the R environment for the purpose of 
-whatever analysis is being conducted. 
+specimen-based Symbiota2 data within an R environment, allowing anyone
+to download digitized biological collection data from any established 
+database. Symbiota2 is the updated version of Symbiota [Symbiota2014], a
+widely used software platform that grants access to data from hundreds of
+museums and herbaria across the United States. Through a complete refactoring
+of the Symbiota code, the structure of Symbiota2 places an emphasis on modularity
+and accessibility.
 
-For instance, the code below demonstrates a user accessing a particular 
-Symbiota2 database and pulling coordinate and trait values associated with a 
+The code below provides and example of a user accessing a Symbiota2 
+database and pulling coordinate and trait values associated with a 
 certain database entry. The specification of the `url` argument allows
 for users to use whatever web address corresponds to the webpage hosting the
 API of the Symbiota2 database of interest. Then, through using two separate
-commands (Coordinates and Traits), data regarding a particular entry within
+commands (`Coordinates` and `Traits`), data regarding a particular entry within
 the database is pulled into R. 
 ```{R}
 # Specify web address from which to access Symbiota2 API
@@ -65,4 +67,10 @@ List of 16
  $ modifiedUserId   : logi NA
  $ taxaId           : chr "/api/taxa/2075"
 ```
+From here, these R objects be manipulated and used for any downstream analysis. 
+The library provides built in commands for all of the default API endpoints 
+included for any given Symbiota2 portal. These endpoints include access to 
+several different resources: trait data, taxonomic classification, 
+collector information, and much more. 
+
 # References
