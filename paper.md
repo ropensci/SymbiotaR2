@@ -30,13 +30,16 @@ museums and herbaria across the United States. Through a complete refactoring
 of the Symbiota code, the structure of Symbiota2 places an emphasis on modularity
 and accessibility.
 
-The code below provides and example of a user accessing a Symbiota2 
-database and pulling coordinate and trait values associated with a 
-certain database entry. The specification of the `url` argument allows
-for users to use whatever web address corresponds to the webpage hosting the
-API of the Symbiota2 database of interest. Then, through using two separate
-commands (`Coordinates` and `Traits`), data regarding a particular entry within
-the database is pulled into R. 
+The code below provides an example of a user accessing two different data types
+from two different entries within a Symbiota2  database. The first set of commands
+demonstrates a user accessing coordinate points from an entry (here, `ID=4`) 
+using the "Checklist" API endpoint. The second command set demonstrates a 
+retrieval of the reproductive condition of an entry (here, `ID=15`) using the 
+"Occurrences" API endpoint. The specification of the `url` argument 
+at the beginning allows for users to use whatever web address corresponds to 
+the webpage hosting the API of the Symbiota2 database of interest. Then, 
+through using two separate commands (`Coordinates` and `Occurrences`), data 
+regarding a particular entry within the database is pulled into R. 
 ```{R}
 # Specify web address from which to access Symbiota2 API
 > url <- "http://a02235015-6.bluezone.usu.edu/api/"
@@ -46,26 +49,11 @@ the database is pulled into R.
 > print(coordinates)
 [1]   32.2106 -110.9208
 
-# Pull trait values associated with database entry (ID=4)
-> traits <- Traits(url=url, ID=4)
-> print(traits)
-List of 16
- $ @context         : chr "/api/contexts/Traits"
- $ @id              : chr "/api/traits/4"
- $ @type            : chr "Traits"
- $ id               : num 4
- $ traitName        : chr "Phenology: fruiting"
- $ traitType        : chr "UM"
- $ units            : logi NA
- $ description      : logi NA
- $ referenceUrl     : chr "http://purl.org/nevp/vocabulary/reproductive-phenology#11"
- $ notes            : logi NA
- $ dynamicProperties: chr "[{\"controlType\":\"radio\"}]"
- $ modifiedTimestamp: logi NA
- $ initialTimestamp : chr "2019-01-12T10:57:40+00:00"
- $ createdUserId    : logi NA
- $ modifiedUserId   : logi NA
- $ taxaId           : chr "/api/taxa/2075"
+# Pull occurrence information associated with database entry (ID=15)
+> test.occurrence <- Occurrencess(url=url, ID=15)
+# Find reproductive condition for entry of interest
+> print(test.occurrence$reproductiveCondition)
+[1]   "bud"
 ```
 From here, these R objects be manipulated and used for any downstream analysis. 
 The library provides built in commands for all of the default API endpoints 
