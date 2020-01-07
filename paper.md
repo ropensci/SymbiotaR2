@@ -30,30 +30,27 @@ museums and herbaria across the United States. Through a complete refactoring
 of the Symbiota code, the structure of Symbiota2 places an emphasis on modularity
 and accessibility.
 
-The code below provides an example of a user accessing two different data types
-from two different entries within a Symbiota2  database. The first set of commands
-demonstrates a user accessing coordinate points from an entry (here, `ID=4`) 
-using the "Checklist" API endpoint. The second command set demonstrates a 
-retrieval of the reproductive condition of an entry (here, `ID=15`) using the 
-"Occurrences" API endpoint. The specification of the `url` argument 
-at the beginning allows for users to use whatever web address corresponds to 
-the webpage hosting the API of the Symbiota2 database of interest. Then, 
-through using two separate commands (`Coordinates` and `Occurrences`), data 
-regarding a particular entry within the database is pulled into R. 
+The code below provides an example of a user accessing two different attributes
+from the same entry within a Symbiota2  database. First, data from a particular 
+entry (here, `ID=28`) is pulled into R using the "Occurrences" API endpoint. 
+Then, different attributes associated with this entry (`reproductiveCondition`,
+`decimalLatitude`, and `decimalLongitude`) are printed. The specification of the 
+`url` argument (at the beginning of the example) allows for users to reference 
+the web address corresponding to any Symbiota2 portal of interest.
 ```{R}
 # Specify web address from which to access Symbiota2 API
 > url <- "http://a02235015-6.bluezone.usu.edu/api/"
 
-# Pull coordinate values associated with database entry (ID=4)
-> coordinates <- Coordinates(url=url, ID=4)
-> print(coordinates)
-[1]   32.2106 -110.9208
+# Pull occurrence information associated with database entry (ID=28)
+> test.Occ <- Occurrences(url=url, ID=28)
 
-# Pull occurrence information associated with database entry (ID=15)
-> test.occurrence <- Occurrencess(url=url, ID=15)
 # Find reproductive condition for entry of interest
-> print(test.occurrence$reproductiveCondition)
+> print(test.Occ$reproductiveCondition)
 [1]   "bud"
+# Retrieve and concatenate coordinates for entry of interest
+> test.coord <- c(test.Occ$decimalLatitude, test.Occ$decimalLongitude)
+> print(test.coord)
+[1]   50.70 -103.65
 ```
 From here, these R objects be manipulated and used for any downstream analysis. 
 The library provides built in commands for all of the default API endpoints 
