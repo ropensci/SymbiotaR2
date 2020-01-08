@@ -3,6 +3,10 @@ title: "Downloading data from Symbiota2 portals in R"
 author: "Austin Koontz & William D. Pearse"
 date: "11/27/2019"
 output: html_document
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  \usepackage[utf8]{inputenc}
 ---
 
 #### Overview

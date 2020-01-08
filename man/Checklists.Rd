@@ -26,7 +26,7 @@ ID or a page parameter is provided, function will pull the first page of resourc
 }
 \value{
 If using \code{ID}, the specific Checklist resource specified; 
-If using page, the \code{page} specified of Checklist resources
+if using page, the \code{page} specified of Checklist resources
 }
 \description{
 Functions that retrieve Checklist resources from the server previously connected to.

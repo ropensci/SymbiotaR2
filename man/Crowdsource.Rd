@@ -21,7 +21,7 @@ ID or a page parameter is provided, function will pull the first page of resourc
 }
 \value{
 If using \code{ID}, the specific Crowdsource resource specified; 
-If using page, the \code{page} specified of Crowdsource resources
+if using page, the \code{page} specified of Crowdsource resources
 }
 \description{
 Functions that retrieve Crowdsource resources from the server previously connected to.

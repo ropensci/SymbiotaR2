@@ -18,7 +18,7 @@ TermLink(url = NA, ID = NA, page = NA)
 ID or a page parameter is provided, function will pull the first page of resources (i.e. \code{page=1}`)}
 }
 \value{
-If using \code{ID}, the specific Glossary resource specified; If using page, the \code{page} specified
+If using \code{ID}, the specific Glossary resource specified; if using page, the \code{page} specified
 of Glossary resources
 }
 \description{
