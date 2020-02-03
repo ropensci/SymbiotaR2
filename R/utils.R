@@ -1,7 +1,7 @@
 # Internal functions used for SymbiotaR2 package
 #' @importFrom rjson fromJSON
 #' @importFrom utils download.file
-#' @importFrom httr verbose GET
+#' @importFrom httr verbose GET stop_for_status
 #' @importFrom fs path_home
 #' @importFrom curl curl_download
 #' @import xml2
@@ -17,7 +17,8 @@
     # Grab a specific ID and return for processing
     if(!is.na(ID)){
         complete_url <- paste0(url,api.entry,"/",ID)
-        GET(url = complete_url, write_disk(dwn_file, overwrite = TRUE))
+        stop_for_status(GET(url = complete_url, write_disk(dwn_file, overwrite = TRUE)))
+        #GET(url = complete_url, write_disk(dwn_file, overwrite = TRUE))
         #curl_download(url = complete_url, destfile = dwn_file)
         RObject <- fromJSON(file = dwn_file)
         for(i in seq_along(RObject))
