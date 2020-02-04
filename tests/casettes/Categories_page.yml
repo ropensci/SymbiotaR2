@@ -1,1 +1,72 @@
-
+http_interactions:
+- request:
+    method: get
+    uri: http://a02235015-6.bluezone.usu.edu/api/
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.17.4
+      content-type: application/ld+json; charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      vary: Accept
+      x-content-type-options: nosniff
+      x-frame-options: deny
+      cache-control: no-cache, private
+      date: Tue, 04 Feb 2020 18:15:40 GMT
+      link: <http://a02235015-6.bluezone.usu.edu/api/docs.jsonld>; rel="http://www.w3.org/ns/hydra/core#apiDocumentation"
+    body:
+      encoding: UTF-8
+      string: '{"@context":"\/api\/contexts\/Entrypoint","@id":"\/api","@type":"Entrypoint","configurations":"\/api\/configurations","schemaVersion":"\/api\/schemaversion","lookupLanguages":"\/api\/lookuplanguages","users":"\/api\/users","checklists":"\/api\/checklists","taxaComments":"\/api\/checklist\/taxacomments","children":"\/api\/checklist\/children","taxaLink":"\/api\/checklist\/taxalink","projectCategories":"\/api\/checklist\/projectcategories","vouchers":"\/api\/checklist\/vouchers","dynamic":"\/api\/checklist\/dynamic","checklistProjects":"\/api\/checklist\/checklistprojects","coordinates":"\/api\/checklist\/coordinates","stats":"\/api\/collection\/stats","institutions":"\/api\/collection\/institutions","collections":"\/api\/collections","categories":"\/api\/collection\/categories","queue":"\/api\/crowdsource\/queue","central":"\/api\/crowdsource\/central","titles":"\/api\/exsiccati\/titles","numbers":"\/api\/exsiccati\/numbers","sources":"\/api\/glossary\/sources","termLink":"\/api\/glossary\/termlink","glossary":"\/api\/glossary","projects":"\/api\/imageprocessor\/projects","nlpVersion":"\/api\/imageprocessor\/nlpversion","ocrFragment":"\/api\/imageprocessor\/ocrfragment","nlpFragment":"\/api\/imageprocessor\/nlpfragment","rawLabels":"\/api\/imageprocessor\/rawlabels","nlp":"\/api\/imageprocessor\/nlp","characterHeading":"\/api\/key\/characterheading","characterStateLanguages":"\/api\/key\/characterstatelanguages","characterLanguages":"\/api\/key\/characterlanguages","characters":"\/api\/key\/characters","descriptions":"\/api\/key\/descriptions","descriptionDeletions":"\/api\/key\/descriptiondeletions","characterStates":"\/api\/key\/characterstates","characterStateImages":"\/api\/key\/characterstateimages","tagKey":"\/api\/media\/tagkey","media":"\/api\/media","images":"\/api\/media\/images","guid":"\/api\/media\/guid","keywords":"\/api\/media\/keywords","tag":"\/api\/media\/tag","associations":"\/api\/occurrenceassociations\/associations","comments":"\/api\/occurrencecomments\/comments","datasetLink":"\/api\/occurrencedataset\/datasetlink","datasets":"\/api\/occurrencedataset\/datasets","genetic":"\/api\/occurrencegenetic\/genetic","exchange":"\/api\/occurrenceloan\/exchange","loans":"\/api\/occurrenceloan\/loans","revisions":"\/api\/occurrence\/revisions","edits":"\/api\/occurrence\/edits","uploadDeterminations":"\/api\/occurrence\/uploaddeterminations","fullText":"\/api\/occurrence\/fulltext","uploadParameters":"\/api\/occurrence\/uploadparameters","duplicates":"\/api\/occurrence\/duplicates","lookupChronostratigraphy":"\/api\/occurrence\/lookupchronostratigraphy","accessStats":"\/api\/occurrence\/accessstats","editLocks":"\/api\/occurrence\/editlocks","lookupCounties":"\/api\/occurrence\/lookupcounties","geoIndex":"\/api\/occurrence\/geoindex","lookupStateProvinces":"\/api\/occurrence\/lookupstateprovinces","occurrences":"\/api\/occurrences","determinations":"\/api\/occurrence\/determinations","verification":"\/api\/occurrence\/verification","uploadMappings":"\/api\/occurrence\/uploadmappings","lookupCountries":"\/api\/occurrence\/lookupcountries","identifiers":"\/api\/occurrence\/identifiers","guidOccurrences":"\/api\/occurrence\/guidoccurrences","uploadOccurrences":"\/api\/occurrence\/uploadoccurrences","guidDeterminations":"\/api\/occurrence\/guiddeterminations","lookupMunicipalities":"\/api\/occurrence\/lookupmunicipalities","checklistTaxaLink":"\/api\/reference\/checklisttaxalink","authors":"\/api\/reference\/authors","lookupReferenceTypes":"\/api\/reference\/lookupreferencetypes","references":"\/api\/references","descriptionBlock":"\/api\/taxa\/descriptionblock","synonymy":"\/api\/taxa\/synonymy","authorities":"\/api\/taxa\/authorities","taxa":"\/api\/taxa","resourceLinks":"\/api\/taxa\/resourcelinks","maps":"\/api\/taxa\/maps","descriptionStatements":"\/api\/taxa\/descriptionstatements","relationships":"\/api\/taxa\/relationships","upload":"\/api\/taxa\/upload","links":"\/api\/taxa\/links","userTaxonomy":"\/api\/taxa\/usertaxonomy","vernaculars":"\/api\/taxa\/vernaculars","ranks":"\/api\/taxa\/ranks","attributes":"\/api\/traits\/attributes","traits":"\/api\/traits","dependencies":"\/api\/traits\/dependencies","states":"\/api\/traits\/states"}'
+  recorded_at: 2020-02-04 18:15:40 GMT
+  recorded_with: vcr/0.3.0, webmockr/0.4.0
+- request:
+    method: get
+    uri: http://a02235015-6.bluezone.usu.edu/api/collection/categories?page=1
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.17.4
+      content-type: application/ld+json; charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      vary: Accept
+      x-content-type-options: nosniff
+      x-frame-options: deny
+      cache-control: private, must-revalidate
+      date: Tue, 04 Feb 2020 18:15:40 GMT
+      link: <http://a02235015-6.bluezone.usu.edu/api/docs.jsonld>; rel="http://www.w3.org/ns/hydra/core#apiDocumentation"
+      etag: '"071f8acf21dc1dcf309514211bc77f3d"'
+    body:
+      encoding: UTF-8
+      string: '{"@context":"\/api\/contexts\/Categories","@id":"\/api\/collection\/categories","@type":"hydra:Collection","hydra:member":[{"@id":"\/api\/collection\/categories\/1","@type":"Categories","id":1,"category":"Intermountain
+        Regional Herbaria Network","icon":null,"acronym":null,"url":null,"inclusive":1,"notes":null,"initialTimestamp":"2019-01-12T09:57:24+00:00","collectionId":["\/api\/collections\/7","\/api\/collections\/13","\/api\/collections\/18","\/api\/collections\/38","\/api\/collections\/45","\/api\/collections\/46","\/api\/collections\/47"]},{"@id":"\/api\/collection\/categories\/2","@type":"Categories","id":2,"category":"Arizona
+        - New Mexico Chapter","icon":null,"acronym":null,"url":null,"inclusive":1,"notes":null,"initialTimestamp":"2019-01-12T09:57:24+00:00","collectionId":["\/api\/collections\/1","\/api\/collections\/2","\/api\/collections\/3","\/api\/collections\/4","\/api\/collections\/5","\/api\/collections\/6","\/api\/collections\/8","\/api\/collections\/39","\/api\/collections\/40","\/api\/collections\/50"]},{"@id":"\/api\/collection\/categories\/3","@type":"Categories","id":3,"category":"Southern
+        Rocky Mountain Herbaria","icon":null,"acronym":null,"url":null,"inclusive":1,"notes":null,"initialTimestamp":"2019-01-12T09:57:24+00:00","collectionId":["\/api\/collections\/9","\/api\/collections\/11"]},{"@id":"\/api\/collection\/categories\/4","@type":"Categories","id":4,"category":"Northern
+        Great Plains Herbaria","icon":null,"acronym":null,"url":null,"inclusive":1,"notes":null,"initialTimestamp":"2019-01-12T09:57:24+00:00","collectionId":["\/api\/collections\/16","\/api\/collections\/17","\/api\/collections\/19"]},{"@id":"\/api\/collection\/categories\/6","@type":"Categories","id":6,"category":"Pacific
+        Herbaria","icon":null,"acronym":null,"url":null,"inclusive":1,"notes":null,"initialTimestamp":"2019-01-12T09:57:24+00:00","collectionId":["\/api\/collections\/14","\/api\/collections\/35","\/api\/collections\/48"]},{"@id":"\/api\/collection\/categories\/8","@type":"Categories","id":8,"category":"SERNEC
+        - Southeastern Herbaria","icon":null,"acronym":null,"url":null,"inclusive":1,"notes":null,"initialTimestamp":"2019-01-12T09:57:24+00:00","collectionId":["\/api\/collections\/15","\/api\/collections\/21","\/api\/collections\/24","\/api\/collections\/25","\/api\/collections\/26","\/api\/collections\/29","\/api\/collections\/30","\/api\/collections\/31","\/api\/collections\/32","\/api\/collections\/37","\/api\/collections\/41","\/api\/collections\/43"]},{"@id":"\/api\/collection\/categories\/9","@type":"Categories","id":9,"category":"North
+        American Network of Small Herbaria (NANSH)","icon":null,"acronym":null,"url":null,"inclusive":1,"notes":null,"initialTimestamp":"2019-01-12T09:57:24+00:00","collectionId":["\/api\/collections\/6","\/api\/collections\/34","\/api\/collections\/44","\/api\/collections\/48","\/api\/collections\/49"]},{"@id":"\/api\/collection\/categories\/10","@type":"Categories","id":10,"category":"Consortium
+        of Midwest Herbaria","icon":null,"acronym":null,"url":null,"inclusive":1,"notes":null,"initialTimestamp":"2019-01-12T09:57:24+00:00","collectionId":["\/api\/collections\/20","\/api\/collections\/22","\/api\/collections\/23","\/api\/collections\/27","\/api\/collections\/28","\/api\/collections\/33"]},{"@id":"\/api\/collection\/categories\/11","@type":"Categories","id":11,"category":"Mid-Atlantic
+        Herbaria","icon":null,"acronym":null,"url":null,"inclusive":1,"notes":null,"initialTimestamp":"2019-01-12T09:57:24+00:00","collectionId":["\/api\/collections\/10","\/api\/collections\/36"]},{"@id":"\/api\/collection\/categories\/12","@type":"Categories","id":12,"category":"Texas
+        Oklahoma Regional Consortium of Herbaria (TORCH)","icon":null,"acronym":null,"url":null,"inclusive":1,"notes":null,"initialTimestamp":"2019-01-12T09:57:24+00:00","collectionId":["\/api\/collections\/42"]}],"hydra:totalItems":10}'
+  recorded_at: 2020-02-04 18:15:40 GMT
+  recorded_with: vcr/0.3.0, webmockr/0.4.0
