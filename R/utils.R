@@ -30,7 +30,7 @@
     if(is.na(page))
         page <- 1
     complete_url <- paste0(url,api.entry,"?page=",page)
-    GET(url = complete_url, write_disk(dwn_file, overwrite = TRUE))
+    stop_for_status(GET(url = complete_url, write_disk(dwn_file, overwrite = TRUE)))
     #curl_download(url = complete_url, destfile = dwn_file)
     RObject <- fromJSON(file = dwn_file)
     return(RObject)
