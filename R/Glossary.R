@@ -32,6 +32,7 @@ Glossary <- function(url=NA, ID=NA, page=NA){
   return(RObject)
 }
 
+#' @export
 #' @rdname Glossary
 TermLink <- function(url=NA, ID=NA, page=NA){
   # Argument handling

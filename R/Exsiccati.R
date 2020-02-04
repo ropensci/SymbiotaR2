@@ -37,6 +37,7 @@ Numbers <- function(url=NA, ID=NA, page=NA){
   }
 }
 
+#' @export
 #' @rdname Exisccati 
 Titles <- function(url=NA, ID=NA, page=NA){
   # Argument handling

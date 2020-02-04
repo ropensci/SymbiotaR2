@@ -1,0 +1,81 @@
+http_interactions:
+- request:
+    method: get
+    uri: http://a02235015-6.bluezone.usu.edu/api/
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.17.4
+      content-type: application/ld+json; charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      vary: Accept
+      x-content-type-options: nosniff
+      x-frame-options: deny
+      cache-control: no-cache, private
+      date: Tue, 04 Feb 2020 20:17:16 GMT
+      link: <http://a02235015-6.bluezone.usu.edu/api/docs.jsonld>; rel="http://www.w3.org/ns/hydra/core#apiDocumentation"
+    body:
+      encoding: UTF-8
+      string: '{"@context":"\/api\/contexts\/Entrypoint","@id":"\/api","@type":"Entrypoint","configurations":"\/api\/configurations","schemaVersion":"\/api\/schemaversion","lookupLanguages":"\/api\/lookuplanguages","users":"\/api\/users","checklists":"\/api\/checklists","taxaComments":"\/api\/checklist\/taxacomments","children":"\/api\/checklist\/children","taxaLink":"\/api\/checklist\/taxalink","projectCategories":"\/api\/checklist\/projectcategories","vouchers":"\/api\/checklist\/vouchers","dynamic":"\/api\/checklist\/dynamic","checklistProjects":"\/api\/checklist\/checklistprojects","coordinates":"\/api\/checklist\/coordinates","stats":"\/api\/collection\/stats","institutions":"\/api\/collection\/institutions","collections":"\/api\/collections","categories":"\/api\/collection\/categories","queue":"\/api\/crowdsource\/queue","central":"\/api\/crowdsource\/central","titles":"\/api\/exsiccati\/titles","numbers":"\/api\/exsiccati\/numbers","sources":"\/api\/glossary\/sources","termLink":"\/api\/glossary\/termlink","glossary":"\/api\/glossary","projects":"\/api\/imageprocessor\/projects","nlpVersion":"\/api\/imageprocessor\/nlpversion","ocrFragment":"\/api\/imageprocessor\/ocrfragment","nlpFragment":"\/api\/imageprocessor\/nlpfragment","rawLabels":"\/api\/imageprocessor\/rawlabels","nlp":"\/api\/imageprocessor\/nlp","characterHeading":"\/api\/key\/characterheading","characterStateLanguages":"\/api\/key\/characterstatelanguages","characterLanguages":"\/api\/key\/characterlanguages","characters":"\/api\/key\/characters","descriptions":"\/api\/key\/descriptions","descriptionDeletions":"\/api\/key\/descriptiondeletions","characterStates":"\/api\/key\/characterstates","characterStateImages":"\/api\/key\/characterstateimages","tagKey":"\/api\/media\/tagkey","media":"\/api\/media","images":"\/api\/media\/images","guid":"\/api\/media\/guid","keywords":"\/api\/media\/keywords","tag":"\/api\/media\/tag","associations":"\/api\/occurrenceassociations\/associations","comments":"\/api\/occurrencecomments\/comments","datasetLink":"\/api\/occurrencedataset\/datasetlink","datasets":"\/api\/occurrencedataset\/datasets","genetic":"\/api\/occurrencegenetic\/genetic","exchange":"\/api\/occurrenceloan\/exchange","loans":"\/api\/occurrenceloan\/loans","revisions":"\/api\/occurrence\/revisions","edits":"\/api\/occurrence\/edits","uploadDeterminations":"\/api\/occurrence\/uploaddeterminations","fullText":"\/api\/occurrence\/fulltext","uploadParameters":"\/api\/occurrence\/uploadparameters","duplicates":"\/api\/occurrence\/duplicates","lookupChronostratigraphy":"\/api\/occurrence\/lookupchronostratigraphy","accessStats":"\/api\/occurrence\/accessstats","editLocks":"\/api\/occurrence\/editlocks","lookupCounties":"\/api\/occurrence\/lookupcounties","geoIndex":"\/api\/occurrence\/geoindex","lookupStateProvinces":"\/api\/occurrence\/lookupstateprovinces","occurrences":"\/api\/occurrences","determinations":"\/api\/occurrence\/determinations","verification":"\/api\/occurrence\/verification","uploadMappings":"\/api\/occurrence\/uploadmappings","lookupCountries":"\/api\/occurrence\/lookupcountries","identifiers":"\/api\/occurrence\/identifiers","guidOccurrences":"\/api\/occurrence\/guidoccurrences","uploadOccurrences":"\/api\/occurrence\/uploadoccurrences","guidDeterminations":"\/api\/occurrence\/guiddeterminations","lookupMunicipalities":"\/api\/occurrence\/lookupmunicipalities","checklistTaxaLink":"\/api\/reference\/checklisttaxalink","authors":"\/api\/reference\/authors","lookupReferenceTypes":"\/api\/reference\/lookupreferencetypes","references":"\/api\/references","descriptionBlock":"\/api\/taxa\/descriptionblock","synonymy":"\/api\/taxa\/synonymy","authorities":"\/api\/taxa\/authorities","taxa":"\/api\/taxa","resourceLinks":"\/api\/taxa\/resourcelinks","maps":"\/api\/taxa\/maps","descriptionStatements":"\/api\/taxa\/descriptionstatements","relationships":"\/api\/taxa\/relationships","upload":"\/api\/taxa\/upload","links":"\/api\/taxa\/links","userTaxonomy":"\/api\/taxa\/usertaxonomy","vernaculars":"\/api\/taxa\/vernaculars","ranks":"\/api\/taxa\/ranks","attributes":"\/api\/traits\/attributes","traits":"\/api\/traits","dependencies":"\/api\/traits\/dependencies","states":"\/api\/traits\/states"}'
+  recorded_at: 2020-02-04 20:17:16 GMT
+  recorded_with: vcr/0.3.0, webmockr/0.4.0
+- request:
+    method: get
+    uri: http://a02235015-6.bluezone.usu.edu/api/key/characterheading?page=1
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.17.4
+      content-type: application/ld+json; charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      vary: Accept
+      x-content-type-options: nosniff
+      x-frame-options: deny
+      cache-control: private, must-revalidate
+      date: Tue, 04 Feb 2020 20:17:16 GMT
+      link: <http://a02235015-6.bluezone.usu.edu/api/docs.jsonld>; rel="http://www.w3.org/ns/hydra/core#apiDocumentation"
+      etag: '"d4cdebc32562428ab861ff4b3d251106"'
+    body:
+      encoding: UTF-8
+      string: '{"@context":"\/api\/contexts\/CharacterHeading","@id":"\/api\/key\/characterheading","@type":"hydra:Collection","hydra:member":[{"@id":"\/api\/key\/characterheading\/1","@type":"CharacterHeading","id":1,"headingName":"Plant","language":"English","notes":null,"sortSequence":25,"initialTimestamp":"2019-01-12T11:59:19+00:00","languageId":"\/api\/lookuplanguages\/1"},{"@id":"\/api\/key\/characterheading\/2","@type":"CharacterHeading","id":2,"headingName":"Leaves","language":"English","notes":null,"sortSequence":40,"initialTimestamp":"2019-01-12T11:59:19+00:00","languageId":"\/api\/lookuplanguages\/1"},{"@id":"\/api\/key\/characterheading\/3","@type":"CharacterHeading","id":3,"headingName":"Inflorescence","language":"English","notes":null,"sortSequence":50,"initialTimestamp":"2019-01-12T11:59:19+00:00","languageId":"\/api\/lookuplanguages\/1"},{"@id":"\/api\/key\/characterheading\/4","@type":"CharacterHeading","id":4,"headingName":"Flower","language":"English","notes":null,"sortSequence":60,"initialTimestamp":"2019-01-12T11:59:19+00:00","languageId":"\/api\/lookuplanguages\/1"},{"@id":"\/api\/key\/characterheading\/5","@type":"CharacterHeading","id":5,"headingName":"Fruit
+        or Cone","language":"English","notes":null,"sortSequence":70,"initialTimestamp":"2019-01-12T11:59:19+00:00","languageId":"\/api\/lookuplanguages\/1"},{"@id":"\/api\/key\/characterheading\/10","@type":"CharacterHeading","id":10,"headingName":"Misc.","language":"English","notes":null,"sortSequence":70,"initialTimestamp":"2019-01-12T11:59:19+00:00","languageId":"\/api\/lookuplanguages\/1"},{"@id":"\/api\/key\/characterheading\/11","@type":"CharacterHeading","id":11,"headingName":"Root
+        System \u0026 Specialized Shoots","language":"English","notes":null,"sortSequence":30,"initialTimestamp":"2019-01-12T11:59:19+00:00","languageId":"\/api\/lookuplanguages\/1"},{"@id":"\/api\/key\/characterheading\/13","@type":"CharacterHeading","id":13,"headingName":"Stem
+        \u0026 Twigs","language":"English","notes":null,"sortSequence":35,"initialTimestamp":"2019-01-12T11:59:19+00:00","languageId":"\/api\/lookuplanguages\/1"},{"@id":"\/api\/key\/characterheading\/14","@type":"CharacterHeading","id":14,"headingName":"Fern
+        Traits","language":"English","notes":null,"sortSequence":110,"initialTimestamp":"2019-01-12T11:59:19+00:00","languageId":"\/api\/lookuplanguages\/1"},{"@id":"\/api\/key\/characterheading\/15","@type":"CharacterHeading","id":15,"headingName":"Cactus
+        Traits","language":"English","notes":null,"sortSequence":140,"initialTimestamp":"2019-01-12T11:59:19+00:00","languageId":"\/api\/lookuplanguages\/1"},{"@id":"\/api\/key\/characterheading\/16","@type":"CharacterHeading","id":16,"headingName":"Graminoid
+        Traits","language":"English","notes":null,"sortSequence":170,"initialTimestamp":"2019-01-12T11:59:19+00:00","languageId":"\/api\/lookuplanguages\/1"},{"@id":"\/api\/key\/characterheading\/17","@type":"CharacterHeading","id":17,"headingName":"Composite
+        Traits","language":"English","notes":null,"sortSequence":150,"initialTimestamp":"2019-01-12T11:59:19+00:00","languageId":"\/api\/lookuplanguages\/1"},{"@id":"\/api\/key\/characterheading\/19","@type":"CharacterHeading","id":19,"headingName":"Conifer
+        Traits","language":"English","notes":null,"sortSequence":120,"initialTimestamp":"2019-01-12T11:59:19+00:00","languageId":"\/api\/lookuplanguages\/1"},{"@id":"\/api\/key\/characterheading\/20","@type":"CharacterHeading","id":20,"headingName":"Beech\/Oak
+        Traits","language":"English","notes":null,"sortSequence":140,"initialTimestamp":"2019-01-12T11:59:19+00:00","languageId":"\/api\/lookuplanguages\/1"},{"@id":"\/api\/key\/characterheading\/21","@type":"CharacterHeading","id":21,"headingName":"Ecological
+        Traits","language":"English","notes":null,"sortSequence":75,"initialTimestamp":"2019-01-12T11:59:19+00:00","languageId":"\/api\/lookuplanguages\/1"},{"@id":"\/api\/key\/characterheading\/22","@type":"CharacterHeading","id":22,"headingName":"Spurge
+        Traits","language":"English","notes":null,"sortSequence":250,"initialTimestamp":"2019-01-12T11:59:19+00:00","languageId":"\/api\/lookuplanguages\/1"},{"@id":"\/api\/key\/characterheading\/23","@type":"CharacterHeading","id":23,"headingName":"Sedge
+        Traits","language":"English","notes":null,"sortSequence":200,"initialTimestamp":"2019-01-12T11:59:19+00:00","languageId":"\/api\/lookuplanguages\/1"},{"@id":"\/api\/key\/characterheading\/24","@type":"CharacterHeading","id":24,"headingName":"Grass
+        Traits","language":"English","notes":null,"sortSequence":180,"initialTimestamp":"2019-01-12T11:59:19+00:00","languageId":"\/api\/lookuplanguages\/1"},{"@id":"\/api\/key\/characterheading\/25","@type":"CharacterHeading","id":25,"headingName":"Rush
+        Traits","language":"English","notes":null,"sortSequence":190,"initialTimestamp":"2019-01-12T11:59:19+00:00","languageId":"\/api\/lookuplanguages\/1"},{"@id":"\/api\/key\/characterheading\/27","@type":"CharacterHeading","id":27,"headingName":"Milkweed
+        Traits","language":"English","notes":null,"sortSequence":210,"initialTimestamp":"2019-01-12T11:59:19+00:00","languageId":"\/api\/lookuplanguages\/1"},{"@id":"\/api\/key\/characterheading\/28","@type":"CharacterHeading","id":28,"headingName":"Aquatics
+        Traits","language":"English","notes":null,"sortSequence":100,"initialTimestamp":"2019-01-12T11:59:19+00:00","languageId":"\/api\/lookuplanguages\/1"},{"@id":"\/api\/key\/characterheading\/29","@type":"CharacterHeading","id":29,"headingName":"Bean
+        Family Traits","language":"English","notes":null,"sortSequence":125,"initialTimestamp":"2019-01-12T11:59:19+00:00","languageId":"\/api\/lookuplanguages\/1"},{"@id":"\/api\/key\/characterheading\/30","@type":"CharacterHeading","id":30,"headingName":"Rose
+        Family Traits","language":"English","notes":null,"sortSequence":230,"initialTimestamp":"2019-01-12T11:59:19+00:00","languageId":"\/api\/lookuplanguages\/1"},{"@id":"\/api\/key\/characterheading\/31","@type":"CharacterHeading","id":31,"headingName":"Carrot
+        Family Traits","language":"English","notes":null,"sortSequence":145,"initialTimestamp":"2019-01-12T11:59:19+00:00","languageId":"\/api\/lookuplanguages\/1"}],"hydra:totalItems":24}'
+  recorded_at: 2020-02-04 20:17:16 GMT
+  recorded_with: vcr/0.3.0, webmockr/0.4.0

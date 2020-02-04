@@ -33,6 +33,7 @@ Categories <- function(url=NA, ID=NA, page=NA){
     return(RObject)
 }
 
+#' @export
 #' @rdname Collection
 Institutions <- function(url=NA, ID=NA, page=NA){
     # Argument handling
@@ -50,6 +51,7 @@ Institutions <- function(url=NA, ID=NA, page=NA){
     return(RObject)
 }
 
+#' @export
 #' @rdname Collection
 Stats <- function(url=NA, ID=NA, page=NA){
     # Argument handling
@@ -67,6 +69,7 @@ Stats <- function(url=NA, ID=NA, page=NA){
     return(RObject)
 }
 
+#' @export
 #' @rdname Collection
 Collections <- function(url=NA, ID=NA, page=NA){
   # Argument handling

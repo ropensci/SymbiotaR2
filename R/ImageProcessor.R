@@ -33,6 +33,7 @@ Projects <- function(url=NA, ID=NA, page=NA){
   return(RObject)
 }
 
+#' @export
 #' @rdname ImagePRocessor
 RawLabels <- function(url=NA, ID=NA, page=NA){
   # Argument handling

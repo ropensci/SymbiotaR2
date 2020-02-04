@@ -33,6 +33,7 @@ Configurations <- function(url=NA, ID=NA, page=NA){
   return(RObject)
 }
 
+#' @export
 #' @rdname Miscellaneous
 LookupLanguages <- function(url=NA, ID=NA, page=NA){
   # Argument handling
@@ -51,6 +52,7 @@ LookupLanguages <- function(url=NA, ID=NA, page=NA){
   return(RObject)
 }
 
+#' @export
 #' @rdname Miscellaneous
 SchemaVersion <- function(url=NA, ID=NA, page=NA){
   # Argument handling

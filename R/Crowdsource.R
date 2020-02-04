@@ -33,6 +33,7 @@ Central <- function(url=NA, ID=NA, page=NA){
   return(RObject)
 }
 
+#' @export
 #' @rdname Crowdsource
 Queue <- function(url=NA, ID=NA, page=NA){
   # Argument handling

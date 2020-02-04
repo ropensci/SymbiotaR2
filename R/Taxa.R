@@ -37,6 +37,7 @@ Taxa <- function(url=NA, ID=NA, page=NA){
   }
 }
 
+#' @export
 #' @rdname Taxa
 Authorities <- function(url=NA, ID=NA, page=NA){
   # Argument handling
@@ -59,6 +60,7 @@ Authorities <- function(url=NA, ID=NA, page=NA){
   }
 }
 
+#' @export
 #' @rdname Taxa
 DescriptionBlock <- function(url=NA, ID=NA, page=NA){
   # Argument handling
@@ -77,6 +79,7 @@ DescriptionBlock <- function(url=NA, ID=NA, page=NA){
   return(RObject)
 }
 
+#' @export
 #' @rdname Taxa
 Synonymy <- function(url=NA, ID=NA, page=NA){
   # Argument handling

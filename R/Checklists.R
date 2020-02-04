@@ -21,7 +21,6 @@ ChecklistProjects <- function(url=NA, ID=NA, page=NA){
   # Argument handling
   url <- .get.url(url)
   RObject <- .api.scaffold(.check.api.entry("checklist/checklistprojects"), url, ID, page)
-  
   # ID Download
   if(!is.na(ID)){
     RObject[sapply(RObject,is.null)] <- NA
@@ -38,6 +37,7 @@ ChecklistProjects <- function(url=NA, ID=NA, page=NA){
   }
 }
 
+#' @export
 #' @rdname Checklists
 Coordinates <- function(url=NA, ID=NA, page=NA){
     # Argument handling
@@ -60,6 +60,7 @@ Coordinates <- function(url=NA, ID=NA, page=NA){
     }
 }
 
+#' @export
 #' @rdname Checklists
 TaxaLink <- function(url=NA, ID=NA, page=NA){
     # Argument handling
@@ -79,6 +80,7 @@ TaxaLink <- function(url=NA, ID=NA, page=NA){
     return(RObject)
 }
 
+#' @export
 #' @rdname Checklists
 Checklists <- function(url=NA, ID=NA, page=NA){
   # Argument handling
