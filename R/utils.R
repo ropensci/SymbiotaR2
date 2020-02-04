@@ -17,7 +17,6 @@
         if(is.null(url))
             stop("No Symbiota2 portal URL specified in defaults or function call")
     }
-    dwn_file <- tempfile()
 
     # Grab a specific ID and return for processing
     if(!is.na(ID)){
