@@ -19,7 +19,9 @@ Coordinates("http://imaginary-symbiota-portal.com/api")
 ```
 
 ...would download the first page of data with co-ordinates from our
-imaginary Symbiota2 portal.
+imaginary Symbiota2 portal. If you would like to set up a Symbiota2
+portal, please follow the instructions online
+(https://github.com/Symbiota2/Symbiota2).
 
 If you would like to specify a default portal from which to download,
 do so like this:
