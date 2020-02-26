@@ -14,8 +14,6 @@
 #' @rdname Taxa
 #' @name Taxa
 #' @export
-
-#' @rdname Taxa
 Taxa <- function(url=NA, ID=NA, page=NA){
   # Argument handling
   url <- .get.url(url)

@@ -12,10 +12,8 @@
 #' @return If using \code{ID}, the specific Checklist resource specified; 
 #' if using page, the \code{page} specified of Checklist resources
 #' @author Austin Koontz
-#' @rdname Checklists
 #' @name Checklists
 #' @export
-
 #' @rdname Checklists
 ChecklistProjects <- function(url=NA, ID=NA, page=NA){
   # Argument handling

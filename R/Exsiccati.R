@@ -11,10 +11,8 @@
 #' @return If using \code{ID}, the specific Exsiccati resource specified; if using page, the \code{page} specified
 #' of Exsiccati resources
 #' @author Austin Koontz
-#' @rdname Exsiccati
 #' @name Exsiccati
 #' @export
-
 #' @rdname Exisccati
 Numbers <- function(url=NA, ID=NA, page=NA){
   # Argument handling

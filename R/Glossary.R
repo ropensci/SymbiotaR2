@@ -14,8 +14,6 @@
 #' @rdname Glossary
 #' @name Glossary
 #' @export
-
-#' @rdname Glossary
 Glossary <- function(url=NA, ID=NA, page=NA){
   # Argument handling
   url <- .get.url(url)

@@ -14,8 +14,6 @@
 #' @rdname Key
 #' @name Key
 #' @export
-
-#' @rdname Key
 CharacterHeading <- function(url=NA, ID=NA, page=NA){
   # Argument handling
   url <- .get.url(url)

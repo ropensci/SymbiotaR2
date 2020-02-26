@@ -14,8 +14,6 @@
 #' @rdname ImagePRocessor
 #' @name ImagePRocessor
 #' @export
-
-#' @rdname ImagePRocessor
 Projects <- function(url=NA, ID=NA, page=NA){
   # Argument handling
   url <- .get.url(url)

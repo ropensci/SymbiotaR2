@@ -15,8 +15,6 @@
 #' @rdname Collection
 #' @name Collection
 #' @export
-
-#' @rdname Collection
 Categories <- function(url=NA, ID=NA, page=NA){
     # Argument handling
     url <- .get.url(url)

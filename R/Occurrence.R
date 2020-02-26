@@ -14,8 +14,6 @@
 #' @rdname Occurrences
 #' @name Occurrences
 #' @export
-
-#' @rdname Occurrences
 AccessStats <- function(url=NA, ID=NA, page=NA){
   # Argument handling
   url <- .get.url(url)

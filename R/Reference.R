@@ -14,8 +14,6 @@
 #' @rdname Reference
 #' @name Reference
 #' @export
-
-#' @rdname Reference
 LookupReferenceTypes <- function(url=NA, ID=NA, page=NA){
   # Argument handling
   url <- .get.url(url)
