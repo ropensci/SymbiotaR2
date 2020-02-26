@@ -13,7 +13,7 @@
 #' @author Austin Koontz
 #' @name Exsiccati
 #' @export
-#' @rdname Exisccati
+#' @rdname Exsiccati
 Numbers <- function(url=NA, ID=NA, page=NA){
   # Argument handling
   url <- .get.url(url)
@@ -36,7 +36,7 @@ Numbers <- function(url=NA, ID=NA, page=NA){
 }
 
 #' @export
-#' @rdname Exisccati 
+#' @rdname Exsiccati 
 Titles <- function(url=NA, ID=NA, page=NA){
   # Argument handling
   url <- .get.url(url)
