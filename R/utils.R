@@ -4,7 +4,7 @@
 #' @importFrom httr verbose GET stop_for_status
 #' @importFrom fs path_home
 #' @importFrom curl curl_download
-#' @import xml2
+
 .parse.json <- function(url){
     json <- stop_for_status(GET(url = url))
     return(fromJSON(json_str = as.character(json)))

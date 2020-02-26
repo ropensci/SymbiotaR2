@@ -23,7 +23,6 @@ Suggests:
     vcr (>= 0.3.0)	
 Imports:
     httr (>= 1.0.0),
-    xml2 (>= 1.2.0),
     rjson (>= 0.2.20),
     fs (>= 1.2.6),
     curl (>= 3.3)
