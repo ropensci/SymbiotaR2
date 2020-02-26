@@ -5,9 +5,13 @@ author:
   name: Austin Koontz
   orcid: 0000-0002-6103-5894
 - affiliation: 2
+  name: Benjamin Brandt
+- affiliation: 3
+  name: Curtis Dyreson
+- affiliation: 1
   name: William D Pearse
   orcid: 0000-0002-6241-3164
-date: "11/20/2019"
+date: "02/26/2020"
 output: html_document
 tags:
 - 
@@ -16,19 +20,20 @@ affiliations:
   name: Department of Biology & Ecology Center, Utah State University, Logan, Utah,
     USA
 - index: 2
-  name: Department of Biology & Ecology Center, Utah State University, Logan, Utah,
-    USA
+  name: Northern Arizona University, Arizona, USA
+- index: 3
+  name: Department of Computer Science, Utah State University, Logan, Utah, USA
 ---
 # Summary
 
-`SymbiotaR2` is an R [@R2018] package for easily accessing and handling 
-specimen-based Symbiota2 data within an R environment, allowing anyone
-to download digitized biological collection data from any established 
-database. Symbiota2 is the updated version of Symbiota [Symbiota2014], a
-widely used software platform that grants access to data from hundreds of
-museums and herbaria across the United States. Through a complete refactoring
-of the Symbiota code, the structure of Symbiota2 places an emphasis on modularity
-and accessibility.
+`SymbiotaR2` is an R [@R2018] package for easily accessing and
+handling specimen-based Symbiota2 data within an R environment,
+allowing anyone to download digitized biological collection data from
+any established database. Symbiota2 is the updated version of Symbiota
+[Symbiota2014], a widely used software platform that grants access to
+data from >750 museums and herbaria worldwide. Through a complete
+refactoring of the Symbiota code, the structure of Symbiota2 places an
+emphasis on modularity and accessibility.
 
 The code below provides an example of a user accessing two different attributes
 from the same entry within a Symbiota2  database. First, data from a particular 

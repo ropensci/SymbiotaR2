@@ -53,5 +53,5 @@ library(SymbiotaR2)
 Right now, we're still working on the underlying API and then R
 package at the same time, so we'd encourage you not to work on the
 package right now. If you are interested in contributing to the
-package in the future, though, please (drop one of us an email and
-we'll let you know when we're ready)[http://pearselab.com/team.html]!
+package in the future, though, please [drop one of us an email and
+we'll let you know when we're ready](http://pearselab.com/team.html)!
