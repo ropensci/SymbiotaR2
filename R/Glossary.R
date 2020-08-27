@@ -14,17 +14,17 @@
 #' @rdname Glossary
 #' @name Glossary
 #' @export
-Glossary <- function(url=NA, ID=NA, page=NA){
+Glossary <- function(ID, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
   RObject <- .api.scaffold(.check.api.entry("glossary"), url, ID, page)
   
   # ID Download
-  if(!is.na(ID))
+  if(!missing(ID))
     return(RObject)
   
   # Page (specified or default) download
-  if(!is.na(page)){
+  if(!missing(page)){
     RObject <- .page.to.dataframe(RObject)
   }
   return(RObject)
@@ -32,17 +32,17 @@ Glossary <- function(url=NA, ID=NA, page=NA){
 
 #' @export
 #' @rdname Glossary
-TermLink <- function(url=NA, ID=NA, page=NA){
+TermLink <- function(ID, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
   RObject <- .api.scaffold(.check.api.entry("glossary/termlink"), url, ID, page)
   
   # ID Download
-  if(!is.na(ID))
+  if(!missing(ID))
     return(RObject)
   
   # Page (specified or default) download
-  if(!is.na(page)){
+  if(!missing(page)){
     RObject <- .page.to.dataframe(RObject)
   }
   return(RObject)

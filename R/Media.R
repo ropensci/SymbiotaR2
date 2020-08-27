@@ -15,18 +15,18 @@
 #' @name Media
 #' @export
 # ID must be a string rather than a numeric; consider adding an argument check
-TagKey <- function(url=NA, ID=NA, page=NA){
+TagKey <- function(ID, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
   RObject <- .api.scaffold(.check.api.entry("media/tagkey"), url, ID, page)
   
   # ID Download
-  if(!is.na(ID)){
+  if(!missing(ID)){
     return(RObject)
   }
   
   # Page (specified or default) download
-  if(!is.na(page)){
+  if(!missing(page)){
     RObject <- .page.to.dataframe(RObject)
   }
   return(RObject)

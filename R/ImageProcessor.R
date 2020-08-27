@@ -14,18 +14,18 @@
 #' @rdname ImagePRocessor
 #' @name ImagePRocessor
 #' @export
-Projects <- function(url=NA, ID=NA, page=NA){
+Projects <- function(ID, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
   RObject <- .api.scaffold(.check.api.entry("imageprocessor/projects"), url, ID, page)
   
   # ID Download
-  if(!is.na(ID)){
+  if(!missing(ID)){
     return(RObject)
   }
   
   # Page (specified or default) download
-  if(!is.na(page)){
+  if(!missing(page)){
     RObject <- .page.to.dataframe(RObject)
   }
   return(RObject)
@@ -33,18 +33,18 @@ Projects <- function(url=NA, ID=NA, page=NA){
 
 #' @export
 #' @rdname ImagePRocessor
-RawLabels <- function(url=NA, ID=NA, page=NA){
+RawLabels <- function(ID, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
   RObject <- .api.scaffold(.check.api.entry("imageprocessor/rawlabels"), url, ID, page)
   
   # ID Download
-  if(!is.na(ID)){
+  if(!missing(ID)){
     return(RObject)
   }
   
   # Page (specified or default) download
-  if(!is.na(page)){
+  if(!missing(page)){
     RObject <- .page.to.dataframe(RObject)
   }
   return(RObject)

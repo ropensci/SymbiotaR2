@@ -14,18 +14,18 @@
 #' @rdname Occurrences
 #' @name Occurrences
 #' @export
-AccessStats <- function(url=NA, ID=NA, page=NA){
+AccessStats <- function(ID, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
   RObject <- .api.scaffold(.check.api.entry("occurrence/accessstats"), url, ID, page)
   
   # ID Download
-  if(!is.na(ID)){
+  if(!missing(ID)){
     return(RObject)
   }
   
   # Page (specified or default) download
-  if(!is.na(page)){
+  if(!missing(page)){
     RObject <- .page.to.dataframe(RObject)
   }
   return(RObject)
@@ -33,18 +33,18 @@ AccessStats <- function(url=NA, ID=NA, page=NA){
 
 #' @export
 #' @rdname Occurrences
-Determinations <- function(url=NA, ID=NA, page=NA){
+Determinations <- function(ID, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
   RObject <- .api.scaffold(.check.api.entry("occurrence/determinations"), url, ID, page)
   
   # ID Download
-  if(!is.na(ID)){
+  if(!missing(ID)){
     return(RObject)
   }
   
   # Page (specified or default) download
-  if(!is.na(page)){
+  if(!missing(page)){
     RObject <- .page.to.dataframe(RObject)
   }
   return(RObject)
@@ -52,18 +52,18 @@ Determinations <- function(url=NA, ID=NA, page=NA){
 
 #' @export
 #' @rdname Occurrences
-Duplicates <- function(url=NA, ID=NA, page=NA){
+Duplicates <- function(ID, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
   RObject <- .api.scaffold(.check.api.entry("occurrence/duplicates"), url, ID, page)
   
   # ID Download
-  if(!is.na(ID)){
+  if(!missing(ID)){
     return(RObject)
   }
   
   # Page (specified or default) download
-  if(!is.na(page)){
+  if(!missing(page)){
     RObject <- .page.to.dataframe(RObject)
   }
   return(RObject)
@@ -71,18 +71,18 @@ Duplicates <- function(url=NA, ID=NA, page=NA){
 
 #' @export
 #' @rdname Occurrences
-EditLocks <- function(url=NA, ID=NA, page=NA){
+EditLocks <- function(ID, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
   RObject <- .api.scaffold(.check.api.entry("occurrence/editlocks"), url, ID, page)
   
   # ID Download
-  if(!is.na(ID)){
+  if(!missing(ID)){
     return(RObject)
   }
   
   # Page (specified or default) download
-  if(!is.na(page)){
+  if(!missing(page)){
     RObject <- .page.to.dataframe(RObject)
   }
   return(RObject)
@@ -90,18 +90,18 @@ EditLocks <- function(url=NA, ID=NA, page=NA){
 
 #' @export
 #' @rdname Occurrences
-Edits <- function(url=NA, ID=NA, page=NA){
+Edits <- function(ID, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
   RObject <- .api.scaffold(.check.api.entry("occurrence/edits"), url, ID, page)
   
   # ID Download
-  if(!is.na(ID)){
+  if(!missing(ID)){
     return(RObject)
   }
   
   # Page (specified or default) download
-  if(!is.na(page)){
+  if(!missing(page)){
     RObject <- .page.to.dataframe(RObject)
   }
   return(RObject)
@@ -109,18 +109,18 @@ Edits <- function(url=NA, ID=NA, page=NA){
 
 #' @export
 #' @rdname Occurrences
-FullText <- function(url=NA, ID=NA, page=NA){
+FullText <- function(ID, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
   RObject <- .api.scaffold(.check.api.entry("occurrence/fulltext"), url, ID, page)
   
   # ID Download
-  if(!is.na(ID)){
+  if(!missing(ID)){
     return(RObject)
   }
   
   # Page (specified or default) download
-  if(!is.na(page)){
+  if(!missing(page)){
     RObject <- .page.to.dataframe(RObject)
   }
   return(RObject)
@@ -128,18 +128,18 @@ FullText <- function(url=NA, ID=NA, page=NA){
 
 #' @export
 #' @rdname Occurrences
-GuidDeterminations <- function(url=NA, ID=NA, page=NA){
+GuidDeterminations <- function(ID, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
   RObject <- .api.scaffold(.check.api.entry("occurrence/guiddeterminations"), url, ID, page)
   
   # ID Download
-  if(!is.na(ID)){
+  if(!missing(ID)){
     return(RObject)
   }
   
   # Page (specified or default) download
-  if(!is.na(page)){
+  if(!missing(page)){
     RObject <- .page.to.dataframe(RObject)
   }
   return(RObject)
@@ -147,18 +147,18 @@ GuidDeterminations <- function(url=NA, ID=NA, page=NA){
 
 #' @export
 #' @rdname Occurrences
-GuidOccurrences <- function(url=NA, ID=NA, page=NA){
+GuidOccurrences <- function(ID, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
   RObject <- .api.scaffold(.check.api.entry("occurrence/guidoccurrences"), url, ID, page)
   
   # ID Download
-  if(!is.na(ID)){
+  if(!missing(ID)){
     return(RObject)
   }
   
   # Page (specified or default) download
-  if(!is.na(page)){
+  if(!missing(page)){
     RObject <- .page.to.dataframe(RObject)
   }
   return(RObject)
@@ -166,19 +166,19 @@ GuidOccurrences <- function(url=NA, ID=NA, page=NA){
 
 #' @export
 #' @rdname Occurrences
-LookupChronostratigraphy <- function(url=NA, ID=NA, page=NA){
+LookupChronostratigraphy <- function(ID, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
   RObject <- .api.scaffold(.check.api.entry("occurrence/lookupchronostratigraphy"), url, ID, page)
   
   # ID Download
-  if(!is.na(ID)){
+  if(!missing(ID)){
     RObject[sapply(RObject,is.null)] <- NA
     return(RObject)
   }
   
   # Page (specified or default) download
-  if(!is.na(page)){
+  if(!missing(page)){
     RObject <- RObject$`hydra:member`
     output <- as.data.frame(do.call(rbind, RObject))
     return(output)
@@ -187,18 +187,18 @@ LookupChronostratigraphy <- function(url=NA, ID=NA, page=NA){
 
 #' @export
 #' @rdname Occurrences
-LookupCounties <- function(url=NA, ID=NA, page=NA){
+LookupCounties <- function(ID, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
   RObject <- .api.scaffold(.check.api.entry("occurrence/lookupcounties"), url, ID, page)
   
   # ID Download
-  if(!is.na(ID)){
+  if(!missing(ID)){
     return(RObject)
   }
   
   # Page (specified or default) download
-  if(!is.na(page)){
+  if(!missing(page)){
     RObject <- .page.to.dataframe(RObject)
   }
   return(RObject)
@@ -206,18 +206,18 @@ LookupCounties <- function(url=NA, ID=NA, page=NA){
 
 #' @export
 #' @rdname Occurrences
-LookupCountries <- function(url=NA, ID=NA, page=NA){
+LookupCountries <- function(ID, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
   RObject <- .api.scaffold(.check.api.entry("occurrence/lookupcountries"), url, ID, page)
   
   # ID Download
-  if(!is.na(ID)){
+  if(!missing(ID)){
     return(RObject)
   }
   
   # Page (specified or default) download
-  if(!is.na(page)){
+  if(!missing(page)){
     RObject <- .page.to.dataframe(RObject)
   }
   return(RObject)
@@ -225,18 +225,18 @@ LookupCountries <- function(url=NA, ID=NA, page=NA){
 
 #' @export
 #' @rdname Occurrences
-LookupStateProvinces <- function(url=NA, ID=NA, page=NA){
+LookupStateProvinces <- function(ID, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
   RObject <- .api.scaffold(.check.api.entry("occurrence/lookupstateprovinces"), url, ID, page)
   
   # ID Download
-  if(!is.na(ID)){
+  if(!missing(ID)){
     return(RObject)
   }
   
   # Page (specified or default) download
-  if(!is.na(page)){
+  if(!missing(page)){
     RObject <- .page.to.dataframe(RObject)
   }
   return(RObject)
@@ -244,18 +244,18 @@ LookupStateProvinces <- function(url=NA, ID=NA, page=NA){
 
 #' @export
 #' @rdname Occurrences
-UploadMappings <- function(url=NA, ID=NA, page=NA){
+UploadMappings <- function(ID, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
   RObject <- .api.scaffold(.check.api.entry("occurrence/uploadmappings"), url, ID, page)
   
   # ID Download
-  if(!is.na(ID)){
+  if(!missing(ID)){
     return(RObject)
   }
   
   # Page (specified or default) download
-  if(!is.na(page)){
+  if(!missing(page)){
     RObject <- .page.to.dataframe(RObject)
   }
   return(RObject)
@@ -263,18 +263,18 @@ UploadMappings <- function(url=NA, ID=NA, page=NA){
 
 #' @export
 #' @rdname Occurrences
-UploadParameters <- function(url=NA, ID=NA, page=NA){
+UploadParameters <- function(ID, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
   RObject <- .api.scaffold(.check.api.entry("occurrence/uploadparameters"), url, ID, page)
   
   # ID Download
-  if(!is.na(ID)){
+  if(!missing(ID)){
     return(RObject)
   }
   
   # Page (specified or default) download
-  if(!is.na(page)){
+  if(!missing(page)){
     RObject <- .page.to.dataframe(RObject)
   }
   return(RObject)
@@ -282,18 +282,18 @@ UploadParameters <- function(url=NA, ID=NA, page=NA){
 
 #' @export
 #' @rdname Occurrences
-Verification <- function(url=NA, ID=NA, page=NA){
+Verification <- function(ID, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
   RObject <- .api.scaffold(.check.api.entry("occurrence/verification"), url, ID, page)
   
   # ID Download
-  if(!is.na(ID)){
+  if(!missing(ID)){
     return(RObject)
   }
   
   # Page (specified or default) download
-  if(!is.na(page)){
+  if(!missing(page)){
     RObject <- .page.to.dataframe(RObject)
   }
   return(RObject)
@@ -301,18 +301,18 @@ Verification <- function(url=NA, ID=NA, page=NA){
 
 #' @export
 #' @rdname Occurrences
-Associations <- function(url=NA, ID=NA, page=NA){
+Associations <- function(ID, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
   RObject <- .api.scaffold(.check.api.entry("occurrenceassociations/associations"), url, ID, page)
   
   # ID Download
-  if(!is.na(ID)){
+  if(!missing(ID)){
     return(RObject)
   }
   
   # Page (specified or default) download
-  if(!is.na(page)){
+  if(!missing(page)){
     RObject <- .page.to.dataframe(RObject)
   }
   return(RObject)
@@ -320,18 +320,18 @@ Associations <- function(url=NA, ID=NA, page=NA){
 
 #' @export
 #' @rdname Occurrences
-Comments <- function(url=NA, ID=NA, page=NA){
+Comments <- function(ID, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
   RObject <- .api.scaffold(.check.api.entry("occurrencecomments/comments"), url, ID, page)
   
   # ID Download
-  if(!is.na(ID)){
+  if(!missing(ID)){
     return(RObject)
   }
   
   # Page (specified or default) download
-  if(!is.na(page)){
+  if(!missing(page)){
     RObject <- .page.to.dataframe(RObject)
   }
   return(RObject)
@@ -339,18 +339,18 @@ Comments <- function(url=NA, ID=NA, page=NA){
 
 #' @export
 #' @rdname Occurrences
-DatasetLink <- function(url=NA, ID=NA, page=NA){
+DatasetLink <- function(ID, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
   RObject <- .api.scaffold(.check.api.entry("occurrencedataset/datasetlink"), url, ID, page)
   
   # ID Download
-  if(!is.na(ID)){
+  if(!missing(ID)){
     return(RObject)
   }
   
   # Page (specified or default) download
-  if(!is.na(page)){
+  if(!missing(page)){
     RObject <- .page.to.dataframe(RObject)
   }
   return(RObject)
@@ -358,18 +358,18 @@ DatasetLink <- function(url=NA, ID=NA, page=NA){
 
 #' @export
 #' @rdname Occurrences
-Datasets <- function(url=NA, ID=NA, page=NA){
+Datasets <- function(ID, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
   RObject <- .api.scaffold(.check.api.entry("occurrencedataset/datasets"), url, ID, page)
   
   # ID Download
-  if(!is.na(ID)){
+  if(!missing(ID)){
     return(RObject)
   }
   
   # Page (specified or default) download
-  if(!is.na(page)){
+  if(!missing(page)){
     RObject <- .page.to.dataframe(RObject)
   }
   return(RObject)
@@ -377,18 +377,18 @@ Datasets <- function(url=NA, ID=NA, page=NA){
 
 #' @export
 #' @rdname Occurrences
-Exchange <- function(url=NA, ID=NA, page=NA){
+Exchange <- function(ID, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
   RObject <- .api.scaffold(.check.api.entry("occurrenceloan/exchange"), url, ID, page)
   
   # ID Download
-  if(!is.na(ID)){
+  if(!missing(ID)){
     return(RObject)
   }
   
   # Page (specified or default) download
-  if(!is.na(page)){
+  if(!missing(page)){
     RObject <- .page.to.dataframe(RObject)
   }
   return(RObject)
@@ -396,18 +396,18 @@ Exchange <- function(url=NA, ID=NA, page=NA){
 
 #' @export
 #' @rdname Occurrences
-Loans <- function(url=NA, ID=NA, page=NA){
+Loans <- function(ID, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
   RObject <- .api.scaffold(.check.api.entry("occurrenceloan/loans"), url, ID, page)
   
   # ID Download
-  if(!is.na(ID)){
+  if(!missing(ID)){
     return(RObject)
   }
   
   # Page (specified or default) download
-  if(!is.na(page)){
+  if(!missing(page)){
     RObject <- .page.to.dataframe(RObject)
   }
   return(RObject)
@@ -415,19 +415,19 @@ Loans <- function(url=NA, ID=NA, page=NA){
 
 #' @export
 #' @rdname Occurrences
-Occurrences <- function(url=NA, ID=NA, page=NA){
+Occurrences <- function(ID, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
   RObject <- .api.scaffold(.check.api.entry("occurrences"), url, ID, page)
   
   # ID Download
-  if(!is.na(ID)){
+  if(!missing(ID)){
     RObject[sapply(RObject,is.null)] <- NA
     return(RObject)
   }
   
   # Page (specified or default) download
-  if(!is.na(page)){
+  if(!missing(page)){
     RObject <- RObject$`hydra:member`
     for(i in seq_along(RObject))
       RObject[[i]][sapply(RObject[[i]], is.null)] <- NA

@@ -10,28 +10,60 @@
     return(fromJSON(json_str = as.character(json)))
 }
 
-.api.scaffold <- function(api.entry, url=NA, ID=NA, page=NA){
-    # Argument handling and setup
-    if(is.na(url)){
-        url <- getOption("SymbiotaR2_url")
-        if(is.null(url))
-            stop("No Symbiota2 portal URL specified in defaults or function call")
-    }
+# .api.scaffold <- function(api.entry, url=NA, ID=NA, page=NA){
+#     # Argument handling and setup
+#     if(is.na(url)){
+#         url <- getOption("SymbiotaR2_url")
+#         if(is.null(url))
+#             stop("No Symbiota2 portal URL specified in defaults or function call")
+#     }
+# 
+#     # Grab a specific ID and return for processing
+#     if(!is.na(ID)){
+#         complete_url <- paste0(url,api.entry,"/",ID)
+#         RObject <- .parse.json(complete_url)
+#         for(i in seq_along(RObject))
+#           RObject[i][sapply(RObject[i], is.null)] <- NA
+#         return(RObject)
+#     }
+# 
+#     # Grabbing all from a page (default: starting at 1) and return for processing
+#     if(is.na(page))
+#         page <- 1
+#     complete_url <- paste0(url,api.entry,"?page=",page)
+#     return(.parse.json(complete_url))
+# }
 
-    # Grab a specific ID and return for processing
-    if(!is.na(ID)){
-        complete_url <- paste0(url,api.entry,"/",ID)
-        RObject <- .parse.json(complete_url)
-        for(i in seq_along(RObject))
-          RObject[i][sapply(RObject[i], is.null)] <- NA
-        return(RObject)
-    }
-
-    # Grabbing all from a page (default: starting at 1) and return for processing
-    if(is.na(page))
-        page <- 1
+.api.scaffold <- function(api.entry, url=NULL, ID=NULL, page){
+  # Argument handling and setup
+  if(is.null(url)){
+    url <- getOption("SymbiotaR2_url")
+    if(is.null(url))
+      stop("No Symbiota2 portal URL specified in defaults or function call")
+  }
+  
+  # Grab a specific ID and return for processing
+  if(!missing(ID)){
+    if(!inherits(ID, "numeric"))
+      stop("ID must be a numeric")
+    complete_url <- paste0(url,api.entry,"/",ID)
+    RObject <- .parse.json(complete_url)
+    for(i in seq_along(RObject))
+      RObject[i][sapply(RObject[i], is.null)] <- NA
+    return(RObject)
+  }
+  
+  # Grabbing all from a page (default: starting at 1) and return for processing
+  if(missing(page)){
+    page <- 1
     complete_url <- paste0(url,api.entry,"?page=",page)
     return(.parse.json(complete_url))
+  } else{
+    if(!inherits(page, "numeric"))
+      stop("Page must be a numeric")
+    complete_url <- paste0(url,api.entry,"?page=",page)
+    return(.parse.json(complete_url)) 
+  }
 }
 
 .page.to.dataframe <- function(RObject){
@@ -54,17 +86,32 @@
     stop("Cannot auto-detect system")
 }
 
+# .check.url <- function(url){
+#     failed <- TRUE
+#     tryCatch({
+#         stop_for_status(GET(url))
+#         failed <- FALSE
+#     }, error = function(e) NA)
+#     if(failed)
+#         stop("URL ", url, " cannot be reached; is it a valid Symbiota2 portal API?")
+#     if(substr(url, nchar(url), nchar(url)) != "/")
+#         url <- paste0(url, "/")
+#     return(url)
+# }
+
 .check.url <- function(url){
-    failed <- TRUE
-    tryCatch({
-        stop_for_status(GET(url))
-        failed <- FALSE
-    }, error = function(e) NA)
-    if(failed)
-        stop("URL ", url, " cannot be reached; is it a valid Symbiota2 portal API?")
-    if(substr(url, nchar(url), nchar(url)) != "/")
-        url <- paste0(url, "/")
-    return(url)
+  failed <- TRUE
+  if(!inherits(url, "character"))
+    stop("URL must be a character string")
+  tryCatch({
+    stop_for_status(GET(url))
+    failed <- FALSE
+  }, error = function(e) NA)
+  if(failed)
+    stop("URL ", url, " cannot be reached; is it a valid Symbiota2 portal API?")
+  if(substr(url, nchar(url), nchar(url)) != "/")
+    url <- paste0(url, "/")
+  return(url)
 }
 
 .check.api.entry <- function(api.entry){
@@ -73,8 +120,8 @@
     return(api.entry)
 }
 
-.get.url <- function(url=NA){
-    if(is.na(url)){
+.get.url <- function(url=NULL){
+    if(is.null(url)){
         url <- getOption("SymbiotaR2_url")
         if(is.null(url))
             stop("No Symbiota2 portal URL specified in defaults or function call")
@@ -82,3 +129,14 @@
     .check.url(url)
     return(url)
 }
+
+# .get.url <- function(url=NA){
+#   if(is.na(url)){
+#     url <- getOption("SymbiotaR2_url")
+#     if(is.null(url))
+#       stop("No Symbiota2 portal URL specified in defaults or function call")
+#   }
+#   .check.url(url)
+#   return(url)
+# }
+

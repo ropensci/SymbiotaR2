@@ -15,18 +15,19 @@
 #' @name Checklists
 #' @export
 #' @rdname Checklists
-ChecklistProjects <- function(url=NA, ID=NA, page=NA){
+ChecklistProjects <- function(ID, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
   RObject <- .api.scaffold(.check.api.entry("checklist/checklistprojects"), url, ID, page)
+  
   # ID Download
-  if(!is.na(ID)){
+  if(!missing(ID)){
     RObject[sapply(RObject,is.null)] <- NA
     return(RObject)
   }
   
   # Page (specified or default) download
-  if(!is.na(page)){
+  if(!missing(page)){
     RObject <- RObject$`hydra:member`
     for(i in seq_along(RObject))
       RObject[[i]][sapply(RObject[[i]], is.null)] <- NA
@@ -37,19 +38,19 @@ ChecklistProjects <- function(url=NA, ID=NA, page=NA){
 
 #' @export
 #' @rdname Checklists
-Coordinates <- function(url=NA, ID=NA, page=NA){
+Coordinates <- function(ID, page, url=NULL){
     # Argument handling
     url <- .get.url(url)
     RObject <- .api.scaffold(.check.api.entry("checklist/coordinates"), url, ID, page)
-
+    
     # ID download
-    if(!is.na(ID)){
+    if(!missing(ID)){
         RObject <- c(RObject$decimalLatitude,RObject$decimalLongitude)
         return(RObject)
     }
 
     # Page (specified or default) download
-    if(!is.na(page)){
+    if(!missing(page)){
       RObject <- RObject$`hydra:member`
       RObject <- lapply(RObject, function(x) c(x$decimalLatitude,x$decimalLongitude))
       output <- as.data.frame(do.call(rbind, RObject))
@@ -60,19 +61,19 @@ Coordinates <- function(url=NA, ID=NA, page=NA){
 
 #' @export
 #' @rdname Checklists
-TaxaLink <- function(url=NA, ID=NA, page=NA){
+TaxaLink <- function(ID, page, url=NULL){
     # Argument handling
     url <- .get.url(url)
     RObject <- .api.scaffold(.check.api.entry("checklist/taxalink"), url, ID, page)
 
     # ID Download
-    if(!is.na(ID)){
+    if(!missing(ID)){
         RObject[sapply(RObject,is.null)] <- NA
         return(RObject)
     }
 
     # Page (specified or default) download
-    if(!is.na(page)){
+    if(!missing(page)){
       RObject <- .page.to.dataframe(RObject)
     }
     return(RObject)
@@ -80,19 +81,19 @@ TaxaLink <- function(url=NA, ID=NA, page=NA){
 
 #' @export
 #' @rdname Checklists
-Checklists <- function(url=NA, ID=NA, page=NA){
+Checklists <- function(ID, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
   RObject <- .api.scaffold(.check.api.entry("checklists"), url, ID, page)
   
   # ID Download
-  if(!is.na(ID)){
+  if(!missing(ID)){
     RObject[sapply(RObject,is.null)] <- NA
     return(RObject)
   }
   
   # Page (specified or default) download
-  if(!is.na(page)){
+  if(!missing(page)){
     RObject <- RObject$`hydra:member`
     for(i in seq_along(RObject))
       RObject[[i]][sapply(RObject[[i]], is.null)] <- NA

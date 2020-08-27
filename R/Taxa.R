@@ -14,19 +14,19 @@
 #' @rdname Taxa
 #' @name Taxa
 #' @export
-Taxa <- function(url=NA, ID=NA, page=NA){
+Taxa <- function(ID, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
   RObject <- .api.scaffold(.check.api.entry("taxa"), url, ID, page)
   
   # ID Download
-  if(!is.na(ID)){
+  if(!missing(ID)){
     RObject[sapply(RObject,is.null)] <- NA
     return(RObject)
   }
   
   # Page (specified or default) download
-  if(!is.na(page)){
+  if(!missing(page)){
     RObject <- RObject$`hydra:member`
     for(i in seq_along(RObject))
       RObject[[i]][sapply(RObject[[i]], is.null)] <- NA
@@ -37,19 +37,19 @@ Taxa <- function(url=NA, ID=NA, page=NA){
 
 #' @export
 #' @rdname Taxa
-Authorities <- function(url=NA, ID=NA, page=NA){
+Authorities <- function(ID, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
   RObject <- .api.scaffold(.check.api.entry("taxa/authorities"), url, ID, page)
   
   # ID Download
-  if(!is.na(ID)){
+  if(!missing(ID)){
     RObject[sapply(RObject,is.null)] <- NA
     return(RObject)
   }
   
   # Page (specified or default) download
-  if(!is.na(page)){
+  if(!missing(page)){
     RObject <- RObject$`hydra:member`
     for(i in seq_along(RObject))
       RObject[[i]][sapply(RObject[[i]], is.null)] <- NA
@@ -60,18 +60,18 @@ Authorities <- function(url=NA, ID=NA, page=NA){
 
 #' @export
 #' @rdname Taxa
-DescriptionBlock <- function(url=NA, ID=NA, page=NA){
+DescriptionBlock <- function(ID, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
   RObject <- .api.scaffold(.check.api.entry("taxa/descriptionblock"), url, ID, page)
   
   # ID Download
-  if(!is.na(ID)){
+  if(!missing(ID)){
     return(RObject)
   }
   
   # Page (specified or default) download
-  if(!is.na(page)){
+  if(!missing(page)){
     RObject <- .page.to.dataframe(RObject)
   }
   return(RObject)
@@ -79,18 +79,18 @@ DescriptionBlock <- function(url=NA, ID=NA, page=NA){
 
 #' @export
 #' @rdname Taxa
-Synonymy <- function(url=NA, ID=NA, page=NA){
+Synonymy <- function(ID, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
   RObject <- .api.scaffold(.check.api.entry("taxa/synonymy"), url, ID, page)
   
   # ID Download
-  if(!is.na(ID)){
+  if(!missing(ID)){
     return(RObject)
   }
   
   # Page (specified or default) download
-  if(!is.na(page)){
+  if(!missing(page)){
     RObject <- .page.to.dataframe(RObject)
   }
   return(RObject)

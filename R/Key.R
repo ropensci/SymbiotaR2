@@ -14,18 +14,18 @@
 #' @rdname Key
 #' @name Key
 #' @export
-CharacterHeading <- function(url=NA, ID=NA, page=NA){
+CharacterHeading <- function(ID, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
   RObject <- .api.scaffold(.check.api.entry("key/characterheading"), url, ID, page)
   
   # ID Download
-  if(!is.na(ID)){
+  if(!missing(ID)){
     return(RObject)
   }
   
   # Page (specified or default) download
-  if(!is.na(page)){
+  if(!missing(page)){
     RObject <- .page.to.dataframe(RObject)
   }
   return(RObject)
@@ -33,13 +33,13 @@ CharacterHeading <- function(url=NA, ID=NA, page=NA){
 
 #' @export
 #' @rdname Key
-Characters <- function(url=NA, ID=NA, page=NA){
+Characters <- function(ID, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
   RObject <- .api.scaffold(.check.api.entry("key/characters"), url, ID, page)
   
   # ID Download
-  if(!is.na(ID)){
+  if(!missing(ID)){
     RObject[sapply(RObject,is.null)] <- NA
     return(RObject)
   }
@@ -52,18 +52,18 @@ Characters <- function(url=NA, ID=NA, page=NA){
 
 #' @export
 #' @rdname Key
-CharacterStateImages <- function(url=NA, ID=NA, page=NA){
+CharacterStateImages <- function(ID, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
   RObject <- .api.scaffold(.check.api.entry("key/characterstateimages"), url, ID, page)
   
   # ID Download
-  if(!is.na(ID)){
+  if(!missing(ID)){
     return(RObject)
   }
   
   # Page (specified or default) download
-  if(!is.na(page)){
+  if(!missing(page)){
     RObject <- .page.to.dataframe(RObject)
   }
   return(RObject)
@@ -71,19 +71,19 @@ CharacterStateImages <- function(url=NA, ID=NA, page=NA){
 
 #' @export
 #' @rdname Key
-CharacterStates <- function(url=NA, ID=NA, page=NA){
+CharacterStates <- function(ID, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
   RObject <- .api.scaffold(.check.api.entry("key/characterstates"), url, ID, page)
   
   # ID Download
-  if(!is.na(ID)){
+  if(!missing(ID)){
     RObject[sapply(RObject,is.null)] <- NA
     return(RObject)
   }
   
   # Page (specified or default) download
-  if(!is.na(page)){
+  if(!missing(page)){
     RObject <- RObject$`hydra:member`
     output <- as.data.frame(do.call(rbind, RObject))
     return(output)
@@ -92,18 +92,18 @@ CharacterStates <- function(url=NA, ID=NA, page=NA){
 
 #' @export
 #' @rdname Key
-DescriptionDeletions <- function(url=NA, ID=NA, page=NA){
+DescriptionDeletions <- function(ID, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
   RObject <- .api.scaffold(.check.api.entry("key/descriptiondeletions"), url, ID, page)
   
   # ID Download
-  if(!is.na(ID)){
+  if(!missing(ID)){
     return(RObject)
   }
   
   # Page (specified or default) download
-  if(!is.na(page)){
+  if(!missing(page)){
     RObject <- .page.to.dataframe(RObject)
   }
   return(RObject)

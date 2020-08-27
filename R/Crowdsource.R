@@ -15,17 +15,17 @@
 #' @rdname Crowdsource
 #' @name Crowdsource
 #' @export
-Central <- function(url=NA, ID=NA, page=NA){
+Central <- function(ID, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
   RObject <- .api.scaffold(.check.api.entry("crowdsource/central"), url, ID, page)
   
   # ID download
-  if(!is.na(ID))
+  if(!missing(ID))
     return(RObject)
   
   # Page (specified or default) download
-  if(!is.na(page)){
+  if(!missing(page)){
     RObject <- .page.to.dataframe(RObject)
   }
   return(RObject)
@@ -33,17 +33,17 @@ Central <- function(url=NA, ID=NA, page=NA){
 
 #' @export
 #' @rdname Crowdsource
-Queue <- function(url=NA, ID=NA, page=NA){
+Queue <- function(ID, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
   RObject <- .api.scaffold(.check.api.entry("crowdsource/queue"), url, ID, page)
   
   # ID download
-  if(!is.na(ID))
+  if(!missing(ID))
     return(RObject)
   
   # Page (specified or default) download
-  if(!is.na(page)){
+  if(!missing(page)){
     RObject <- .page.to.dataframe(RObject)
   }
   return(RObject)

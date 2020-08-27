@@ -14,18 +14,18 @@
 #' @rdname Reference
 #' @name Reference
 #' @export
-LookupReferenceTypes <- function(url=NA, ID=NA, page=NA){
+LookupReferenceTypes <- function(ID, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
   RObject <- .api.scaffold(.check.api.entry("reference/lookupreferencetypes"), url, ID, page)
   
   # ID Download
-  if(!is.na(ID)){
+  if(!missing(ID)){
     return(RObject)
   }
   
   # Page (specified or default) download
-  if(!is.na(page)){
+  if(!missing(page)){
     RObject <- .page.to.dataframe(RObject)
   }
   return(RObject)

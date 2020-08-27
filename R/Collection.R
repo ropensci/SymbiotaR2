@@ -15,17 +15,17 @@
 #' @rdname Collection
 #' @name Collection
 #' @export
-Categories <- function(url=NA, ID=NA, page=NA){
+Categories <- function(ID, page, url=NULL){
     # Argument handling
     url <- .get.url(url)
     RObject <- .api.scaffold(.check.api.entry("collection/categories"), url, ID, page)
 
     # ID download
-    if(!is.na(ID))
+    if(!missing(ID))
         return(RObject)
 
     # Page (specified or default) download
-    if(!is.na(page)){
+    if(!missing(page)){
       RObject <- .page.to.dataframe(RObject)
     }
     return(RObject)
@@ -33,17 +33,17 @@ Categories <- function(url=NA, ID=NA, page=NA){
 
 #' @export
 #' @rdname Collection
-Institutions <- function(url=NA, ID=NA, page=NA){
+Institutions <- function(ID, page, url=NULL){
     # Argument handling
     url <- .get.url(url)
     RObject <- .api.scaffold(.check.api.entry("collection/institutions"), url, ID, page)
 
     # ID download
-    if(!is.na(ID))
+    if(!missing(ID))
         return(RObject)
 
     # Page (specified or default) download
-    if(!is.na(page)){
+    if(!missing(page)){
       RObject <- .page.to.dataframe(RObject)
     }
     return(RObject)
@@ -51,17 +51,17 @@ Institutions <- function(url=NA, ID=NA, page=NA){
 
 #' @export
 #' @rdname Collection
-Stats <- function(url=NA, ID=NA, page=NA){
+Stats <- function(ID, page, url=NULL){
     # Argument handling
     url <- .get.url(url)
     RObject <- .api.scaffold(.check.api.entry("collection/stats"), url, ID, page)
 
     # ID download
-    if(!is.na(ID))
+    if(!missing(ID))
         return(RObject)
     
     # Page (specified or default) download
-    if(!is.na(page)){
+    if(!missing(page)){
       RObject <- .page.to.dataframe(RObject)
     }
     return(RObject)
@@ -69,17 +69,17 @@ Stats <- function(url=NA, ID=NA, page=NA){
 
 #' @export
 #' @rdname Collection
-Collections <- function(url=NA, ID=NA, page=NA){
+Collections <- function(ID, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
   RObject <- .api.scaffold(.check.api.entry("collections"), url, ID, page)
   
   # ID download
-  if(!is.na(ID))
+  if(!missing(ID))
     return(RObject)
   
   # Page (specified or default) download
-  if(!is.na(page)){
+  if(!missing(page)){
     RObject <- RObject$`hydra:member`
     output <- as.data.frame(do.call(rbind, RObject))
     return(output)

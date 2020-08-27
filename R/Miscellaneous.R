@@ -14,18 +14,18 @@
 #' @rdname Miscellaneous
 #' @name Miscellaneous
 #' @export
-Configurations <- function(url=NA, ID=NA, page=NA){
+Configurations <- function(ID, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
   RObject <- .api.scaffold(.check.api.entry("configurations"), url, ID, page)
   
   # ID Download
-  if(!is.na(ID)){
+  if(!missing(ID)){
     return(RObject)
   }
   
   # Page (specified or default) download
-  if(!is.na(page)){
+  if(!missing(page)){
     RObject <- .page.to.dataframe(RObject)
   }
   return(RObject)
@@ -33,18 +33,18 @@ Configurations <- function(url=NA, ID=NA, page=NA){
 
 #' @export
 #' @rdname Miscellaneous
-LookupLanguages <- function(url=NA, ID=NA, page=NA){
+LookupLanguages <- function(ID, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
   RObject <- .api.scaffold(.check.api.entry("lookuplanguages"), url, ID, page)
   
   # ID Download
-  if(!is.na(ID)){
+  if(!missing(ID)){
     return(RObject)
   }
   
   # Page (specified or default) download
-  if(!is.na(page)){
+  if(!missing(page)){
     RObject <- .page.to.dataframe(RObject)
   }
   return(RObject)
@@ -52,18 +52,18 @@ LookupLanguages <- function(url=NA, ID=NA, page=NA){
 
 #' @export
 #' @rdname Miscellaneous
-SchemaVersion <- function(url=NA, ID=NA, page=NA){
+SchemaVersion <- function(ID, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
   RObject <- .api.scaffold(.check.api.entry("schemaversion"), url, ID, page)
   
   # ID Download
-  if(!is.na(ID)){
+  if(!missing(ID)){
     return(RObject)
   }
   
   # Page (specified or default) download
-  if(!is.na(page)){
+  if(!missing(page)){
     RObject <- .page.to.dataframe(RObject)
   }
   return(RObject)

@@ -14,18 +14,18 @@
 #' @name Exsiccati
 #' @export
 #' @rdname Exsiccati
-Numbers <- function(url=NA, ID=NA, page=NA){
+Numbers <- function(ID, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
   RObject <- .api.scaffold(.check.api.entry("exsiccati/numbers"), url, ID, page)
   
   # ID Download
-  if(!is.na(ID)){
+  if(!missing(ID)){
     return(RObject)
   }
   
   # Page (specified or default) download
-  if(!is.na(page)){
+  if(!missing(page)){
     RObject <- RObject$`hydra:member`
     for(i in seq_along(RObject))
       RObject[[i]][sapply(RObject[[i]], is.null)] <- NA
@@ -37,18 +37,18 @@ Numbers <- function(url=NA, ID=NA, page=NA){
 
 #' @export
 #' @rdname Exsiccati 
-Titles <- function(url=NA, ID=NA, page=NA){
+Titles <- function(ID, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
   RObject <- .api.scaffold(.check.api.entry("exsiccati/titles"), url, ID, page)
   
   # ID Download
-  if(!is.na(ID)){
+  if(!missing(ID)){
     return(RObject)
   }
   
   # Page (specified or default) download
-  if(!is.na(page)){
+  if(!missing(page)){
     RObject <- .page.to.dataframe(RObject)
   }
   return(RObject)
