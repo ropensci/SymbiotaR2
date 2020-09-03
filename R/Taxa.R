@@ -4,33 +4,27 @@
 #' Each function either retrieves an individual resource or a page of resources,
 #' depending on the arguments provided.
 #' 
-#' @param url URL of the Symbiota2 portal connected to
-#' @param id id value (usually \code{numeric}, but not always) used to refer to the specific resource to pull from the database
-#' @param page \code{numeric} value referring to the page of Taxa resources to pull. If neither an
-#' id or a page parameter is provided, function will pull the first page of resources (i.e. \code{page=1}`)
-#' @return If using \code{id}, the specific Taxa resource specified; If using page, the \code{page} specified
-#' of Taxa resources
-#' @author Austin Koontz
+#' @template SymbiotaR2
 #' @rdname Taxa
 #' @name Taxa
 #' @export
 Taxa <- function(id, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
-  RObject <- .api.scaffold(.check.api.entry("taxa"), url, id, page)
+  robject <- .api.scaffold(.check.api.entry("taxa"), url, id, page)
   
   # id Download
   if(!missing(id)){
-    RObject[sapply(RObject,is.null)] <- NA
-    return(RObject)
+    robject[sapply(robject,is.null)] <- NA
+    return(robject)
   }
   
   # Page (specified or default) download
   if(!missing(page)){
-    RObject <- RObject$`hydra:member`
-    for(i in seq_along(RObject))
-      RObject[[i]][sapply(RObject[[i]], is.null)] <- NA
-    output <- as.data.frame(do.call(rbind, RObject))
+    robject <- robject$`hydra:member`
+    for(i in seq_along(robject))
+      robject[[i]][sapply(robject[[i]], is.null)] <- NA
+    output <- as.data.frame(do.call(rbind, robject))
     return(output)
   }
 }
@@ -40,20 +34,20 @@ Taxa <- function(id, page, url=NULL){
 Authorities <- function(id, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
-  RObject <- .api.scaffold(.check.api.entry("taxa/authorities"), url, id, page)
+  robject <- .api.scaffold(.check.api.entry("taxa/authorities"), url, id, page)
   
   # id Download
   if(!missing(id)){
-    RObject[sapply(RObject,is.null)] <- NA
-    return(RObject)
+    robject[sapply(robject,is.null)] <- NA
+    return(robject)
   }
   
   # Page (specified or default) download
   if(!missing(page)){
-    RObject <- RObject$`hydra:member`
-    for(i in seq_along(RObject))
-      RObject[[i]][sapply(RObject[[i]], is.null)] <- NA
-    output <- as.data.frame(do.call(rbind, RObject))
+    robject <- robject$`hydra:member`
+    for(i in seq_along(robject))
+      robject[[i]][sapply(robject[[i]], is.null)] <- NA
+    output <- as.data.frame(do.call(rbind, robject))
     return(output)
   }
 }
@@ -63,18 +57,18 @@ Authorities <- function(id, page, url=NULL){
 DescriptionBlock <- function(id, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
-  RObject <- .api.scaffold(.check.api.entry("taxa/descriptionblock"), url, id, page)
+  robject <- .api.scaffold(.check.api.entry("taxa/descriptionblock"), url, id, page)
   
   # id Download
   if(!missing(id)){
-    return(RObject)
+    return(robject)
   }
   
   # Page (specified or default) download
   if(!missing(page)){
-    RObject <- .page.to.dataframe(RObject)
+    robject <- .page.to.dataframe(robject)
   }
-  return(RObject)
+  return(robject)
 }
 
 #' @export
@@ -82,16 +76,16 @@ DescriptionBlock <- function(id, page, url=NULL){
 Synonymy <- function(id, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
-  RObject <- .api.scaffold(.check.api.entry("taxa/synonymy"), url, id, page)
+  robject <- .api.scaffold(.check.api.entry("taxa/synonymy"), url, id, page)
   
   # id Download
   if(!missing(id)){
-    return(RObject)
+    return(robject)
   }
   
   # Page (specified or default) download
   if(!missing(page)){
-    RObject <- .page.to.dataframe(RObject)
+    robject <- .page.to.dataframe(robject)
   }
-  return(RObject)
+  return(robject)
 }

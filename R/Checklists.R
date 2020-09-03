@@ -4,34 +4,27 @@
 #' Each function either retrieves an individual resource or a page of resources,
 #' depending on the arguments provided.
 #' 
-#' @param url URL of the Symbiota2 portal connected to
-#' @param id id value (usually \code{numeric}, but not always) 
-#' used to refer to the specific resource to pull from the database
-#' @param page \code{numeric} value referring to the page of Checklist resources to pull. If neither an
-#' id or a page parameter is provided, function will pull the first page of resources (i.e. \code{page=1}`)
-#' @return If using \code{id}, the specific Checklist resource specified; 
-#' if using page, the \code{page} specified of Checklist resources
-#' @author Austin Koontz
+#' @template SymbiotaR2
 #' @name Checklists
-#' @export
 #' @rdname Checklists
+#' @export
 ChecklistProjects <- function(id, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
-  RObject <- .api.scaffold(.check.api.entry("checklist/checklistprojects"), url, id, page)
+  robject <- .api.scaffold(.check.api.entry("checklist/checklistprojects"), url, id, page)
   
   # id Download
   if(!missing(id)){
-    RObject[sapply(RObject,is.null)] <- NA
-    return(RObject)
+    robject[sapply(robject,is.null)] <- NA
+    return(robject)
   }
   
   # Page (specified or default) download
   if(!missing(page)){
-    RObject <- RObject$`hydra:member`
-    for(i in seq_along(RObject))
-      RObject[[i]][sapply(RObject[[i]], is.null)] <- NA
-    output <- as.data.frame(do.call(rbind, RObject))
+    robject <- robject$`hydra:member`
+    for(i in seq_along(robject))
+      robject[[i]][sapply(robject[[i]], is.null)] <- NA
+    output <- as.data.frame(do.call(rbind, robject))
     return(output)
   }
 }
@@ -41,19 +34,19 @@ ChecklistProjects <- function(id, page, url=NULL){
 Coordinates <- function(id, page, url=NULL){
     # Argument handling
     url <- .get.url(url)
-    RObject <- .api.scaffold(.check.api.entry("checklist/coordinates"), url, id, page)
+    robject <- .api.scaffold(.check.api.entry("checklist/coordinates"), url, id, page)
     
     # id download
     if(!missing(id)){
-        RObject <- c(RObject$decimalLatitude,RObject$decimalLongitude)
-        return(RObject)
+        robject <- c(robject$decimalLatitude,robject$decimalLongitude)
+        return(robject)
     }
 
     # Page (specified or default) download
     if(!missing(page)){
-      RObject <- RObject$`hydra:member`
-      RObject <- lapply(RObject, function(x) c(x$decimalLatitude,x$decimalLongitude))
-      output <- as.data.frame(do.call(rbind, RObject))
+      robject <- robject$`hydra:member`
+      robject <- lapply(robject, function(x) c(x$decimalLatitude,x$decimalLongitude))
+      output <- as.data.frame(do.call(rbind, robject))
       names(output) <- c("latitude","longitude")
       return(output)
     }
@@ -64,19 +57,19 @@ Coordinates <- function(id, page, url=NULL){
 TaxaLink <- function(id, page, url=NULL){
     # Argument handling
     url <- .get.url(url)
-    RObject <- .api.scaffold(.check.api.entry("checklist/taxalink"), url, id, page)
+    robject <- .api.scaffold(.check.api.entry("checklist/taxalink"), url, id, page)
 
     # id Download
     if(!missing(id)){
-        RObject[sapply(RObject,is.null)] <- NA
-        return(RObject)
+        robject[sapply(robject,is.null)] <- NA
+        return(robject)
     }
 
     # Page (specified or default) download
     if(!missing(page)){
-      RObject <- .page.to.dataframe(RObject)
+      robject <- .page.to.dataframe(robject)
     }
-    return(RObject)
+    return(robject)
 }
 
 #' @export
@@ -84,20 +77,20 @@ TaxaLink <- function(id, page, url=NULL){
 Checklists <- function(id, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
-  RObject <- .api.scaffold(.check.api.entry("checklists"), url, id, page)
+  robject <- .api.scaffold(.check.api.entry("checklists"), url, id, page)
   
   # id Download
   if(!missing(id)){
-    RObject[sapply(RObject,is.null)] <- NA
-    return(RObject)
+    robject[sapply(robject,is.null)] <- NA
+    return(robject)
   }
   
   # Page (specified or default) download
   if(!missing(page)){
-    RObject <- RObject$`hydra:member`
-    for(i in seq_along(RObject))
-      RObject[[i]][sapply(RObject[[i]], is.null)] <- NA
-    output <- as.data.frame(do.call(rbind, RObject))
+    robject <- robject$`hydra:member`
+    for(i in seq_along(robject))
+      robject[[i]][sapply(robject[[i]], is.null)] <- NA
+    output <- as.data.frame(do.call(rbind, robject))
     return(output)
   }
 }

@@ -23,10 +23,10 @@
     if(!inherits(id, "numeric"))
       stop("id must be a numeric")
     complete_url <- paste0(url,api.entry,"/",id)
-    RObject <- .parse.json(complete_url)
-    for(i in seq_along(RObject))
-      RObject[i][sapply(RObject[i], is.null)] <- NA
-    return(RObject)
+    robject <- .parse.json(complete_url)
+    for(i in seq_along(robject))
+      robject[i][sapply(robject[i], is.null)] <- NA
+    return(robject)
   }
   
   # Grabbing all from a page (default: starting at 1) and return for processing
@@ -43,7 +43,7 @@
 }
 
 .page.to.dataframe <- function(robject){
-  # Takes the page RObject and converts it to a data.frame to be returned
+  # Takes the page robject and converts it to a data.frame to be returned
   robject <- robject$`hydra:member`
   for(i in seq_along(robject))
     robject[[i]][sapply(robject[[i]], is.null)] <- NA
