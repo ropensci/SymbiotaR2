@@ -2,10 +2,10 @@
 url <- "http://a02235015-6.bluezone.usu.edu/api/"
 
 context("Traits")
-vcr::use_cassette(name="Traits_ID",{
-  data <- Traits(url=url, ID = 1)
+vcr::use_cassette(name="Traits_id",{
+  data <- Traits(url=url, id = 1)
 })
-test_that("Traits_ID",{
+test_that("Traits_id",{
   expect_equal(length(data),  16)
   expect_type(data, "list")
 })

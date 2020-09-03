@@ -2,10 +2,10 @@
 url <- "http://a02235015-6.bluezone.usu.edu/api/"
 
 context("Configurations")
-vcr::use_cassette(name="Configurations_ID",{
-  data <- Configurations(url=url, ID=5)
+vcr::use_cassette(name="Configurations_id",{
+  data <- Configurations(url=url, id=5)
 })
-test_that("Configurations_ID",{
+test_that("Configurations_id",{
   expect_equal(length(data),  7)
   expect_type(data, "list")
 })
@@ -18,10 +18,10 @@ test_that("Configurations_page",{
 })
 
 context("LookupLanguages")
-vcr::use_cassette(name="LookupLanguages_ID",{
-  data <- LookupLanguages(url=url, ID=5)
+vcr::use_cassette(name="LookupLanguages_id",{
+  data <- LookupLanguages(url=url, id=5)
 })
-test_that("LookupLanguages_ID",{
+test_that("LookupLanguages_id",{
   expect_equal(length(data),  9)
   expect_type(data, "list")
 })
@@ -34,10 +34,10 @@ test_that("LookupLanguages_page",{
 })
 
 context("SchemaVersion")
-vcr::use_cassette(name="SchemaVersion_ID",{
-  data <- SchemaVersion(url=url, ID=1)
+vcr::use_cassette(name="SchemaVersion_id",{
+  data <- SchemaVersion(url=url, id=1)
 })
-test_that("SchemaVersion_ID",{
+test_that("SchemaVersion_id",{
   expect_equal(length(data),  6)
   expect_type(data, "list")
 })

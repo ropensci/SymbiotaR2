@@ -2,10 +2,10 @@
 url <- "http://a02235015-6.bluezone.usu.edu/api/"
 
 context("Taxa")
-vcr::use_cassette(name="Taxa_ID",{
-  data <- Taxa(url=url, ID= 1)
+vcr::use_cassette(name="Taxa_id",{
+  data <- Taxa(url=url, id= 1)
 })
-test_that("Taxa_ID",{
+test_that("Taxa_id",{
   expect_equal(length(data),  23)
   expect_type(data, "list")
 })
@@ -18,10 +18,10 @@ test_that("Taxa_page",{
 })
 
 context("Authorities")
-vcr::use_cassette(name="Authorities_ID",{
-  data <- Authorities(url=url, ID= 1)
+vcr::use_cassette(name="Authorities_id",{
+  data <- Authorities(url=url, id= 1)
 })
-test_that("Authorities_ID",{
+test_that("Authorities_id",{
   expect_equal(length(data),  15)
   expect_type(data, "list")
 })
@@ -34,10 +34,10 @@ test_that("Authorities_page",{
 })
 
 context("DescriptionBlock")
-vcr::use_cassette(name="DescriptionBlock_ID",{
-  data <- DescriptionBlock(url=url, ID= 1)
+vcr::use_cassette(name="DescriptionBlock_id",{
+  data <- DescriptionBlock(url=url, id= 1)
 })
-test_that("DescriptionBlock_ID",{
+test_that("DescriptionBlock_id",{
   expect_equal(length(data),  14)
   expect_type(data, "list")
 })
@@ -50,10 +50,10 @@ test_that("DescriptionBlock_page",{
 })
 
 context("Synonymy")
-vcr::use_cassette(name="Synonymy_ID",{
-  data <- Synonymy(url=url, ID= 1)
+vcr::use_cassette(name="Synonymy_id",{
+  data <- Synonymy(url=url, id= 1)
 })
-test_that("Synonymy_ID",{
+test_that("Synonymy_id",{
   expect_equal(length(data),  13)
   expect_type(data, "list")
 })

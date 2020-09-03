@@ -2,10 +2,10 @@
 url <- "http://a02235015-6.bluezone.usu.edu/api/"
 
 context("CharacterHeading")
-vcr::use_cassette(name="CharacterHeading_ID",{
-  data <- CharacterHeading(url=url, ID=1)
+vcr::use_cassette(name="CharacterHeading_id",{
+  data <- CharacterHeading(url=url, id=1)
 })
-test_that("CharacterHeading_ID",{
+test_that("CharacterHeading_id",{
   expect_equal(length(data),  10)
   expect_type(data, "list")
 })
@@ -18,10 +18,10 @@ test_that("CharacterHeading_page",{
 })
 
 context("Characters")
-vcr::use_cassette(name="Characters_ID",{
-  data <- Characters(url=url, ID=1)
+vcr::use_cassette(name="Characters_id",{
+  data <- Characters(url=url, id=1)
 })
-test_that("Characters_ID",{
+test_that("Characters_id",{
   expect_equal(length(data),  19)
   expect_type(data, "list")
 })
@@ -34,10 +34,10 @@ test_that("Characters_page",{
 })
 
 context("CharacterStateImages")
-vcr::use_cassette(name="CharacterStateImages_ID",{
-  data <- CharacterStateImages(url=url, ID=1)
+vcr::use_cassette(name="CharacterStateImages_id",{
+  data <- CharacterStateImages(url=url, id=1)
 })
-test_that("CharacterStateImages_ID",{
+test_that("CharacterStateImages_id",{
   expect_equal(length(data),  10)
   expect_type(data, "list")
 })
@@ -50,10 +50,10 @@ test_that("CharacterStateImages_page",{
 })
 
 context("CharacterStates")
-vcr::use_cassette(name="CharacterStates_ID",{
-  data <- CharacterStates(url=url, ID=1)
+vcr::use_cassette(name="CharacterStates_id",{
+  data <- CharacterStates(url=url, id=1)
 })
-test_that("CharacterStates_ID",{
+test_that("CharacterStates_id",{
   expect_equal(length(data),  16)
   expect_type(data, "list")
 })
@@ -66,10 +66,10 @@ test_that("CharacterStates_page",{
 })
 
 context("DescriptionDeletions")
-vcr::use_cassette(name="DescriptionDeletions_ID",{
-  data <- DescriptionDeletions(url=url, ID=638)
+vcr::use_cassette(name="DescriptionDeletions_id",{
+  data <- DescriptionDeletions(url=url, id=638)
 })
-test_that("DescriptionDeletions_ID",{
+test_that("DescriptionDeletions_id",{
   expect_equal(length(data),  18)
   expect_type(data, "list")
 })

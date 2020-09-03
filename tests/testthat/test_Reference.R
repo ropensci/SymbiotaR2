@@ -2,10 +2,10 @@
 url <- "http://a02235015-6.bluezone.usu.edu/api/"
 
 context("LookupReferenceTypes")
-vcr::use_cassette(name="LookupReferenceTypes_ID",{
-  data <- LookupReferenceTypes(url=url, ID=5)
+vcr::use_cassette(name="LookupReferenceTypes_id",{
+  data <- LookupReferenceTypes(url=url, id=5)
 })
-test_that("LookupReferenceTypes_ID",{
+test_that("LookupReferenceTypes_id",{
   expect_equal(length(data),  25)
   expect_type(data, "list")
 })

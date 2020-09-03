@@ -2,10 +2,10 @@
 url <- "http://a02235015-6.bluezone.usu.edu/api/"
 
 context("Glossary")
-vcr::use_cassette(name="Glossary_ID",{
-  data <- Glossary(url=url, ID=5)
+vcr::use_cassette(name="Glossary_id",{
+  data <- Glossary(url=url, id=5)
 })
-test_that("Glossary_ID",{
+test_that("Glossary_id",{
   expect_equal(length(data),  15)
   expect_type(data, "list")
 })
@@ -17,9 +17,9 @@ test_that("Glossary_page",{
   expect_type(data, "list")
 })
 
-context("TermLink_ID")
-vcr::use_cassette(name="TermLink_ID",{
-  data <- TermLink(url=url, ID=1)
+context("TermLink_id")
+vcr::use_cassette(name="TermLink_id",{
+  data <- TermLink(url=url, id=1)
 })
 test_that("TermLink",{
   expect_equal(length(data),  8)

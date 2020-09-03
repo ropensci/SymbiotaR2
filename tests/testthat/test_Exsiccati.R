@@ -2,10 +2,10 @@
 url <- "http://a02235015-6.bluezone.usu.edu/api/"
 
 context("Numbers")
-vcr::use_cassette(name="Numbers_ID",{
-  data <- Numbers(url=url, ID=5)
+vcr::use_cassette(name="Numbers_id",{
+  data <- Numbers(url=url, id=5)
 })
-test_that("Numbers_ID",{
+test_that("Numbers_id",{
   expect_equal(length(data),  9)
   expect_type(data, "list")
 })
@@ -18,10 +18,10 @@ test_that("Numbers_page",{
 })
 
 context("Titles")
-vcr::use_cassette(name="Titles_ID",{
-  data <- Titles(url=url, ID=1)
+vcr::use_cassette(name="Titles_id",{
+  data <- Titles(url=url, id=1)
 })
-test_that("Titles_ID",{
+test_that("Titles_id",{
   expect_equal(length(data),  14)
   expect_type(data, "list")
 })

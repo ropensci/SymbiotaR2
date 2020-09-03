@@ -2,10 +2,10 @@
 url <- "http://a02235015-6.bluezone.usu.edu/api/"
 
 context("Categories")
-vcr::use_cassette(name="Categories_ID",{
-  data <- Categories(url=url, ID=1)
+vcr::use_cassette(name="Categories_id",{
+  data <- Categories(url=url, id=1)
 })
-test_that("Categories_ID",{
+test_that("Categories_id",{
   expect_equal(length(data),  12)
   expect_type(data, "list")
 })
@@ -18,10 +18,10 @@ test_that("Categories_page",{
 })
 
 context("Institutions")
-vcr::use_cassette(name="Institutions_ID",{
-  data <- Institutions(url=url, ID=5)
+vcr::use_cassette(name="Institutions_id",{
+  data <- Institutions(url=url, id=5)
 })
-test_that("Institutions_ID",{
+test_that("Institutions_id",{
   expect_equal(length(data),  21)
   expect_type(data, "list")
 })
@@ -34,10 +34,10 @@ test_that("Institutions_page",{
 })
 
 context("Stats")
-vcr::use_cassette(name="Stats_ID",{
-  data <- Stats(url=url, ID=1)
+vcr::use_cassette(name="Stats_id",{
+  data <- Stats(url=url, id=1)
 })
-test_that("Stats_ID",{
+test_that("Stats_id",{
   expect_equal(length(data),  14)
   expect_type(data, "list")
 })
@@ -50,10 +50,10 @@ test_that("Stats_page",{
 })
 
 context("Collections")
-vcr::use_cassette(name="Collections_ID",{
-  data <- Collections(url=url, ID=1)
+vcr::use_cassette(name="Collections_id",{
+  data <- Collections(url=url, id=1)
 })
-test_that("Collections_ID",{
+test_that("Collections_id",{
   expect_equal(length(data),  37)
   expect_type(data, "list")
 })

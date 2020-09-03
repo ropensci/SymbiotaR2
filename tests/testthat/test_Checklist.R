@@ -2,10 +2,10 @@
 url <- "http://a02235015-6.bluezone.usu.edu/api/"
 
 context("ChecklistProjects")
-vcr::use_cassette(name="ChecklistProjects_ID",{
-  data <- ChecklistProjects(url=url, ID=1)
+vcr::use_cassette(name="ChecklistProjects_id",{
+  data <- ChecklistProjects(url=url, id=1)
 })
-test_that("ChecklistProjects_ID",{
+test_that("ChecklistProjects_id",{
   expect_equal(length(data),  19)
   expect_type(data, "list")
 })
@@ -18,10 +18,10 @@ test_that("ChecklistProjects_page",{
 })
 
 context("Coordinates")
-vcr::use_cassette(name="Coordinates_ID",{
-  data <- Coordinates(url=url, ID=5)
+vcr::use_cassette(name="Coordinates_id",{
+  data <- Coordinates(url=url, id=5)
 })
-test_that("Coordinates_ID",{
+test_that("Coordinates_id",{
   expect_equal(length(data),  2)
   expect_type(data, "double")
 })
@@ -34,10 +34,10 @@ test_that("Coordinates_page",{
 })
 
 context("TaxaLink")
-vcr::use_cassette(name="TaxaLink_ID",{
-  data <- TaxaLink(url=url, ID=5)
+vcr::use_cassette(name="TaxaLink_id",{
+  data <- TaxaLink(url=url, id=5)
 })
-test_that("TaxaLink_ID",{
+test_that("TaxaLink_id",{
   expect_equal(length(data),  19)
   expect_type(data, "list")
 })
@@ -50,10 +50,10 @@ test_that("TaxaLink_page",{
 })
 
 context("Checklists")
-vcr::use_cassette(name="Checklists_ID",{
-  data <- Checklists(url=url, ID=1)
+vcr::use_cassette(name="Checklists_id",{
+  data <- Checklists(url=url, id=1)
 })
-test_that("Checklists_ID",{
+test_that("Checklists_id",{
   expect_equal(length(data),  31)
   expect_type(data, "list")
 })
