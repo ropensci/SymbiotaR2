@@ -1,0 +1,8 @@
+#' @param url URL of the Symbiota2 portal connected to
+#' @param id id value (usually \code{numeric}, but not always) 
+#' used to refer to the specific resource to pull from the database
+#' @param page \code{numeric} value referring to the page of resources to pull. If neither an
+#' id or a page parameter is provided, function will pull the first page of resources (i.e. \code{page=1}`)
+#' @return If using \code{id}, the specific resource specified; 
+#' if using page, the \code{page} specified of resources
+#' @author Austin Koontz
