@@ -1,0 +1,73 @@
+http_interactions:
+- request:
+    method: get
+    uri: http://a02235015-6.bluezone.usu.edu/api/
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.17.4
+      content-type: application/ld+json; charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      vary: Accept
+      x-content-type-options: nosniff
+      x-frame-options: deny
+      cache-control: no-cache, private
+      date: Thu, 03 Sep 2020 19:21:59 GMT
+      link: <http://a02235015-6.bluezone.usu.edu/api/docs.jsonld>; rel="http://www.w3.org/ns/hydra/core#apiDocumentation"
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"@context":"\/api\/contexts\/Entrypoint","@id":"\/api","@type":"Entrypoint","configurations":"\/api\/configurations","schemaVersion":"\/api\/schemaversion","lookupLanguages":"\/api\/lookuplanguages","users":"\/api\/users","checklists":"\/api\/checklists","taxaComments":"\/api\/checklist\/taxacomments","children":"\/api\/checklist\/children","taxaLink":"\/api\/checklist\/taxalink","projectCategories":"\/api\/checklist\/projectcategories","vouchers":"\/api\/checklist\/vouchers","dynamic":"\/api\/checklist\/dynamic","checklistProjects":"\/api\/checklist\/checklistprojects","coordinates":"\/api\/checklist\/coordinates","stats":"\/api\/collection\/stats","institutions":"\/api\/collection\/institutions","collections":"\/api\/collections","categories":"\/api\/collection\/categories","queue":"\/api\/crowdsource\/queue","central":"\/api\/crowdsource\/central","titles":"\/api\/exsiccati\/titles","numbers":"\/api\/exsiccati\/numbers","sources":"\/api\/glossary\/sources","termLink":"\/api\/glossary\/termlink","glossary":"\/api\/glossary","projects":"\/api\/imageprocessor\/projects","nlpVersion":"\/api\/imageprocessor\/nlpversion","ocrFragment":"\/api\/imageprocessor\/ocrfragment","nlpFragment":"\/api\/imageprocessor\/nlpfragment","rawLabels":"\/api\/imageprocessor\/rawlabels","nlp":"\/api\/imageprocessor\/nlp","characterHeading":"\/api\/key\/characterheading","characterStateLanguages":"\/api\/key\/characterstatelanguages","characterLanguages":"\/api\/key\/characterlanguages","characters":"\/api\/key\/characters","descriptions":"\/api\/key\/descriptions","descriptionDeletions":"\/api\/key\/descriptiondeletions","characterStates":"\/api\/key\/characterstates","characterStateImages":"\/api\/key\/characterstateimages","tagKey":"\/api\/media\/tagkey","media":"\/api\/media","images":"\/api\/media\/images","guid":"\/api\/media\/guid","keywords":"\/api\/media\/keywords","tag":"\/api\/media\/tag","associations":"\/api\/occurrenceassociations\/associations","comments":"\/api\/occurrencecomments\/comments","datasetLink":"\/api\/occurrencedataset\/datasetlink","datasets":"\/api\/occurrencedataset\/datasets","genetic":"\/api\/occurrencegenetic\/genetic","exchange":"\/api\/occurrenceloan\/exchange","loans":"\/api\/occurrenceloan\/loans","revisions":"\/api\/occurrence\/revisions","edits":"\/api\/occurrence\/edits","uploadDeterminations":"\/api\/occurrence\/uploaddeterminations","fullText":"\/api\/occurrence\/fulltext","uploadParameters":"\/api\/occurrence\/uploadparameters","duplicates":"\/api\/occurrence\/duplicates","lookupChronostratigraphy":"\/api\/occurrence\/lookupchronostratigraphy","accessStats":"\/api\/occurrence\/accessstats","editLocks":"\/api\/occurrence\/editlocks","lookupCounties":"\/api\/occurrence\/lookupcounties","geoIndex":"\/api\/occurrence\/geoindex","lookupStateProvinces":"\/api\/occurrence\/lookupstateprovinces","occurrences":"\/api\/occurrences","determinations":"\/api\/occurrence\/determinations","verification":"\/api\/occurrence\/verification","uploadMappings":"\/api\/occurrence\/uploadmappings","lookupCountries":"\/api\/occurrence\/lookupcountries","identifiers":"\/api\/occurrence\/identifiers","guidOccurrences":"\/api\/occurrence\/guidoccurrences","uploadOccurrences":"\/api\/occurrence\/uploadoccurrences","guidDeterminations":"\/api\/occurrence\/guiddeterminations","lookupMunicipalities":"\/api\/occurrence\/lookupmunicipalities","checklistTaxaLink":"\/api\/reference\/checklisttaxalink","authors":"\/api\/reference\/authors","lookupReferenceTypes":"\/api\/reference\/lookupreferencetypes","references":"\/api\/references","descriptionBlock":"\/api\/taxa\/descriptionblock","synonymy":"\/api\/taxa\/synonymy","authorities":"\/api\/taxa\/authorities","taxa":"\/api\/taxa","resourceLinks":"\/api\/taxa\/resourcelinks","maps":"\/api\/taxa\/maps","descriptionStatements":"\/api\/taxa\/descriptionstatements","relationships":"\/api\/taxa\/relationships","upload":"\/api\/taxa\/upload","links":"\/api\/taxa\/links","userTaxonomy":"\/api\/taxa\/usertaxonomy","vernaculars":"\/api\/taxa\/vernaculars","ranks":"\/api\/taxa\/ranks","attributes":"\/api\/traits\/attributes","traits":"\/api\/traits","dependencies":"\/api\/traits\/dependencies","states":"\/api\/traits\/states"}'
+  recorded_at: 2020-09-03 19:21:59 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.6.2
+- request:
+    method: get
+    uri: http://a02235015-6.bluezone.usu.edu/api/key/characterstateimages?page=1
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.17.4
+      content-type: application/ld+json; charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      vary: Accept
+      x-content-type-options: nosniff
+      x-frame-options: deny
+      cache-control: private, must-revalidate
+      date: Thu, 03 Sep 2020 19:21:59 GMT
+      link: <http://a02235015-6.bluezone.usu.edu/api/docs.jsonld>; rel="http://www.w3.org/ns/hydra/core#apiDocumentation"
+      etag: '"e0b7be679888d303d52e16ce66b3e8b1"'
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"@context":"\/api\/contexts\/CharacterStateImages","@id":"\/api\/key\/characterstateimages","@type":"hydra:Collection","hydra:member":[{"@id":"\/api\/key\/characterstateimages\/1","@type":"CharacterStateImages","id":1,"characterStateId":"\/api\/key\/characterstates\/237","url":"http:\/\/midwestherbaria.org\/imglib\/midwest\/ident\/csimgs\/Leaf_morphology_even_pinnate.jpg","notes":null,"sortSequence":"50","username":null,"initialTimestamp":"2019-01-14T08:10:15+00:00"},{"@id":"\/api\/key\/characterstateimages\/2","@type":"CharacterStateImages","id":2,"characterStateId":"\/api\/key\/characterstates\/297","url":"http:\/\/midwestherbaria.org\/imglib\/midwest\/ident\/csimgs\/Leaf_morphology_even_pinnate.jpg","notes":null,"sortSequence":"50","username":null,"initialTimestamp":"2019-01-14T08:10:15+00:00"},{"@id":"\/api\/key\/characterstateimages\/3","@type":"CharacterStateImages","id":3,"characterStateId":"\/api\/key\/characterstates\/21","url":"http:\/\/midwestherbaria.org\/imglib\/midwest\/ident\/csimgs\/Ulmus_americana_lf4.jpg","notes":"Ulmus
+        americana leaf showing pinnate venation","sortSequence":"10","username":null,"initialTimestamp":"2019-01-14T08:10:15+00:00"},{"@id":"\/api\/key\/characterstateimages\/4","@type":"CharacterStateImages","id":4,"characterStateId":"\/api\/key\/characterstates\/431","url":"http:\/\/midwestherbaria.org\/imglib\/midwest\/ident\/csimgs\/Fagus_grandifolia_bark2.jpg","notes":"American
+        beech","sortSequence":"5","username":null,"initialTimestamp":"2019-01-14T08:10:15+00:00"},{"@id":"\/api\/key\/characterstateimages\/5","@type":"CharacterStateImages","id":5,"characterStateId":"\/api\/key\/characterstates\/228","url":"http:\/\/midwestherbaria.org\/imglib\/midwest\/ident\/csimgs\/Sambucus_canadensis_habit.JPG","notes":"common
+        elderberry - a shrub","sortSequence":"20","username":null,"initialTimestamp":"2019-01-14T08:10:15+00:00"},{"@id":"\/api\/key\/characterstateimages\/6","@type":"CharacterStateImages","id":6,"characterStateId":"\/api\/key\/characterstates\/555","url":"http:\/\/midwestherbaria.org\/imglib\/midwest\/ident\/csimgs\/Menispermum-canadensis-yg2.jpg","notes":"moon
+        seed - an herbaceous vine","sortSequence":"30","username":null,"initialTimestamp":"2019-01-14T08:10:15+00:00"},{"@id":"\/api\/key\/characterstateimages\/7","@type":"CharacterStateImages","id":7,"characterStateId":"\/api\/key\/characterstates\/1","url":"http:\/\/midwestherbaria.org\/imglib\/midwest\/ident\/csimgs\/Oxalis_violacea_4015.JPG","notes":"a
+        small size herbaceous dicot","sortSequence":"40","username":null,"initialTimestamp":"2019-01-14T08:10:15+00:00"},{"@id":"\/api\/key\/characterstateimages\/8","@type":"CharacterStateImages","id":8,"characterStateId":"\/api\/key\/characterstates\/634","url":"http:\/\/midwestherbaria.org\/imglib\/midwest\/ident\/csimgs\/Alopecurus_pratensis_4037.JPG","notes":"a
+        grass","sortSequence":"60","username":null,"initialTimestamp":"2019-01-14T08:10:15+00:00"},{"@id":"\/api\/key\/characterstateimages\/9","@type":"CharacterStateImages","id":9,"characterStateId":"\/api\/key\/characterstates\/727","url":"http:\/\/midwestherbaria.org\/imglib\/midwest\/ident\/csimgs\/Cystopteris_bulbifera_9428e.jpg","notes":"a
+        true fern","sortSequence":"60","username":null,"initialTimestamp":"2019-01-14T08:10:15+00:00"},{"@id":"\/api\/key\/characterstateimages\/10","@type":"CharacterStateImages","id":10,"characterStateId":"\/api\/key\/characterstates\/690","url":"http:\/\/midwestherbaria.org\/imglib\/midwest\/ident\/csimgs\/Opuntia_humifusa_0578.JPG","notes":null,"sortSequence":"70","username":null,"initialTimestamp":"2019-01-14T08:10:15+00:00"},{"@id":"\/api\/key\/characterstateimages\/11","@type":"CharacterStateImages","id":11,"characterStateId":"\/api\/key\/characterstates\/755","url":"http:\/\/midwestherbaria.org\/imglib\/midwest\/ident\/csimgs\/Potamogeton_amplifolius_b.JPG","notes":"an
+        aquatic plants with submergent and floating leaves","sortSequence":"80","username":null,"initialTimestamp":"2019-01-14T08:10:15+00:00"},{"@id":"\/api\/key\/characterstateimages\/12","@type":"CharacterStateImages","id":12,"characterStateId":"\/api\/key\/characterstates\/134","url":"http:\/\/midwestherbaria.org\/imglib\/midwest\/ident\/csimgs\/Coreopsis_verticillata_3820r.jpg","notes":"ray
+        or ligulate florets","sortSequence":"50","username":null,"initialTimestamp":"2019-01-14T08:10:15+00:00"}],"hydra:totalItems":12}'
+  recorded_at: 2020-09-03 19:21:59 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.6.2
