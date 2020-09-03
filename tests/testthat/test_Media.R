@@ -2,17 +2,17 @@
 url <- "http://a02235015-6.bluezone.usu.edu/api/"
 
 context("TagKey")
-use_cassette(name="TagKey_ID", {
-  test_that("TagKey_ID",{
-    data <- TagKey(url=url, ID="Diagnostic")
-    expect_equal(length(data),  8)
-    expect_type(data, "list")
-  })
+use_cassette(name="TagKey_ID",{
+  data <- TagKey(url=url, ID="Diagnostic")
 })
-use_cassette(name="TagKey_page", {
-  test_that("TagKey_page",{
-    data <- TagKey(url=url, page=1)
-    expect_equal(length(data),  70)
-    expect_type(data, "list")
-  })
+test_that("TagKey_ID",{
+  expect_equal(length(data),  8)
+  expect_type(data, "list")
+})
+use_cassette(name="TagKey_page",{
+  data <- TagKey(url=url, page=1)
+})
+test_that("TagKey_page",{
+  expect_equal(length(data),  70)
+  expect_type(data, "list")
 })
