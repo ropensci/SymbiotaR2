@@ -5,23 +5,23 @@
 #' depending on the arguments provided.
 #' 
 #' @param url URL of the Symbiota2 portal connected to
-#' @param ID ID value (usually \code{numeric}, but not always) 
+#' @param id id value (usually \code{numeric}, but not always) 
 #' used to refer to the specific resource to pull from the database
 #' @param page \code{numeric} value referring to the page of Collection resources to pull. If neither an
-#' ID or a page parameter is provided, function will pull the first page of resources (i.e. \code{page=1}`)
-#' @return If using \code{ID}, the specific Collection resource specified; 
+#' id or a page parameter is provided, function will pull the first page of resources (i.e. \code{page=1}`)
+#' @return If using \code{id}, the specific Collection resource specified; 
 #' if using page, the \code{page} specified of Collection resources
 #' @author Austin Koontz
 #' @rdname Collection
 #' @name Collection
 #' @export
-Categories <- function(ID, page, url=NULL){
+Categories <- function(id, page, url=NULL){
     # Argument handling
     url <- .get.url(url)
-    RObject <- .api.scaffold(.check.api.entry("collection/categories"), url, ID, page)
+    RObject <- .api.scaffold(.check.api.entry("collection/categories"), url, id, page)
 
-    # ID download
-    if(!missing(ID))
+    # id download
+    if(!missing(id))
         return(RObject)
 
     # Page (specified or default) download
@@ -33,13 +33,13 @@ Categories <- function(ID, page, url=NULL){
 
 #' @export
 #' @rdname Collection
-Institutions <- function(ID, page, url=NULL){
+Institutions <- function(id, page, url=NULL){
     # Argument handling
     url <- .get.url(url)
-    RObject <- .api.scaffold(.check.api.entry("collection/institutions"), url, ID, page)
+    RObject <- .api.scaffold(.check.api.entry("collection/institutions"), url, id, page)
 
-    # ID download
-    if(!missing(ID))
+    # id download
+    if(!missing(id))
         return(RObject)
 
     # Page (specified or default) download
@@ -51,13 +51,13 @@ Institutions <- function(ID, page, url=NULL){
 
 #' @export
 #' @rdname Collection
-Stats <- function(ID, page, url=NULL){
+Stats <- function(id, page, url=NULL){
     # Argument handling
     url <- .get.url(url)
-    RObject <- .api.scaffold(.check.api.entry("collection/stats"), url, ID, page)
+    RObject <- .api.scaffold(.check.api.entry("collection/stats"), url, id, page)
 
-    # ID download
-    if(!missing(ID))
+    # id download
+    if(!missing(id))
         return(RObject)
     
     # Page (specified or default) download
@@ -69,13 +69,13 @@ Stats <- function(ID, page, url=NULL){
 
 #' @export
 #' @rdname Collection
-Collections <- function(ID, page, url=NULL){
+Collections <- function(id, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
-  RObject <- .api.scaffold(.check.api.entry("collections"), url, ID, page)
+  RObject <- .api.scaffold(.check.api.entry("collections"), url, id, page)
   
-  # ID download
-  if(!missing(ID))
+  # id download
+  if(!missing(id))
     return(RObject)
   
   # Page (specified or default) download

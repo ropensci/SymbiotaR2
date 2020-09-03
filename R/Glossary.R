@@ -5,22 +5,22 @@
 #' depending on the arguments provided.
 #' 
 #' @param url URL of the Symbiota2 portal connected to
-#' @param ID ID value (usually \code{numeric}, but not always) used to refer to the specific resource to pull from the database
+#' @param id id value (usually \code{numeric}, but not always) used to refer to the specific resource to pull from the database
 #' @param page \code{numeric} value referring to the page of Glossary resources to pull. If neither an
-#' ID or a page parameter is provided, function will pull the first page of resources (i.e. \code{page=1}`)
-#' @return If using \code{ID}, the specific Glossary resource specified; if using page, the \code{page} specified
+#' id or a page parameter is provided, function will pull the first page of resources (i.e. \code{page=1}`)
+#' @return If using \code{id}, the specific Glossary resource specified; if using page, the \code{page} specified
 #' of Glossary resources
 #' @author Austin Koontz
 #' @rdname Glossary
 #' @name Glossary
 #' @export
-Glossary <- function(ID, page, url=NULL){
+Glossary <- function(id, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
-  RObject <- .api.scaffold(.check.api.entry("glossary"), url, ID, page)
+  RObject <- .api.scaffold(.check.api.entry("glossary"), url, id, page)
   
-  # ID Download
-  if(!missing(ID))
+  # id Download
+  if(!missing(id))
     return(RObject)
   
   # Page (specified or default) download
@@ -32,13 +32,13 @@ Glossary <- function(ID, page, url=NULL){
 
 #' @export
 #' @rdname Glossary
-TermLink <- function(ID, page, url=NULL){
+TermLink <- function(id, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
-  RObject <- .api.scaffold(.check.api.entry("glossary/termlink"), url, ID, page)
+  RObject <- .api.scaffold(.check.api.entry("glossary/termlink"), url, id, page)
   
-  # ID Download
-  if(!missing(ID))
+  # id Download
+  if(!missing(id))
     return(RObject)
   
   # Page (specified or default) download

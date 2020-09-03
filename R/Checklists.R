@@ -5,23 +5,23 @@
 #' depending on the arguments provided.
 #' 
 #' @param url URL of the Symbiota2 portal connected to
-#' @param ID ID value (usually \code{numeric}, but not always) 
+#' @param id id value (usually \code{numeric}, but not always) 
 #' used to refer to the specific resource to pull from the database
 #' @param page \code{numeric} value referring to the page of Checklist resources to pull. If neither an
-#' ID or a page parameter is provided, function will pull the first page of resources (i.e. \code{page=1}`)
-#' @return If using \code{ID}, the specific Checklist resource specified; 
+#' id or a page parameter is provided, function will pull the first page of resources (i.e. \code{page=1}`)
+#' @return If using \code{id}, the specific Checklist resource specified; 
 #' if using page, the \code{page} specified of Checklist resources
 #' @author Austin Koontz
 #' @name Checklists
 #' @export
 #' @rdname Checklists
-ChecklistProjects <- function(ID, page, url=NULL){
+ChecklistProjects <- function(id, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
-  RObject <- .api.scaffold(.check.api.entry("checklist/checklistprojects"), url, ID, page)
+  RObject <- .api.scaffold(.check.api.entry("checklist/checklistprojects"), url, id, page)
   
-  # ID Download
-  if(!missing(ID)){
+  # id Download
+  if(!missing(id)){
     RObject[sapply(RObject,is.null)] <- NA
     return(RObject)
   }
@@ -38,13 +38,13 @@ ChecklistProjects <- function(ID, page, url=NULL){
 
 #' @export
 #' @rdname Checklists
-Coordinates <- function(ID, page, url=NULL){
+Coordinates <- function(id, page, url=NULL){
     # Argument handling
     url <- .get.url(url)
-    RObject <- .api.scaffold(.check.api.entry("checklist/coordinates"), url, ID, page)
+    RObject <- .api.scaffold(.check.api.entry("checklist/coordinates"), url, id, page)
     
-    # ID download
-    if(!missing(ID)){
+    # id download
+    if(!missing(id)){
         RObject <- c(RObject$decimalLatitude,RObject$decimalLongitude)
         return(RObject)
     }
@@ -61,13 +61,13 @@ Coordinates <- function(ID, page, url=NULL){
 
 #' @export
 #' @rdname Checklists
-TaxaLink <- function(ID, page, url=NULL){
+TaxaLink <- function(id, page, url=NULL){
     # Argument handling
     url <- .get.url(url)
-    RObject <- .api.scaffold(.check.api.entry("checklist/taxalink"), url, ID, page)
+    RObject <- .api.scaffold(.check.api.entry("checklist/taxalink"), url, id, page)
 
-    # ID Download
-    if(!missing(ID)){
+    # id Download
+    if(!missing(id)){
         RObject[sapply(RObject,is.null)] <- NA
         return(RObject)
     }
@@ -81,13 +81,13 @@ TaxaLink <- function(ID, page, url=NULL){
 
 #' @export
 #' @rdname Checklists
-Checklists <- function(ID, page, url=NULL){
+Checklists <- function(id, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
-  RObject <- .api.scaffold(.check.api.entry("checklists"), url, ID, page)
+  RObject <- .api.scaffold(.check.api.entry("checklists"), url, id, page)
   
-  # ID Download
-  if(!missing(ID)){
+  # id Download
+  if(!missing(id)){
     RObject[sapply(RObject,is.null)] <- NA
     return(RObject)
   }

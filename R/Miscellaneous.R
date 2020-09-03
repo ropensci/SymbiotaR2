@@ -5,22 +5,22 @@
 #' depending on the arguments provided.
 #' 
 #' @param url URL of the Symbiota2 portal connected to
-#' @param ID ID value (usually \code{numeric}, but not always) used to refer to the specific resource to pull from the database
+#' @param id id value (usually \code{numeric}, but not always) used to refer to the specific resource to pull from the database
 #' @param page \code{numeric} value referring to the page of Miscellaneous resources to pull. If neither an
-#' ID or a page parameter is provided, function will pull the first page of resources (i.e. \code{page=1}`)
-#' @return If using \code{ID}, the specific Miscellaneous resource specified; if using page, the \code{page} specified
+#' id or a page parameter is provided, function will pull the first page of resources (i.e. \code{page=1}`)
+#' @return If using \code{id}, the specific Miscellaneous resource specified; if using page, the \code{page} specified
 #' of Miscellaneous resources
 #' @author Austin Koontz
 #' @rdname Miscellaneous
 #' @name Miscellaneous
 #' @export
-Configurations <- function(ID, page, url=NULL){
+Configurations <- function(id, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
-  RObject <- .api.scaffold(.check.api.entry("configurations"), url, ID, page)
+  RObject <- .api.scaffold(.check.api.entry("configurations"), url, id, page)
   
-  # ID Download
-  if(!missing(ID)){
+  # id Download
+  if(!missing(id)){
     return(RObject)
   }
   
@@ -33,13 +33,13 @@ Configurations <- function(ID, page, url=NULL){
 
 #' @export
 #' @rdname Miscellaneous
-LookupLanguages <- function(ID, page, url=NULL){
+LookupLanguages <- function(id, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
-  RObject <- .api.scaffold(.check.api.entry("lookuplanguages"), url, ID, page)
+  RObject <- .api.scaffold(.check.api.entry("lookuplanguages"), url, id, page)
   
-  # ID Download
-  if(!missing(ID)){
+  # id Download
+  if(!missing(id)){
     return(RObject)
   }
   
@@ -52,13 +52,13 @@ LookupLanguages <- function(ID, page, url=NULL){
 
 #' @export
 #' @rdname Miscellaneous
-SchemaVersion <- function(ID, page, url=NULL){
+SchemaVersion <- function(id, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
-  RObject <- .api.scaffold(.check.api.entry("schemaversion"), url, ID, page)
+  RObject <- .api.scaffold(.check.api.entry("schemaversion"), url, id, page)
   
-  # ID Download
-  if(!missing(ID)){
+  # id Download
+  if(!missing(id)){
     return(RObject)
   }
   

@@ -5,22 +5,22 @@
 #' depending on the arguments provided.
 #' 
 #' @param url URL of the Symbiota2 portal connected to
-#' @param ID ID value (usually \code{numeric}, but not always) used to refer to the specific resource to pull from the database
+#' @param id id value (usually \code{numeric}, but not always) used to refer to the specific resource to pull from the database
 #' @param page \code{numeric} value referring to the page of Occurrence resources to pull. If neither an
-#' ID or a page parameter is provided, function will pull the first page of resources (i.e. \code{page=1}`)
-#' @return If using \code{ID}, the specific Occurrence resource specified; if using page, the \code{page} specified
+#' id or a page parameter is provided, function will pull the first page of resources (i.e. \code{page=1}`)
+#' @return If using \code{id}, the specific Occurrence resource specified; if using page, the \code{page} specified
 #' of Occurrence resources
 #' @author Austin Koontz
 #' @rdname Occurrences
 #' @name Occurrences
 #' @export
-AccessStats <- function(ID, page, url=NULL){
+AccessStats <- function(id, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
-  RObject <- .api.scaffold(.check.api.entry("occurrence/accessstats"), url, ID, page)
+  RObject <- .api.scaffold(.check.api.entry("occurrence/accessstats"), url, id, page)
   
-  # ID Download
-  if(!missing(ID)){
+  # id Download
+  if(!missing(id)){
     return(RObject)
   }
   
@@ -33,13 +33,13 @@ AccessStats <- function(ID, page, url=NULL){
 
 #' @export
 #' @rdname Occurrences
-Determinations <- function(ID, page, url=NULL){
+Determinations <- function(id, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
-  RObject <- .api.scaffold(.check.api.entry("occurrence/determinations"), url, ID, page)
+  RObject <- .api.scaffold(.check.api.entry("occurrence/determinations"), url, id, page)
   
-  # ID Download
-  if(!missing(ID)){
+  # id Download
+  if(!missing(id)){
     return(RObject)
   }
   
@@ -52,13 +52,13 @@ Determinations <- function(ID, page, url=NULL){
 
 #' @export
 #' @rdname Occurrences
-Duplicates <- function(ID, page, url=NULL){
+Duplicates <- function(id, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
-  RObject <- .api.scaffold(.check.api.entry("occurrence/duplicates"), url, ID, page)
+  RObject <- .api.scaffold(.check.api.entry("occurrence/duplicates"), url, id, page)
   
-  # ID Download
-  if(!missing(ID)){
+  # id Download
+  if(!missing(id)){
     return(RObject)
   }
   
@@ -71,13 +71,13 @@ Duplicates <- function(ID, page, url=NULL){
 
 #' @export
 #' @rdname Occurrences
-EditLocks <- function(ID, page, url=NULL){
+EditLocks <- function(id, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
-  RObject <- .api.scaffold(.check.api.entry("occurrence/editlocks"), url, ID, page)
+  RObject <- .api.scaffold(.check.api.entry("occurrence/editlocks"), url, id, page)
   
-  # ID Download
-  if(!missing(ID)){
+  # id Download
+  if(!missing(id)){
     return(RObject)
   }
   
@@ -90,13 +90,13 @@ EditLocks <- function(ID, page, url=NULL){
 
 #' @export
 #' @rdname Occurrences
-Edits <- function(ID, page, url=NULL){
+Edits <- function(id, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
-  RObject <- .api.scaffold(.check.api.entry("occurrence/edits"), url, ID, page)
+  RObject <- .api.scaffold(.check.api.entry("occurrence/edits"), url, id, page)
   
-  # ID Download
-  if(!missing(ID)){
+  # id Download
+  if(!missing(id)){
     return(RObject)
   }
   
@@ -109,13 +109,13 @@ Edits <- function(ID, page, url=NULL){
 
 #' @export
 #' @rdname Occurrences
-FullText <- function(ID, page, url=NULL){
+FullText <- function(id, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
-  RObject <- .api.scaffold(.check.api.entry("occurrence/fulltext"), url, ID, page)
+  RObject <- .api.scaffold(.check.api.entry("occurrence/fulltext"), url, id, page)
   
-  # ID Download
-  if(!missing(ID)){
+  # id Download
+  if(!missing(id)){
     return(RObject)
   }
   
@@ -128,13 +128,13 @@ FullText <- function(ID, page, url=NULL){
 
 #' @export
 #' @rdname Occurrences
-GuidDeterminations <- function(ID, page, url=NULL){
+GuidDeterminations <- function(id, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
-  RObject <- .api.scaffold(.check.api.entry("occurrence/guiddeterminations"), url, ID, page)
+  RObject <- .api.scaffold(.check.api.entry("occurrence/guiddeterminations"), url, id, page)
   
-  # ID Download
-  if(!missing(ID)){
+  # id Download
+  if(!missing(id)){
     return(RObject)
   }
   
@@ -147,13 +147,13 @@ GuidDeterminations <- function(ID, page, url=NULL){
 
 #' @export
 #' @rdname Occurrences
-GuidOccurrences <- function(ID, page, url=NULL){
+GuidOccurrences <- function(id, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
-  RObject <- .api.scaffold(.check.api.entry("occurrence/guidoccurrences"), url, ID, page)
+  RObject <- .api.scaffold(.check.api.entry("occurrence/guidoccurrences"), url, id, page)
   
-  # ID Download
-  if(!missing(ID)){
+  # id Download
+  if(!missing(id)){
     return(RObject)
   }
   
@@ -166,13 +166,13 @@ GuidOccurrences <- function(ID, page, url=NULL){
 
 #' @export
 #' @rdname Occurrences
-LookupChronostratigraphy <- function(ID, page, url=NULL){
+LookupChronostratigraphy <- function(id, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
-  RObject <- .api.scaffold(.check.api.entry("occurrence/lookupchronostratigraphy"), url, ID, page)
+  RObject <- .api.scaffold(.check.api.entry("occurrence/lookupchronostratigraphy"), url, id, page)
   
-  # ID Download
-  if(!missing(ID)){
+  # id Download
+  if(!missing(id)){
     RObject[sapply(RObject,is.null)] <- NA
     return(RObject)
   }
@@ -187,13 +187,13 @@ LookupChronostratigraphy <- function(ID, page, url=NULL){
 
 #' @export
 #' @rdname Occurrences
-LookupCounties <- function(ID, page, url=NULL){
+LookupCounties <- function(id, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
-  RObject <- .api.scaffold(.check.api.entry("occurrence/lookupcounties"), url, ID, page)
+  RObject <- .api.scaffold(.check.api.entry("occurrence/lookupcounties"), url, id, page)
   
-  # ID Download
-  if(!missing(ID)){
+  # id Download
+  if(!missing(id)){
     return(RObject)
   }
   
@@ -206,13 +206,13 @@ LookupCounties <- function(ID, page, url=NULL){
 
 #' @export
 #' @rdname Occurrences
-LookupCountries <- function(ID, page, url=NULL){
+LookupCountries <- function(id, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
-  RObject <- .api.scaffold(.check.api.entry("occurrence/lookupcountries"), url, ID, page)
+  RObject <- .api.scaffold(.check.api.entry("occurrence/lookupcountries"), url, id, page)
   
-  # ID Download
-  if(!missing(ID)){
+  # id Download
+  if(!missing(id)){
     return(RObject)
   }
   
@@ -225,13 +225,13 @@ LookupCountries <- function(ID, page, url=NULL){
 
 #' @export
 #' @rdname Occurrences
-LookupStateProvinces <- function(ID, page, url=NULL){
+LookupStateProvinces <- function(id, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
-  RObject <- .api.scaffold(.check.api.entry("occurrence/lookupstateprovinces"), url, ID, page)
+  RObject <- .api.scaffold(.check.api.entry("occurrence/lookupstateprovinces"), url, id, page)
   
-  # ID Download
-  if(!missing(ID)){
+  # id Download
+  if(!missing(id)){
     return(RObject)
   }
   
@@ -244,13 +244,13 @@ LookupStateProvinces <- function(ID, page, url=NULL){
 
 #' @export
 #' @rdname Occurrences
-UploadMappings <- function(ID, page, url=NULL){
+UploadMappings <- function(id, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
-  RObject <- .api.scaffold(.check.api.entry("occurrence/uploadmappings"), url, ID, page)
+  RObject <- .api.scaffold(.check.api.entry("occurrence/uploadmappings"), url, id, page)
   
-  # ID Download
-  if(!missing(ID)){
+  # id Download
+  if(!missing(id)){
     return(RObject)
   }
   
@@ -263,13 +263,13 @@ UploadMappings <- function(ID, page, url=NULL){
 
 #' @export
 #' @rdname Occurrences
-UploadParameters <- function(ID, page, url=NULL){
+UploadParameters <- function(id, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
-  RObject <- .api.scaffold(.check.api.entry("occurrence/uploadparameters"), url, ID, page)
+  RObject <- .api.scaffold(.check.api.entry("occurrence/uploadparameters"), url, id, page)
   
-  # ID Download
-  if(!missing(ID)){
+  # id Download
+  if(!missing(id)){
     return(RObject)
   }
   
@@ -282,13 +282,13 @@ UploadParameters <- function(ID, page, url=NULL){
 
 #' @export
 #' @rdname Occurrences
-Verification <- function(ID, page, url=NULL){
+Verification <- function(id, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
-  RObject <- .api.scaffold(.check.api.entry("occurrence/verification"), url, ID, page)
+  RObject <- .api.scaffold(.check.api.entry("occurrence/verification"), url, id, page)
   
-  # ID Download
-  if(!missing(ID)){
+  # id Download
+  if(!missing(id)){
     return(RObject)
   }
   
@@ -301,13 +301,13 @@ Verification <- function(ID, page, url=NULL){
 
 #' @export
 #' @rdname Occurrences
-Associations <- function(ID, page, url=NULL){
+Associations <- function(id, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
-  RObject <- .api.scaffold(.check.api.entry("occurrenceassociations/associations"), url, ID, page)
+  RObject <- .api.scaffold(.check.api.entry("occurrenceassociations/associations"), url, id, page)
   
-  # ID Download
-  if(!missing(ID)){
+  # id Download
+  if(!missing(id)){
     return(RObject)
   }
   
@@ -320,13 +320,13 @@ Associations <- function(ID, page, url=NULL){
 
 #' @export
 #' @rdname Occurrences
-Comments <- function(ID, page, url=NULL){
+Comments <- function(id, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
-  RObject <- .api.scaffold(.check.api.entry("occurrencecomments/comments"), url, ID, page)
+  RObject <- .api.scaffold(.check.api.entry("occurrencecomments/comments"), url, id, page)
   
-  # ID Download
-  if(!missing(ID)){
+  # id Download
+  if(!missing(id)){
     return(RObject)
   }
   
@@ -339,13 +339,13 @@ Comments <- function(ID, page, url=NULL){
 
 #' @export
 #' @rdname Occurrences
-DatasetLink <- function(ID, page, url=NULL){
+DatasetLink <- function(id, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
-  RObject <- .api.scaffold(.check.api.entry("occurrencedataset/datasetlink"), url, ID, page)
+  RObject <- .api.scaffold(.check.api.entry("occurrencedataset/datasetlink"), url, id, page)
   
-  # ID Download
-  if(!missing(ID)){
+  # id Download
+  if(!missing(id)){
     return(RObject)
   }
   
@@ -358,13 +358,13 @@ DatasetLink <- function(ID, page, url=NULL){
 
 #' @export
 #' @rdname Occurrences
-Datasets <- function(ID, page, url=NULL){
+Datasets <- function(id, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
-  RObject <- .api.scaffold(.check.api.entry("occurrencedataset/datasets"), url, ID, page)
+  RObject <- .api.scaffold(.check.api.entry("occurrencedataset/datasets"), url, id, page)
   
-  # ID Download
-  if(!missing(ID)){
+  # id Download
+  if(!missing(id)){
     return(RObject)
   }
   
@@ -377,13 +377,13 @@ Datasets <- function(ID, page, url=NULL){
 
 #' @export
 #' @rdname Occurrences
-Exchange <- function(ID, page, url=NULL){
+Exchange <- function(id, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
-  RObject <- .api.scaffold(.check.api.entry("occurrenceloan/exchange"), url, ID, page)
+  RObject <- .api.scaffold(.check.api.entry("occurrenceloan/exchange"), url, id, page)
   
-  # ID Download
-  if(!missing(ID)){
+  # id Download
+  if(!missing(id)){
     return(RObject)
   }
   
@@ -396,13 +396,13 @@ Exchange <- function(ID, page, url=NULL){
 
 #' @export
 #' @rdname Occurrences
-Loans <- function(ID, page, url=NULL){
+Loans <- function(id, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
-  RObject <- .api.scaffold(.check.api.entry("occurrenceloan/loans"), url, ID, page)
+  RObject <- .api.scaffold(.check.api.entry("occurrenceloan/loans"), url, id, page)
   
-  # ID Download
-  if(!missing(ID)){
+  # id Download
+  if(!missing(id)){
     return(RObject)
   }
   
@@ -415,13 +415,13 @@ Loans <- function(ID, page, url=NULL){
 
 #' @export
 #' @rdname Occurrences
-Occurrences <- function(ID, page, url=NULL){
+Occurrences <- function(id, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
-  RObject <- .api.scaffold(.check.api.entry("occurrences"), url, ID, page)
+  RObject <- .api.scaffold(.check.api.entry("occurrences"), url, id, page)
   
-  # ID Download
-  if(!missing(ID)){
+  # id Download
+  if(!missing(id)){
     RObject[sapply(RObject,is.null)] <- NA
     return(RObject)
   }

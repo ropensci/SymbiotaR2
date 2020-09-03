@@ -5,23 +5,23 @@
 #' depending on the arguments provided.
 #' 
 #' @param url URL of the Symbiota2 portal connected to
-#' @param ID ID value (usually \code{numeric}, but not always) 
+#' @param id id value (usually \code{numeric}, but not always) 
 #' used to refer to the specific resource to pull from the database
 #' @param page \code{numeric} value referring to the page of Crowdsource resources to pull. If neither an
-#' ID or a page parameter is provided, function will pull the first page of resources (i.e. \code{page=1}`)
-#' @return If using \code{ID}, the specific Crowdsource resource specified; 
+#' id or a page parameter is provided, function will pull the first page of resources (i.e. \code{page=1}`)
+#' @return If using \code{id}, the specific Crowdsource resource specified; 
 #' if using page, the \code{page} specified of Crowdsource resources
 #' @author Austin Koontz
 #' @rdname Crowdsource
 #' @name Crowdsource
 #' @export
-Central <- function(ID, page, url=NULL){
+Central <- function(id, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
-  RObject <- .api.scaffold(.check.api.entry("crowdsource/central"), url, ID, page)
+  RObject <- .api.scaffold(.check.api.entry("crowdsource/central"), url, id, page)
   
-  # ID download
-  if(!missing(ID))
+  # id download
+  if(!missing(id))
     return(RObject)
   
   # Page (specified or default) download
@@ -33,13 +33,13 @@ Central <- function(ID, page, url=NULL){
 
 #' @export
 #' @rdname Crowdsource
-Queue <- function(ID, page, url=NULL){
+Queue <- function(id, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
-  RObject <- .api.scaffold(.check.api.entry("crowdsource/queue"), url, ID, page)
+  RObject <- .api.scaffold(.check.api.entry("crowdsource/queue"), url, id, page)
   
-  # ID download
-  if(!missing(ID))
+  # id download
+  if(!missing(id))
     return(RObject)
   
   # Page (specified or default) download

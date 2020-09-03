@@ -5,22 +5,22 @@
 #' depending on the arguments provided.
 #' 
 #' @param url URL of the Symbiota2 portal connected to
-#' @param ID ID value (usually \code{numeric}, but not always) used to refer to the specific resource to pull from the database
+#' @param id id value (usually \code{numeric}, but not always) used to refer to the specific resource to pull from the database
 #' @param page \code{numeric} value referring to the page of Taxa resources to pull. If neither an
-#' ID or a page parameter is provided, function will pull the first page of resources (i.e. \code{page=1}`)
-#' @return If using \code{ID}, the specific Taxa resource specified; If using page, the \code{page} specified
+#' id or a page parameter is provided, function will pull the first page of resources (i.e. \code{page=1}`)
+#' @return If using \code{id}, the specific Taxa resource specified; If using page, the \code{page} specified
 #' of Taxa resources
 #' @author Austin Koontz
 #' @rdname Taxa
 #' @name Taxa
 #' @export
-Taxa <- function(ID, page, url=NULL){
+Taxa <- function(id, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
-  RObject <- .api.scaffold(.check.api.entry("taxa"), url, ID, page)
+  RObject <- .api.scaffold(.check.api.entry("taxa"), url, id, page)
   
-  # ID Download
-  if(!missing(ID)){
+  # id Download
+  if(!missing(id)){
     RObject[sapply(RObject,is.null)] <- NA
     return(RObject)
   }
@@ -37,13 +37,13 @@ Taxa <- function(ID, page, url=NULL){
 
 #' @export
 #' @rdname Taxa
-Authorities <- function(ID, page, url=NULL){
+Authorities <- function(id, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
-  RObject <- .api.scaffold(.check.api.entry("taxa/authorities"), url, ID, page)
+  RObject <- .api.scaffold(.check.api.entry("taxa/authorities"), url, id, page)
   
-  # ID Download
-  if(!missing(ID)){
+  # id Download
+  if(!missing(id)){
     RObject[sapply(RObject,is.null)] <- NA
     return(RObject)
   }
@@ -60,13 +60,13 @@ Authorities <- function(ID, page, url=NULL){
 
 #' @export
 #' @rdname Taxa
-DescriptionBlock <- function(ID, page, url=NULL){
+DescriptionBlock <- function(id, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
-  RObject <- .api.scaffold(.check.api.entry("taxa/descriptionblock"), url, ID, page)
+  RObject <- .api.scaffold(.check.api.entry("taxa/descriptionblock"), url, id, page)
   
-  # ID Download
-  if(!missing(ID)){
+  # id Download
+  if(!missing(id)){
     return(RObject)
   }
   
@@ -79,13 +79,13 @@ DescriptionBlock <- function(ID, page, url=NULL){
 
 #' @export
 #' @rdname Taxa
-Synonymy <- function(ID, page, url=NULL){
+Synonymy <- function(id, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
-  RObject <- .api.scaffold(.check.api.entry("taxa/synonymy"), url, ID, page)
+  RObject <- .api.scaffold(.check.api.entry("taxa/synonymy"), url, id, page)
   
-  # ID Download
-  if(!missing(ID)){
+  # id Download
+  if(!missing(id)){
     return(RObject)
   }
   

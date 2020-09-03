@@ -5,22 +5,22 @@
 #' depending on the arguments provided.
 #' 
 #' @param url URL of the Symbiota2 portal connected to
-#' @param ID ID value (usually \code{numeric}, but not always) used to refer to the specific resource to pull from the database
+#' @param id id value (usually \code{numeric}, but not always) used to refer to the specific resource to pull from the database
 #' @param page \code{numeric} value referring to the page of ImageProcessor resources to pull. If neither an
-#' ID or a page parameter is provided, function will pull the first page of resources (i.e. \code{page=1}`)
-#' @return If using \code{ID}, the specific ImageProcessor resource specified; if using page, the \code{page} specified
+#' id or a page parameter is provided, function will pull the first page of resources (i.e. \code{page=1}`)
+#' @return If using \code{id}, the specific ImageProcessor resource specified; if using page, the \code{page} specified
 #' of ImageProcessor resources
 #' @author Austin Koontz
 #' @rdname ImagePRocessor
 #' @name ImagePRocessor
 #' @export
-Projects <- function(ID, page, url=NULL){
+Projects <- function(id, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
-  RObject <- .api.scaffold(.check.api.entry("imageprocessor/projects"), url, ID, page)
+  RObject <- .api.scaffold(.check.api.entry("imageprocessor/projects"), url, id, page)
   
-  # ID Download
-  if(!missing(ID)){
+  # id Download
+  if(!missing(id)){
     return(RObject)
   }
   
@@ -33,13 +33,13 @@ Projects <- function(ID, page, url=NULL){
 
 #' @export
 #' @rdname ImagePRocessor
-RawLabels <- function(ID, page, url=NULL){
+RawLabels <- function(id, page, url=NULL){
   # Argument handling
   url <- .get.url(url)
-  RObject <- .api.scaffold(.check.api.entry("imageprocessor/rawlabels"), url, ID, page)
+  RObject <- .api.scaffold(.check.api.entry("imageprocessor/rawlabels"), url, id, page)
   
-  # ID Download
-  if(!missing(ID)){
+  # id Download
+  if(!missing(id)){
     return(RObject)
   }
   
