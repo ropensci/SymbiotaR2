@@ -20,7 +20,7 @@ LazyLoad: yes
 Suggests:
     knitr (>= 1.23),
     testthat (>= 2.0.0),
-    vcr (>= 0.3.0)	
+    vcr
 Imports:
     httr (>= 1.0.0),
     rjson (>= 0.2.20),
