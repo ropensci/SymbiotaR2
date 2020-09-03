@@ -1,0 +1,130 @@
+http_interactions:
+- request:
+    method: get
+    uri: http://a02235015-6.bluezone.usu.edu/api/
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.17.4
+      content-type: application/ld+json; charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      vary: Accept
+      x-content-type-options: nosniff
+      x-frame-options: deny
+      cache-control: no-cache, private
+      date: Tue, 04 Feb 2020 20:17:01 GMT
+      link: <http://a02235015-6.bluezone.usu.edu/api/docs.jsonld>; rel="http://www.w3.org/ns/hydra/core#apiDocumentation"
+    body:
+      encoding: UTF-8
+      string: '{"@context":"\/api\/contexts\/Entrypoint","@id":"\/api","@type":"Entrypoint","configurations":"\/api\/configurations","schemaVersion":"\/api\/schemaversion","lookupLanguages":"\/api\/lookuplanguages","users":"\/api\/users","checklists":"\/api\/checklists","taxaComments":"\/api\/checklist\/taxacomments","children":"\/api\/checklist\/children","taxaLink":"\/api\/checklist\/taxalink","projectCategories":"\/api\/checklist\/projectcategories","vouchers":"\/api\/checklist\/vouchers","dynamic":"\/api\/checklist\/dynamic","checklistProjects":"\/api\/checklist\/checklistprojects","coordinates":"\/api\/checklist\/coordinates","stats":"\/api\/collection\/stats","institutions":"\/api\/collection\/institutions","collections":"\/api\/collections","categories":"\/api\/collection\/categories","queue":"\/api\/crowdsource\/queue","central":"\/api\/crowdsource\/central","titles":"\/api\/exsiccati\/titles","numbers":"\/api\/exsiccati\/numbers","sources":"\/api\/glossary\/sources","termLink":"\/api\/glossary\/termlink","glossary":"\/api\/glossary","projects":"\/api\/imageprocessor\/projects","nlpVersion":"\/api\/imageprocessor\/nlpversion","ocrFragment":"\/api\/imageprocessor\/ocrfragment","nlpFragment":"\/api\/imageprocessor\/nlpfragment","rawLabels":"\/api\/imageprocessor\/rawlabels","nlp":"\/api\/imageprocessor\/nlp","characterHeading":"\/api\/key\/characterheading","characterStateLanguages":"\/api\/key\/characterstatelanguages","characterLanguages":"\/api\/key\/characterlanguages","characters":"\/api\/key\/characters","descriptions":"\/api\/key\/descriptions","descriptionDeletions":"\/api\/key\/descriptiondeletions","characterStates":"\/api\/key\/characterstates","characterStateImages":"\/api\/key\/characterstateimages","tagKey":"\/api\/media\/tagkey","media":"\/api\/media","images":"\/api\/media\/images","guid":"\/api\/media\/guid","keywords":"\/api\/media\/keywords","tag":"\/api\/media\/tag","associations":"\/api\/occurrenceassociations\/associations","comments":"\/api\/occurrencecomments\/comments","datasetLink":"\/api\/occurrencedataset\/datasetlink","datasets":"\/api\/occurrencedataset\/datasets","genetic":"\/api\/occurrencegenetic\/genetic","exchange":"\/api\/occurrenceloan\/exchange","loans":"\/api\/occurrenceloan\/loans","revisions":"\/api\/occurrence\/revisions","edits":"\/api\/occurrence\/edits","uploadDeterminations":"\/api\/occurrence\/uploaddeterminations","fullText":"\/api\/occurrence\/fulltext","uploadParameters":"\/api\/occurrence\/uploadparameters","duplicates":"\/api\/occurrence\/duplicates","lookupChronostratigraphy":"\/api\/occurrence\/lookupchronostratigraphy","accessStats":"\/api\/occurrence\/accessstats","editLocks":"\/api\/occurrence\/editlocks","lookupCounties":"\/api\/occurrence\/lookupcounties","geoIndex":"\/api\/occurrence\/geoindex","lookupStateProvinces":"\/api\/occurrence\/lookupstateprovinces","occurrences":"\/api\/occurrences","determinations":"\/api\/occurrence\/determinations","verification":"\/api\/occurrence\/verification","uploadMappings":"\/api\/occurrence\/uploadmappings","lookupCountries":"\/api\/occurrence\/lookupcountries","identifiers":"\/api\/occurrence\/identifiers","guidOccurrences":"\/api\/occurrence\/guidoccurrences","uploadOccurrences":"\/api\/occurrence\/uploadoccurrences","guidDeterminations":"\/api\/occurrence\/guiddeterminations","lookupMunicipalities":"\/api\/occurrence\/lookupmunicipalities","checklistTaxaLink":"\/api\/reference\/checklisttaxalink","authors":"\/api\/reference\/authors","lookupReferenceTypes":"\/api\/reference\/lookupreferencetypes","references":"\/api\/references","descriptionBlock":"\/api\/taxa\/descriptionblock","synonymy":"\/api\/taxa\/synonymy","authorities":"\/api\/taxa\/authorities","taxa":"\/api\/taxa","resourceLinks":"\/api\/taxa\/resourcelinks","maps":"\/api\/taxa\/maps","descriptionStatements":"\/api\/taxa\/descriptionstatements","relationships":"\/api\/taxa\/relationships","upload":"\/api\/taxa\/upload","links":"\/api\/taxa\/links","userTaxonomy":"\/api\/taxa\/usertaxonomy","vernaculars":"\/api\/taxa\/vernaculars","ranks":"\/api\/taxa\/ranks","attributes":"\/api\/traits\/attributes","traits":"\/api\/traits","dependencies":"\/api\/traits\/dependencies","states":"\/api\/traits\/states"}'
+  recorded_at: 2020-02-04 20:17:01 GMT
+  recorded_with: vcr/0.3.0, webmockr/0.4.0
+- request:
+    method: get
+    uri: http://a02235015-6.bluezone.usu.edu/api/collection/institutions?page=1
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.17.4
+      content-type: application/ld+json; charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      vary: Accept
+      x-content-type-options: nosniff
+      x-frame-options: deny
+      cache-control: private, must-revalidate
+      date: Tue, 04 Feb 2020 20:17:01 GMT
+      link: <http://a02235015-6.bluezone.usu.edu/api/docs.jsonld>; rel="http://www.w3.org/ns/hydra/core#apiDocumentation"
+      etag: '"c71dcf7398e18db14327b1b5cef18d6a"'
+    body:
+      encoding: UTF-8
+      string: '{"@context":"\/api\/contexts\/Institutions","@id":"\/api\/collection\/institutions","@type":"hydra:Collection","hydra:member":[{"@id":"\/api\/collection\/institutions\/1","@type":"Institutions","id":1,"institutionCode":"ASU","institutionName":"Arizona
+        State University Herbarium","institutionNameSecondary":"Natural History Collections","addressLineOne":"P.
+        O. Box 874108","addressLineTwo":null,"city":"Tempe","stateProvince":"Arizona","postalCode":"85287-4108","country":"USA","phone":null,"contact":null,"email":null,"url":"https:\/\/biokic.asu.edu\/","notes":null,"modifiedTimestamp":null,"initialTimestamp":"2019-01-12T09:03:26+00:00","modifiedUserId":null},{"@id":"\/api\/collection\/institutions\/2","@type":"Institutions","id":2,"institutionCode":"UA","institutionName":"University
+        of Arizona Herbarium","institutionNameSecondary":null,"addressLineOne":"P.O.
+        Box 210036","addressLineTwo":"Herring Hall","city":"Tucson","stateProvince":"Arizona","postalCode":"85721","country":"USA","phone":null,"contact":null,"email":null,"url":"http:\/\/ag.arizona.edu\/herbarium\/","notes":null,"modifiedTimestamp":null,"initialTimestamp":"2019-01-12T09:03:26+00:00","modifiedUserId":null},{"@id":"\/api\/collection\/institutions\/3","@type":"Institutions","id":3,"institutionCode":"NAU","institutionName":"Northern
+        Arziona University","institutionNameSecondary":"Department of Biological Sciences","addressLineOne":"P.O.
+        Box 5640","addressLineTwo":null,"city":"Flagstaff","stateProvince":"Arizona","postalCode":"86011-5640","country":"USA","phone":null,"contact":null,"email":null,"url":"http:\/\/www4.nau.edu\/deaver\/","notes":null,"modifiedTimestamp":null,"initialTimestamp":"2019-01-12T09:03:26+00:00","modifiedUserId":null},{"@id":"\/api\/collection\/institutions\/4","@type":"Institutions","id":4,"institutionCode":"BLM","institutionName":"Bureau
+        of Land Management","institutionNameSecondary":null,"addressLineOne":null,"addressLineTwo":null,"city":null,"stateProvince":null,"postalCode":null,"country":null,"phone":null,"contact":null,"email":null,"url":null,"notes":null,"modifiedTimestamp":null,"initialTimestamp":"2019-01-12T09:03:26+00:00","modifiedUserId":null},{"@id":"\/api\/collection\/institutions\/5","@type":"Institutions","id":5,"institutionCode":"VCNP","institutionName":"Valles
+        Caldera National Preserve","institutionNameSecondary":null,"addressLineOne":null,"addressLineTwo":null,"city":null,"stateProvince":null,"postalCode":null,"country":null,"phone":null,"contact":null,"email":null,"url":null,"notes":null,"modifiedTimestamp":null,"initialTimestamp":"2019-01-12T09:03:26+00:00","modifiedUserId":null},{"@id":"\/api\/collection\/institutions\/6","@type":"Institutions","id":6,"institutionCode":"ALTA","institutionName":"Vascular
+        Plant Herbarium; Dept. of Biological Sciences","institutionNameSecondary":"University
+        of Alberta","addressLineOne":null,"addressLineTwo":null,"city":"Edmonton","stateProvince":"Alberta","postalCode":"T6G
+        2E9","country":"Canada","phone":null,"contact":null,"email":null,"url":null,"notes":null,"modifiedTimestamp":null,"initialTimestamp":"2019-01-12T09:03:26+00:00","modifiedUserId":null},{"@id":"\/api\/collection\/institutions\/7","@type":"Institutions","id":7,"institutionCode":"ANSM","institutionName":"Universidad
+        Autonoma Agraria Antonio Narro","institutionNameSecondary":"Departamento de
+        Botanica","addressLineOne":"Buenavista","addressLineTwo":null,"city":"25315
+        Saltillo","stateProvince":"Coahuila","postalCode":null,"country":"Mexico","phone":null,"contact":null,"email":null,"url":null,"notes":null,"modifiedTimestamp":null,"initialTimestamp":"2019-01-12T09:03:26+00:00","modifiedUserId":null},{"@id":"\/api\/collection\/institutions\/8","@type":"Institutions","id":8,"institutionCode":"ARIZ","institutionName":"Herbarium;
+        Department of Plant Sciences","institutionNameSecondary":"University of Arizona","addressLineOne":"Herring
+        Hall","addressLineTwo":"P.O. Box 210036","city":"Tucson","stateProvince":"Arizona","postalCode":"85721-0038","country":"USA","phone":null,"contact":null,"email":null,"url":null,"notes":null,"modifiedTimestamp":null,"initialTimestamp":"2019-01-12T09:03:26+00:00","modifiedUserId":null},{"@id":"\/api\/collection\/institutions\/9","@type":"Institutions","id":9,"institutionCode":"ASC","institutionName":"The
+        Deaver Herbarium; Department of Biological Sciences","institutionNameSecondary":"Northern
+        Arizona University","addressLineOne":"P. O. Box 5640","addressLineTwo":"617
+        South Beaver Street 21\/314","city":"Flagstaff","stateProvince":"AZ","postalCode":"86011-5640","country":"USA","phone":null,"contact":null,"email":null,"url":"https:\/\/in.nau.edu\/deaver-herbarium","notes":null,"modifiedTimestamp":null,"initialTimestamp":"2019-01-12T09:03:26+00:00","modifiedUserId":null},{"@id":"\/api\/collection\/institutions\/10","@type":"Institutions","id":10,"institutionCode":"BAYLU","institutionName":"Herbarium;
+        Department of Biology","institutionNameSecondary":"Baylor University","addressLineOne":null,"addressLineTwo":null,"city":"Waco","stateProvince":"Texas","postalCode":"76798-7388","country":"USA","phone":null,"contact":null,"email":null,"url":null,"notes":null,"modifiedTimestamp":null,"initialTimestamp":"2019-01-12T09:03:26+00:00","modifiedUserId":null},{"@id":"\/api\/collection\/institutions\/11","@type":"Institutions","id":11,"institutionCode":"BH","institutionName":"Bailey
+        Hortorium Herbarium; Department of Plant Biology","institutionNameSecondary":"Cornell
+        University","addressLineOne":"228 Plant Sciences Building","addressLineTwo":null,"city":"Ithaca","stateProvince":"NY","postalCode":"14853","country":"USA","phone":null,"contact":null,"email":null,"url":null,"notes":null,"modifiedTimestamp":null,"initialTimestamp":"2019-01-12T09:03:26+00:00","modifiedUserId":null},{"@id":"\/api\/collection\/institutions\/12","@type":"Institutions","id":12,"institutionCode":"BM","institutionName":"Herbarium
+        \r\nDepartment of Botany; Department of Botany","institutionNameSecondary":"The
+        Natural History Museum","addressLineOne":"Cromwell Road","addressLineTwo":null,"city":"London","stateProvince":"England","postalCode":"SW7
+        5BD","country":"U.K.","phone":null,"contact":null,"email":null,"url":null,"notes":null,"modifiedTimestamp":null,"initialTimestamp":"2019-01-12T09:03:26+00:00","modifiedUserId":null},{"@id":"\/api\/collection\/institutions\/13","@type":"Institutions","id":13,"institutionCode":"BRIT","institutionName":"Botanical
+        Research Institute of Texas; BRIT\/SMU\/VDB","institutionNameSecondary":null,"addressLineOne":"1700
+        University Drive","addressLineTwo":null,"city":"Fort Worth","stateProvince":"TX","postalCode":"76107-3400","country":"USA","phone":null,"contact":null,"email":null,"url":null,"notes":null,"modifiedTimestamp":null,"initialTimestamp":"2019-01-12T09:03:26+00:00","modifiedUserId":null},{"@id":"\/api\/collection\/institutions\/14","@type":"Institutions","id":14,"institutionCode":"BRY","institutionName":"Stanley
+        L. Welsh Herbarium","institutionNameSecondary":"Brigham Young University","addressLineOne":"3115
+        MLBM","addressLineTwo":null,"city":"Provo","stateProvince":"Utah","postalCode":"84602-0200","country":"USA","phone":null,"contact":null,"email":null,"url":null,"notes":null,"modifiedTimestamp":null,"initialTimestamp":"2019-01-12T09:03:26+00:00","modifiedUserId":null},{"@id":"\/api\/collection\/institutions\/15","@type":"Institutions","id":15,"institutionCode":"CAN","institutionName":"National
+        Herbarium of Canada; Vascular Plant Section","institutionNameSecondary":"Canadian
+        Museum of Nature","addressLineOne":"P.O. Box 3443, Station D","addressLineTwo":null,"city":"Ottawa","stateProvince":"Ontario","postalCode":"K1P
+        6P4","country":"CANADA","phone":null,"contact":null,"email":null,"url":null,"notes":null,"modifiedTimestamp":null,"initialTimestamp":"2019-01-12T09:03:26+00:00","modifiedUserId":null},{"@id":"\/api\/collection\/institutions\/16","@type":"Institutions","id":16,"institutionCode":"CANB","institutionName":"Australian
+        National Herbarium; Centre for Plant Biodiversity Research","institutionNameSecondary":"CSIRO
+        Division of Plant Industry","addressLineOne":"GPO Box 1600","addressLineTwo":null,"city":"Canberra","stateProvince":null,"postalCode":"ACT
+        2601","country":"AUSTRALIA","phone":null,"contact":null,"email":null,"url":null,"notes":"web
+        www.anbg.gov.au","modifiedTimestamp":null,"initialTimestamp":"2019-01-12T09:03:26+00:00","modifiedUserId":null},{"@id":"\/api\/collection\/institutions\/17","@type":"Institutions","id":17,"institutionCode":"CAS","institutionName":"Botany
+        Department; California Academy of Sciences","institutionNameSecondary":null,"addressLineOne":"55
+        Concourse Drive","addressLineTwo":"Golden Gate Park","city":"San Francisco","stateProvince":"CA","postalCode":"94118","country":"USA","phone":null,"contact":null,"email":null,"url":null,"notes":null,"modifiedTimestamp":null,"initialTimestamp":"2019-01-12T09:03:26+00:00","modifiedUserId":null},{"@id":"\/api\/collection\/institutions\/18","@type":"Institutions","id":18,"institutionCode":"CICY","institutionName":"Centro
+        de Investigacion Cientifica de Yucatan, A.C.","institutionNameSecondary":"Jefe
+        del Herbario CICY","addressLineOne":"Apartado Postal 87","addressLineTwo":"Cordemex
+        97310","city":"Merida","stateProvince":"Yucatan","postalCode":null,"country":"MEXICO","phone":null,"contact":null,"email":null,"url":null,"notes":null,"modifiedTimestamp":null,"initialTimestamp":"2019-01-12T09:03:26+00:00","modifiedUserId":null},{"@id":"\/api\/collection\/institutions\/19","@type":"Institutions","id":19,"institutionCode":"CONC","institutionName":"Herbario;
+        Departamento de BotÃ¡nica\r\nDepartamento de BotÃ¡nica\r\nDepartamento de
+        BotÃ¡nica","institutionNameSecondary":"Universidad de Concepción","addressLineOne":"Casilla
+        160-C","addressLineTwo":null,"city":"Concepción","stateProvince":null,"postalCode":null,"country":"Chile","phone":null,"contact":null,"email":null,"url":null,"notes":null,"modifiedTimestamp":null,"initialTimestamp":"2019-01-12T09:03:26+00:00","modifiedUserId":null},{"@id":"\/api\/collection\/institutions\/20","@type":"Institutions","id":20,"institutionCode":"CPH","institutionName":"Herbarium\r\nHerbarium,;
+        Biological Sciences Department","institutionNameSecondary":null,"addressLineOne":"University
+        of the Pacific","addressLineTwo":null,"city":"Stockton","stateProvince":"California","postalCode":"95211","country":null,"phone":null,"contact":null,"email":null,"url":null,"notes":null,"modifiedTimestamp":null,"initialTimestamp":"2019-01-12T09:03:26+00:00","modifiedUserId":null},{"@id":"\/api\/collection\/institutions\/21","@type":"Institutions","id":21,"institutionCode":"CS","institutionName":"Colorado
+        State University","institutionNameSecondary":null,"addressLineOne":"Biology
+        Department","addressLineTwo":null,"city":"Fort Collins","stateProvince":"CO","postalCode":null,"country":"United
+        States","phone":null,"contact":null,"email":null,"url":null,"notes":null,"modifiedTimestamp":null,"initialTimestamp":"2019-01-12T09:03:26+00:00","modifiedUserId":null},{"@id":"\/api\/collection\/institutions\/22","@type":"Institutions","id":22,"institutionCode":"CSLA","institutionName":"California
+        State University","institutionNameSecondary":"Department of Biological Sciences","addressLineOne":"5151
+        State University Drive","addressLineTwo":null,"city":"Los Angeles","stateProvince":"CA","postalCode":null,"country":"United
+        States","phone":null,"contact":null,"email":null,"url":null,"notes":null,"modifiedTimestamp":null,"initialTimestamp":"2019-01-12T09:03:26+00:00","modifiedUserId":null},{"@id":"\/api\/collection\/institutions\/23","@type":"Institutions","id":23,"institutionCode":"CTES","institutionName":"Instituto
+        de Botánica del Nordeste - Herbario","institutionNameSecondary":"Facultad
+        de Ciencias Agrarias","addressLineOne":"Casilla de Correo 209","addressLineTwo":null,"city":"Corrientes","stateProvince":"Corrientes","postalCode":"3400","country":"Argentina","phone":null,"contact":null,"email":null,"url":null,"notes":null,"modifiedTimestamp":null,"initialTimestamp":"2019-01-12T09:03:26+00:00","modifiedUserId":null},{"@id":"\/api\/collection\/institutions\/24","@type":"Institutions","id":24,"institutionCode":"DUKE","institutionName":"Duke
+        University; Herbarium","institutionNameSecondary":"Dept. of Biology","addressLineOne":"Box
+        90338","addressLineTwo":null,"city":"Durham","stateProvince":"North Carolina","postalCode":"27708-0338","country":"USA","phone":null,"contact":null,"email":null,"url":null,"notes":null,"modifiedTimestamp":null,"initialTimestamp":"2019-01-12T09:03:26+00:00","modifiedUserId":null},{"@id":"\/api\/collection\/institutions\/25","@type":"Institutions","id":25,"institutionCode":"ENCB","institutionName":"Instituto
+        Politocnico Nacional","institutionNameSecondary":"Departamento de Botanica","addressLineOne":"Escuela
+        Nacional de Ciencias Biologicas","addressLineTwo":"Apartado Postal 17-564","city":"11410
+        Mexico City","stateProvince":"Distrito Federal","postalCode":null,"country":"Mexico","phone":null,"contact":null,"email":null,"url":null,"notes":null,"modifiedTimestamp":null,"initialTimestamp":"2019-01-12T09:03:26+00:00","modifiedUserId":null},{"@id":"\/api\/collection\/institutions\/26","@type":"Institutions","id":26,"institutionCode":"F","institutionName":"Field
+        Museum of Natural History","institutionNameSecondary":"Herbarium","addressLineOne":"Botany
+        Department","addressLineTwo":"1400 South Lake Shore Drive","city":"Chicago","stateProvince":"IL","postalCode":"60605-2496","country":"U.S.A.","phone":null,"contact":null,"email":null,"url":"http:\/\/fieldmuseum.org\/explore\/department\/botany\/collections","notes":null,"modifiedTimestamp":null,"initialTimestamp":"2019-01-12T09:03:26+00:00","modifiedUserId":null},{"@id":"\/api\/collection\/institutions\/27","@type":"Institutions","id":27,"institutionCode":"FHO","institutionName":"University
+        of Oxford","institutionNameSecondary":"Department of Plant Sciences","addressLineOne":"South
+        Parks Road","addressLineTwo":null,"city":"Oxford","stateProvince":"England","postalCode":"OX1
+        3RB","country":"United Kingdom","phone":null,"contact":null,"email":null,"url":null,"notes":null,"modifiedTimestamp":null,"initialTimestamp":"2019-01-12T09:03:26+00:00","modifiedUserId":null},{"@id":"\/api\/collection\/institutions\/28","@type":"Institutions","id":28,"institutionCode":"FLAS","institutionName":"University
+        of Florida Herbarium","institutionNameSecondary":"Florida Museum of Natural
+        History","addressLineOne":"379 Dickinson Hall, P.O. Box 110575","addressLineTwo":null,"city":"Gainesville","stateProvince":"Florida","postalCode":"32611-0575","country":null,"phone":null,"contact":null,"email":null,"url":"https:\/\/www.floridamuseum.ufl.edu\/herbarium\/","notes":null,"modifiedTimestamp":null,"initialTimestamp":"2019-01-12T09:03:26+00:00","modifiedUserId":null},{"@id":"\/api\/collection\/institutions\/29","@type":"Institutions","id":29,"institutionCode":"GH","institutionName":"Harvard
+        University Herbarium; 22 Divinity Avenue","institutionNameSecondary":null,"addressLineOne":null,"addressLineTwo":null,"city":"Cambridge","stateProvince":"Massachusetts","postalCode":"02138-2020","country":"USA","phone":null,"contact":null,"email":null,"url":null,"notes":null,"modifiedTimestamp":null,"initialTimestamp":"2019-01-12T09:03:26+00:00","modifiedUserId":null},{"@id":"\/api\/collection\/institutions\/30","@type":"Institutions","id":30,"institutionCode":"HUA","institutionName":"To
+        be completed","institutionNameSecondary":null,"addressLineOne":null,"addressLineTwo":null,"city":"Medellin","stateProvince":null,"postalCode":null,"country":"Colombia","phone":null,"contact":null,"email":null,"url":null,"notes":null,"modifiedTimestamp":null,"initialTimestamp":"2019-01-12T09:03:26+00:00","modifiedUserId":null}],"hydra:totalItems":175,"hydra:view":{"@id":"\/api\/collection\/institutions?page=1","@type":"hydra:PartialCollectionView","hydra:first":"\/api\/collection\/institutions?page=1","hydra:last":"\/api\/collection\/institutions?page=6","hydra:next":"\/api\/collection\/institutions?page=2"}}'
+  recorded_at: 2020-02-04 20:17:01 GMT
+  recorded_with: vcr/0.3.0, webmockr/0.4.0

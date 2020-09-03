@@ -1,0 +1,92 @@
+http_interactions:
+- request:
+    method: get
+    uri: http://a02235015-6.bluezone.usu.edu/api/
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.17.4
+      content-type: application/ld+json; charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      vary: Accept
+      x-content-type-options: nosniff
+      x-frame-options: deny
+      cache-control: no-cache, private
+      date: Tue, 04 Feb 2020 20:17:30 GMT
+      link: <http://a02235015-6.bluezone.usu.edu/api/docs.jsonld>; rel="http://www.w3.org/ns/hydra/core#apiDocumentation"
+    body:
+      encoding: UTF-8
+      string: '{"@context":"\/api\/contexts\/Entrypoint","@id":"\/api","@type":"Entrypoint","configurations":"\/api\/configurations","schemaVersion":"\/api\/schemaversion","lookupLanguages":"\/api\/lookuplanguages","users":"\/api\/users","checklists":"\/api\/checklists","taxaComments":"\/api\/checklist\/taxacomments","children":"\/api\/checklist\/children","taxaLink":"\/api\/checklist\/taxalink","projectCategories":"\/api\/checklist\/projectcategories","vouchers":"\/api\/checklist\/vouchers","dynamic":"\/api\/checklist\/dynamic","checklistProjects":"\/api\/checklist\/checklistprojects","coordinates":"\/api\/checklist\/coordinates","stats":"\/api\/collection\/stats","institutions":"\/api\/collection\/institutions","collections":"\/api\/collections","categories":"\/api\/collection\/categories","queue":"\/api\/crowdsource\/queue","central":"\/api\/crowdsource\/central","titles":"\/api\/exsiccati\/titles","numbers":"\/api\/exsiccati\/numbers","sources":"\/api\/glossary\/sources","termLink":"\/api\/glossary\/termlink","glossary":"\/api\/glossary","projects":"\/api\/imageprocessor\/projects","nlpVersion":"\/api\/imageprocessor\/nlpversion","ocrFragment":"\/api\/imageprocessor\/ocrfragment","nlpFragment":"\/api\/imageprocessor\/nlpfragment","rawLabels":"\/api\/imageprocessor\/rawlabels","nlp":"\/api\/imageprocessor\/nlp","characterHeading":"\/api\/key\/characterheading","characterStateLanguages":"\/api\/key\/characterstatelanguages","characterLanguages":"\/api\/key\/characterlanguages","characters":"\/api\/key\/characters","descriptions":"\/api\/key\/descriptions","descriptionDeletions":"\/api\/key\/descriptiondeletions","characterStates":"\/api\/key\/characterstates","characterStateImages":"\/api\/key\/characterstateimages","tagKey":"\/api\/media\/tagkey","media":"\/api\/media","images":"\/api\/media\/images","guid":"\/api\/media\/guid","keywords":"\/api\/media\/keywords","tag":"\/api\/media\/tag","associations":"\/api\/occurrenceassociations\/associations","comments":"\/api\/occurrencecomments\/comments","datasetLink":"\/api\/occurrencedataset\/datasetlink","datasets":"\/api\/occurrencedataset\/datasets","genetic":"\/api\/occurrencegenetic\/genetic","exchange":"\/api\/occurrenceloan\/exchange","loans":"\/api\/occurrenceloan\/loans","revisions":"\/api\/occurrence\/revisions","edits":"\/api\/occurrence\/edits","uploadDeterminations":"\/api\/occurrence\/uploaddeterminations","fullText":"\/api\/occurrence\/fulltext","uploadParameters":"\/api\/occurrence\/uploadparameters","duplicates":"\/api\/occurrence\/duplicates","lookupChronostratigraphy":"\/api\/occurrence\/lookupchronostratigraphy","accessStats":"\/api\/occurrence\/accessstats","editLocks":"\/api\/occurrence\/editlocks","lookupCounties":"\/api\/occurrence\/lookupcounties","geoIndex":"\/api\/occurrence\/geoindex","lookupStateProvinces":"\/api\/occurrence\/lookupstateprovinces","occurrences":"\/api\/occurrences","determinations":"\/api\/occurrence\/determinations","verification":"\/api\/occurrence\/verification","uploadMappings":"\/api\/occurrence\/uploadmappings","lookupCountries":"\/api\/occurrence\/lookupcountries","identifiers":"\/api\/occurrence\/identifiers","guidOccurrences":"\/api\/occurrence\/guidoccurrences","uploadOccurrences":"\/api\/occurrence\/uploadoccurrences","guidDeterminations":"\/api\/occurrence\/guiddeterminations","lookupMunicipalities":"\/api\/occurrence\/lookupmunicipalities","checklistTaxaLink":"\/api\/reference\/checklisttaxalink","authors":"\/api\/reference\/authors","lookupReferenceTypes":"\/api\/reference\/lookupreferencetypes","references":"\/api\/references","descriptionBlock":"\/api\/taxa\/descriptionblock","synonymy":"\/api\/taxa\/synonymy","authorities":"\/api\/taxa\/authorities","taxa":"\/api\/taxa","resourceLinks":"\/api\/taxa\/resourcelinks","maps":"\/api\/taxa\/maps","descriptionStatements":"\/api\/taxa\/descriptionstatements","relationships":"\/api\/taxa\/relationships","upload":"\/api\/taxa\/upload","links":"\/api\/taxa\/links","userTaxonomy":"\/api\/taxa\/usertaxonomy","vernaculars":"\/api\/taxa\/vernaculars","ranks":"\/api\/taxa\/ranks","attributes":"\/api\/traits\/attributes","traits":"\/api\/traits","dependencies":"\/api\/traits\/dependencies","states":"\/api\/traits\/states"}'
+  recorded_at: 2020-02-04 20:17:31 GMT
+  recorded_with: vcr/0.3.0, webmockr/0.4.0
+- request:
+    method: get
+    uri: http://a02235015-6.bluezone.usu.edu/api/occurrence/duplicates?page=1
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.17.4
+      content-type: application/ld+json; charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      vary: Accept
+      x-content-type-options: nosniff
+      x-frame-options: deny
+      cache-control: private, must-revalidate
+      date: Tue, 04 Feb 2020 20:17:30 GMT
+      link: <http://a02235015-6.bluezone.usu.edu/api/docs.jsonld>; rel="http://www.w3.org/ns/hydra/core#apiDocumentation"
+      etag: '"d758f6a494e7eb11b82fba95b0294355"'
+    body:
+      encoding: UTF-8
+      string: '{"@context":"\/api\/contexts\/Duplicates","@id":"\/api\/occurrence\/duplicates","@type":"hydra:Collection","hydra:member":[{"@id":"\/api\/occurrence\/duplicates\/1","@type":"Duplicates","id":1,"title":"Gilbert
+        4 2000-04-02","description":null,"notes":null,"duplicateType":"1","initialTimestamp":"2019-01-12T13:00:54+00:00","occurrenceId":["\/api\/occurrences\/2076","\/api\/occurrences\/3228"]},{"@id":"\/api\/occurrence\/duplicates\/2","@type":"Duplicates","id":2,"title":"Gilbert
+        9 2000-04-02","description":null,"notes":null,"duplicateType":"1","initialTimestamp":"2019-01-12T13:00:54+00:00","occurrenceId":["\/api\/occurrences\/2665","\/api\/occurrences\/3261"]},{"@id":"\/api\/occurrence\/duplicates\/3","@type":"Duplicates","id":3,"title":"Gilbert
+        3 2000-04-02","description":null,"notes":null,"duplicateType":"1","initialTimestamp":"2019-01-12T13:00:54+00:00","occurrenceId":["\/api\/occurrences\/1922","\/api\/occurrences\/3276"]},{"@id":"\/api\/occurrence\/duplicates\/4","@type":"Duplicates","id":4,"title":"Gilbert
+        10 2000-04-02","description":null,"notes":null,"duplicateType":"1","initialTimestamp":"2019-01-12T13:00:54+00:00","occurrenceId":["\/api\/occurrences\/2321","\/api\/occurrences\/3327"]},{"@id":"\/api\/occurrence\/duplicates\/5","@type":"Duplicates","id":5,"title":"Gilbert
+        5 2000-04-02","description":null,"notes":null,"duplicateType":"1","initialTimestamp":"2019-01-12T13:00:54+00:00","occurrenceId":["\/api\/occurrences\/2379","\/api\/occurrences\/3469"]},{"@id":"\/api\/occurrence\/duplicates\/6","@type":"Duplicates","id":6,"title":"Gilbert
+        6 2000-04-02","description":null,"notes":null,"duplicateType":"1","initialTimestamp":"2019-01-12T13:00:54+00:00","occurrenceId":["\/api\/occurrences\/2390","\/api\/occurrences\/3474"]},{"@id":"\/api\/occurrence\/duplicates\/7","@type":"Duplicates","id":7,"title":"Gilbert
+        2 2000-04-02","description":null,"notes":null,"duplicateType":"1","initialTimestamp":"2019-01-12T13:00:54+00:00","occurrenceId":["\/api\/occurrences\/3592","\/api\/occurrences\/4312"]},{"@id":"\/api\/occurrence\/duplicates\/8","@type":"Duplicates","id":8,"title":"Gilbert
+        16 2000-05-14","description":null,"notes":null,"duplicateType":"1","initialTimestamp":"2019-01-12T13:00:54+00:00","occurrenceId":["\/api\/occurrences\/1998","\/api\/occurrences\/3217"]},{"@id":"\/api\/occurrence\/duplicates\/9","@type":"Duplicates","id":9,"title":"Gilbert
+        37 2000-05-14","description":null,"notes":null,"duplicateType":"1","initialTimestamp":"2019-01-12T13:00:54+00:00","occurrenceId":["\/api\/occurrences\/2380","\/api\/occurrences\/3231"]},{"@id":"\/api\/occurrence\/duplicates\/10","@type":"Duplicates","id":10,"title":"Gilbert
+        32 2000-05-14","description":null,"notes":null,"duplicateType":"1","initialTimestamp":"2019-01-12T13:00:54+00:00","occurrenceId":["\/api\/occurrences\/2135","\/api\/occurrences\/3271"]},{"@id":"\/api\/occurrence\/duplicates\/11","@type":"Duplicates","id":11,"title":"Gilbert
+        14 2000-05-14","description":null,"notes":null,"duplicateType":"1","initialTimestamp":"2019-01-12T13:00:54+00:00","occurrenceId":["\/api\/occurrences\/2382","\/api\/occurrences\/3285"]},{"@id":"\/api\/occurrence\/duplicates\/12","@type":"Duplicates","id":12,"title":"Gilbert
+        19 2000-05-14","description":null,"notes":null,"duplicateType":"1","initialTimestamp":"2019-01-12T13:00:54+00:00","occurrenceId":["\/api\/occurrences\/3286","\/api\/occurrences\/4865"]},{"@id":"\/api\/occurrence\/duplicates\/13","@type":"Duplicates","id":13,"title":"Gilbert
+        27 2000-05-14","description":null,"notes":null,"duplicateType":"1","initialTimestamp":"2019-01-12T13:00:54+00:00","occurrenceId":["\/api\/occurrences\/2147","\/api\/occurrences\/3311"]},{"@id":"\/api\/occurrence\/duplicates\/14","@type":"Duplicates","id":14,"title":"Gilbert
+        44 2000-05-14","description":null,"notes":null,"duplicateType":"1","initialTimestamp":"2019-01-12T13:00:54+00:00","occurrenceId":["\/api\/occurrences\/2028","\/api\/occurrences\/3341"]},{"@id":"\/api\/occurrence\/duplicates\/15","@type":"Duplicates","id":15,"title":"Gilbert
+        26 2000-05-14","description":null,"notes":null,"duplicateType":"1","initialTimestamp":"2019-01-12T13:00:54+00:00","occurrenceId":["\/api\/occurrences\/2261","\/api\/occurrences\/3351"]},{"@id":"\/api\/occurrence\/duplicates\/16","@type":"Duplicates","id":16,"title":"Gilbert
+        15 2000-05-14","description":null,"notes":null,"duplicateType":"1","initialTimestamp":"2019-01-12T13:00:54+00:00","occurrenceId":["\/api\/occurrences\/2334","\/api\/occurrences\/3359"]},{"@id":"\/api\/occurrence\/duplicates\/17","@type":"Duplicates","id":17,"title":"Gilbert
+        21 2000-05-14","description":null,"notes":null,"duplicateType":"1","initialTimestamp":"2019-01-12T13:00:54+00:00","occurrenceId":["\/api\/occurrences\/2834","\/api\/occurrences\/3390","\/api\/occurrences\/4656"]},{"@id":"\/api\/occurrence\/duplicates\/18","@type":"Duplicates","id":18,"title":"Gilbert
+        33 2000-05-14","description":null,"notes":null,"duplicateType":"1","initialTimestamp":"2019-01-12T13:00:54+00:00","occurrenceId":["\/api\/occurrences\/2248","\/api\/occurrences\/3416"]},{"@id":"\/api\/occurrence\/duplicates\/19","@type":"Duplicates","id":19,"title":"Gilbert
+        29 2000-05-14","description":null,"notes":null,"duplicateType":"1","initialTimestamp":"2019-01-12T13:00:54+00:00","occurrenceId":["\/api\/occurrences\/2363","\/api\/occurrences\/3454"]},{"@id":"\/api\/occurrence\/duplicates\/20","@type":"Duplicates","id":20,"title":"Gilbert
+        17 2000-05-14","description":null,"notes":null,"duplicateType":"1","initialTimestamp":"2019-01-12T13:00:54+00:00","occurrenceId":["\/api\/occurrences\/3465","\/api\/occurrences\/3521","\/api\/occurrences\/4508"]},{"@id":"\/api\/occurrence\/duplicates\/21","@type":"Duplicates","id":21,"title":"Gilbert
+        22 2000-05-14","description":null,"notes":null,"duplicateType":"1","initialTimestamp":"2019-01-12T13:00:54+00:00","occurrenceId":["\/api\/occurrences\/3477","\/api\/occurrences\/4668"]},{"@id":"\/api\/occurrence\/duplicates\/22","@type":"Duplicates","id":22,"title":"Gilbert
+        39 2000-05-14","description":null,"notes":null,"duplicateType":"1","initialTimestamp":"2019-01-12T13:00:54+00:00","occurrenceId":["\/api\/occurrences\/2373","\/api\/occurrences\/3563"]},{"@id":"\/api\/occurrence\/duplicates\/23","@type":"Duplicates","id":23,"title":"Gilbert
+        38 2000-05-14","description":null,"notes":null,"duplicateType":"1","initialTimestamp":"2019-01-12T13:00:54+00:00","occurrenceId":["\/api\/occurrences\/2080","\/api\/occurrences\/3567"]},{"@id":"\/api\/occurrence\/duplicates\/24","@type":"Duplicates","id":24,"title":"Gilbert
+        30 2000-05-14","description":null,"notes":null,"duplicateType":"1","initialTimestamp":"2019-01-12T13:00:54+00:00","occurrenceId":["\/api\/occurrences\/3575","\/api\/occurrences\/4519"]},{"@id":"\/api\/occurrence\/duplicates\/25","@type":"Duplicates","id":25,"title":"Gilbert
+        43 2000-05-14","description":null,"notes":null,"duplicateType":"1","initialTimestamp":"2019-01-12T13:00:54+00:00","occurrenceId":["\/api\/occurrences\/2245","\/api\/occurrences\/3580"]},{"@id":"\/api\/occurrence\/duplicates\/26","@type":"Duplicates","id":26,"title":"Gilbert
+        47 2000-05-21","description":null,"notes":null,"duplicateType":"1","initialTimestamp":"2019-01-12T13:00:54+00:00","occurrenceId":["\/api\/occurrences\/2278","\/api\/occurrences\/3212"]},{"@id":"\/api\/occurrence\/duplicates\/27","@type":"Duplicates","id":27,"title":"Gilbert
+        49 2000-05-21","description":null,"notes":null,"duplicateType":"1","initialTimestamp":"2019-01-12T13:00:54+00:00","occurrenceId":["\/api\/occurrences\/2060","\/api\/occurrences\/3243"]},{"@id":"\/api\/occurrence\/duplicates\/28","@type":"Duplicates","id":28,"title":"Gilbert
+        51 2000-05-21","description":null,"notes":null,"duplicateType":"1","initialTimestamp":"2019-01-12T13:00:54+00:00","occurrenceId":["\/api\/occurrences\/2330","\/api\/occurrences\/3254"]},{"@id":"\/api\/occurrence\/duplicates\/29","@type":"Duplicates","id":29,"title":"Gilbert
+        46 2000-05-21","description":null,"notes":null,"duplicateType":"1","initialTimestamp":"2019-01-12T13:00:54+00:00","occurrenceId":["\/api\/occurrences\/2131","\/api\/occurrences\/3387"]},{"@id":"\/api\/occurrence\/duplicates\/30","@type":"Duplicates","id":30,"title":"Gilbert
+        48 2000-05-21","description":null,"notes":null,"duplicateType":"1","initialTimestamp":"2019-01-12T13:00:54+00:00","occurrenceId":["\/api\/occurrences\/3462","\/api\/occurrences\/4504"]}],"hydra:totalItems":831,"hydra:view":{"@id":"\/api\/occurrence\/duplicates?page=1","@type":"hydra:PartialCollectionView","hydra:first":"\/api\/occurrence\/duplicates?page=1","hydra:last":"\/api\/occurrence\/duplicates?page=28","hydra:next":"\/api\/occurrence\/duplicates?page=2"}}'
+  recorded_at: 2020-02-04 20:17:31 GMT
+  recorded_with: vcr/0.3.0, webmockr/0.4.0

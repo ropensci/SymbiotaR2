@@ -1,0 +1,68 @@
+http_interactions:
+- request:
+    method: get
+    uri: http://a02235015-6.bluezone.usu.edu/api/
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.17.4
+      content-type: application/ld+json; charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      vary: Accept
+      x-content-type-options: nosniff
+      x-frame-options: deny
+      cache-control: no-cache, private
+      date: Tue, 04 Feb 2020 20:17:37 GMT
+      link: <http://a02235015-6.bluezone.usu.edu/api/docs.jsonld>; rel="http://www.w3.org/ns/hydra/core#apiDocumentation"
+    body:
+      encoding: UTF-8
+      string: '{"@context":"\/api\/contexts\/Entrypoint","@id":"\/api","@type":"Entrypoint","configurations":"\/api\/configurations","schemaVersion":"\/api\/schemaversion","lookupLanguages":"\/api\/lookuplanguages","users":"\/api\/users","checklists":"\/api\/checklists","taxaComments":"\/api\/checklist\/taxacomments","children":"\/api\/checklist\/children","taxaLink":"\/api\/checklist\/taxalink","projectCategories":"\/api\/checklist\/projectcategories","vouchers":"\/api\/checklist\/vouchers","dynamic":"\/api\/checklist\/dynamic","checklistProjects":"\/api\/checklist\/checklistprojects","coordinates":"\/api\/checklist\/coordinates","stats":"\/api\/collection\/stats","institutions":"\/api\/collection\/institutions","collections":"\/api\/collections","categories":"\/api\/collection\/categories","queue":"\/api\/crowdsource\/queue","central":"\/api\/crowdsource\/central","titles":"\/api\/exsiccati\/titles","numbers":"\/api\/exsiccati\/numbers","sources":"\/api\/glossary\/sources","termLink":"\/api\/glossary\/termlink","glossary":"\/api\/glossary","projects":"\/api\/imageprocessor\/projects","nlpVersion":"\/api\/imageprocessor\/nlpversion","ocrFragment":"\/api\/imageprocessor\/ocrfragment","nlpFragment":"\/api\/imageprocessor\/nlpfragment","rawLabels":"\/api\/imageprocessor\/rawlabels","nlp":"\/api\/imageprocessor\/nlp","characterHeading":"\/api\/key\/characterheading","characterStateLanguages":"\/api\/key\/characterstatelanguages","characterLanguages":"\/api\/key\/characterlanguages","characters":"\/api\/key\/characters","descriptions":"\/api\/key\/descriptions","descriptionDeletions":"\/api\/key\/descriptiondeletions","characterStates":"\/api\/key\/characterstates","characterStateImages":"\/api\/key\/characterstateimages","tagKey":"\/api\/media\/tagkey","media":"\/api\/media","images":"\/api\/media\/images","guid":"\/api\/media\/guid","keywords":"\/api\/media\/keywords","tag":"\/api\/media\/tag","associations":"\/api\/occurrenceassociations\/associations","comments":"\/api\/occurrencecomments\/comments","datasetLink":"\/api\/occurrencedataset\/datasetlink","datasets":"\/api\/occurrencedataset\/datasets","genetic":"\/api\/occurrencegenetic\/genetic","exchange":"\/api\/occurrenceloan\/exchange","loans":"\/api\/occurrenceloan\/loans","revisions":"\/api\/occurrence\/revisions","edits":"\/api\/occurrence\/edits","uploadDeterminations":"\/api\/occurrence\/uploaddeterminations","fullText":"\/api\/occurrence\/fulltext","uploadParameters":"\/api\/occurrence\/uploadparameters","duplicates":"\/api\/occurrence\/duplicates","lookupChronostratigraphy":"\/api\/occurrence\/lookupchronostratigraphy","accessStats":"\/api\/occurrence\/accessstats","editLocks":"\/api\/occurrence\/editlocks","lookupCounties":"\/api\/occurrence\/lookupcounties","geoIndex":"\/api\/occurrence\/geoindex","lookupStateProvinces":"\/api\/occurrence\/lookupstateprovinces","occurrences":"\/api\/occurrences","determinations":"\/api\/occurrence\/determinations","verification":"\/api\/occurrence\/verification","uploadMappings":"\/api\/occurrence\/uploadmappings","lookupCountries":"\/api\/occurrence\/lookupcountries","identifiers":"\/api\/occurrence\/identifiers","guidOccurrences":"\/api\/occurrence\/guidoccurrences","uploadOccurrences":"\/api\/occurrence\/uploadoccurrences","guidDeterminations":"\/api\/occurrence\/guiddeterminations","lookupMunicipalities":"\/api\/occurrence\/lookupmunicipalities","checklistTaxaLink":"\/api\/reference\/checklisttaxalink","authors":"\/api\/reference\/authors","lookupReferenceTypes":"\/api\/reference\/lookupreferencetypes","references":"\/api\/references","descriptionBlock":"\/api\/taxa\/descriptionblock","synonymy":"\/api\/taxa\/synonymy","authorities":"\/api\/taxa\/authorities","taxa":"\/api\/taxa","resourceLinks":"\/api\/taxa\/resourcelinks","maps":"\/api\/taxa\/maps","descriptionStatements":"\/api\/taxa\/descriptionstatements","relationships":"\/api\/taxa\/relationships","upload":"\/api\/taxa\/upload","links":"\/api\/taxa\/links","userTaxonomy":"\/api\/taxa\/usertaxonomy","vernaculars":"\/api\/taxa\/vernaculars","ranks":"\/api\/taxa\/ranks","attributes":"\/api\/traits\/attributes","traits":"\/api\/traits","dependencies":"\/api\/traits\/dependencies","states":"\/api\/traits\/states"}'
+  recorded_at: 2020-02-04 20:17:37 GMT
+  recorded_with: vcr/0.3.0, webmockr/0.4.0
+- request:
+    method: get
+    uri: http://a02235015-6.bluezone.usu.edu/api/occurrence/lookupchronostratigraphy?page=1
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.17.4
+      content-type: application/ld+json; charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      vary: Accept
+      x-content-type-options: nosniff
+      x-frame-options: deny
+      cache-control: private, must-revalidate
+      date: Tue, 04 Feb 2020 20:17:37 GMT
+      link: <http://a02235015-6.bluezone.usu.edu/api/docs.jsonld>; rel="http://www.w3.org/ns/hydra/core#apiDocumentation"
+      etag: '"3ff5d6040d49f7394c80773ebe623256"'
+    body:
+      encoding: UTF-8
+      string: '{"@context":"\/api\/contexts\/LookupChronostratigraphy","@id":"\/api\/occurrence\/lookupchronostratigraphy","@type":"hydra:Collection","hydra:member":[{"@id":"\/api\/occurrence\/lookupchronostratigraphy\/1","@type":"LookupChronostratigraphy","id":1,"eon":"Hadean","era":null,"period":null,"epoch":null,"stage":null,"occurrenceId":[]},{"@id":"\/api\/occurrence\/lookupchronostratigraphy\/2","@type":"LookupChronostratigraphy","id":2,"eon":"Archean","era":null,"period":null,"epoch":null,"stage":null,"occurrenceId":[]},{"@id":"\/api\/occurrence\/lookupchronostratigraphy\/3","@type":"LookupChronostratigraphy","id":3,"eon":"Archean","era":"Eoarchean","period":null,"epoch":null,"stage":null,"occurrenceId":[]},{"@id":"\/api\/occurrence\/lookupchronostratigraphy\/4","@type":"LookupChronostratigraphy","id":4,"eon":"Archean","era":"Paleoarchean","period":null,"epoch":null,"stage":null,"occurrenceId":[]},{"@id":"\/api\/occurrence\/lookupchronostratigraphy\/5","@type":"LookupChronostratigraphy","id":5,"eon":"Archean","era":"Mesoarchean","period":null,"epoch":null,"stage":null,"occurrenceId":[]},{"@id":"\/api\/occurrence\/lookupchronostratigraphy\/6","@type":"LookupChronostratigraphy","id":6,"eon":"Archean","era":"Neoarchean","period":null,"epoch":null,"stage":null,"occurrenceId":[]},{"@id":"\/api\/occurrence\/lookupchronostratigraphy\/7","@type":"LookupChronostratigraphy","id":7,"eon":"Proterozoic","era":null,"period":null,"epoch":null,"stage":null,"occurrenceId":[]},{"@id":"\/api\/occurrence\/lookupchronostratigraphy\/8","@type":"LookupChronostratigraphy","id":8,"eon":"Proterozoic","era":"Paleoproterozoic","period":null,"epoch":null,"stage":null,"occurrenceId":[]},{"@id":"\/api\/occurrence\/lookupchronostratigraphy\/9","@type":"LookupChronostratigraphy","id":9,"eon":"Proterozoic","era":"Paleoproterozoic","period":"Siderian","epoch":null,"stage":null,"occurrenceId":[]},{"@id":"\/api\/occurrence\/lookupchronostratigraphy\/10","@type":"LookupChronostratigraphy","id":10,"eon":"Proterozoic","era":"Paleoproterozoic","period":"Rhyacian","epoch":null,"stage":null,"occurrenceId":[]},{"@id":"\/api\/occurrence\/lookupchronostratigraphy\/11","@type":"LookupChronostratigraphy","id":11,"eon":"Proterozoic","era":"Paleoproterozoic","period":"Orosirian","epoch":null,"stage":null,"occurrenceId":[]},{"@id":"\/api\/occurrence\/lookupchronostratigraphy\/12","@type":"LookupChronostratigraphy","id":12,"eon":"Proterozoic","era":"Paleoproterozoic","period":"Statherian","epoch":null,"stage":null,"occurrenceId":[]},{"@id":"\/api\/occurrence\/lookupchronostratigraphy\/13","@type":"LookupChronostratigraphy","id":13,"eon":"Proterozoic","era":"Mesoproterozoic","period":null,"epoch":null,"stage":null,"occurrenceId":[]},{"@id":"\/api\/occurrence\/lookupchronostratigraphy\/14","@type":"LookupChronostratigraphy","id":14,"eon":"Proterozoic","era":"Mesoproterozoic","period":"Calymmian","epoch":null,"stage":null,"occurrenceId":[]},{"@id":"\/api\/occurrence\/lookupchronostratigraphy\/15","@type":"LookupChronostratigraphy","id":15,"eon":"Proterozoic","era":"Mesoproterozoic","period":"Ectasian","epoch":null,"stage":null,"occurrenceId":[]},{"@id":"\/api\/occurrence\/lookupchronostratigraphy\/16","@type":"LookupChronostratigraphy","id":16,"eon":"Proterozoic","era":"Mesoproterozoic","period":"Stenian","epoch":null,"stage":null,"occurrenceId":[]},{"@id":"\/api\/occurrence\/lookupchronostratigraphy\/17","@type":"LookupChronostratigraphy","id":17,"eon":"Proterozoic","era":"Neoproterozoic","period":null,"epoch":null,"stage":null,"occurrenceId":[]},{"@id":"\/api\/occurrence\/lookupchronostratigraphy\/18","@type":"LookupChronostratigraphy","id":18,"eon":"Proterozoic","era":"Neoproterozoic","period":"Tonian","epoch":null,"stage":null,"occurrenceId":[]},{"@id":"\/api\/occurrence\/lookupchronostratigraphy\/19","@type":"LookupChronostratigraphy","id":19,"eon":"Proterozoic","era":"Neoproterozoic","period":"Gryogenian","epoch":null,"stage":null,"occurrenceId":[]},{"@id":"\/api\/occurrence\/lookupchronostratigraphy\/20","@type":"LookupChronostratigraphy","id":20,"eon":"Proterozoic","era":"Neoproterozoic","period":"Ediacaran","epoch":null,"stage":null,"occurrenceId":[]},{"@id":"\/api\/occurrence\/lookupchronostratigraphy\/21","@type":"LookupChronostratigraphy","id":21,"eon":"Phanerozoic","era":null,"period":null,"epoch":null,"stage":null,"occurrenceId":[]},{"@id":"\/api\/occurrence\/lookupchronostratigraphy\/22","@type":"LookupChronostratigraphy","id":22,"eon":"Phanerozoic","era":"Paleozoic","period":null,"epoch":null,"stage":null,"occurrenceId":[]},{"@id":"\/api\/occurrence\/lookupchronostratigraphy\/23","@type":"LookupChronostratigraphy","id":23,"eon":"Phanerozoic","era":"Paleozoic","period":"Cambrian","epoch":null,"stage":null,"occurrenceId":[]},{"@id":"\/api\/occurrence\/lookupchronostratigraphy\/24","@type":"LookupChronostratigraphy","id":24,"eon":"Phanerozoic","era":"Paleozoic","period":"Cambrian","epoch":"Lower
+        Cambrian","stage":null,"occurrenceId":[]},{"@id":"\/api\/occurrence\/lookupchronostratigraphy\/25","@type":"LookupChronostratigraphy","id":25,"eon":"Phanerozoic","era":"Paleozoic","period":"Cambrian","epoch":"Middle
+        Cambrian","stage":null,"occurrenceId":[]},{"@id":"\/api\/occurrence\/lookupchronostratigraphy\/26","@type":"LookupChronostratigraphy","id":26,"eon":"Phanerozoic","era":"Paleozoic","period":"Cambrian","epoch":"Upper
+        Cambrian","stage":null,"occurrenceId":[]},{"@id":"\/api\/occurrence\/lookupchronostratigraphy\/27","@type":"LookupChronostratigraphy","id":27,"eon":"Phanerozoic","era":"Paleozoic","period":"Ordovician","epoch":null,"stage":null,"occurrenceId":[]},{"@id":"\/api\/occurrence\/lookupchronostratigraphy\/28","@type":"LookupChronostratigraphy","id":28,"eon":"Phanerozoic","era":"Paleozoic","period":"Ordovician","epoch":"Lower
+        Ordovician","stage":null,"occurrenceId":[]},{"@id":"\/api\/occurrence\/lookupchronostratigraphy\/29","@type":"LookupChronostratigraphy","id":29,"eon":"Phanerozoic","era":"Paleozoic","period":"Ordovician","epoch":"Lower
+        Ordovician","stage":"Tremadocian","occurrenceId":[]},{"@id":"\/api\/occurrence\/lookupchronostratigraphy\/30","@type":"LookupChronostratigraphy","id":30,"eon":"Phanerozoic","era":"Paleozoic","period":"Ordovician","epoch":"Lower
+        Ordovician","stage":"Floian","occurrenceId":[]}],"hydra:totalItems":156,"hydra:view":{"@id":"\/api\/occurrence\/lookupchronostratigraphy?page=1","@type":"hydra:PartialCollectionView","hydra:first":"\/api\/occurrence\/lookupchronostratigraphy?page=1","hydra:last":"\/api\/occurrence\/lookupchronostratigraphy?page=6","hydra:next":"\/api\/occurrence\/lookupchronostratigraphy?page=2"}}'
+  recorded_at: 2020-02-04 20:17:37 GMT
+  recorded_with: vcr/0.3.0, webmockr/0.4.0

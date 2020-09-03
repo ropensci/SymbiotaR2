@@ -1,0 +1,88 @@
+http_interactions:
+- request:
+    method: get
+    uri: http://a02235015-6.bluezone.usu.edu/api/
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.17.4
+      content-type: application/ld+json; charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      vary: Accept
+      x-content-type-options: nosniff
+      x-frame-options: deny
+      cache-control: no-cache, private
+      date: Tue, 04 Feb 2020 20:17:31 GMT
+      link: <http://a02235015-6.bluezone.usu.edu/api/docs.jsonld>; rel="http://www.w3.org/ns/hydra/core#apiDocumentation"
+    body:
+      encoding: UTF-8
+      string: '{"@context":"\/api\/contexts\/Entrypoint","@id":"\/api","@type":"Entrypoint","configurations":"\/api\/configurations","schemaVersion":"\/api\/schemaversion","lookupLanguages":"\/api\/lookuplanguages","users":"\/api\/users","checklists":"\/api\/checklists","taxaComments":"\/api\/checklist\/taxacomments","children":"\/api\/checklist\/children","taxaLink":"\/api\/checklist\/taxalink","projectCategories":"\/api\/checklist\/projectcategories","vouchers":"\/api\/checklist\/vouchers","dynamic":"\/api\/checklist\/dynamic","checklistProjects":"\/api\/checklist\/checklistprojects","coordinates":"\/api\/checklist\/coordinates","stats":"\/api\/collection\/stats","institutions":"\/api\/collection\/institutions","collections":"\/api\/collections","categories":"\/api\/collection\/categories","queue":"\/api\/crowdsource\/queue","central":"\/api\/crowdsource\/central","titles":"\/api\/exsiccati\/titles","numbers":"\/api\/exsiccati\/numbers","sources":"\/api\/glossary\/sources","termLink":"\/api\/glossary\/termlink","glossary":"\/api\/glossary","projects":"\/api\/imageprocessor\/projects","nlpVersion":"\/api\/imageprocessor\/nlpversion","ocrFragment":"\/api\/imageprocessor\/ocrfragment","nlpFragment":"\/api\/imageprocessor\/nlpfragment","rawLabels":"\/api\/imageprocessor\/rawlabels","nlp":"\/api\/imageprocessor\/nlp","characterHeading":"\/api\/key\/characterheading","characterStateLanguages":"\/api\/key\/characterstatelanguages","characterLanguages":"\/api\/key\/characterlanguages","characters":"\/api\/key\/characters","descriptions":"\/api\/key\/descriptions","descriptionDeletions":"\/api\/key\/descriptiondeletions","characterStates":"\/api\/key\/characterstates","characterStateImages":"\/api\/key\/characterstateimages","tagKey":"\/api\/media\/tagkey","media":"\/api\/media","images":"\/api\/media\/images","guid":"\/api\/media\/guid","keywords":"\/api\/media\/keywords","tag":"\/api\/media\/tag","associations":"\/api\/occurrenceassociations\/associations","comments":"\/api\/occurrencecomments\/comments","datasetLink":"\/api\/occurrencedataset\/datasetlink","datasets":"\/api\/occurrencedataset\/datasets","genetic":"\/api\/occurrencegenetic\/genetic","exchange":"\/api\/occurrenceloan\/exchange","loans":"\/api\/occurrenceloan\/loans","revisions":"\/api\/occurrence\/revisions","edits":"\/api\/occurrence\/edits","uploadDeterminations":"\/api\/occurrence\/uploaddeterminations","fullText":"\/api\/occurrence\/fulltext","uploadParameters":"\/api\/occurrence\/uploadparameters","duplicates":"\/api\/occurrence\/duplicates","lookupChronostratigraphy":"\/api\/occurrence\/lookupchronostratigraphy","accessStats":"\/api\/occurrence\/accessstats","editLocks":"\/api\/occurrence\/editlocks","lookupCounties":"\/api\/occurrence\/lookupcounties","geoIndex":"\/api\/occurrence\/geoindex","lookupStateProvinces":"\/api\/occurrence\/lookupstateprovinces","occurrences":"\/api\/occurrences","determinations":"\/api\/occurrence\/determinations","verification":"\/api\/occurrence\/verification","uploadMappings":"\/api\/occurrence\/uploadmappings","lookupCountries":"\/api\/occurrence\/lookupcountries","identifiers":"\/api\/occurrence\/identifiers","guidOccurrences":"\/api\/occurrence\/guidoccurrences","uploadOccurrences":"\/api\/occurrence\/uploadoccurrences","guidDeterminations":"\/api\/occurrence\/guiddeterminations","lookupMunicipalities":"\/api\/occurrence\/lookupmunicipalities","checklistTaxaLink":"\/api\/reference\/checklisttaxalink","authors":"\/api\/reference\/authors","lookupReferenceTypes":"\/api\/reference\/lookupreferencetypes","references":"\/api\/references","descriptionBlock":"\/api\/taxa\/descriptionblock","synonymy":"\/api\/taxa\/synonymy","authorities":"\/api\/taxa\/authorities","taxa":"\/api\/taxa","resourceLinks":"\/api\/taxa\/resourcelinks","maps":"\/api\/taxa\/maps","descriptionStatements":"\/api\/taxa\/descriptionstatements","relationships":"\/api\/taxa\/relationships","upload":"\/api\/taxa\/upload","links":"\/api\/taxa\/links","userTaxonomy":"\/api\/taxa\/usertaxonomy","vernaculars":"\/api\/taxa\/vernaculars","ranks":"\/api\/taxa\/ranks","attributes":"\/api\/traits\/attributes","traits":"\/api\/traits","dependencies":"\/api\/traits\/dependencies","states":"\/api\/traits\/states"}'
+  recorded_at: 2020-02-04 20:17:32 GMT
+  recorded_with: vcr/0.3.0, webmockr/0.4.0
+- request:
+    method: get
+    uri: http://a02235015-6.bluezone.usu.edu/api/occurrence/edits?page=1
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.17.4
+      content-type: application/ld+json; charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      vary: Accept
+      x-content-type-options: nosniff
+      x-frame-options: deny
+      cache-control: private, must-revalidate
+      date: Tue, 04 Feb 2020 20:17:32 GMT
+      link: <http://a02235015-6.bluezone.usu.edu/api/docs.jsonld>; rel="http://www.w3.org/ns/hydra/core#apiDocumentation"
+      etag: '"336b8cab2b75a5067287999c388129f1"'
+    body:
+      encoding: UTF-8
+      string: '{"@context":"\/api\/contexts\/Edits","@id":"\/api\/occurrence\/edits","@type":"hydra:Collection","hydra:member":[{"@id":"\/api\/occurrence\/edits\/16","@type":"Edits","id":16,"fieldName":"basisofrecord","fieldValueNew":"HerbariumSpecimen","fieldValueOld":"PreservedSpecimen","reviewStatus":3,"appliedStatus":0,"editType":1,"guid":null,"initialTimestamp":"2019-01-12T13:18:12+00:00","occurrenceId":"\/api\/occurrences\/959","userId":"\/api\/users\/18"},{"@id":"\/api\/occurrence\/edits\/17","@type":"Edits","id":17,"fieldName":"processingstatus","fieldValueNew":"reviewed","fieldValueOld":"pending
+        review","reviewStatus":3,"appliedStatus":1,"editType":1,"guid":null,"initialTimestamp":"2019-01-12T13:18:12+00:00","occurrenceId":"\/api\/occurrences\/959","userId":"\/api\/users\/18"},{"@id":"\/api\/occurrence\/edits\/20","@type":"Edits","id":20,"fieldName":"basisofrecord","fieldValueNew":"Herbarium
+        specimen","fieldValueOld":"PreservedSpecimen","reviewStatus":3,"appliedStatus":0,"editType":1,"guid":null,"initialTimestamp":"2019-01-12T13:18:12+00:00","occurrenceId":"\/api\/occurrences\/1205","userId":"\/api\/users\/18"},{"@id":"\/api\/occurrence\/edits\/104","@type":"Edits","id":104,"fieldName":"basisofrecord","fieldValueNew":"HerbariumSpecimen","fieldValueOld":"PreservedSpecimen","reviewStatus":3,"appliedStatus":1,"editType":1,"guid":null,"initialTimestamp":"2019-01-12T13:18:12+00:00","occurrenceId":"\/api\/occurrences\/1418","userId":"\/api\/users\/18"},{"@id":"\/api\/occurrence\/edits\/105","@type":"Edits","id":105,"fieldName":"basisofrecord","fieldValueNew":"HerbariumSpecimen","fieldValueOld":"PreservedSpecimen","reviewStatus":3,"appliedStatus":1,"editType":1,"guid":null,"initialTimestamp":"2019-01-12T13:18:12+00:00","occurrenceId":"\/api\/occurrences\/1382","userId":"\/api\/users\/18"},{"@id":"\/api\/occurrence\/edits\/220","@type":"Edits","id":220,"fieldName":"recordedby","fieldValueNew":"Mary
+        E. Barkworth","fieldValueOld":"M. Barkworth; F. Smith; E. Gabrielian; A. Nersesya","reviewStatus":3,"appliedStatus":1,"editType":1,"guid":null,"initialTimestamp":"2019-01-12T13:18:12+00:00","occurrenceId":"\/api\/occurrences\/695","userId":"\/api\/users\/18"},{"@id":"\/api\/occurrence\/edits\/883","@type":"Edits","id":883,"fieldName":"identifiedby","fieldValueNew":"N.
+        Jacobsen","fieldValueOld":"","reviewStatus":3,"appliedStatus":1,"editType":1,"guid":null,"initialTimestamp":"2019-01-12T13:18:12+00:00","occurrenceId":"\/api\/occurrences\/995","userId":"\/api\/users\/18"},{"@id":"\/api\/occurrence\/edits\/884","@type":"Edits","id":884,"fieldName":"processingstatus","fieldValueNew":"reviewed","fieldValueOld":"pending
+        review","reviewStatus":3,"appliedStatus":1,"editType":1,"guid":null,"initialTimestamp":"2019-01-12T13:18:12+00:00","occurrenceId":"\/api\/occurrences\/995","userId":"\/api\/users\/18"},{"@id":"\/api\/occurrence\/edits\/956","@type":"Edits","id":956,"fieldName":"basisofrecord","fieldValueNew":"Herbarium
+        Specimen","fieldValueOld":"PreservedSpecimen","reviewStatus":3,"appliedStatus":1,"editType":1,"guid":null,"initialTimestamp":"2019-01-12T13:18:12+00:00","occurrenceId":"\/api\/occurrences\/718","userId":"\/api\/users\/18"},{"@id":"\/api\/occurrence\/edits\/957","@type":"Edits","id":957,"fieldName":"processingstatus","fieldValueNew":"reviewed","fieldValueOld":"pending
+        review","reviewStatus":3,"appliedStatus":1,"editType":1,"guid":null,"initialTimestamp":"2019-01-12T13:18:12+00:00","occurrenceId":"\/api\/occurrences\/718","userId":"\/api\/users\/18"},{"@id":"\/api\/occurrence\/edits\/958","@type":"Edits","id":958,"fieldName":"basisofrecord","fieldValueNew":"Herbarium
+        Specimen","fieldValueOld":"PreservedSpecimen","reviewStatus":3,"appliedStatus":1,"editType":1,"guid":null,"initialTimestamp":"2019-01-12T13:18:12+00:00","occurrenceId":"\/api\/occurrences\/715","userId":"\/api\/users\/18"},{"@id":"\/api\/occurrence\/edits\/959","@type":"Edits","id":959,"fieldName":"processingstatus","fieldValueNew":"reviewed","fieldValueOld":"pending
+        review","reviewStatus":3,"appliedStatus":1,"editType":1,"guid":null,"initialTimestamp":"2019-01-12T13:18:12+00:00","occurrenceId":"\/api\/occurrences\/715","userId":"\/api\/users\/18"},{"@id":"\/api\/occurrence\/edits\/960","@type":"Edits","id":960,"fieldName":"basisofrecord","fieldValueNew":"Herbarium
+        Specimen","fieldValueOld":"PreservedSpecimen","reviewStatus":3,"appliedStatus":1,"editType":1,"guid":null,"initialTimestamp":"2019-01-12T13:18:12+00:00","occurrenceId":"\/api\/occurrences\/714","userId":"\/api\/users\/18"},{"@id":"\/api\/occurrence\/edits\/961","@type":"Edits","id":961,"fieldName":"processingstatus","fieldValueNew":"reviewed","fieldValueOld":"pending
+        review","reviewStatus":3,"appliedStatus":1,"editType":1,"guid":null,"initialTimestamp":"2019-01-12T13:18:12+00:00","occurrenceId":"\/api\/occurrences\/714","userId":"\/api\/users\/18"},{"@id":"\/api\/occurrence\/edits\/2002","@type":"Edits","id":2002,"fieldName":"decimallongitude","fieldValueNew":"44.65","fieldValueOld":"-44.65","reviewStatus":3,"appliedStatus":1,"editType":1,"guid":null,"initialTimestamp":"2019-01-12T13:18:13+00:00","occurrenceId":"\/api\/occurrences\/624","userId":"\/api\/users\/18"},{"@id":"\/api\/occurrence\/edits\/2502","@type":"Edits","id":2502,"fieldName":"sciname","fieldValueNew":"Elymus
+        trachycaulus","fieldValueOld":"Elymus trachycaulus subsp. trachycaulus","reviewStatus":3,"appliedStatus":1,"editType":1,"guid":null,"initialTimestamp":"2019-01-12T13:18:13+00:00","occurrenceId":"\/api\/occurrences\/1501","userId":"\/api\/users\/18"},{"@id":"\/api\/occurrence\/edits\/3075","@type":"Edits","id":3075,"fieldName":"country","fieldValueNew":"United
+        States","fieldValueOld":"USA","reviewStatus":1,"appliedStatus":1,"editType":1,"guid":null,"initialTimestamp":"2019-01-12T13:18:13+00:00","occurrenceId":"\/api\/occurrences\/12","userId":"\/api\/users\/18"},{"@id":"\/api\/occurrence\/edits\/3076","@type":"Edits","id":3076,"fieldName":"country","fieldValueNew":"United
+        States","fieldValueOld":"USA","reviewStatus":1,"appliedStatus":1,"editType":1,"guid":null,"initialTimestamp":"2019-01-12T13:18:13+00:00","occurrenceId":"\/api\/occurrences\/1033","userId":"\/api\/users\/18"},{"@id":"\/api\/occurrence\/edits\/3077","@type":"Edits","id":3077,"fieldName":"country","fieldValueNew":"United
+        States","fieldValueOld":"USA","reviewStatus":1,"appliedStatus":1,"editType":1,"guid":null,"initialTimestamp":"2019-01-12T13:18:13+00:00","occurrenceId":"\/api\/occurrences\/13","userId":"\/api\/users\/18"},{"@id":"\/api\/occurrence\/edits\/3078","@type":"Edits","id":3078,"fieldName":"country","fieldValueNew":"United
+        States","fieldValueOld":"USA","reviewStatus":1,"appliedStatus":1,"editType":1,"guid":null,"initialTimestamp":"2019-01-12T13:18:13+00:00","occurrenceId":"\/api\/occurrences\/14","userId":"\/api\/users\/18"},{"@id":"\/api\/occurrence\/edits\/3079","@type":"Edits","id":3079,"fieldName":"country","fieldValueNew":"United
+        States","fieldValueOld":"USA","reviewStatus":1,"appliedStatus":1,"editType":1,"guid":null,"initialTimestamp":"2019-01-12T13:18:13+00:00","occurrenceId":"\/api\/occurrences\/15","userId":"\/api\/users\/18"},{"@id":"\/api\/occurrence\/edits\/3081","@type":"Edits","id":3081,"fieldName":"country","fieldValueNew":"United
+        States","fieldValueOld":"USA","reviewStatus":1,"appliedStatus":1,"editType":1,"guid":null,"initialTimestamp":"2019-01-12T13:18:13+00:00","occurrenceId":"\/api\/occurrences\/17","userId":"\/api\/users\/18"},{"@id":"\/api\/occurrence\/edits\/3082","@type":"Edits","id":3082,"fieldName":"country","fieldValueNew":"United
+        States","fieldValueOld":"USA","reviewStatus":1,"appliedStatus":1,"editType":1,"guid":null,"initialTimestamp":"2019-01-12T13:18:13+00:00","occurrenceId":"\/api\/occurrences\/16","userId":"\/api\/users\/18"},{"@id":"\/api\/occurrence\/edits\/3083","@type":"Edits","id":3083,"fieldName":"country","fieldValueNew":"United
+        States","fieldValueOld":"USA","reviewStatus":1,"appliedStatus":1,"editType":1,"guid":null,"initialTimestamp":"2019-01-12T13:18:13+00:00","occurrenceId":"\/api\/occurrences\/18","userId":"\/api\/users\/18"},{"@id":"\/api\/occurrence\/edits\/3084","@type":"Edits","id":3084,"fieldName":"country","fieldValueNew":"United
+        States","fieldValueOld":"USA","reviewStatus":1,"appliedStatus":1,"editType":1,"guid":null,"initialTimestamp":"2019-01-12T13:18:13+00:00","occurrenceId":"\/api\/occurrences\/44","userId":"\/api\/users\/18"},{"@id":"\/api\/occurrence\/edits\/3085","@type":"Edits","id":3085,"fieldName":"country","fieldValueNew":"United
+        States","fieldValueOld":"USA","reviewStatus":1,"appliedStatus":1,"editType":1,"guid":null,"initialTimestamp":"2019-01-12T13:18:13+00:00","occurrenceId":"\/api\/occurrences\/33","userId":"\/api\/users\/18"},{"@id":"\/api\/occurrence\/edits\/3086","@type":"Edits","id":3086,"fieldName":"country","fieldValueNew":"United
+        States","fieldValueOld":"USA","reviewStatus":1,"appliedStatus":1,"editType":1,"guid":null,"initialTimestamp":"2019-01-12T13:18:13+00:00","occurrenceId":"\/api\/occurrences\/34","userId":"\/api\/users\/18"},{"@id":"\/api\/occurrence\/edits\/3087","@type":"Edits","id":3087,"fieldName":"country","fieldValueNew":"United
+        States","fieldValueOld":"USA","reviewStatus":1,"appliedStatus":1,"editType":1,"guid":null,"initialTimestamp":"2019-01-12T13:18:13+00:00","occurrenceId":"\/api\/occurrences\/49","userId":"\/api\/users\/18"},{"@id":"\/api\/occurrence\/edits\/3088","@type":"Edits","id":3088,"fieldName":"country","fieldValueNew":"United
+        States","fieldValueOld":"USA","reviewStatus":1,"appliedStatus":1,"editType":1,"guid":null,"initialTimestamp":"2019-01-12T13:18:13+00:00","occurrenceId":"\/api\/occurrences\/50","userId":"\/api\/users\/18"},{"@id":"\/api\/occurrence\/edits\/3089","@type":"Edits","id":3089,"fieldName":"country","fieldValueNew":"United
+        States","fieldValueOld":"USA","reviewStatus":1,"appliedStatus":1,"editType":1,"guid":null,"initialTimestamp":"2019-01-12T13:18:13+00:00","occurrenceId":"\/api\/occurrences\/51","userId":"\/api\/users\/18"}],"hydra:totalItems":816,"hydra:view":{"@id":"\/api\/occurrence\/edits?page=1","@type":"hydra:PartialCollectionView","hydra:first":"\/api\/occurrence\/edits?page=1","hydra:last":"\/api\/occurrence\/edits?page=28","hydra:next":"\/api\/occurrence\/edits?page=2"}}'
+  recorded_at: 2020-02-04 20:17:32 GMT
+  recorded_with: vcr/0.3.0, webmockr/0.4.0

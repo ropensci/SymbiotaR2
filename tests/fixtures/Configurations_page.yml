@@ -1,0 +1,64 @@
+http_interactions:
+- request:
+    method: get
+    uri: http://a02235015-6.bluezone.usu.edu/api/
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.17.4
+      content-type: application/ld+json; charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      vary: Accept
+      x-content-type-options: nosniff
+      x-frame-options: deny
+      cache-control: no-cache, private
+      date: Tue, 04 Feb 2020 20:17:24 GMT
+      link: <http://a02235015-6.bluezone.usu.edu/api/docs.jsonld>; rel="http://www.w3.org/ns/hydra/core#apiDocumentation"
+    body:
+      encoding: UTF-8
+      string: '{"@context":"\/api\/contexts\/Entrypoint","@id":"\/api","@type":"Entrypoint","configurations":"\/api\/configurations","schemaVersion":"\/api\/schemaversion","lookupLanguages":"\/api\/lookuplanguages","users":"\/api\/users","checklists":"\/api\/checklists","taxaComments":"\/api\/checklist\/taxacomments","children":"\/api\/checklist\/children","taxaLink":"\/api\/checklist\/taxalink","projectCategories":"\/api\/checklist\/projectcategories","vouchers":"\/api\/checklist\/vouchers","dynamic":"\/api\/checklist\/dynamic","checklistProjects":"\/api\/checklist\/checklistprojects","coordinates":"\/api\/checklist\/coordinates","stats":"\/api\/collection\/stats","institutions":"\/api\/collection\/institutions","collections":"\/api\/collections","categories":"\/api\/collection\/categories","queue":"\/api\/crowdsource\/queue","central":"\/api\/crowdsource\/central","titles":"\/api\/exsiccati\/titles","numbers":"\/api\/exsiccati\/numbers","sources":"\/api\/glossary\/sources","termLink":"\/api\/glossary\/termlink","glossary":"\/api\/glossary","projects":"\/api\/imageprocessor\/projects","nlpVersion":"\/api\/imageprocessor\/nlpversion","ocrFragment":"\/api\/imageprocessor\/ocrfragment","nlpFragment":"\/api\/imageprocessor\/nlpfragment","rawLabels":"\/api\/imageprocessor\/rawlabels","nlp":"\/api\/imageprocessor\/nlp","characterHeading":"\/api\/key\/characterheading","characterStateLanguages":"\/api\/key\/characterstatelanguages","characterLanguages":"\/api\/key\/characterlanguages","characters":"\/api\/key\/characters","descriptions":"\/api\/key\/descriptions","descriptionDeletions":"\/api\/key\/descriptiondeletions","characterStates":"\/api\/key\/characterstates","characterStateImages":"\/api\/key\/characterstateimages","tagKey":"\/api\/media\/tagkey","media":"\/api\/media","images":"\/api\/media\/images","guid":"\/api\/media\/guid","keywords":"\/api\/media\/keywords","tag":"\/api\/media\/tag","associations":"\/api\/occurrenceassociations\/associations","comments":"\/api\/occurrencecomments\/comments","datasetLink":"\/api\/occurrencedataset\/datasetlink","datasets":"\/api\/occurrencedataset\/datasets","genetic":"\/api\/occurrencegenetic\/genetic","exchange":"\/api\/occurrenceloan\/exchange","loans":"\/api\/occurrenceloan\/loans","revisions":"\/api\/occurrence\/revisions","edits":"\/api\/occurrence\/edits","uploadDeterminations":"\/api\/occurrence\/uploaddeterminations","fullText":"\/api\/occurrence\/fulltext","uploadParameters":"\/api\/occurrence\/uploadparameters","duplicates":"\/api\/occurrence\/duplicates","lookupChronostratigraphy":"\/api\/occurrence\/lookupchronostratigraphy","accessStats":"\/api\/occurrence\/accessstats","editLocks":"\/api\/occurrence\/editlocks","lookupCounties":"\/api\/occurrence\/lookupcounties","geoIndex":"\/api\/occurrence\/geoindex","lookupStateProvinces":"\/api\/occurrence\/lookupstateprovinces","occurrences":"\/api\/occurrences","determinations":"\/api\/occurrence\/determinations","verification":"\/api\/occurrence\/verification","uploadMappings":"\/api\/occurrence\/uploadmappings","lookupCountries":"\/api\/occurrence\/lookupcountries","identifiers":"\/api\/occurrence\/identifiers","guidOccurrences":"\/api\/occurrence\/guidoccurrences","uploadOccurrences":"\/api\/occurrence\/uploadoccurrences","guidDeterminations":"\/api\/occurrence\/guiddeterminations","lookupMunicipalities":"\/api\/occurrence\/lookupmunicipalities","checklistTaxaLink":"\/api\/reference\/checklisttaxalink","authors":"\/api\/reference\/authors","lookupReferenceTypes":"\/api\/reference\/lookupreferencetypes","references":"\/api\/references","descriptionBlock":"\/api\/taxa\/descriptionblock","synonymy":"\/api\/taxa\/synonymy","authorities":"\/api\/taxa\/authorities","taxa":"\/api\/taxa","resourceLinks":"\/api\/taxa\/resourcelinks","maps":"\/api\/taxa\/maps","descriptionStatements":"\/api\/taxa\/descriptionstatements","relationships":"\/api\/taxa\/relationships","upload":"\/api\/taxa\/upload","links":"\/api\/taxa\/links","userTaxonomy":"\/api\/taxa\/usertaxonomy","vernaculars":"\/api\/taxa\/vernaculars","ranks":"\/api\/taxa\/ranks","attributes":"\/api\/traits\/attributes","traits":"\/api\/traits","dependencies":"\/api\/traits\/dependencies","states":"\/api\/traits\/states"}'
+  recorded_at: 2020-02-04 20:17:24 GMT
+  recorded_with: vcr/0.3.0, webmockr/0.4.0
+- request:
+    method: get
+    uri: http://a02235015-6.bluezone.usu.edu/api/configurations?page=1
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.17.4
+      content-type: application/ld+json; charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      vary: Accept
+      x-content-type-options: nosniff
+      x-frame-options: deny
+      cache-control: private, must-revalidate
+      date: Tue, 04 Feb 2020 20:17:24 GMT
+      link: <http://a02235015-6.bluezone.usu.edu/api/docs.jsonld>; rel="http://www.w3.org/ns/hydra/core#apiDocumentation"
+      etag: '"a9c63544d28ac6efb9c72ed387d5f02c"'
+    body:
+      encoding: UTF-8
+      string: '{"@context":"\/api\/contexts\/Configurations","@id":"\/api\/configurations","@type":"hydra:Collection","hydra:member":[{"@id":"\/api\/configurations\/1","@type":"Configurations","id":1,"configurationName":"DEFAULT_LANG","configurationValue":"English","configurationSide":"client"},{"@id":"\/api\/configurations\/2","@type":"Configurations","id":2,"configurationName":"DEFAULT_PROJ_ID","configurationValue":"1","configurationSide":"client"},{"@id":"\/api\/configurations\/3","@type":"Configurations","id":3,"configurationName":"DEFAULTCATID","configurationValue":"","configurationSide":"client"},{"@id":"\/api\/configurations\/4","@type":"Configurations","id":4,"configurationName":"DEFAULT_TITLE","configurationValue":"Symbiota2
+        Dev Portal","configurationSide":"client"},{"@id":"\/api\/configurations\/5","@type":"Configurations","id":5,"configurationName":"TID_FOCUS","configurationValue":"","configurationSide":"client"},{"@id":"\/api\/configurations\/6","@type":"Configurations","id":6,"configurationName":"ADMIN_EMAIL","configurationValue":"","configurationSide":"server"},{"@id":"\/api\/configurations\/7","@type":"Configurations","id":7,"configurationName":"PORTAL_GUID","configurationValue":"500fa85c-8634-434f-a097-ef3440b9d1d6","configurationSide":"server"},{"@id":"\/api\/configurations\/8","@type":"Configurations","id":8,"configurationName":"SECURITY_KEY","configurationValue":"274b003c-8ee3-47d1-a22f-d45953c19ef3","configurationSide":"server"},{"@id":"\/api\/configurations\/9","@type":"Configurations","id":9,"configurationName":"IMAGE_DOMAIN","configurationValue":"","configurationSide":"server"},{"@id":"\/api\/configurations\/10","@type":"Configurations","id":10,"configurationName":"IMAGE_ROOT_URL","configurationValue":"","configurationSide":"server"},{"@id":"\/api\/configurations\/11","@type":"Configurations","id":11,"configurationName":"IMAGE_ROOT_PATH","configurationValue":"","configurationSide":"server"},{"@id":"\/api\/configurations\/12","@type":"Configurations","id":12,"configurationName":"IMG_WEB_WIDTH","configurationValue":"1400","configurationSide":"server"},{"@id":"\/api\/configurations\/13","@type":"Configurations","id":13,"configurationName":"IMG_TN_WIDTH","configurationValue":"200","configurationSide":"server"},{"@id":"\/api\/configurations\/14","@type":"Configurations","id":14,"configurationName":"IMG_LG_WIDTH","configurationValue":"3200","configurationSide":"server"},{"@id":"\/api\/configurations\/15","@type":"Configurations","id":15,"configurationName":"IMG_FILE_SIZE_LIMIT","configurationValue":"300000","configurationSide":"server"},{"@id":"\/api\/configurations\/16","@type":"Configurations","id":16,"configurationName":"IPLANT_IMAGE_IMPORT_PATH","configurationValue":"","configurationSide":"server"},{"@id":"\/api\/configurations\/17","@type":"Configurations","id":17,"configurationName":"GBIF_USERNAME","configurationValue":"","configurationSide":"server"},{"@id":"\/api\/configurations\/18","@type":"Configurations","id":18,"configurationName":"GBIF_PASSWORD","configurationValue":"","configurationSide":"server"},{"@id":"\/api\/configurations\/19","@type":"Configurations","id":19,"configurationName":"GBIF_ORG_KEY","configurationValue":"","configurationSide":"server"},{"@id":"\/api\/configurations\/20","@type":"Configurations","id":20,"configurationName":"MAP_INITIAL_CENTER","configurationValue":"[-110.90713,
+        32.21976]","configurationSide":"client"},{"@id":"\/api\/configurations\/21","@type":"Configurations","id":21,"configurationName":"MAP_INITIAL_ZOOM","configurationValue":"7","configurationSide":"client"},{"@id":"\/api\/configurations\/22","@type":"Configurations","id":22,"configurationName":"ACTIVATE_GEOLOCATION","configurationValue":"1","configurationSide":"client"},{"@id":"\/api\/configurations\/23","@type":"Configurations","id":23,"configurationName":"GEOREFERENCE_POLITICAL_DIVISIONS","configurationValue":"1","configurationSide":"server"},{"@id":"\/api\/configurations\/24","@type":"Configurations","id":24,"configurationName":"GOOGLE_ANALYTICS_KEY","configurationValue":"","configurationSide":"client"},{"@id":"\/api\/configurations\/25","@type":"Configurations","id":25,"configurationName":"TAXONOMIC_AUTHORITY","configurationValue":"COL","configurationSide":"server"},{"@id":"\/api\/configurations\/26","@type":"Configurations","id":26,"configurationName":"TAXONOMIC_AUTHORITY","configurationValue":"WoRMS","configurationSide":"server"},{"@id":"\/api\/configurations\/27","@type":"Configurations","id":27,"configurationName":"PORTAL_TAXA_DESC","configurationValue":"","configurationSide":"client"},{"@id":"\/api\/configurations\/28","@type":"Configurations","id":28,"configurationName":"GLOSSARY_EXPORT_BANNER","configurationValue":"","configurationSide":"server"},{"@id":"\/api\/configurations\/29","@type":"Configurations","id":29,"configurationName":"DYN_CHECKLIST_RADIUS","configurationValue":"","configurationSide":"server"},{"@id":"\/api\/configurations\/30","@type":"Configurations","id":30,"configurationName":"DISPLAY_COMMON_NAMES","configurationValue":"1","configurationSide":"client"}],"hydra:totalItems":35,"hydra:view":{"@id":"\/api\/configurations?page=1","@type":"hydra:PartialCollectionView","hydra:first":"\/api\/configurations?page=1","hydra:last":"\/api\/configurations?page=2","hydra:next":"\/api\/configurations?page=2"},"hydra:search":{"@type":"hydra:IriTemplate","hydra:template":"\/api\/configurations{?configurationName,configurationName[],configurationSide,configurationSide[]}","hydra:variableRepresentation":"BasicRepresentation","hydra:mapping":[{"@type":"IriTemplateMapping","variable":"configurationName","property":"configurationName","required":false},{"@type":"IriTemplateMapping","variable":"configurationName[]","property":"configurationName","required":false},{"@type":"IriTemplateMapping","variable":"configurationSide","property":"configurationSide","required":false},{"@type":"IriTemplateMapping","variable":"configurationSide[]","property":"configurationSide","required":false}]}}'
+  recorded_at: 2020-02-04 20:17:24 GMT
+  recorded_with: vcr/0.3.0, webmockr/0.4.0
