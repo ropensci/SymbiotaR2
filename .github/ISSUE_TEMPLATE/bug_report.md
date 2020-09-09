@@ -1,6 +1,6 @@
 ---
 name: Bug report
-about: Create a report to help us improve
+about: Create a report to help fix a package bug
 title: ''
 labels: ''
 assignees: ''
@@ -8,20 +8,17 @@ assignees: ''
 ---
 
 **Describe the bug**
-A clear and concise description of what the bug is.
+Provide a clear and concise description of what the bug is.
 
 **To Reproduce**
-Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
+Provide a reproducible example (reprex) here.
+
+Alternatively, outline the steps taken to reproduce the behavior; for instance:
+1. Call `function` using `param1`, `param2`, etc.
+2. Look at return object structure
 
 **Expected behavior**
 A clear and concise description of what you expected to happen.
 
-**Screenshots**
-If applicable, add screenshots to help explain your problem.
-
-**Additional context**
-Add any other context about the problem here.
+**Context**
+Provide all relevant context information here (i.e. output from `utils::sessionInfo()`, the URL of the relevant Symbiota2 portal, etc.)
