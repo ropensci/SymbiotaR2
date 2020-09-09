@@ -7,21 +7,22 @@
 
 ## Feature request
 
-* If there are package features you'd like to see, submit an issue on the [Issues page](https://github.com/pearselab/SymbiotaR2/issues), following the format on the [feature request from]](https://github.com/pearselab/SymbiotaR2/blob/master/.github/ISSUE_TEMPLATE/feature_request.md).
+* If there are package features you'd like to see, submit an issue on the [Issues page](https://github.com/pearselab/SymbiotaR2/issues), following the format on the [feature request form](https://github.com/pearselab/SymbiotaR2/blob/master/.github/ISSUE_TEMPLATE/feature_request.md).
 * Note that feature requests should be pertinent to the SymbiotaR2 package, not the Symbiota2 software itself. The Github page for the Symbiota2 software can be found [here](https://github.com/Symbiota2/Symbiota2).
 
 ## Code contributions
 
-* Pull requests should follow the format shown in the [pull request template](https://github.com/pearselab/SymbiotaR2/blob/master/.github/ISSUE_TEMPLATE/bug_report.md), and can be initiated using the steps below. 
-* Please refer to the Tests section below if your pull request updates code that will alter the performance of the SymbiotaR2 package tests.
+* Pull requests should follow the format shown in the [pull request template](https://github.com/pearselab/SymbiotaR2/blob/master/.github/PULL_REQUEST_TEMPLATE/pull_request_template.md).
+* To submit a pull request, follow the workflow outlined below in the 'Overview' section.
+* If your pull request updates code that will alter the performance of the package tests, refer to the 'Tests' section below.
 
-### Broad overview of contributing workflow
+### Overview
 
 * Fork this repo to your Github account
 * Clone your version on your account down to your machine from your account, e.g,. `git clone https://github.com/<yourgithubusername>/SymbiotaR2.git`
-* Make sure to track progress upstream (i.e., on our version of `SymbiotaR2` at `pearselab/SymbiotaR2`) by doing `git remote add upstream https://github.com/pearselab/SymbiotaR2.git`. Before making changes make sure to pull changes in from upstream by doing either `git fetch upstream` then merge later or `git pull upstream` to fetch and merge in one step
+* Make sure to track progress upstream (i.e., on our version of `SymbiotaR2` at `pearselab/SymbiotaR2`) by calling `git remote add upstream https://github.com/pearselab/SymbiotaR2.git`. Before making changes make sure to pull changes in from upstream by doing either `git fetch upstream` then merge later or `git pull upstream` to fetch and merge in one step
 * Make your changes (consider making changes on a new feature branch)
-* If your changes affect code (and not just docs), please write tests for those changes, and include them in a `tests` directory (see Tests below)
+* If your changes affect code (and not just documentation), please write tests for those changes, and include them in a `tests` directory (see 'Tests' below)
 * Push up to your account
 * Submit a pull request to `pearselab/SymbiotaR2`
 
@@ -60,18 +61,18 @@ If you aren't familiar with testing in R, the R packages book has [a chapter on 
 
 ### Making changes
 
-In addition to changing the code, do make sure to udpate the documentation if applicable. The R packages book book has a [chapter on documentation](http://r-pkgs.had.co.nz/man.html) you should read if you aren't familiar.
+In addition to changing the code, make sure to udpate the documentation if applicable. For more information on documentation, the R packages book has a [chapter on documentation](http://r-pkgs.had.co.nz/man.html).
 
 After code and documentation has been changed, update documentation by running either `devtools::document()` or `roxygen2::roxygenise()`.
 
-Make sure if you change what packages or even functions within packages are imported, most likely add the package to Imports in the DESCRIPTION file and list what functions are imported in the `taxize-package.R` file.
+If you change what packages or even functions within packages are imported, then you most likely need to add the package to Imports in the DESCRIPTION file and list what functions are imported in the `SymbiotaR2-package.R` file.
 
 Be conservative about adding new dependencies.
 
 
 ### Style
 
-* SymbiotaR2 is structured hierarchically:"hidden" worker function reside in `R/utils.R`, and all other functions are roughly grouped according to their API calls. When possible, please try to follow this structure; if you're confused at all, feel free reach out to the package maintainers.
+* SymbiotaR2 is structured hierarchically: "hidden" worker functions reside in `utils.R`, and all other functions are roughly grouped according to their API calls. When possible, please try to follow this structure; if you're confused at all, feel free reach out to the package maintainers.
 * Make sure code, documentation, and comments are no more than 80 characters in width.
 * Use `<-` instead of `=` for assignment
 
