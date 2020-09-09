@@ -3,7 +3,7 @@
 ## Bugs
 
 * If there's a bug that you'd like addressed in SymbiotaR2, submit an issue on the [Issues page](https://github.com/pearselab/SymbiotaR2/issues), following the format on the [bug report form](https://github.com/pearselab/SymbiotaR2/blob/master/.github/ISSUE_TEMPLATE/bug_report.md).
-* Please try and include as much relevant information on the bug as possible.
+* Because SymbiotaR2 uses HTTP calls to pull information from a Symbiota2 portal, it's important to determine whether errors are originating from the referenced Symbiota2 portal or from the SymbiotaR2 package. For that reason, providing the URL of the relevant Symbiota2 portal can assist maintainers in addressing any problems.
 
 ## Feature request
 
@@ -72,7 +72,10 @@ Be conservative about adding new dependencies.
 
 ### Style
 
-* SymbiotaR2 is structured hierarchically: "hidden" worker functions reside in `utils.R`, and all other functions are roughly grouped according to their API calls. When possible, please try to follow this structure; if you're confused at all, feel free reach out to the package maintainers.
+* SymbiotaR2 follows a certain structure, which is outlined below. Please try to follow this structure when possible; if you have any confusion, feel free to contact the package maintainers.
+  * "Worker" functions, including the actual API calls and URL checks, reside in `utils.R`. All other package functions are built based off the functions in this file.
+  * Package functions are roughly grouped into scripts based on the URL used to query the SymbiotaR2 portal. So, if a function is pulling a 'Reference' resource, it would be included in the `Reference.R` file.
+  * For each function, either a single resource can be retrieved (by specifying an `id` argument), or an entire page of resources (by specifying `page`). Using the `.api.scaffold` function allows for resources to be consistently accessed in this way.
 * Make sure code, documentation, and comments are no more than 80 characters in width.
 * Use `<-` instead of `=` for assignment
 
