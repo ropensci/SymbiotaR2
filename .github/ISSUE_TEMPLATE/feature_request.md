@@ -1,17 +1,15 @@
 ---
 name: Feature request
-about: Suggest an idea for this project
+about: Suggest something for SymbiotaR2 to include
 title: ''
 labels: ''
 assignees: ''
 
----
-
-**Is your feature request related to a problem? Please describe.**
-A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+**If your feature request is related to a problem, please describe what that problem is.**
+A brief description of problematic behavior with the current package. Example: "Calling `function(param1, param2)` leads to a return object structured like X."
 
 **Describe the solution you'd like**
-A clear and concise description of what you want to happen.
+Provide a description of what you'd like the package to do in place of current behavior.
 
-**Additional context**
-Add any other context or screenshots about the feature request here.
+**Context**
+Provide all relevant context information here (i.e. output from `utils::sessionInfo()`, the URL of the relevant Symbiota2 portal, etc.)
