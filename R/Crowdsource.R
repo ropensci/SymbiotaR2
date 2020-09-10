@@ -1,24 +1,25 @@
 #' Retrieves Crowdsource resources from the Symbiota2 server
-#' 
+#'
 #' Functions that retrieve Crowdsource resources from the server previously connected to.
 #' Each function either retrieves an individual resource or a page of resources,
 #' depending on the arguments provided.
-#' 
+#'
 #' @template SymbiotaR2
 #' @rdname Crowdsource
 #' @name Crowdsource
 #' @export
-Central <- function(id, page, url=NULL){
+Central <- function(id, page, url = NULL) {
   # Argument handling
   url <- .get.url(url)
   robject <- .api.scaffold(.check.api.entry("crowdsource/central"), url, id, page)
-  
+
   # id download
-  if(!missing(id))
+  if (!missing(id)) {
     return(robject)
-  
+  }
+
   # Page (specified or default) download
-  if(!missing(page)){
+  if (!missing(page)) {
     robject <- .page.to.dataframe(robject)
   }
   return(robject)
@@ -26,17 +27,18 @@ Central <- function(id, page, url=NULL){
 
 #' @export
 #' @rdname Crowdsource
-Queue <- function(id, page, url=NULL){
+Queue <- function(id, page, url = NULL) {
   # Argument handling
   url <- .get.url(url)
   robject <- .api.scaffold(.check.api.entry("crowdsource/queue"), url, id, page)
-  
+
   # id download
-  if(!missing(id))
+  if (!missing(id)) {
     return(robject)
-  
+  }
+
   # Page (specified or default) download
-  if(!missing(page)){
+  if (!missing(page)) {
     robject <- .page.to.dataframe(robject)
   }
   return(robject)

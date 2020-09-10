@@ -1,24 +1,25 @@
 #' Retrieves Glossary resources from the Symbiota2 server
-#' 
+#'
 #' Functions that retrieve Glossary resources from the server previously connected to.
 #' Each function either retrieves an individual resource or a page of resources,
 #' depending on the arguments provided.
-#' 
+#'
 #' @template SymbiotaR2
 #' @rdname Glossary
 #' @name Glossary
 #' @export
-Glossary <- function(id, page, url=NULL){
+Glossary <- function(id, page, url = NULL) {
   # Argument handling
   url <- .get.url(url)
   robject <- .api.scaffold(.check.api.entry("glossary"), url, id, page)
-  
+
   # id Download
-  if(!missing(id))
+  if (!missing(id)) {
     return(robject)
-  
+  }
+
   # Page (specified or default) download
-  if(!missing(page)){
+  if (!missing(page)) {
     robject <- .page.to.dataframe(robject)
   }
   return(robject)
@@ -26,17 +27,18 @@ Glossary <- function(id, page, url=NULL){
 
 #' @export
 #' @rdname Glossary
-TermLink <- function(id, page, url=NULL){
+TermLink <- function(id, page, url = NULL) {
   # Argument handling
   url <- .get.url(url)
   robject <- .api.scaffold(.check.api.entry("glossary/termlink"), url, id, page)
-  
+
   # id Download
-  if(!missing(id))
+  if (!missing(id)) {
     return(robject)
-  
+  }
+
   # Page (specified or default) download
-  if(!missing(page)){
+  if (!missing(page)) {
     robject <- .page.to.dataframe(robject)
   }
   return(robject)

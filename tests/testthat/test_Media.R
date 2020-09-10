@@ -2,17 +2,17 @@
 url <- "http://a02235015-6.bluezone.usu.edu/api/"
 
 context("TagKey")
-vcr::use_cassette(name="TagKey_id",{
-  data <- TagKey(url=url, id="Diagnostic")
+vcr::use_cassette(name = "TagKey_id", {
+  data <- TagKey(url = url, id = "Diagnostic")
 })
-test_that("TagKey_id",{
-  expect_equal(length(data),  8)
+test_that("TagKey_id", {
+  expect_equal(length(data), 8)
   expect_type(data, "list")
 })
-vcr::use_cassette(name="TagKey_page",{
-  data <- TagKey(url=url, page=1)
+vcr::use_cassette(name = "TagKey_page", {
+  data <- TagKey(url = url, page = 1)
 })
-test_that("TagKey_page",{
-  expect_equal(length(data),  70)
+test_that("TagKey_page", {
+  expect_equal(length(data), 70)
   expect_type(data, "list")
 })

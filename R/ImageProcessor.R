@@ -1,25 +1,25 @@
 #' Retrieves ImageProcessor resources from the Symbiota2 server
-#' 
+#'
 #' Functions that retrieve ImageProcessor resources from the server previously connected to.
 #' Each function either retrieves an individual resource or a page of resources,
 #' depending on the arguments provided.
-#' 
+#'
 #' @template SymbiotaR2
 #' @rdname ImagePRocessor
 #' @name ImagePRocessor
 #' @export
-Projects <- function(id, page, url=NULL){
+Projects <- function(id, page, url = NULL) {
   # Argument handling
   url <- .get.url(url)
   robject <- .api.scaffold(.check.api.entry("imageprocessor/projects"), url, id, page)
-  
+
   # id Download
-  if(!missing(id)){
+  if (!missing(id)) {
     return(robject)
   }
-  
+
   # Page (specified or default) download
-  if(!missing(page)){
+  if (!missing(page)) {
     robject <- .page.to.dataframe(robject)
   }
   return(robject)
@@ -27,18 +27,18 @@ Projects <- function(id, page, url=NULL){
 
 #' @export
 #' @rdname ImagePRocessor
-RawLabels <- function(id, page, url=NULL){
+RawLabels <- function(id, page, url = NULL) {
   # Argument handling
   url <- .get.url(url)
   robject <- .api.scaffold(.check.api.entry("imageprocessor/rawlabels"), url, id, page)
-  
+
   # id Download
-  if(!missing(id)){
+  if (!missing(id)) {
     return(robject)
   }
-  
+
   # Page (specified or default) download
-  if(!missing(page)){
+  if (!missing(page)) {
     robject <- .page.to.dataframe(robject)
   }
   return(robject)
