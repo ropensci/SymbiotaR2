@@ -72,12 +72,17 @@
 
 .check.url <- function(url) {
   failed <- TRUE
+  # Check that url argument is a string
   if (!inherits(url, "character")) {
     stop("URL must be a character string")
   }
   tryCatch(
     {
+      # Check that url refers to a valid website
       stop_for_status(GET(url))
+      # Check that url refers to a Symbiota2 portal (by trying to pull Occurrence resource from it)
+      api.entry <- .check.api.entry(url)
+      .parse.json(url = paste0(api.entry, "/occurrences/1"))
       failed <- FALSE
     },
     error = function(e) NA
@@ -91,6 +96,7 @@
   return(url)
 }
 
+# Function for removing trailing backslash from provided string
 .check.api.entry <- function(api.entry) {
   if (substr(api.entry, nchar(api.entry), nchar(api.entry)) == "/") {
     api.entry <- substr(api.entry, 0, nchar(api.entry) - 1)
