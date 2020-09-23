@@ -6,8 +6,13 @@
 #' depending on the arguments provided.
 #'
 #' @template SymbiotaR2
-#' @name Checklists
+#' @example
+#' \dontrun{
+#' # Pulling a Coordinates resource (id = 1), from a (nonexistent) dummy portal
+#' object <- Coordinates(id = 1, url = "http://dummy-portal.com/api/")
+#' }
 #' @rdname Checklists
+#' @name Checklists
 #' @export
 ChecklistProjects <- function(id, page, url = NULL) {
   # Argument handling

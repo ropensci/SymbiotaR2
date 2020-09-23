@@ -1,14 +1,13 @@
 #' Set default URL for Symbiota2 portal download
 #'
-#' Sets the \code{SymbiotaR2_url} option for you, optionally by
+#' Sets the \code{SymbiotaR2_url} option for you, optionally, by
 #' appending it to your \code{.Rprofile}. Checks whether you've
-#' specified a valid URL that can be reached (as do all
-#' \code{SymbiotaR2 functions}), but cannot verify whether it's
-#' actually a Symbiota2 portal because you might not be authenticated
-#' or the portal manager may have modified the API in some way.
+#' specified a valid URL that can be reached, and attempts to pull 
+#' a resource from the API, to confirm that the URL does specify 
+#' a Symbiota2 portal.
 #'
 #' @param url URL of Symbiota2 portal (a trailing \code{/} will be
-#'     appended if it is not given)
+#'     appended, if it is not given)
 #' @param append \code{logical} of whether to attempt to append this
 #'     to your \code{.Rprofile} file, making this your default every
 #'     time you start up \code{R}

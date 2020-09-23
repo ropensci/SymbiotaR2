@@ -5,6 +5,11 @@
 #' depending on the arguments provided.
 #'
 #' @template SymbiotaR2
+#' @example 
+#' \dontrun{
+#' # Pulling a page of TagKey resources, from a (nonexistent) dummy portal
+#' object <- TagKey(page = 1, url = "http://dummy-portal.com/api/")
+#' }
 #' @rdname Media
 #' @name Media
 #' @export

@@ -5,6 +5,10 @@
 #' depending on the arguments provided.
 #'
 #' @template SymbiotaR2
+#' \dontrun{
+#' # Pulling a page of Taxa resources, from a (nonexistent) dummy portal
+#' object <- Taxa(page = 2, url = "http://dummy-portal.com/api/")
+#' }
 #' @rdname Taxa
 #' @name Taxa
 #' @export

@@ -5,8 +5,13 @@
 #' depending on the arguments provided.
 #'
 #' @template SymbiotaR2
-#' @name Exsiccati
+#' @example
+#' \dontrun{
+#' # Acquiring a Titles resource (id = 3), from a (nonexistent) dummy portal
+#' object <- Titles(id = 3, url = "http://dummy-portal.com/api/")
+#' }
 #' @rdname Exsiccati
+#' @name Exsiccati
 #' @export
 Numbers <- function(id, page, url = NULL) {
   # Argument handling

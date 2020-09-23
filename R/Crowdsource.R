@@ -5,6 +5,11 @@
 #' depending on the arguments provided.
 #'
 #' @template SymbiotaR2
+#' @example 
+#' \dontrun{
+#' # Acquiring a Queue resource (id = 2), from a (nonexistent) dummy portal
+#' object <- Queue(id = 2, url = "http://dummy-portal.com/api/")
+#' }
 #' @rdname Crowdsource
 #' @name Crowdsource
 #' @export

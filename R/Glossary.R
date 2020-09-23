@@ -5,6 +5,11 @@
 #' depending on the arguments provided.
 #'
 #' @template SymbiotaR2
+#' @example
+#' \dontrun{
+#' # Acquiring a page of Glossary resources, from a (nonexistent) dummy portal
+#' glossPage <- Glossary(page = 1, url = "http://dummy-portal.com/api/")
+#' }
 #' @rdname Glossary
 #' @name Glossary
 #' @export

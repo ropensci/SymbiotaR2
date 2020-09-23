@@ -5,6 +5,11 @@
 #' depending on the arguments provided.
 #'
 #' @template SymbiotaR2
+#' \dontrun{
+#' # Pulling a LookupReferenceType resource (id = 1), 
+#' from a (nonexistent) dummy portal
+#' object <- LookupReferenceType(id = 1, url = "http://dummy-portal.com/api/")
+#' }
 #' @rdname Reference
 #' @name Reference
 #' @export

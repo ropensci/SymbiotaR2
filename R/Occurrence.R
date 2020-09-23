@@ -5,6 +5,10 @@
 #' depending on the arguments provided.
 #'
 #' @template SymbiotaR2
+#' \dontrun{
+#' # Pulling a page of Occurrences, from a (nonexistent) dummy portal
+#' entries <- Occurrence(page = 6, url = "http://dummy-portal.com/api/")
+#' }
 #' @rdname Occurrences
 #' @name Occurrences
 #' @export
