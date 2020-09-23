@@ -13,20 +13,20 @@
 ## Code contributions
 
 * Pull requests should follow the format shown in the [pull request template](https://github.com/pearselab/SymbiotaR2/blob/master/.github/PULL_REQUEST_TEMPLATE/pull_request_template.md).
-* To submit a pull request, follow the workflow outlined below in the 'Overview' section.
-* If your pull request updates code that will alter the performance of the package tests, refer to the 'Tests' section below.
+* To submit a pull request, follow the workflow outlined below in the [Overview](#ovvw) section.
+* If your pull request updates code that will alter the performance of the package tests, refer to the [Tests](#tests) section below.
 
-### Overview
+### <a name="ovvw"></a>Overview
 
 * Fork this repo to your Github account
 * Clone your version on your account down to your machine from your account, e.g,. `git clone https://github.com/<yourgithubusername>/SymbiotaR2.git`
 * Make sure to track progress upstream (i.e., on our version of `SymbiotaR2` at `pearselab/SymbiotaR2`) by calling `git remote add upstream https://github.com/pearselab/SymbiotaR2.git`. Before making changes make sure to pull changes in from upstream by doing either `git fetch upstream` then merge later or `git pull upstream` to fetch and merge in one step
 * Make your changes (consider making changes on a new feature branch)
-* If your changes affect code (and not just documentation), please write tests for those changes, and include them in a `tests` directory (see 'Tests' below)
+* If your changes affect code (and not just documentation), please write tests for those changes, and include them in a `tests` directory (see [Tests](#tests) below)
 * Push up to your account
 * Submit a pull request to `pearselab/SymbiotaR2`
 
-### Tests
+### <a name="tests"></a>Tests
 
 To add tests, go to the folder `tests/testthat/`. Tests are generally organized as individual files for each exported function from the package (that is, listed as an export in the `NAMESPACE` file). If you are adding a new exported function, add a new test file. If you are changing an existing function, look in the tests file for that function; if a function doesn't have tests written for it, make a new test file.
 
