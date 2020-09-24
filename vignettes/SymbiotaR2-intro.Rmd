@@ -1,7 +1,7 @@
 ---
 title: "Downloading data from Symbiota2 portals in R"
 author: "Austin Koontz & William D. Pearse"
-date: "11/27/2019"
+date: "09/24/2020"
 output: html_document
 vignette: >
   %\VignetteIndexEntry{Vignette Title}
@@ -9,32 +9,93 @@ vignette: >
   \usepackage[utf8]{inputenc}
 ---
 
-#### Overview
-**SymbiotaR2** allows users to connect to and download data from
-specified Symbiota2 portals, granting access to thousands of digitized 
-flora and fauna specimen records across the United States. It does this by
-querying endpoints in the Symbiota2 API, then downloading a JSON object
-containing the requested data to a temporary directory on the local computer,
-and finally converting that JSON object into an R format that is 
-straightforward and easy to use. The general argument structure of **SymbiotaR2** 
-allows users to specify whether they want to pull a single resource or a 
-collection of resources from the API.
+## Overview
+[Symbiota](https://symbiota.org/docs/)
+is an open-source content management system built for the purpose of 
+integrating virtual biodiversity databases. Currently used by over 
+700 natural history collections, containing more than 30 million specimens,
+Symbiota is an essential tool for digitizing biological specimen data. 
+In an effort to expand modularity and accesibility, [Symbiota2](https://symbiota.org/docs/symbiota2-project/)
+is an improved, refactored version of the original Symbiota core code 
+structure, designed based on user feedback. While packages do exist for 
+accessing Symbiota portals (for instance, see the [rSymbiota](https://github.com/FranzKrah/rSymbiota)
+package), R users currently cannot access the data offered by Symbiota2. 
+Here, we describe **SymbiotaR2**, a package built to address this need 
+by allowing users to access Symbiota2 portals in an R environment.
 
-#### Example
-The **SymbiotaR2** package includes commands to pull from the Checklists, 
-Collections, Crowdsource, Exsiccati, Glossary, ImageProcessor, Key, Media, 
-Occurrence, Reference, Taxa, Traits, and UserRoles API families of the specified 
-Symbiota2 portal. Note that because each Symbiota2 portal owner can load their 
-own plugins into the API, it's possible that not every possible API endpoint 
-from the specified Symbiota2 instance will be covered. 
+Below, we provide a general workflow for using SymbiotaR2, a description of
+the command structure, code for installing the package, and examples of using 
+SymbiotaR2 functions. The GitHub page for the Symbiota2 software can be found [here](https://github.com/Symbiota2/Symbiota2),
+and instructions for setting up a new Symbiota2 portal can be found on the
+[documentation site](https://symbiota2.github.io/Symbiota2/setup/installation.html).
+Finally, a review of the original Symbiota platform is offered in 
+[Gries et al., 2014](https://bdj.pensoft.net/articles.php?id=1114).
 
-Below, we provide an example of pulling a single `Taxa` resource into the R
-environment, by specifying an `ID` argument in the command call:
+## Workflow
+SymbiotaR2 allows R users to download data from specified Symbiota2 portals, 
+granting access to thousands of digitized flora and fauna specimen records 
+across the United States. It does this by querying endpoints in the 
+Symbiota2 API, then downloading a JSON object containing the requested data 
+to a temporary directory on the local computer. The JSON object is then 
+converted into an R format that is straightforward and easy to use. 
+The general argument structure of all SymbiotaR2 functions allows users 
+to specify whether they want to pull a single resource or a collection 
+of resources from the API.
+
+The general workflow for using SymbiotaR2 is as follows:
+
+1. Determine the URL of the Symbiota2 portal you wish to access data from. 
+You will need to be approved access by the portal manager before being able to
+retrieve data from the portal. 
+2. Install the SymbiotaR2 package (see [Installation](#inst) below).
+3. Find the function corresponding to the resource you wish to pull from the 
+Symbiota2 portal. 
+4. Call the function, specifying the Symbiota2 portal using the `url` 
+argument (see [Example](#ex) below).
+
+## <a name="inst"></a>Installation
+SymbiotaR2 can be downloaded by calling:
 
 ```
-url <- "http://a02235015-6.bluezone.usu.edu/api/"
-my.Taxa <- Taxa(url, ID=12)
-str(my.Taxa)
+library(devtools)
+install_github("pearselab/SymbiotaR2")
+```
+
+Load the package using:
+
+```
+library(SymbiotaR2)
+```
+
+#### Portal Specification
+`SymbiotaR2_setup` will save to your `.Rprofile` a default URL, 
+for automatic reference. Specifing a different `url` argument will let you
+refer to a portal besides the default. The code below demonstrates this:
+
+```
+SymbiotaR2_setup("http://imaginary-symbiota-portal.com/api", append=TRUE)
+
+Coordinates() # Download from http://imaginary-symbiota-portal.com/api
+Coordinates("http://another-imaginary-portal.com/api") # Download from a different portal
+```
+
+## <a name="ex"></a>Example
+SymbiotaR2 consists of commands pulling from the Checklists, 
+Collections, Crowdsource, Exsiccati, Glossary, ImageProcessor, Key, Media, 
+Occurrence, Reference, Taxa, Traits, and UserRoles API families of the 
+specified Symbiota2 portal. Note that because each Symbiota2 portal 
+owner can load their own plugins into the API, it's possible that 
+not every possible API endpoint from the specified Symbiota2 
+instance will be covered. 
+
+Below, we provide an example of pulling a single `Taxa` resource into the R
+environment, by specifying an `id` argument in the command call
+(using a random, nonexistent URL):
+
+```
+myURL <- "http://imaginary-symbiota2-portal.com/api"
+myTaxa <- Taxa(id = 12, url = myURL)
+str(myTaxa)
 ```
 ```
 List of 23
@@ -65,11 +126,11 @@ List of 23
 
 If a collection of resources from the Symbiota2 API needs to come into 
 the R environment, then the `page` argument can be specified in place of
-`ID` to retrieve a list of resources (here, as a `data.frame`):
+`id` to retrieve a list of resources (here, as a `data.frame`):
 
 ```
-url <- "http://a02235015-6.bluezone.usu.edu/api/"
-my.Coordinates <- Coordinates(url, page=1)
+myURL <- "http://imaginary-symbiota2-portal.com/api"
+myCoordinates <- Coordinates(page = 1, url = myURL)
 str(my.Coordinates)
 ```
 ```
@@ -77,5 +138,37 @@ str(my.Coordinates)
  $ latitude : num  32.2 32.2 32.2 32.2 32.2
  $ longitude: num  -111 -111 -111 -111 -111
  ```
-From here, these R objects can be taken and manipulated as needed for any
+
+If neither an `id` or a `page` argument is provided, the functions are written
+to return the list of resources at `page = 1`. Once downloaded, 
+these R objects can be taken and manipulated as needed for any
 downstream processes.
+
+## Troubleshooting
+The code for SymbiotaR2 is structured hierarchically, and includes parameter 
+type checking to ensure arguments are provided in the proper format. 
+Additionally, all commands include a URL check (`.check.url`), 
+which confirms the following:
+
+1. URL provided refers to an accessible website, and
+2. that website is a working Symbiota2 portal.
+
+The 2nd step consists of an API call made at the end of the URL check.
+If either step fails, the error below will be triggered:
+
+```
+Error in .check.url(badURL) : 
+  URL http://incorrect-portal-address.com/api cannot be reached; is it a valid Symbiota2 portal API?
+```
+
+If this error is received, make sure your portal address is spelled correctly. 
+Note that functions are designed such that a forward slash (`/`) at the end 
+of the URL is optional. If your URL is correctly spelled, make sure that 
+the Symbiota2 portal manager has allowed you access to the portal. 
+
+#### Testing
+Tests for all SymbiotaR2 functions (using both an `id` and a `page` parameter)
+can be found in the `tests/testthat/` directory. Tests, like functions, are 
+organized by API families. The `tests/fixtures` directory contains the
+`vcr` <em>cassettes</em> for the tests, which are used to speed up HTTP
+requests; information about the `vcr` package can be found [here](https://github.com/ropensci/vcr).
