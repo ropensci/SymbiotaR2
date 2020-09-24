@@ -54,7 +54,7 @@ resource from an example Symbiota2 portal
 
 ```{R}
 library(SymbiotaR2)
-myURL <- "http://imaginary-symbiota-portal.com/api"
+myURL <- "http://imaginary-symbiota2-portal.com/api"
 myCoordinates <- Coordinates(id = 6, url = myURL)
 ```
 
@@ -75,7 +75,7 @@ Coordinates("http://another-imaginary-portal.com/api") # Download from a differe
 
 ## <a name="inst"></a>Installation
 
-This package is not currently up on CRAN (as it is being developed), 
+This package is not currently up on CRAN (as it's being developed), 
 but it can be downloaded by calling:
 
 ```{R}
