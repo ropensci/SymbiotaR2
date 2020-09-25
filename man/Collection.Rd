@@ -8,31 +8,42 @@
 \alias{Collections}
 \title{Retrieves Collection resources from the Symbiota2 server}
 \usage{
-Categories(url = NA, ID = NA, page = NA)
+Categories(id, page, url = NULL)
 
-Institutions(url = NA, ID = NA, page = NA)
+Institutions(id, page, url = NULL)
 
-Stats(url = NA, ID = NA, page = NA)
+Stats(id, page, url = NULL)
 
-Collections(url = NA, ID = NA, page = NA)
+Collections(id, page, url = NULL)
 }
 \arguments{
-\item{url}{URL of the Symbiota2 portal connected to}
-
-\item{ID}{ID value (usually \code{numeric}, but not always) 
+\item{id}{id value (usually \code{numeric}, but not always) 
 used to refer to the specific resource to pull from the database}
 
-\item{page}{\code{numeric} value referring to the page of Collection resources to pull. If neither an
-ID or a page parameter is provided, function will pull the first page of resources (i.e. \code{page=1}`)}
+\item{page}{\code{numeric} value referring to the page of resources to pull.
+If neither an id or a page parameter is provided, 
+function will pull the first page of resources (i.e. \code{page=1}`)}
+
+\item{url}{URL string of the Symbiota2 portal to be connected to. 
+A trailing \code{/} will be appended, if it is not given.}
 }
 \value{
-If using \code{ID}, the specific Collection resource specified; 
-if using page, the \code{page} specified of Collection resources
+If using \code{id}, the specific resource specified; 
+if using page, the \code{page} specified of resources
 }
 \description{
 Functions that retrieve Collection resources from the server previously connected to.
 Each function either retrieves an individual resource or a page of resources,
 depending on the arguments provided.
+}
+\note{
+To specify a default URL to refer to, see [SymbiotaR2_setup()]
+}
+\examples{
+\dontrun{
+# Pulling in a page of Institutions, from a (nonexistent) dummy portal
+ints <- Institutions(page = 3, url = "http://dummy-portal.com/api/")
+}
 }
 \author{
 Austin Koontz

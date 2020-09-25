@@ -6,26 +6,38 @@
 \alias{Titles}
 \title{Retrieves Exsiccati resources from the Symbiota2 server}
 \usage{
-Numbers(url = NA, ID = NA, page = NA)
+Numbers(id, page, url = NULL)
 
-Titles(url = NA, ID = NA, page = NA)
+Titles(id, page, url = NULL)
 }
 \arguments{
-\item{url}{URL of the Symbiota2 portal connected to}
+\item{id}{id value (usually \code{numeric}, but not always) 
+used to refer to the specific resource to pull from the database}
 
-\item{ID}{ID value (usually \code{numeric}, but not always) used to refer to the specific resource to pull from the database}
+\item{page}{\code{numeric} value referring to the page of resources to pull.
+If neither an id or a page parameter is provided, 
+function will pull the first page of resources (i.e. \code{page=1}`)}
 
-\item{page}{\code{numeric} value referring to the page of Exsiccati resources to pull. If neither an
-ID or a page parameter is provided, function will pull the first page of resources (i.e. \code{page=1}`)}
+\item{url}{URL string of the Symbiota2 portal to be connected to. 
+A trailing \code{/} will be appended, if it is not given.}
 }
 \value{
-If using \code{ID}, the specific Exsiccati resource specified; if using page, the \code{page} specified
-of Exsiccati resources
+If using \code{id}, the specific resource specified; 
+if using page, the \code{page} specified of resources
 }
 \description{
 Functions that retrieve Exsiccati resources from the server previously connected to.
 Each function either retrieves an individual resource or a page of resources,
 depending on the arguments provided.
+}
+\note{
+To specify a default URL to refer to, see [SymbiotaR2_setup()]
+}
+\examples{
+\dontrun{
+# Acquiring a Titles resource (id = 3), from a (nonexistent) dummy portal
+object <- Titles(id = 3, url = "http://dummy-portal.com/api/")
+}
 }
 \author{
 Austin Koontz
