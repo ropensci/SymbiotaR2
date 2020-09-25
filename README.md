@@ -126,8 +126,8 @@ test_that("AccessStats_id", {
 })
 ```
 
-The `data <- AccessStates(url = url, id = 4)` is the Symbiota2 call, and the
-`test_that` block below contains the test conditions: here, that the `data`
+The `data <- AccessStates(url = url, id = 4)` line is the Symbiota2 call, and the
+`test_that` block below it contains the test conditions--here, that the `data`
 object is a `list` of length 12. These test conditions will vary with the 
 Symbiota2 portal used, so for tests to pass, the conditions
 (and possibly the Symbiota2 calls, too) may need to be updated
