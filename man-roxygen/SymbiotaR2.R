@@ -12,3 +12,4 @@
 #' @note To specify a default URL to refer to, see [SymbiotaR2_setup()]
 #' 
 #' @author Austin Koontz
+#' 
