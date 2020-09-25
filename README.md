@@ -89,11 +89,61 @@ Load the package using:
 library(SymbiotaR2)
 ```
 
+## Testing
+
+All of the package functions come with tests, for both pulling
+a single SymbiotaR2 resource (using the `id` argument), or
+a collection of resources (using `page`). Tests for each function 
+are contained in the `tests/testthat` directory.
+
+The `.yml` files contained in the `tests/fixtures` directory contain
+`vcr` <em>cassettes</em>. `vcr` is a package SymbiotaR2 uses to accelerate
+repeated HTTP requests. More information about the `vcr` package can be 
+found on [the `vcr` page on GitHub](https://github.com/ropensci/vcr).
+
+### Running the tests
+
+To run the tests, specify the URL of the Symbiota2 portal you want to 
+refer to in the assignment call at the beginning of the test script:
+
+```{R}
+url <- "http://imaginary-symbiota-portal.com/api"
+```
+
+Tests utilize the [`testthat` R package](https://github.com/r-lib/testthat),
+and use the `expect_equal`, `expect_type`, and `expect_length` functions
+to ensure that resources pulled from the Symbiota2 portal are correct. For
+instance, a piece of testing code may look like:
+
+```{R}
+context("AccessStats")
+vcr::use_cassette(name = "AccessStats_id", {
+  data <- AccessStats(url = url, id = 4)
+})
+test_that("AccessStats_id", {
+  expect_equal(length(data), 12)
+  expect_type(data, "list")
+})
+```
+
+The `data <- AccessStates(url = url, id = 4)` is the Symbiota2 call, and the
+`test_that` block below contains the test conditions: here, that the `data`
+object is a `list` of length 12. These test conditions will vary with the 
+Symbiota2 portal used, so for tests to pass, the conditions
+(and possibly the Symbiota2 calls, too) may need to be updated
+for your particular Symbiota2 portal. 
+
 ## Contributions
 
 Please check out our [contribution guidelines](https://github.com/pearselab/SymbiotaR2/blob/master/.github/CONTRIBUTING.md).
-As the underlying API and the R package are still being developed, we'd recommend
-holding off any development on the package until these are finalized. 
-If you are interested in contributing to the
+
+If you'd like to contribute to the tests in this package (e.g.
+to include a test for a new plugin), remember that you'll need an
+accessible SymbiotaR2 instance to determine test criteria.
+
+As the underlying Symbiota2 API and the R package are still 
+being worked on, we generally recommend holding off
+on any package development until these are finalized.
+If you're interested in contributing to the
 package in the future, though, please [drop one of us an email and
 we'll let you know when we're ready](http://pearselab.com/team.html)!
