@@ -118,7 +118,7 @@ instance, a piece of testing code may look like:
 ```{R}
 context("AccessStats")
 vcr::use_cassette(name = "AccessStats_id", {
-  data <- AccessStats(url = url, id = 4)
+  data <- AccessStats(id = 4, url = url)
 })
 test_that("AccessStats_id", {
   expect_equal(length(data), 12)
