@@ -1,6 +1,6 @@
 #' @title Downloading data from Symbiota2 portals into R
 #'
-#' @decription This package allows users to access and 
+#' @description This package allows users to access and 
 #' download from Symbiota2, a content management system 
 #' for biodiveristy data.
 #' 
@@ -43,10 +43,12 @@
 #' @references https://symbiota.org/docs/
 #' @references Gries, C., Gilbert, E. E., & Franz, N. M. (2014). Symbiota - A virtual platform for creating voucher-based biodiversity information communities. Biodiversity Data Journal, 2, e1114.
 #' @examples
-#' myURL <- "http://imaginary-symbiota2-portal.com/api"
+#' \dontrun{
+#' myURL <- "http://ImaginarySymbiota2Portal.com/api"
 #' myTaxa <- Taxa(id = 12, url = myURL)
 #' str(myTaxa)
 #' 
 #' myOccurrences <- Occurrence(page = 2, url = myURL)
 #' length(myOccurrences)
+#' }
 NULL
