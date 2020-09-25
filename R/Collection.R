@@ -5,7 +5,7 @@
 #' depending on the arguments provided.
 #'
 #' @template SymbiotaR2
-#' @example
+#' @examples
 #' \dontrun{
 #' # Pulling in a page of Institutions, from a (nonexistent) dummy portal
 #' ints <- Institutions(page = 3, url = "http://dummy-portal.com/api/")

@@ -5,7 +5,7 @@
 #' depending on the arguments provided.
 #'
 #' @template SymbiotaR2
-#' @example
+#' @examples
 #' \dontrun{
 #' # Acquiring a RawLabels resource (id = 1), from a (nonexistent) dummy portal
 #' object <- RawLabels(id = 1, url = "http://dummy-portal.com/api/")

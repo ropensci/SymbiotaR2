@@ -5,6 +5,7 @@
 #' depending on the arguments provided.
 #'
 #' @template SymbiotaR2
+#' @examples
 #' \dontrun{
 #' # Pulling a Configurations resource (id = 4), from a (nonexistent) dummy portal
 #' object <- Configurations(id = 4, url = "http://dummy-portal.com/api/")

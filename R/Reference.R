@@ -5,6 +5,7 @@
 #' depending on the arguments provided.
 #'
 #' @template SymbiotaR2
+#' @examples
 #' \dontrun{
 #' # Pulling a LookupReferenceType resource (id = 1), 
 #' from a (nonexistent) dummy portal

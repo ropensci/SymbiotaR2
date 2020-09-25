@@ -6,7 +6,7 @@
 #' depending on the arguments provided.
 #'
 #' @template SymbiotaR2
-#' @example
+#' @examples
 #' \dontrun{
 #' # Pulling a Coordinates resource (id = 1), from a (nonexistent) dummy portal
 #' object <- Coordinates(id = 1, url = "http://dummy-portal.com/api/")
