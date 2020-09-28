@@ -6,6 +6,11 @@
 \alias{package-SymbiotaR2}
 \alias{SymbiotaR2-package}
 \title{Downloading data from Symbiota2 portals into R}
+\description{
+This package allows users to access and 
+download from Symbiota2, a content management system 
+for biodiveristy data.
+}
 \section{About}{
 
 Symbiota2 is the improved, refactored version of Symbiota, 
@@ -46,12 +51,14 @@ https://symbiota2.github.io/Symbiota2/setup/installation.html
 }
 
 \examples{
-myURL <- "http://imaginary-symbiota2-portal.com/api"
+\dontrun{
+myURL <- "http://ImaginarySymbiota2Portal.com/api"
 myTaxa <- Taxa(id = 12, url = myURL)
 str(myTaxa)
 
 myOccurrences <- Occurrence(page = 2, url = myURL)
 length(myOccurrences)
+}
 }
 \references{
 https://symbiota.org/docs/
