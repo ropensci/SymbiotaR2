@@ -21,9 +21,6 @@
 
   # Grab a specific id and return for processing
   if (!missing(id)) {
-    if (!inherits(id, "numeric")) {
-      stop("id must be a numeric")
-    }
     complete_url <- paste0(url, api.entry, "/", id)
     robject <- .parse.json(complete_url)
     for (i in seq_along(robject)) {
