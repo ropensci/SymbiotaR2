@@ -1,5 +1,5 @@
 library("vcr")
 invisible(vcr::vcr_configure(
-  dir = "../fixtures"
+  dir = "tests/fixtures"
 ))
 vcr::check_cassette_names()
