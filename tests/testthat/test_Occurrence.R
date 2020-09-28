@@ -3,14 +3,14 @@ url <- "http://a02235015-6.bluezone.usu.edu/api/"
 
 context("AccessStats")
 vcr::use_cassette(name = "AccessStats_id", {
-  data <- AccessStats(url = url, id = 4)
+  data <- AccessStats(id = 4, url = url)
 })
 test_that("AccessStats_id", {
   expect_equal(length(data), 12)
   expect_type(data, "list")
 })
 vcr::use_cassette(name = "AccessStats_page", {
-  data <- AccessStats(url = url, page = 1)
+  data <- AccessStats(page = 1, url = url)
 })
 test_that("AccessStats_page", {
   expect_equal(length(data), 330)
@@ -19,14 +19,14 @@ test_that("AccessStats_page", {
 
 context("Determinations")
 vcr::use_cassette(name = "Determinations_id", {
-  data <- Determinations(url = url, id = 4)
+  data <- Determinations(id = 4, url = url)
 })
 test_that("Determinations_id", {
   expect_equal(length(data), 21)
   expect_type(data, "list")
 })
 vcr::use_cassette(name = "Determinations_page", {
-  data <- Determinations(url = url, page = 1)
+  data <- Determinations(page = 1, url = url)
 })
 test_that("Determinations_page", {
   expect_equal(length(data), 600)
@@ -35,14 +35,14 @@ test_that("Determinations_page", {
 
 context("Duplicates")
 vcr::use_cassette(name = "Duplicates_id", {
-  data <- Duplicates(url = url, id = 4)
+  data <- Duplicates(id = 4, url = url)
 })
 test_that("Duplicates_id", {
   expect_equal(length(data), 10)
   expect_type(data, "list")
 })
 vcr::use_cassette(name = "Duplicates_page", {
-  data <- Duplicates(url = url, page = 1)
+  data <- Duplicates(page = 1, url = url)
 })
 test_that("Duplicates_page", {
   expect_equal(length(data), 270)
@@ -51,14 +51,14 @@ test_that("Duplicates_page", {
 
 context("Edits")
 vcr::use_cassette(name = "Edits_id", {
-  data <- Edits(url = url, id = 16)
+  data <- Edits(id = 16, url = url)
 })
 test_that("Edits_id", {
   expect_equal(length(data), 14)
   expect_type(data, "list")
 })
 vcr::use_cassette(name = "Edits_page", {
-  data <- Edits(url = url, page = 1)
+  data <- Edits(page = 1, url = url)
 })
 test_that("Edits_page", {
   expect_equal(length(data), 390)
@@ -67,14 +67,14 @@ test_that("Edits_page", {
 
 context("FullText")
 vcr::use_cassette(name = "FullText_id", {
-  data <- FullText(url = url, id = 1)
+  data <- FullText(id = 1, url = url)
 })
 test_that("FullText_id", {
   expect_equal(length(data), 6)
   expect_type(data, "list")
 })
 vcr::use_cassette(name = "FullText_page", {
-  data <- FullText(url = url, page = 1)
+  data <- FullText(page = 1, url = url)
 })
 test_that("FullText_page", {
   expect_equal(length(data), 150)
@@ -83,14 +83,14 @@ test_that("FullText_page", {
 
 context("GuidDeterminations")
 vcr::use_cassette(name = "GuidDeterminations_id", {
-  data <- GuidDeterminations(url = url, id = "00135877-f154-4fdf-965b-3e56118ed747")
+  data <- GuidDeterminations(id = "00135877-f154-4fdf-965b-3e56118ed747", url = url)
 })
 test_that("GuidDeterminations_id", {
   expect_equal(length(data), 9)
   expect_type(data, "list")
 })
 vcr::use_cassette(name = "GuidDeterminations_page", {
-  data <- GuidDeterminations(url = url, page = 1)
+  data <- GuidDeterminations(page = 1, url = url)
 })
 test_that("GuidDeterminations_page", {
   expect_equal(length(data), 240)
@@ -99,14 +99,14 @@ test_that("GuidDeterminations_page", {
 
 context("GuidOccurrences")
 vcr::use_cassette(name = "GuidOccurrences_id", {
-  data <- GuidOccurrences(url = url, id = "00046309-7f89-4d73-8b36-8ee87d7bb053")
+  data <- GuidOccurrences(id = "00046309-7f89-4d73-8b36-8ee87d7bb053", url = url)
 })
 test_that("GuidOccurrences_id", {
   expect_equal(length(data), 9)
   expect_type(data, "list")
 })
 vcr::use_cassette(name = "GuidOccurrences_page", {
-  data <- GuidOccurrences(url = url, page = 1)
+  data <- GuidOccurrences(page = 1, url = url)
 })
 test_that("GuidOccurrences_page", {
   expect_equal(length(data), 240)
@@ -115,14 +115,14 @@ test_that("GuidOccurrences_page", {
 
 context("LookupChronostratigraphy")
 vcr::use_cassette(name = "LookupChronostratigraphy_id", {
-  data <- LookupChronostratigraphy(url = url, id = 1)
+  data <- LookupChronostratigraphy(id = 1, url = url)
 })
 test_that("LookupChronostratigraphy_id", {
   expect_equal(length(data), 10)
   expect_type(data, "list")
 })
 vcr::use_cassette(name = "LookupChronostratigraphy_page", {
-  data <- LookupChronostratigraphy(url = url, page = 1)
+  data <- LookupChronostratigraphy(page = 1, url = url)
 })
 test_that("LookupChronostratigraphy_page", {
   expect_equal(length(data), 9)
@@ -131,7 +131,7 @@ test_that("LookupChronostratigraphy_page", {
 
 context("LookupCounties")
 vcr::use_cassette(name = "LookupCounties_id", {
-  data <- LookupCounties(url = url, id = 1)
+  data <- LookupCounties(id = 1, url = url)
 })
 test_that("LookupCounties_id", {
   expect_equal(length(data), 7)
@@ -147,14 +147,14 @@ test_that("LookupCounties_page", {
 
 context("LookupCountries")
 vcr::use_cassette(name = "LookupCountries_id", {
-  data <- LookupCountries(url = url, id = 1)
+  data <- LookupCountries(id = 1, url = url)
 })
 test_that("LookupCountries_id", {
   expect_equal(length(data), 9)
   expect_type(data, "list")
 })
 vcr::use_cassette(name = "LookupCountries_page", {
-  data <- LookupCountries(url = url, page = 1)
+  data <- LookupCountries(page = 1, url = url)
 })
 test_that("LookupCountries_page", {
   expect_equal(length(data), 240)
@@ -163,14 +163,14 @@ test_that("LookupCountries_page", {
 
 context("LookupStateProvinces")
 vcr::use_cassette(name = "LookupStateProvinces_id", {
-  data <- LookupStateProvinces(url = url, id = 1)
+  data <- LookupStateProvinces(id = 1, url = url)
 })
 test_that("LookupStateProvinces_id", {
   expect_equal(length(data), 8)
   expect_type(data, "list")
 })
 vcr::use_cassette(name = "LookupStateProvinces_page", {
-  data <- LookupStateProvinces(url = url, page = 1)
+  data <- LookupStateProvinces(page = 1, url = url)
 })
 test_that("LookupStateProvinces_page", {
   expect_equal(length(data), 210)
@@ -179,14 +179,14 @@ test_that("LookupStateProvinces_page", {
 
 context("UploadMappings")
 vcr::use_cassette(name = "UploadMappings_id", {
-  data <- UploadMappings(url = url, id = 64)
+  data <- UploadMappings(id = 64, url = url)
 })
 test_that("UploadMappings_id", {
   expect_equal(length(data), 9)
   expect_type(data, "list")
 })
 vcr::use_cassette(name = "UploadMappings_page", {
-  data <- UploadMappings(url = url, page = 1)
+  data <- UploadMappings(page = 1, url = url)
 })
 test_that("UploadMappings_page", {
   expect_equal(length(data), 240)
@@ -195,14 +195,14 @@ test_that("UploadMappings_page", {
 
 context("UploadParameters")
 vcr::use_cassette(name = "UploadParameters_id", {
-  data <- UploadParameters(url = url, id = 6)
+  data <- UploadParameters(id = 6, url = url)
 })
 test_that("UploadParameters_id", {
   expect_equal(length(data), 21)
   expect_type(data, "list")
 })
 vcr::use_cassette(name = "UploadParameters_page", {
-  data <- UploadParameters(url = url, page = 1)
+  data <- UploadParameters(page = 1, url = url)
 })
 test_that("UploadParameters_page", {
   expect_equal(length(data), 600)
@@ -211,14 +211,14 @@ test_that("UploadParameters_page", {
 
 context("Verification")
 vcr::use_cassette(name = "Verification_id", {
-  data <- Verification(url = url, id = 6)
+  data <- Verification(id = 6, url = url)
 })
 test_that("Verification_id", {
   expect_equal(length(data), 12)
   expect_type(data, "list")
 })
 vcr::use_cassette(name = "Verification_page", {
-  data <- Verification(url = url, page = 1)
+  data <- Verification(page = 1, url = url)
 })
 test_that("Verification_page", {
   expect_equal(length(data), 330)
@@ -227,14 +227,14 @@ test_that("Verification_page", {
 
 context("Associations")
 vcr::use_cassette(name = "Associations_id", {
-  data <- Associations(url = url, id = 1)
+  data <- Associations(id = 1, url = url)
 })
 test_that("Associations_id", {
   expect_equal(length(data), 21)
   expect_type(data, "list")
 })
 vcr::use_cassette(name = "Associations_page", {
-  data <- Associations(url = url, page = 1)
+  data <- Associations(page = 1, url = url)
 })
 test_that("Associations_page", {
   expect_equal(length(data), 600)
@@ -243,14 +243,14 @@ test_that("Associations_page", {
 
 context("Comments")
 vcr::use_cassette(name = "Comments_id", {
-  data <- Comments(url = url, id = 1)
+  data <- Comments(id = 1, url = url)
 })
 test_that("Comments_id", {
   expect_equal(length(data), 10)
   expect_type(data, "list")
 })
 vcr::use_cassette(name = "Comments_page", {
-  data <- Comments(url = url, page = 1)
+  data <- Comments(page = 1, url = url)
 })
 test_that("Comments_page", {
   expect_equal(length(data), 9)
@@ -259,14 +259,14 @@ test_that("Comments_page", {
 
 context("DatasetLink")
 vcr::use_cassette(name = "DatasetLink_id", {
-  data <- DatasetLink(url = url, id = 1)
+  data <- DatasetLink(id = 1, url = url)
 })
 test_that("DatasetLink_id", {
   expect_equal(length(data), 8)
   expect_type(data, "list")
 })
 vcr::use_cassette(name = "DatasetLink_page", {
-  data <- DatasetLink(url = url, page = 1)
+  data <- DatasetLink(page = 1, url = url)
 })
 test_that("DatasetLink_page", {
   expect_equal(length(data), 210)
@@ -275,14 +275,14 @@ test_that("DatasetLink_page", {
 
 context("Datasets")
 vcr::use_cassette(name = "Datasets_id", {
-  data <- Datasets(url = url, id = 1)
+  data <- Datasets(id = 1, url = url)
 })
 test_that("Datasets_id", {
   expect_equal(length(data), 10)
   expect_type(data, "list")
 })
 vcr::use_cassette(name = "Datasets_page", {
-  data <- Datasets(url = url, page = 1)
+  data <- Datasets(page = 1, url = url)
 })
 test_that("Datasets_page", {
   expect_equal(length(data), 252)
@@ -291,14 +291,14 @@ test_that("Datasets_page", {
 
 context("Exchange")
 vcr::use_cassette(name = "Exchange_id", {
-  data <- Exchange(url = url, id = 1)
+  data <- Exchange(id = 1, url = url)
 })
 test_that("Exchange_id", {
   expect_equal(length(data), 24)
   expect_type(data, "list")
 })
 vcr::use_cassette(name = "Exchange_page", {
-  data <- Exchange(url = url, page = 1)
+  data <- Exchange(page = 1, url = url)
 })
 test_that("Exchange_page", {
   expect_equal(length(data), 690)
@@ -307,14 +307,14 @@ test_that("Exchange_page", {
 
 context("Loans")
 vcr::use_cassette(name = "Loans_id", {
-  data <- Loans(url = url, id = 1)
+  data <- Loans(id = 1, url = url)
 })
 test_that("Loans_id", {
   expect_equal(length(data), 36)
   expect_type(data, "list")
 })
 vcr::use_cassette(name = "Loans_page", {
-  data <- Loans(url = url, page = 1)
+  data <- Loans(page = 1, url = url)
 })
 test_that("Loans_page", {
   expect_equal(length(data), 840)
@@ -323,14 +323,14 @@ test_that("Loans_page", {
 
 context("Occurrences")
 vcr::use_cassette(name = "Occurrences_id", {
-  data <- Occurrences(url = url, id = 1)
+  data <- Occurrences(id = 1, url = url)
 })
 test_that("Occurrences_id", {
   expect_equal(length(data), 108)
   expect_type(data, "list")
 })
 vcr::use_cassette(name = "Occurrences_page", {
-  data <- Occurrences(url = url, page = 1)
+  data <- Occurrences(page = 1, url = url)
 })
 test_that("Occurrences_page", {
   expect_equal(length(data), 107)

@@ -3,14 +3,14 @@ url <- "http://a02235015-6.bluezone.usu.edu/api/"
 
 context("Configurations")
 vcr::use_cassette(name = "Configurations_id", {
-  data <- Configurations(url = url, id = 5)
+  data <- Configurations(id = 5, url = url)
 })
 test_that("Configurations_id", {
   expect_equal(length(data), 7)
   expect_type(data, "list")
 })
 vcr::use_cassette(name = "Configurations_page", {
-  data <- Configurations(url = url, page = 1)
+  data <- Configurations(page = 1, url = url)
 })
 test_that("Configurations_page", {
   expect_equal(length(data), 180)
@@ -19,14 +19,14 @@ test_that("Configurations_page", {
 
 context("LookupLanguages")
 vcr::use_cassette(name = "LookupLanguages_id", {
-  data <- LookupLanguages(url = url, id = 5)
+  data <- LookupLanguages(id = 5, url = url)
 })
 test_that("LookupLanguages_id", {
   expect_equal(length(data), 9)
   expect_type(data, "list")
 })
 vcr::use_cassette(name = "LookupLanguages_page", {
-  data <- LookupLanguages(url = url, page = 1)
+  data <- LookupLanguages(page = 1, url = url)
 })
 test_that("LookupLanguages_page", {
   expect_equal(length(data), 240)
@@ -35,14 +35,14 @@ test_that("LookupLanguages_page", {
 
 context("SchemaVersion")
 vcr::use_cassette(name = "SchemaVersion_id", {
-  data <- SchemaVersion(url = url, id = 1)
+  data <- SchemaVersion(id = 1, url = url)
 })
 test_that("SchemaVersion_id", {
   expect_equal(length(data), 6)
   expect_type(data, "list")
 })
 vcr::use_cassette(name = "SchemaVersion_page", {
-  data <- SchemaVersion(url = url, page = 1)
+  data <- SchemaVersion(page = 1, url = url)
 })
 test_that("SchemaVersion_page", {
   expect_equal(length(data), 15)
