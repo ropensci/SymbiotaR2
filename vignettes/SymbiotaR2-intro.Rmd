@@ -158,7 +158,7 @@ If either step fails, the error below will be triggered:
 
 ```
 Error in .check.url(badURL) : 
-  URL http://IncorrectPortalAddress.com/api cannot be reached; is it a valid Symbiota2 portal API?
+  URL http://incorrect-portal-address.com/api cannot be reached; is it a valid Symbiota2 portal API?
 ```
 
 If this error is received, make sure your portal address is spelled correctly. 
