@@ -80,7 +80,8 @@
     {
       # Check that url refers to a valid website
       stop_for_status(GET(url))
-      # Check that url refers to a Symbiota2 portal (by trying to pull Occurrence resource from it)
+      # Check that url refers to a Symbiota2 portal 
+      # (by trying to pull Occurrence resource id = 1 from it)
       api.entry <- .check.api.entry(url)
       .parse.json(url = paste0(api.entry, "/occurrences/1"))
       failed <- FALSE
