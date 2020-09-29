@@ -9,7 +9,7 @@
 #' @return If using \code{id}, the specific resource specified; 
 #' if using page, the \code{page} specified of resources
 #' 
-#' @note To specify a default URL to refer to, see @seealso [SymbiotaR2_setup()]
+#' @note To specify a default URL to refer to, see [SymbiotaR2_setup()]
 #' 
 #' @author Austin Koontz
 #' 
