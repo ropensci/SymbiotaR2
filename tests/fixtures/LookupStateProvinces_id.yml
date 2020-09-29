@@ -14,7 +14,7 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      server: nginx/1.17.4
+      server: nginx/1.17.3
       content-type: application/ld+json; charset=utf-8
       transfer-encoding: chunked
       connection: keep-alive
@@ -22,13 +22,56 @@ http_interactions:
       x-content-type-options: nosniff
       x-frame-options: deny
       cache-control: no-cache, private
-      date: Thu, 03 Sep 2020 19:22:57 GMT
+      date: Tue, 29 Sep 2020 19:30:13 GMT
       link: <http://a02235015-6.bluezone.usu.edu/api/docs.jsonld>; rel="http://www.w3.org/ns/hydra/core#apiDocumentation"
     body:
       encoding: UTF-8
       file: no
       string: '{"@context":"\/api\/contexts\/Entrypoint","@id":"\/api","@type":"Entrypoint","configurations":"\/api\/configurations","schemaVersion":"\/api\/schemaversion","lookupLanguages":"\/api\/lookuplanguages","users":"\/api\/users","checklists":"\/api\/checklists","taxaComments":"\/api\/checklist\/taxacomments","children":"\/api\/checklist\/children","taxaLink":"\/api\/checklist\/taxalink","projectCategories":"\/api\/checklist\/projectcategories","vouchers":"\/api\/checklist\/vouchers","dynamic":"\/api\/checklist\/dynamic","checklistProjects":"\/api\/checklist\/checklistprojects","coordinates":"\/api\/checklist\/coordinates","stats":"\/api\/collection\/stats","institutions":"\/api\/collection\/institutions","collections":"\/api\/collections","categories":"\/api\/collection\/categories","queue":"\/api\/crowdsource\/queue","central":"\/api\/crowdsource\/central","titles":"\/api\/exsiccati\/titles","numbers":"\/api\/exsiccati\/numbers","sources":"\/api\/glossary\/sources","termLink":"\/api\/glossary\/termlink","glossary":"\/api\/glossary","projects":"\/api\/imageprocessor\/projects","nlpVersion":"\/api\/imageprocessor\/nlpversion","ocrFragment":"\/api\/imageprocessor\/ocrfragment","nlpFragment":"\/api\/imageprocessor\/nlpfragment","rawLabels":"\/api\/imageprocessor\/rawlabels","nlp":"\/api\/imageprocessor\/nlp","characterHeading":"\/api\/key\/characterheading","characterStateLanguages":"\/api\/key\/characterstatelanguages","characterLanguages":"\/api\/key\/characterlanguages","characters":"\/api\/key\/characters","descriptions":"\/api\/key\/descriptions","descriptionDeletions":"\/api\/key\/descriptiondeletions","characterStates":"\/api\/key\/characterstates","characterStateImages":"\/api\/key\/characterstateimages","tagKey":"\/api\/media\/tagkey","media":"\/api\/media","images":"\/api\/media\/images","guid":"\/api\/media\/guid","keywords":"\/api\/media\/keywords","tag":"\/api\/media\/tag","associations":"\/api\/occurrenceassociations\/associations","comments":"\/api\/occurrencecomments\/comments","datasetLink":"\/api\/occurrencedataset\/datasetlink","datasets":"\/api\/occurrencedataset\/datasets","genetic":"\/api\/occurrencegenetic\/genetic","exchange":"\/api\/occurrenceloan\/exchange","loans":"\/api\/occurrenceloan\/loans","revisions":"\/api\/occurrence\/revisions","edits":"\/api\/occurrence\/edits","uploadDeterminations":"\/api\/occurrence\/uploaddeterminations","fullText":"\/api\/occurrence\/fulltext","uploadParameters":"\/api\/occurrence\/uploadparameters","duplicates":"\/api\/occurrence\/duplicates","lookupChronostratigraphy":"\/api\/occurrence\/lookupchronostratigraphy","accessStats":"\/api\/occurrence\/accessstats","editLocks":"\/api\/occurrence\/editlocks","lookupCounties":"\/api\/occurrence\/lookupcounties","geoIndex":"\/api\/occurrence\/geoindex","lookupStateProvinces":"\/api\/occurrence\/lookupstateprovinces","occurrences":"\/api\/occurrences","determinations":"\/api\/occurrence\/determinations","verification":"\/api\/occurrence\/verification","uploadMappings":"\/api\/occurrence\/uploadmappings","lookupCountries":"\/api\/occurrence\/lookupcountries","identifiers":"\/api\/occurrence\/identifiers","guidOccurrences":"\/api\/occurrence\/guidoccurrences","uploadOccurrences":"\/api\/occurrence\/uploadoccurrences","guidDeterminations":"\/api\/occurrence\/guiddeterminations","lookupMunicipalities":"\/api\/occurrence\/lookupmunicipalities","checklistTaxaLink":"\/api\/reference\/checklisttaxalink","authors":"\/api\/reference\/authors","lookupReferenceTypes":"\/api\/reference\/lookupreferencetypes","references":"\/api\/references","descriptionBlock":"\/api\/taxa\/descriptionblock","synonymy":"\/api\/taxa\/synonymy","authorities":"\/api\/taxa\/authorities","taxa":"\/api\/taxa","resourceLinks":"\/api\/taxa\/resourcelinks","maps":"\/api\/taxa\/maps","descriptionStatements":"\/api\/taxa\/descriptionstatements","relationships":"\/api\/taxa\/relationships","upload":"\/api\/taxa\/upload","links":"\/api\/taxa\/links","userTaxonomy":"\/api\/taxa\/usertaxonomy","vernaculars":"\/api\/taxa\/vernaculars","ranks":"\/api\/taxa\/ranks","attributes":"\/api\/traits\/attributes","traits":"\/api\/traits","dependencies":"\/api\/traits\/dependencies","states":"\/api\/traits\/states"}'
-  recorded_at: 2020-09-03 19:22:57 GMT
+  recorded_at: 2020-09-29 19:30:13 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.6.2
+- request:
+    method: get
+    uri: http://a02235015-6.bluezone.usu.edu/api/occurrences/1
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.17.3
+      content-type: application/ld+json; charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      vary: Accept
+      x-content-type-options: nosniff
+      x-frame-options: deny
+      cache-control: private, must-revalidate
+      date: Tue, 29 Sep 2020 19:30:13 GMT
+      link: <http://a02235015-6.bluezone.usu.edu/api/docs.jsonld>; rel="http://www.w3.org/ns/hydra/core#apiDocumentation"
+      etag: '"ba94f183e11e4f158853d0c0f20ccac4"'
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"@context":"\/api\/contexts\/Occurrences","@id":"\/api\/occurrences\/1","@type":"Occurrences","id":1,"sourcePrimaryKey":"11251","basisOfRecord":"PreservedSpecimen","occurrenceIdentifier":"USU:UTC:11251","catalogNumber":"UTC00011251","otherCatalogNumbers":null,"ownerInstitutionCode":null,"institutionIdentifier":null,"collectionIdentifier":null,"datasetIdentifier":null,"institutionCode":null,"collectionCode":null,"family":"Poaceae","scientificNameFull":null,"scientificName":"Pascopyrum
+        smithii","genus":null,"specificEpithet":null,"taxonRank":null,"infraspecificEpithet":null,"scientificNameAuthorship":"(Rydb.)
+        A. Löve","taxonRemarks":null,"identifiedBy":"Mary E. Barkworth","dateIdentified":"1993","identificationReferences":null,"identificationRemarks":null,"identificationQualifier":null,"typeStatus":null,"recordedBy":"Mary
+        E. Barkworth","recordNumber":"4300","associatedCollectors":"CAB Gilbert","eventDate":"1983-07-21T00:00:00+00:00","latestDateCollected":null,"year":1983,"month":7,"day":21,"startDayOfYear":202,"endDayOfYear":null,"verbatimEventDate":"21
+        July 1983","habitat":"Gently southeast facing slope, restored by reseeding.","substrate":null,"fieldNotes":null,"fieldNumber":null,"eventIdentifier":null,"occurrenceRemarks":"All
+        species appear cespitose because planted in holes in very heavy clay soil.
+        Anthers 2.5 mm. Vouchers for leaf epidermal study by C. Gilbert.","informationWithheld":null,"dataGeneralizations":null,"associatedOccurrences":null,"associatedTaxa":"Elymus
+        lanceolatus, Pseudoroegneria spicata, and Pascopyrum smithii.","dynamicProperties":null,"verbatimAttributes":null,"behavior":null,"reproductiveCondition":"flowering
+        or fruiting","cultivationStatus":0,"establishmentMeans":null,"lifeStage":null,"sex":null,"individualCount":null,"samplingProtocol":null,"samplingEffort":null,"preparations":null,"locationIdentifier":null,"waterbody":null,"country":"United
+        States","stateProvince":"Wyoming","county":"Lincoln","municipality":null,"locality":"Kemmerer
+        Caol Mine about 1 mile west of Kemmerer; coollected on research plots for
+        12ua","localitySecurity":0,"localitySecurityReason":null,"decimalLatitude":null,"decimalLongitude":null,"geodeticDatum":null,"coordinateUncertaintyInMeters":null,"footprintWkt":null,"coordinatePrecision":null,"locationRemarks":null,"verbatimCoordinates":null,"verbatimCoordinateSystem":null,"georeferencedBy":null,"georeferenceProtocol":null,"georeferenceSources":null,"georeferenceVerificationStatus":null,"georeferenceRemarks":null,"minimumElevationInMeters":2000,"maximumElevationInMeters":2500,"verbatimElevation":null,"minimumDepthInMeters":null,"maximumDepthInMeters":null,"verbatimDepth":null,"previousIdentifications":null,"disposition":null,"storageLocation":null,"language":null,"processingStatus":"reviewed","recordEnteredBy":null,"duplicateQuantity":null,"labelProject":null,"dynamicFields":null,"initialTimestamp":null,"modifiedTimestamp":"2019-01-12T13:42:43+00:00","taxaId":null,"observerUserId":null,"collectionId":"\/api\/collections\/7","duplicateId":[],"chronostratigraphyId":[]}'
+  recorded_at: 2020-09-29 19:30:13 GMT
   recorded_with: vcr/0.5.4, webmockr/0.6.2
 - request:
     method: get
@@ -45,7 +88,7 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      server: nginx/1.17.4
+      server: nginx/1.17.3
       content-type: application/ld+json; charset=utf-8
       transfer-encoding: chunked
       connection: keep-alive
@@ -53,12 +96,12 @@ http_interactions:
       x-content-type-options: nosniff
       x-frame-options: deny
       cache-control: private, must-revalidate
-      date: Thu, 03 Sep 2020 19:22:57 GMT
+      date: Tue, 29 Sep 2020 19:30:13 GMT
       link: <http://a02235015-6.bluezone.usu.edu/api/docs.jsonld>; rel="http://www.w3.org/ns/hydra/core#apiDocumentation"
       etag: '"dafed24e684f351a6faacea67422b952"'
     body:
       encoding: UTF-8
       file: no
       string: '{"@context":"\/api\/contexts\/LookupStateProvinces","@id":"\/api\/occurrence\/lookupstateprovinces\/1","@type":"LookupStateProvinces","id":1,"stateName":"Alaska","abbreviation":"AK","initialTimestamp":null,"countryId":"\/api\/occurrence\/lookupcountries\/223"}'
-  recorded_at: 2020-09-03 19:22:57 GMT
+  recorded_at: 2020-09-29 19:30:13 GMT
   recorded_with: vcr/0.5.4, webmockr/0.6.2
