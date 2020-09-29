@@ -30,7 +30,7 @@ Each function either retrieves an individual resource or a page of resources,
 depending on the arguments provided.
 }
 \note{
-To specify a default URL to refer to, see @seealso [SymbiotaR2_setup()]
+To specify a default URL to refer to, see [SymbiotaR2_setup()]
 }
 \examples{
 \dontrun{
