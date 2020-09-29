@@ -33,6 +33,7 @@ SymbiotaR2_setup("http://nonexistent-portal.com/api/")
 # Trying to save a non-existence portal
 SymbiotaR2_setup("http://nonexistent-portal.com/api/", TRUE)
 }
+#' @rdname SymbiotaR2_setup
 }
 \author{
 Will Pearse
