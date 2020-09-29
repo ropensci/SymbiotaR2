@@ -21,7 +21,7 @@
 #' # Trying to save a non-existence portal
 #' SymbiotaR2_setup("http://nonexistent-portal.com/api/", TRUE)
 #' }
-#' #' @rdname SymbiotaR2_setup
+#' @rdname SymbiotaR2_setup
 #' @name SymbiotaR2_setup
 #' @export
 
