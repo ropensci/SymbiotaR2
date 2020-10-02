@@ -135,6 +135,9 @@ do the following:
 2. Check the package as you would normally, with something like `R CMD
    check SymbbiotaR2_1.0-0` from the command line.
 3. XXX AUSTIN IS THIS CORRECT? XXX
+4. YYY WILL No, because all the functions include a `.check.url` call, 
+which will fail if the user can't connect to the referenced Symbiota2
+portal website--even if a `vcr` cassette exists.
 
 If you want to add new tests, or new functions that address new API
 endpoints (perhaps because you have written a Symbiota2 plugin and
