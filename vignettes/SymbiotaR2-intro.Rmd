@@ -44,16 +44,26 @@ The general argument structure of all SymbiotaR2 functions allows users
 to specify whether they want to pull a single resource or a collection 
 of resources from the API.
 
-The general workflow for using SymbiotaR2 is as follows:
+In general, there are four steps for using SymbiotaR2:
 
-1. Determine the URL of the Symbiota2 portal you wish to access data from. 
-You will need to be approved access by the portal manager before being able to
-retrieve data from the portal. 
-2. Install the SymbiotaR2 package (see [Installation](#inst) below).
-3. Find the function corresponding to the resource you wish to pull from the 
-Symbiota2 portal. 
-4. Call the function, specifying the Symbiota2 portal using the `url` 
-argument (see [Example](#ex) below).
+1. Determine the URL of the Symbiota2 portal you wish to access data
+   from; its "API endpoint" is probably its web address with "api"
+   appended to it (see below). Remember that your particular portal
+   may not have enabled data download.
+2. Load the SymbiotaR2 package (see [Installation](#inst) below for
+   install instructions).
+3. Find the function corresponding to the kind of data you wish to
+pull from the Symbiota2 portal (e.g., `Coordinates` for co-ordinate
+data).
+    - Functions are named after the resources they download, and are
+  grouped according to the relevant API call.
+    - Note that, because each Symbiota2 portal owner can load their
+  own plugins into the API, it's possible that not every API endpoint
+  will be covered.
+    - You can find a full list by typing `library(help=SymbiotaR2)`
+4. Call the function, specifying the Symbiota2 portal using the `url`
+argument (see [Example](#ex) and [Portal Specification](#portspec)
+below).
 
 ## <a name="inst"></a>Installation
 SymbiotaR2 can be downloaded by calling:
@@ -61,6 +71,13 @@ SymbiotaR2 can be downloaded by calling:
 ```
 library(devtools)
 install_github("pearselab/SymbiotaR2")
+```
+
+Once it has passed peer review, you will be able to install it by
+running:
+
+```
+install.packages("SymbiotaR2")
 ```
 
 Load the package using:
@@ -168,9 +185,13 @@ Note that functions are designed such that a forward slash (`/`) at the end
 of the URL is optional. If your URL is correctly spelled, make sure that 
 the Symbiota2 portal manager has allowed you access to the portal. 
 
-#### Testing
-Tests for all SymbiotaR2 functions (using both an `id` and a `page` parameter)
-can be found in the `tests/testthat/` directory. Tests, like functions, are 
-organized by API families. The `tests/fixtures` directory contains the
-`vcr` <em>cassettes</em> for the tests, which are used to speed up HTTP
-requests; information about the `vcr` package can be found [here](https://github.com/ropensci/vcr).
+#### (For developers) Unit tests
+All of the package functions come with tests, for both pulling a
+single SymbiotaR2 resource (using the `id` argument), or a collection
+of resources (using `page`). Tests for each function are contained in
+the `tests/testthat` directory. Running these tests requires you have
+access to a fully configured SymbiotaR2 test instance, complete with
+demo data, which is both time-consuming to setup and then
+time/bandwidth-consuming to run the tests. We therefore release cached
+data downloads, generated using `vcr`, for use with this package; 
+information about the `vcr` package can be found [here](https://github.com/ropensci/vcr).
