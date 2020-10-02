@@ -60,34 +60,36 @@ The R code below provides an example of how to install a `Coordinates`
 resource from an example Symbiota2 portal
 
 ```{R}
-# Step 1 - find the URL
+# Step 1 - Find the URL
 myURL <- "http://imaginary-symbiota2-portal.com/api"
-# Step 2 - load the package 
-# install.packages("SymbiotaR2") # (the first time you need to install it)
+# Step 2 - Install the package (only required the first time you're using it)
+install.packages("SymbiotaR2") 
+# Step 3 - Load the package
 library(SymbiotaR2)
-# Step 3 - Choose the kind of data you want
+# Step 4 - Choose the kind of data you want
 library(help=SymbiotaR2)
-# Step 4 - Download your data
+# Step 5 - Download your data
 myCoordinates <- Coordinates(url = myURL)
-# XXX Austin above I have dropped id=6 from the Coordinates call because it's confusing to have it here - it still works, yes?
 ```
 
 From here, the `myCoordinates` object can be used as desired.
 
 ## <a name="portspec"></a>Setting up a default portal for download
 
-`SymbiotaR2_setup` will save to your `.Rprofile` a default portal
-instance to use when downloading data. XXX Austin does this change the
-default in the user's current session as well? I think so, but please
-check! XXX Specifing a different `url` argument will let you refer to
+Calling `SymbiotaR2_setup` will specify a default portal URL to use for 
+all subsequent SymbiotaR2 calls made within your R session.
+Specifing a different `url` argument will let you refer to
 a portal besides the default. The code below offers an example:
 
 ```{R}
-SymbiotaR2_setup("http://imaginary-symbiota-portal.com/api", append=TRUE)
-# XXX Austin do we need "append=TRUE" above? What does it do? Is it confusing to the reader to see that there? XXX
+SymbiotaR2_setup("http://imaginary-symbiota-portal.com/api")
 Coordinates() # Download from http://imaginary-symbiota-portal.com/api
 Coordinates("http://another-imaginary-portal.com/api") # Download from a different portal
 ```
+
+If the `append` argument in your `SymbiotaR2_setup` call is set to 
+`TRUE`, then the specified `url` argument will be saved as the default
+to your `.Rprofile`, allowing it to be used everytime you start up `R`.
 
 ## <a name="inst"></a>Installation
 
@@ -120,7 +122,7 @@ of resources (using `page`). Tests for each function are contained in
 the `tests/testthat` directory. Running these tests requires you have
 access to a fully configured SymbiotaR2 test instance, complete with
 demo data, which is both time-consuming to setup and then
-time/bandwidth-consiming to run the tests. We therefore release cached
+time/bandwidth-consuming to run the tests. We therefore release cached
 data downloads, generated using `vcr`, for use with this package.
 
 While more information about the `vcr` package can be found on [the
@@ -147,7 +149,7 @@ want it to work with this package), do the following:
    that the folder `fixtures` contains the cassettes, and that
    `SymbiotaR2` makes use of the file
    `tests/testthat/helper-SymbiotaR2.R` to setup the automatic
-   tests. See also below and point 4.
+   tests. See point 4 below.
 4. When writing/checking your test, set the `url` variable at the top
    of the script to be wherever your test instance is. When committing
    your code to submit a pull request (see point 5), change it to the
