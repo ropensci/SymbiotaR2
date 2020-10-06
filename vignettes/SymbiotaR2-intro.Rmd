@@ -186,12 +186,61 @@ of the URL is optional. If your URL is correctly spelled, make sure that
 the Symbiota2 portal manager has allowed you access to the portal. 
 
 #### (For developers) Unit tests
-All of the package functions come with tests, for both pulling a
+
+All SymbiotaR2 functions come with tests, for both pulling a
 single SymbiotaR2 resource (using the `id` argument), or a collection
 of resources (using `page`). Tests for each function are contained in
 the `tests/testthat` directory. Running these tests requires you have
 access to a fully configured SymbiotaR2 test instance, complete with
 demo data, which is both time-consuming to setup and then
 time/bandwidth-consuming to run the tests. We therefore release cached
-data downloads, generated using `vcr`, for use with this package; 
-information about the `vcr` package can be found [here](https://github.com/ropensci/vcr).
+data downloads, generated using `vcr`, for use with this package.
+Information about the `vcr` package can be found on [the
+`vcr` page on GitHub](https://github.com/ropensci/vcr). 
+
+To run the package tests, do the following:
+
+1. Build the package as you would normally, with something like `R CMD
+   build SymbiotaR2` from the command line.
+2. Check the package as you would normally, with something like `R CMD
+   check SymbbiotaR2_0.0-1` from the command line.
+
+If you want to add new tests, or new functions that address new API
+endpoints, do the following:
+
+1. Setup a Symbiota2 instance with the canned example data.
+2. If you are adding support for a new API endpoint, make a new file
+   in `tests/testthat` for your tests. Otherwise, add to one of the
+   existing files.
+3. Write your test, following the coding style of the other tests,
+   particularly with respect to setting up the `vcr` _cassette_. Note
+   that the folder `fixtures` contains the cassettes, and that
+   `SymbiotaR2` makes use of the file
+   `tests/testthat/helper-SymbiotaR2.R` to setup the automatic
+   tests. See point 4 below.
+4. When writing/checking your test, set the `url` variable at the top
+   of the script to be wherever your test instance is. When committing
+   your code to submit a pull request (see point 5), change it to the
+   address at the top of the other tests (currently
+   `http://a02235015-6.bluezone.usu.edu/api/`).
+5. When you are finished, submit a pull request to the `master` branch
+   of this repository. Please use the pull request template and follow
+   the contributor guidelines.
+
+Here is an example of what a piece of testing code may look like:
+
+```
+context("AccessStats")
+vcr::use_cassette(name = "AccessStats_id", {
+  data <- AccessStats(id = 4, url = url)
+})
+test_that("AccessStats_id", {
+  expect_equal(length(data), 12)
+  expect_type(data, "list")
+})
+```
+
+The `data <- AccessStates(url = url, id = 4)` line is the Symbiota2
+call, and the `test_that` block below it contains the test
+conditions--here, that the `data` object is a `list` of
+length 12. 
