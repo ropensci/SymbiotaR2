@@ -133,11 +133,7 @@ do the following:
 1. Build the package as you would normally, with something like `R CMD
    build SymbiotaR2` from the command line.
 2. Check the package as you would normally, with something like `R CMD
-   check SymbbiotaR2_1.0-0` from the command line.
-3. XXX AUSTIN IS THIS CORRECT? XXX
-4. YYY WILL No, because all the functions include a `.check.url` call, 
-which will fail if the user can't connect to the referenced Symbiota2
-portal website--even if a `vcr` cassette exists.
+   check SymbbiotaR2_0.0-1` from the command line.
 
 If you want to add new tests, or new functions that address new API
 endpoints (perhaps because you have written a Symbiota2 plugin and
@@ -178,10 +174,7 @@ test_that("AccessStats_id", {
 The `data <- AccessStates(url = url, id = 4)` line is the Symbiota2
 call, and the `test_that` block below it contains the test
 conditions--here, that the `data` object is a `list` of
-length 12. These test conditions will vary with the Symbiota2 portal
-used, so for tests to pass, the conditions (and possibly the Symbiota2
-calls, too) may need to be updated for your particular Symbiota2
-portal.
+length 12. 
 
 ## Citation
 
