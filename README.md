@@ -183,6 +183,12 @@ used, so for tests to pass, the conditions (and possibly the Symbiota2
 calls, too) may need to be updated for your particular Symbiota2
 portal.
 
+## Citation
+
+If you use SymbiotaR2 as a component to publication, we ask that you 
+properly cite this R package. Use `citation("SymbiotaR2")` to see how to 
+cite SymbiotaR2.
+
 ## Contributions
 
 Please check out our [contribution guidelines](https://github.com/pearselab/SymbiotaR2/blob/master/.github/CONTRIBUTING.md).
