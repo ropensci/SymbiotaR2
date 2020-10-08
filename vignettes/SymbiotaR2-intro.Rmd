@@ -17,7 +17,7 @@ is an open-source content management system built for the purpose of
 integrating virtual biodiversity databases. Currently used by over 
 700 natural history collections, containing more than 30 million specimens,
 Symbiota is an essential tool for digitizing biological specimen data. 
-In an effort to expand modularity and accesibility, [Symbiota2](https://symbiota.org/docs/symbiota2-project/)
+In an effort to expand modularity and accessibility, [Symbiota2](https://symbiota.org/docs/symbiota2-project/)
 is an improved, refactored version of the original Symbiota core code 
 structure, designed based on user feedback. While packages do exist for 
 accessing Symbiota portals (for instance, see the [rSymbiota](https://github.com/FranzKrah/rSymbiota)
@@ -88,7 +88,7 @@ library(SymbiotaR2)
 
 #### Portal Specification
 `SymbiotaR2_setup` will save to your `.Rprofile` a default URL, 
-for automatic reference. Specifing a different `url` argument will let you
+for automatic reference. Specifying a different `url` argument will let you
 refer to a portal besides the default. The code below demonstrates this:
 
 ```
@@ -109,7 +109,9 @@ instance will be covered.
 
 Below, we provide an example of pulling a single `Taxa` resource into the R
 environment, by specifying an `id` argument in the command call
-(using a random, nonexistent URL):
+(using a random, nonexistent URL). Please note that this example won't
+work for users (as they need to specify a working Symbiota2 portal
+they can access), but is included to demonstrate typical usage:
 
 ```
 myURL <- "http://imaginary-symbiota2-portal.com/api"
@@ -172,7 +174,7 @@ which confirms the following:
 1. URL provided refers to an accessible website, and
 2. that website is a working Symbiota2 portal.
 
-The 2nd step consists of an API call made at the end of the URL check.
+The second step consists of an API call made at the end of the URL check.
 If either step fails, the error below will be triggered:
 
 ```
