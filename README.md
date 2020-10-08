@@ -17,7 +17,7 @@ working with biological specimens,
 management system designed to integrate virtual biodiversity
 databases. Over 750 natural history collections use Symbiota, which
 has motivated the development of the Symbiota2 update to the Symbiota
-platofrm. This package, _SymbiotaR2_, allows users to access and
+platform. This package, _SymbiotaR2_, allows users to access and
 download specimen- and observation-based data from a published
 Symbiota2 portal. If you're looking for something similar for the
 original Symbiota, take a look at
