@@ -11,10 +11,6 @@ author:
 - affiliation: 1
   name: William D Pearse
   orcid: 0000-0002-6241-3164
-date: "02/26/2020"
-output: html_document
-tags:
-- 
 affiliations:
 - index: 1
   name: Department of Biology & Ecology Center, Utah State University, Logan, Utah,
@@ -23,6 +19,13 @@ affiliations:
   name: Northern Arizona University, Arizona, USA
 - index: 3
   name: Department of Computer Science, Utah State University, Logan, Utah, USA
+date: "10/08/2020"
+output: html_document
+bibliography: paper.bib
+tags:
+  - R
+  - Symbiota
+  - specimen-records
 ---
 # Summary
 
@@ -37,7 +40,7 @@ emphasis on modularity and accessibility.
 
 The code below provides an example of a user accessing two different attributes
 from the same entry within a Symbiota2  database. First, data from a particular 
-entry (here, `ID=28`) is pulled into R using the "Occurrences" API endpoint. 
+entry (here, `id=28`) is pulled into R using the "Occurrences" API endpoint. 
 Then, different attributes associated with this entry (`reproductiveCondition`,
 `decimalLatitude`, and `decimalLongitude`) are printed. The specification of the 
 `url` argument (at the beginning of the example) allows for users to reference 
@@ -46,8 +49,8 @@ the web address corresponding to any Symbiota2 portal of interest.
 # Specify web address from which to access Symbiota2 API
 > url <- "http://a02235015-6.bluezone.usu.edu/api/"
 
-# Pull occurrence information associated with database entry (ID=28)
-> test.Occ <- Occurrences(url=url, ID=28)
+# Pull occurrence information associated with database entry (id=28)
+> test.Occ <- Occurrences(id=28, url=url)
 
 # Find reproductive condition for entry of interest
 > print(test.Occ$reproductiveCondition)
