@@ -117,10 +117,10 @@ library(SymbiotaR2)
 ## (For developers) Unit tests
 
 All of the package functions come with tests, for both pulling a
-single SymbiotaR2 resource (using the `id` argument), or a collection
+single Symbiota2 resource (using the `id` argument), or a collection
 of resources (using `page`). Tests for each function are contained in
 the `tests/testthat` directory. Running these tests requires you have
-access to a fully configured SymbiotaR2 test instance, complete with
+access to a fully configured Symbiota2 test instance, complete with
 demo data, which is both time-consuming to setup and then
 time/bandwidth-consuming to run the tests. We therefore release cached
 data downloads, generated using `vcr`, for use with this package.
@@ -196,3 +196,12 @@ on any package development until these are finalized.
 If you're interested in contributing to the
 package in the future, though, please [drop one of us an email and
 we'll let you know when we're ready](http://pearselab.com/team.html)!
+
+-----
+
+Please note that `SymbiotaR2` is released with a [Contributor Code
+of
+Conduct](https://ropensci.org/code-of-conduct/).
+By contributing to this project, you agree to abide by its terms.
+
+[![ropensci\_footer](https://ropensci.org/public_images/ropensci_footer.png)](https://ropensci.org)
