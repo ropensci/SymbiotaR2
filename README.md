@@ -199,7 +199,7 @@ we'll let you know when we're ready](http://pearselab.com/team.html)!
 
 -----
 
-Please note that `SymbiotaR2` is released with a [Contributor Code
+Please note that this package is released with a [Contributor Code
 of
 Conduct](https://ropensci.org/code-of-conduct/).
 By contributing to this project, you agree to abide by its terms.
