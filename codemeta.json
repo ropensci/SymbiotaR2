@@ -1,0 +1,145 @@
+{
+  "@context": ["https://doi.org/10.5063/schema/codemeta-2.0", "http://schema.org"],
+  "@type": "SoftwareSourceCode",
+  "identifier": "SymbiotaR2",
+  "description": "Download data from Symbiota2 portals using Symbiota's\n    API. Covers the Checklists, Collections, Crowdsource, Exsiccati,\n    Glossary, ImageProcessor, Key, Media, Occurrence, Reference, Taxa,\n    Traits, and UserRoles API families. Each Symbiota2 portal owner\n    can load their own plugins (and modified code), and so this\n    package may not cover every possible API endpoint from a given\n    Symbiota2 instance.",
+  "name": "SymbiotaR2: Downloading Data from Symbiota2 Portals into R",
+  "codeRepository": "https://github.com/pearselab/SymbiotaR2",
+  "issueTracker": "https://github.com/pearselab/SymbiotaR2/issues",
+  "license": "https://spdx.org/licenses/MIT",
+  "version": "0.0.1",
+  "programmingLanguage": {
+    "@type": "ComputerLanguage",
+    "name": "R",
+    "url": "https://r-project.org"
+  },
+  "runtimePlatform": "R version 3.6.3 (2020-02-29)",
+  "author": [
+    {
+      "@type": "Person",
+      "givenName": "Austin",
+      "familyName": "Koontz",
+      "email": "austinkoontz11@gmail.com",
+      "@id": "https://orcid.org/0000-0002-6103-5896"
+    },
+    {
+      "@type": "Person",
+      "givenName": "William D.",
+      "familyName": "Pearse",
+      "email": "will.pearse@gmail.com",
+      "@id": "https://orcid.org/0000-0002-6241-3164"
+    }
+  ],
+  "contributor": {},
+  "copyrightHolder": {},
+  "funder": {},
+  "maintainer": [
+    {
+      "@type": "Person",
+      "givenName": "Austin",
+      "familyName": "Koontz",
+      "email": "austinkoontz11@gmail.com",
+      "@id": "https://orcid.org/0000-0002-6103-5896"
+    }
+  ],
+  "softwareSuggestions": [
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "knitr",
+      "name": "knitr",
+      "version": ">= 1.23",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=knitr"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "testthat",
+      "name": "testthat",
+      "version": ">= 2.0.0",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=testthat"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "vcr",
+      "name": "vcr",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=vcr"
+    }
+  ],
+  "softwareRequirements": [
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "httr",
+      "name": "httr",
+      "version": ">= 1.0.0",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=httr"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "rjson",
+      "name": "rjson",
+      "version": ">= 0.2.20",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=rjson"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "fs",
+      "name": "fs",
+      "version": ">= 1.2.6",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=fs"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "curl",
+      "name": "curl",
+      "version": ">= 3.3",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=curl"
+    }
+  ],
+  "releaseNotes": "https://github.com/pearselab/SymbiotaR2/blob/master/NEWS.md",
+  "readme": "https://github.com/ropensci/SymbiotaR2/blob/master/README.md",
+  "fileSize": "2017.879KB",
+  "contIntegration": ["https://travis-ci.org/ropensci/SymbiotaR2", "https://codecov.io/gh/ropensci/SymbiotaR2"],
+  "developmentStatus": "https://www.repostatus.org/#wip",
+  "keywords": ["symbiota2-portal", "database", "library", "r", "symbiota", "specimen-records", "symbiota2"]
+}

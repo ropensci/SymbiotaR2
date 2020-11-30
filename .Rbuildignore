@@ -3,3 +3,4 @@
 ^paper\.md$
 ^\.github/
 ^\.github$
+^codemeta\.json$
