@@ -98,7 +98,7 @@ but it can be downloaded by calling:
 
 ```{R}
 library(devtools)
-install_github("pearselab/SymbiotaR2")
+install_github("ropensci/SymbiotaR2")
 ```
 
 Once it has passed peer review, you will be able to install it by
@@ -184,7 +184,7 @@ cite SymbiotaR2.
 
 ## Contributions
 
-Please check out our [contribution guidelines](https://github.com/pearselab/SymbiotaR2/blob/master/.github/CONTRIBUTING.md).
+Please check out our [contribution guidelines](https://github.com/ropensci/SymbiotaR2/blob/master/.github/CONTRIBUTING.md).
 
 If you'd like to contribute to the tests in this package (e.g.
 to include a test for a new plugin), remember that you'll need an
