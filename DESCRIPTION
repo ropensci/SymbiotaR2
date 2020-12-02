@@ -3,7 +3,9 @@ Type: Package
 Title: Downloading Data from Symbiota2 Portals into R
 Version: 0.0-1
 Authors@R: c(person("Austin", "Koontz", email = "austinkoontz11@gmail.com", role = c("aut", "cre"), comment=c(ORCID="0000-0002-6103-5896")),
-    person("William D.", "Pearse", email = "will.pearse@gmail.com", role ="aut", comment=c(ORCID="0000-0002-6241-3164")))
+    person("William D.", "Pearse", email = "will.pearse@gmail.com", role ="aut", comment=c(ORCID="0000-0002-6241-3164")),
+    person("Ben", "Bond-Lamberty", role = "rev", comment = "Ben reviewed SymbiotaR2 for rOpenSci and provided valuable feedback, see https://github.com/ropensci/software-review/issues/373)),
+    person("Scott", "Chamberlain", role = "rev", comment = "Scott reviewed SymbiotaR2 for rOpenSci and provided valuable feedback, see https://github.com/ropensci/software-review/issues/373)))
 Maintainer: Austin Koontz <austinkoontz11@gmail.com>
 Description: Download data from Symbiota2 portals using Symbiota's
     API. Covers the Checklists, Collections, Crowdsource, Exsiccati,
