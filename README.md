@@ -3,6 +3,7 @@
 [![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
 [![Build Status](https://api.travis-ci.org/ropensci/Symbiota2.svg)](https://travis-ci.org/ropensci/SymbiotaR2)
 [![codecov](https://codecov.io/gh/ropensci/SymbiotaR2/branch/master/graph/badge.svg)](https://codecov.io/gh/ropensci/SymbiotaR2)
+[![DOI](https://zenodo.org/badge/190439935.svg)](https://zenodo.org/badge/latestdoi/190439935)
 <!-- badges: end -->
 
 # SymbiotaR2
