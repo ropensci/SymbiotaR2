@@ -37,7 +37,7 @@ tags:
 handling specimen-based Symbiota2 data within an R environment,
 allowing anyone to download digitized biological collection data from
 any established database. Symbiota2 is the updated version of Symbiota
-[Symbiota2014], a widely used software platform that grants access to
+[@Symbiota2014], a widely used software platform that grants access to
 data from >750 museums and herbaria worldwide. Through a complete
 refactoring of the Symbiota code, the structure of Symbiota2 places an
 emphasis on modularity and accessibility.
@@ -46,11 +46,9 @@ emphasis on modularity and accessibility.
 
 The release of `SymbiotaR2` is motivated by the ongoing development 
 of Symbiota2. Several R packages already exist for accessing 
-data from standard Symbiota portals (for instance, 
-see [rSymbiota](https://github.com/FranzKrah/rSymbiota));
-because Symbiota2 is a complete refactoring of the original 
-framework, a new package is required to interface with new 
-Symbiota2 portals.
+data from standard Symbiota portals; because Symbiota2 
+is a complete refactoring of the original framework, 
+a new package is required to interface with new Symbiota2 portals.
 
 The goal of this package is to allow users to access digitized 
 biological specimen data hosted via Symbiota2 portals quickly and 
@@ -71,7 +69,7 @@ Then, different attributes associated with this entry (`reproductiveCondition`,
 the web address corresponding to any Symbiota2 portal of interest.
 ```{R}
 # Specify web address from which to access Symbiota2 API
-> url <- "http://a02235015-6.bluezone.usu.edu/api/"
+> url <- "http://demo.portal.address/api/"
 
 # Pull occurrence information associated with database entry (id=28)
 > test.Occ <- Occurrences(id=28, url=url)
