@@ -4,11 +4,11 @@ authors:
 - affiliation: 1
   name: Austin Koontz
   orcid: 0000-0002-6103-5894
-- affiliation: 2
-  name: Benjamin Brandt
 - affiliation: 3
+  name: Benjamin Brandt
+- affiliation: 4
   name: Curtis Dyreson
-- affiliation: 1
+- affiliation: "1,2"
   name: William D Pearse
   orcid: 0000-0002-6241-3164
 affiliations:
@@ -16,8 +16,11 @@ affiliations:
   name: Department of Biology & Ecology Center, Utah State University, Logan, Utah,
     USA
 - index: 2
-  name: Northern Arizona University, Arizona, USA
+  name: Department of Life Sciences, Imperial College London, Silwood Park Campus, 
+    Buckhurst Rd., Ascot, Berkshire, SL5 7PY UK
 - index: 3
+  name: Northern Arizona University, Arizona, USA
+- index: 4
   name: Department of Computer Science, Utah State University, Logan, Utah, USA
 date: "10/08/2020"
 output: html_document
