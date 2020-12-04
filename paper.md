@@ -1,6 +1,6 @@
 ---
-title: "SymbiotaR2: An R Package for Accessing Symbiota2 Data"
-author: 
+title: 'SymbiotaR2: An R Package for Accessing Symbiota2 Data'
+authors: 
 - affiliation: 1
   name: Austin Koontz
   orcid: 0000-0002-6103-5894
@@ -26,6 +26,7 @@ tags:
   - R
   - Symbiota
   - specimen-records
+  - biodiversity
 ---
 # Summary
 
@@ -37,6 +38,26 @@ any established database. Symbiota2 is the updated version of Symbiota
 data from >750 museums and herbaria worldwide. Through a complete
 refactoring of the Symbiota code, the structure of Symbiota2 places an
 emphasis on modularity and accessibility.
+
+# Statement of need
+
+The release of `SymbiotaR2` is motivated by the ongoing development 
+of Symbiota2. Several R packages already exist for accessing 
+data from standard Symbiota portals (for instance, 
+see [rSymbiota](https://github.com/FranzKrah/rSymbiota));
+because Symbiota2 is a complete refactoring of the original 
+framework, a new package is required to interface with new 
+Symbiota2 portals.
+
+The goal of this package is to allow users to access digitized 
+biological specimen data hosted via Symbiota2 portals quickly and 
+efficiently. This data could include geographic, taxonomic, or genetic 
+information tied to a recorded specimen, as well as pertinent collection 
+information, images, and publications. By making this data accessible in R, 
+`SymbiotaR2` is part of the broader Symbiota effort of creating a 
+collaborative environment to share biodiversity data more widely. 
+
+# Demonstration
 
 The code below provides an example of a user accessing two different attributes
 from the same entry within a Symbiota2  database. First, data from a particular 
