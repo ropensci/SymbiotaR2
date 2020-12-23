@@ -4,6 +4,7 @@
 [![Build Status](https://api.travis-ci.org/ropensci/Symbiota2.svg)](https://travis-ci.org/ropensci/SymbiotaR2)
 [![codecov](https://codecov.io/gh/ropensci/SymbiotaR2/branch/master/graph/badge.svg)](https://codecov.io/gh/ropensci/SymbiotaR2)
 [![DOI](https://zenodo.org/badge/190439935.svg)](https://zenodo.org/badge/latestdoi/190439935)
+[![DOI](https://joss.theoj.org/papers/10.21105/joss.02917/status.svg)](https://doi.org/10.21105/joss.02917)
 <!-- badges: end -->
 
 # SymbiotaR2
